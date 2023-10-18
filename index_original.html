@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patricio Salazar | Developer Portfolio</title>
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- reCAPTCHA -->
+    <script src="https://www.google.com/recaptcha/api.js?render=6LfIQ3woAAAAAHQNGZESbvKDXepLwmIwm8zGyQby"></script>
+    <script>
+        grecaptcha.ready(function () {
+            grecaptcha.execute('6LfIQ3woAAAAAHQNGZESbvKDXepLwmIwm8zGyQby', {action: 'submit'}).then(function (token) {
+              console.info("got token: " + token);
+              document.getElementById('g-recaptcha-response').value = token;
+            });
+        });
+    </script>
+    <!-- JS -->
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <!-- Navigation -->
+      <nav class="navigation">
+        <div class="logo">
+          <img src="img/dev_logo.png" alt="Patricio Salazar logo" width="50">
+        </div>
+      </nav>
+    </header>
+    <!-- Main -->
+    <main class="main-content-container">
+      <!-- H1 -->
+      <section class="h1-section-container">
+        <div class="h1-control-wrapper">
+          <h1>
+            Hi, I'm Patricio Salazar
+          </h1>
+          <p class="sub-heading">I'm a web developer, and I care deeply<br/>
+            about building great tools for great causes.<br/>
+            <a class="linkedin-profile" href="https://www.linkedin.com/in/patriciosalazardev/" target="_blank">LinkedIn</a>
+            <img class="right-arrow" src="img/icons8-right-arrow-50.png" alt="right arrow icon">
+          </p>
+        </div>
+        <div class="gradient-blob"></div>
+      </section>
+      <!-- Card Components -->
+      <section class="card-component-section-container display-none">
+        <div class="card">
+          <!-- create modal: does it replace .card div or go inside it right here? -->
+          <div class="card-main-subject">
+            <!-- Ultra Content -->
+            <img
+              src="https://images.unsplash.com/photo-1579567761406-4684ee0c75b6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80"
+              alt="prism installation"
+            />
+          </div>
+          <div class="card-info">
+            <a class="card-info__link" href="https://www.touchbaseapp.co" target="_blank">Touch Base</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-main-subject">
+            <!-- Ultra Content -->
+            <img
+              src="https://images.unsplash.com/photo-1639815188546-c43c240ff4df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
+              alt="3D cube network"
+            />
+          </div>
+          <div class="card-info">
+            <a class="card-info__link" href="https://www.clearcalc.app" target="_blank">ClearCalc</a>
+          </div>
+        </div>
+      </section>
+      <!-- Start card-component-section-container Duplicate -->
+      <section class="project-section">
+        <h2 class="project-section__heading">Projects</h2>
+        <div class="primary-project-container">
+          <div class="card">
+            <!-- create modal: does it replace .card div or go inside it right here? -->
+            <a class="card-main-subject" href="https://www.touchbaseapp.co" target="_blank">
+              <!-- Ultra Content -->
+              <img
+                src="img/TB_Desktop.png"
+                alt="prism installation"
+              />
+            </a>
+            <div class="card-info">
+              <a class="card-info__link" href="https://www.touchbaseapp.co" target="_blank">Touch Base</a>
+            </div>
+          </div>
+          <div class="primary-project-container__about">
+            <p>
+              Touch Base is a full stack contacts management app. Manage contacts and groups using your own account.
+            </p>
+          </div>
+        </div>
+        <div class="secondary-project-container">
+          <div class="secondary-project-container__about">
+            <p>
+              ClearCalc is a JavaScript loan calculator, designed for simplicity and ease of use. Generate an amortization schedule using ClearCalc.
+            </p>
+          </div>
+          <div class="card">
+            <a class="card-main-subject" href="https://www.clearcalc.app" target="_blank">
+              <!-- Ultra Content -->
+              <img
+                src="img/CC_Desktop.png"
+                alt="3D cube network"
+              />
+            </a>
+            <div class="card-info">
+              <a class="card-info__link" href="https://www.clearcalc.app" target="_blank">ClearCalc</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End card-component-section-container Duplicate -->
+      <!-- ****  == MORE SPACE BEFORE ABOUT ME CARD ?? == **** -->
+      <!-- About -->
+      <section class="about-me-container">
+        <h2 class="about-me-container__heading">About Me</h2>
+        <div class="about-me-card">
+          <img class="about-me-image" src="img/Patricio_Salazar_Portrait.JPEG" alt="">
+          <div class="about-me-info">
+            <p>
+              <strong>I'm on a mission to build meaningful tools for the church</strong>... I'm currently transitioning from being in a full time ministry role, and before that I was a developer at an ecommerce company. Now, I'm combining the purpose behind both of those roles, and my goal is to be impactful on a team that shares my same mission.
+              <br/>
+              <!-- If I've applied to your company, I really hope that we get a chance to talk. -->
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- Skills -->
+      <section class="skills-container">
+        <h2 class="skills-container__heading">Current Tech Stack</h2>
+        <div class="skills-control">
+          <ul class="skills-list d-flex">
+            <li class="skills-icon">
+              <img src="img/icons8-html-5-filled.svg" alt="HTML5 icon">
+              <p>HTML5</p>
+            </li>
+            <li class="skills-icon">
+              <img src="img/icons8-css-filled.svg" alt="CSS3 icon">
+              <p>CSS3</p>
+            </li>
+            <li class="skills-icon">
+              <img src="img/icons8-bootstrap.svg" alt="Bootstrap icon">
+              <p>Bootstrap</p>
+            </li>
+            <li class="skills-icon">
+              <img src="img/icons8-javascript-filled.svg" alt="JavaScript icon">
+              <p>JavaScript</p>
+            </li>
+            <li class="skills-icon">
+              <img src="img/icons8-react-js-filled.svg" alt="React.js icon">
+              <p>React</p>
+            </li>
+            <li class="skills-icon">
+              <img src="img/icons8-node-js.svg" alt="Node.js icon">
+              <p>Node.js</p>
+            </li>
+            <li class="skills-icon">
+              <img src="img/icons8-express-js.svg" alt="Express.js icon">
+              <p>Express.js</p>
+            </li>
+            <li class="skills-icon">
+              <img src="img/icons8-postgresql-filled.svg" alt="PostgreSQL icon">
+              <p>PostgreSQL</p>
+            </li>
+            <li class="skills-icon">
+              <img src="img/icons8-github-filled.svg" alt="Github icon">
+              <p>Github</p>
+            </li>
+            <li class="skills-icon">
+              <img class="firebase-icon" src="img/icons8-firebase-filled.png" alt="Firebase icon">
+              <p>Firebase</p>
+            </li>
+            <li class="skills-icon">
+              <img src="img/icons8-notion-filled.svg" alt="Notion icon">
+              <p>Notion</p>
+            </li>
+            <li class="skills-icon">
+              <img src="img/icons8-slack-new-filled.svg" alt="Slack icon">
+              <p>Slack</p>
+            </li>
+            <li class="skills-icon">
+              <img src="img/icons8-zoom-filled.svg" alt="Zoom icon">
+              <p>Zoom</p>
+            </li>
+            <li class="skills-icon">
+              <img class="comm-icon" src="img/icons8-communication-100-filled.png" alt="Communication icon">
+              <p>Comm</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <!-- Contact Form -->
+      <section class="contact-form-container">
+        <h2 class="contact-form-container__heading">Contact</h2>
+        <div class="contact-form-card">
+          <form class="contact-form" id="contact-form" action="https://formspree.io/f/mgejpdop" method="post">
+            <div class="input-group email-group">
+              <label for="sender-email">Your Email</label>
+              <input type="email" id="sender-email" name="sender-email" placeholder="Enter your email" required>
+            </div>
+            <div class="input-group message-group">
+              <label for="message">Message</label>
+              <textarea name="message" id="message" cols="30" rows="5" required></textarea>
+            </div>
+            <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
+            <p class="form-status" id="form-status"></p>
+            <div class="contact-form__button-container">
+              <button type="submit">Send</button>
+            </div>
+          </form>
+          <!-- <div class="contact-form-img-container">
+            <img class="contact-form-img" src="img/white-abstract-curve.jpg"></img>
+          </div> -->
+        </div>
+      </section>
+      <!-- Footer -->
+      <footer>
+        <a class="social-link" href="https://www.linkedin.com/in/patriciosalazardev">
+          <img class="social-icon linkedin-icon" src="img/icons8-linkedin-filled.svg" alt="LinkedIn icon" width="50">
+        </a>
+        <a class="social-link" href="https://github.com/patriciosebastian">
+          <img class="social-icon github-icon" src="img/icons8-github-filled.svg" alt="GitHub icon" width="50">
+        </a>
+      </footer>
+    </main>
+    <div class="body-background-blur"></div>
+  </body>
+</html>

@@ -1,4 +1,16 @@
-// Form Submit
+window.addEventListener("scroll", function() {
+  const nav = document.querySelector(".nav-container__nav-ul");
+  
+  // Add a class to the Nav once a user scrolls down,
+  // remove the class when user scrolls back up
+  if (window.scrollY > 0) {
+      nav.classList.add("scrolled");
+  } else {
+      nav.classList.remove("scrolled");
+  }
+});
+
+// Contact Form Submit
 const form = document.querySelector(".contact-form");
 
 async function handleSubmit(event) {
