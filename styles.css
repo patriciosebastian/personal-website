@@ -52,11 +52,10 @@ button, input, label {
   line-height: 1.1;
 }
 
-/* prefer to hard wrap instead of overflowing text and potentially add a hyphen */
+/* prefer to hard wrap instead of overflowing text */
 p, h1, h2,
 h3, h4 {
   overflow-wrap: break-word;
-  /* hyphens: auto; */
 }
 
 /* make images and icons easier to work with */
@@ -99,12 +98,14 @@ textarea:not([rows]) {
   --white-color: #FAFAFA;
   --semi-transparent-white-color: rgba(250, 250, 250, 0.875);
   --black-color: black;
+  --green-color: #2E8B57;
+  --red-color: #FF414D;
 }
 
 /********** HERO SECTION **********/
 
 .hero-section {
-  height: 100dvh;
+  height: 100svh;
   position: relative;
 }
 
@@ -220,7 +221,7 @@ textarea:not([rows]) {
 /********** ABOUT SECTION **********/
 
 .about-section {
-  height: 100dvh;
+  height: 100vh;
   position: relative;
 }
 
@@ -266,7 +267,7 @@ textarea:not([rows]) {
 }
 
 .about-section__main-cta {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 /********** PROJECTS SECTION **********/
@@ -286,7 +287,7 @@ textarea:not([rows]) {
 }
 
 .projects-section__project1 {
-  height: 85dvh;
+  height: 85vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -298,7 +299,7 @@ textarea:not([rows]) {
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  width: 60%;
+  width: 80%;
 }
 
 .projects-section__project1-left-side-main-content {
@@ -309,14 +310,6 @@ textarea:not([rows]) {
   gap: 1rem;
 }
 
-.projects-section__project1-left-img-container {
-  width: 80%;
-}
-
-.projects-section__project1-info-text {
-  width: 80%;
-}
-
 .projects-section__project1-cta-btn {
   background-color: var(--background-color);
   border: 0;
@@ -325,7 +318,7 @@ textarea:not([rows]) {
 }
 
 .projects-section__project1-right-side {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   width: 60%;
@@ -335,15 +328,21 @@ textarea:not([rows]) {
   width: 55%;
 }
 
+.projects-section__project1-cta-btn {
+  font-weight: 500;
+}
+
+/* Project 2 */
+
 .projects-section__project2 {
-  height: 85dvh;
+  height: 85vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .projects-section__project2-left-side {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   width: 60%;
@@ -359,7 +358,7 @@ textarea:not([rows]) {
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  width: 60%;
+  width: 80%;
 }
 
 .projects-section__project2-right-side-main-content {
@@ -370,22 +369,130 @@ textarea:not([rows]) {
   gap: 1rem;
 }
 
-.projects-section__project2-right-img-container {
-  width: 80%;
-}
-
-.projects-section__project2-info-text {
-  width: 80%;
-}
-
 .projects-section__project2-cta-btn {
   background-color: var(--background-color);
   border: 0;
   color: var(--text-color);
   cursor: pointer;
+  font-weight: 500;
 }
 
 /********** SKILLS **********/
+
+.skills-section {
+  height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.skills-section__display-control {
+  height: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skills-section__content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 5rem;
+}
+
+.skills-section__skills-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.skills-section__ticker {
+  display: flex;
+  overflow: hidden;
+  /* position: absolute; */
+  /* bottom: 5rem; */
+  white-space: nowrap;
+  /* width: 100%; */
+  z-index: -1;
+
+  width: 8.3%;
+  margin-inline: auto;
+  /* margin: 0 auto; */
+}
+
+.skills-section__ticker-content {
+  /* padding-right: 2rem; */
+}
+
+.skills-section__ticker-content ul {
+  animation: scrollTicker 20s linear infinite;
+  display: flex;
+}
+
+.skills-section__skill-icon {
+  margin-inline: 2.5rem;
+  transform: translateZ(0);
+}
+
+/********** CONTACT FORM **********/
+
+.contact-section__display-control {
+  width: 80%;
+  margin-inline: auto;
+}
+
+.contact-section__email-input {
+  margin-bottom: .2rem;
+}
+
+.contact-section__email-input,
+.contact-section__textarea {
+  background-color: var(--white-color);
+  border: none;
+  outline-color: var(--text-color);
+  width: 100%;
+}
+
+.contact-section__textarea {
+  height: 12rem;
+}
+
+.message-success {
+  color: var(--green-color);
+  font-weight: 500;
+  font-size: 1.3rem;
+  margin: 1rem 0;
+  width: 100%;
+}
+
+.message-error {
+  color: var(--red-color);
+  font-weight: 500;
+  font-size: 1.3rem;
+  margin: 1rem 0;
+  width: 100%;
+}
+
+.contact-section__form-btn {
+  background-color: var(--background-color);
+  border: 0;
+  border-bottom: 2px solid var(--text-color);
+  color: var(--text-color);
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0;
+}
+
+/********** FOOTER **********/
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+}
 
 /********** MEDIA QUERIES **********/
 
@@ -403,29 +510,48 @@ textarea:not([rows]) {
     font-size: 1rem;
     gap: 1rem;
   }
+  .skills-section__skills-container {
+    font-size: calc(1rem + .5vw);
+  }
+  .contact-section__display-control {
+    width: 65%;
+  }
 }
 
 /* X Small */
 @media (min-width: 380px) {
   .hero-section__heading-container {
     height: calc(15% + 15vw);
+    justify-content: space-around;
   }
-  .about-section {
+  .about-section, .projects-section {
     font-size: calc(1rem + .3vw);
   }
   .about-section__main-content {
     width: 70%;
-    max-width: 364.31px;
+    /* max-width: 364.31px; */
   }
   .about-section__img-container {
     width: 86%;
     max-width: 360.66px;
   }
+  .skills-section__content-container {
+    gap: 5rem;
+  }
+  .skills-section__skills-container {
+    gap: 3rem;
+  }
+  .skills-section__ticker {
+    bottom: 7.5rem;
+    width: 9.5%;
+  }
 }
 
 /* Small */
 @media (min-width: 576px) {
-  /* .hero-section__heading-container instead? */
+  .hero-section__heading-container {
+    justify-content: space-between;
+  }
   .hero-section__primary-heading,
   .hero-section__secondary-heading {
     font-size: calc(1.5rem + 3vw);
@@ -433,11 +559,27 @@ textarea:not([rows]) {
   .hero-section__primary-heading {
     gap: calc(5rem + 10vw);
   }
+  .projects-section__project1-left-side,
+  .projects-section__project2-right-side {
+    width: 60%;
+  }
+  .skills-section__skills-container {
+    gap: calc(3rem + 10vw);
+  }
+  .skills-section__ticker {
+    width: calc(10% + 12vw);
+  }
+  .contact-section__display-control {
+    width: 50%;
+    max-width: 680px;
+  }
+  .contact-section__textarea {
+    height: 15rem;
+  }
 }
 
 /* Medium */
 @media (min-width: 768px) {
-  /* .hero-section__heading-container instead? */
   .hero-section__primary-heading,
   .hero-section__secondary-heading {
     font-size: calc(1.5rem + 5vw);
@@ -449,8 +591,17 @@ textarea:not([rows]) {
   .about-section__main-cta {
     font-size: calc(1rem + .5vw);
   }
+  .about-section__img-container {
+    width: 47%;
+  }
   .projects-section {
     font-size: calc(1rem + .5vw);
+  }
+  .projects-section__project1-left-img-container,
+  .projects-section__project2-right-img-container,
+  .projects-section__project1-info-text,
+  .projects-section__project2-info-text {
+    width: 80%;
   }
 }
 
@@ -463,12 +614,11 @@ textarea:not([rows]) {
     gap: calc(1rem + 10vw);
   }
   .nav-container {
-    height: 215%;
+    height: 320%;
     position: absolute;
     top: 150vh;
     right: 5px;
     left: auto;
-    z-index: 0;
   }
   .nav-container__sticky-nav {
     top: 50vh;
@@ -491,12 +641,7 @@ textarea:not([rows]) {
     margin: 0;
   }
   .about-section__main-content {
-    flex-direction: row;
-    /* max-width: 1075px; */
-    
-    /* max-width: 1055px; */
     max-width: 1124px;
-    gap: 4rem;
   }
   .about-section__about-text {
     width: 100%;
@@ -505,7 +650,24 @@ textarea:not([rows]) {
 
 /* X Large */
 @media (min-width: 1200px) {
-
+  .about-section__main-content {
+    flex-direction: row;
+    gap: 4rem;
+  }
+  .about-section__img-container {
+    width: 86%;
+  }
+  .projects-section__project1-right-side,
+  .projects-section__project2-left-side {
+    display: flex;
+  }
+  .skills-section__ticker {
+    bottom: 5rem;
+    width: calc(10% + 14.5vw);
+  }
+  footer img {
+    width: 125px;
+  }
 }
 
 /* XX Large */
@@ -521,4 +683,51 @@ textarea:not([rows]) {
   }
   /* Todo: fonts--I have some font sizes calculated based on vw */
   /* Todo: same as above for gap property in hero section */
+}
+
+/* I'm unsure about these untis: maybe limit for smaller widths/heights ? */
+/* NOT GOOD */
+@media (min-width: 540px) and (min-height: 600px) and (max-width: 1024px) and (max-height: 1366px) {
+  /* body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+  .projects-section__display-control {
+    gap: 2rem;
+  }
+  .projects-section__project1,
+  .projects-section__project2 {
+    height: 100%;
+  } */
+}
+
+/* Mobile Orientation: Landscape */
+@media (orientation: landscape) and (max-width: 1000px) and (max-height: 520px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 9rem;
+  }
+  section {
+    height: 100%;
+  }
+  .hero-section__ticker {
+    bottom: 3rem;
+    font-size: 1rem;
+    padding: 0;
+  }
+  .hero-section__cta-container {
+    bottom: 2.5rem;
+  }
+  .projects-section__display-control {
+    gap: 2rem;
+  }
+  .projects-section__project1,
+  .projects-section__project2 {
+    height: 100%;
+  }
 }

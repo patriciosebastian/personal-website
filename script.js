@@ -1,12 +1,13 @@
+// Mobile nav styles on scroll
 window.addEventListener("scroll", function() {
   const nav = document.querySelector(".nav-container__nav-ul");
   
   // Add a class to the Nav once a user scrolls down,
   // remove the class when user scrolls back up
   if (window.scrollY > 0) {
-      nav.classList.add("scrolled");
+    nav.classList.add("scrolled");
   } else {
-      nav.classList.remove("scrolled");
+    nav.classList.remove("scrolled");
   }
 });
 
@@ -26,7 +27,7 @@ async function handleSubmit(event) {
     .then((response) => {
       if (response.ok) {
         status.classList.add('message-success');
-        status.innerHTML = "Success! I'll be in touch as soon as possible.";
+        status.innerHTML = "SUCCESS! I'LL BE IN TOUCH AS SOON AS POSSIBLE.";
         form.reset();
       } else {
         response.json().then((data) => {
@@ -37,14 +38,14 @@ async function handleSubmit(event) {
               .join(", ");
           } else {
             status.classList.add('message-error');
-            status.innerHTML = "Oops! There was a problem sending your message. Please try again.";
+            status.innerHTML = "OOPS! THERE WAS A PROBLEM SENDING YOUR MESSAGE. PLEASE TRY AGAIN.";
           }
         });
       }
     })
     .catch((error) => {
       status.classList.add('message-error');
-      status.innerHTML = "Oops! There was a problem sending your message. Please try again.";
+      status.innerHTML = "OOPS! THERE WAS A PROBLEM SENDING YOUR MESSAGE. PLEASE TRY AGAIN.";
       console.log("Error:", error);
     });
 }
