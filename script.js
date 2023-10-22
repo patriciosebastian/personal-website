@@ -1,3 +1,64 @@
+// Modal
+const project1Modal = document.querySelector(".projects-section__project1-modal");
+const project1Overlay = document.querySelector(".projects-section__project1-overlay");
+const openProject1ModalBtn = document.querySelector(".projects-section__project1-cta-btn");
+const closeProject1ModalBtn = document.querySelector(".projects-section__close-project1-modal-btn");
+const project1Img = document.querySelector(".projects-section__project1-desktop-img");
+
+const openModal = () => {
+  project1Modal.style.visibility = "visible";
+  project1Overlay.style.visibility = "visible";
+  // document.body.style.overflow = "hidden";
+}
+
+const closeModal = () => {
+  project1Modal.style.visibility = "hidden";
+  project1Overlay.style.visibility = "hidden";
+  // document.body.style.overflow = "auto";
+};
+
+openProject1ModalBtn.addEventListener("click", openModal);
+project1Img.addEventListener("click", openModal);
+closeProject1ModalBtn.addEventListener("click", closeModal);
+project1Overlay.addEventListener("click", closeModal);
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && project1Modal.style.visibility === "visible") {
+    closeModal();
+  }
+});
+
+// Carousel
+let carouselSlide = document.querySelector('.carousel-slide');
+let carouselImages = document.querySelectorAll('.carousel-slide img');
+
+let counter = 0;
+let size;
+let resizeTimeout;
+
+const updateSize = () => {
+  size = carouselImages[0].clientWidth;
+}
+updateSize(); // initial call
+
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(updateSize, 100);
+});
+
+document.getElementById('nextBtn').addEventListener('click', () => {
+    if (counter >= carouselImages.length - 1) return;
+    carouselSlide.style.transition = "transform 0.4s ease-in-out";
+    counter++;
+    carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+});
+
+document.getElementById('prevBtn').addEventListener('click', () => {
+    if (counter <= 0) return;
+    carouselSlide.style.transition = "transform 0.4s ease-in-out";
+    counter--;
+    carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+});
+
 // Mobile nav styles on scroll
 window.addEventListener("scroll", function() {
   const nav = document.querySelector(".nav-container__nav-ul");
