@@ -355,14 +355,15 @@ textarea:not([rows]) {
 
 .projects-section__project1-modal {
   width: 90vw;
+  height: auto;
+  max-height: 90dvh;
   background-color: var(--background-color);
-  /* overflow-y: auto; */
+  overflow-y: auto;
   padding: 2.2rem 2rem 2rem 2rem;
-  position: absolute;
-  top: 0;
-  right: auto;
-  bottom: auto;
-  left: auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
   visibility: hidden;
   z-index: 3;
@@ -429,6 +430,7 @@ textarea:not([rows]) {
 .projects-section__project1-link {
   text-decoration: underline;
   text-align: center;
+  margin-inline: auto;
 }
 
 .projects-section__project1-modal-info p {
@@ -451,8 +453,8 @@ textarea:not([rows]) {
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
-  /* width: 100%;
-  height: 100%; */
+  width: 100%;
+  height: 100%;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -469,6 +471,7 @@ textarea:not([rows]) {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .projects-section__project2-left-side {
@@ -499,12 +502,139 @@ textarea:not([rows]) {
   gap: 1rem;
 }
 
+.projects-section__project2-desktop-img {
+  cursor: pointer;
+}
+
+.projects-section__project2-desktop-img:hover {
+  opacity: 0.85;
+}
+
+.projects-section__project2-small-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .projects-section__project2-cta-btn {
   background-color: var(--background-color);
   border: 0;
   color: var(--text-color);
   cursor: pointer;
   font-weight: 500;
+}
+
+/* project 2 modal */
+
+.projects-section__project2-modal {
+  width: 90vw;
+  height: auto;
+  max-height: 90dvh;
+  background-color: var(--background-color);
+  overflow-y: auto;
+  padding: 2.2rem 2rem 2rem 2rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  visibility: hidden;
+  z-index: 3;
+}
+
+.projects-section__close-project2-modal-btn {
+  background-color: transparent;
+  border: 0;
+  color: var(--text-color);
+  cursor: pointer;
+  font-weight: 500;
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  z-index: 1;
+}
+
+.projects-section__project2-carousel-container {
+  max-width: 298px;
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+}
+
+.projects-section__project2-carousel-slide {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  transition: all 0.5s;
+}
+
+.projects-section__project2-carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.projects-section__project2-carousel-btns-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+  margin-top: 6px;
+  margin-bottom: 2rem;
+}
+
+.projects-section__project2-carousel-btn {
+  background-color: transparent;
+  border: 0;
+  color: var(--text-color);
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.projects-section__project2-modal-info {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  line-height: 1.7;
+  text-align: left;
+}
+
+.projects-section__project2-link {
+  text-decoration: underline;
+  text-align: center;
+  margin-inline: auto;
+}
+
+.projects-section__project2-modal-info p {
+  margin-top: 2.75rem;
+}
+
+.projects-section__project2-icon-presenter-text {
+  display: inline-block;
+  margin: 2.75rem 0 1rem 0;
+}
+
+.projects-section__project2-modal-icons-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .5rem;
+}
+
+.projects-section__project2-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  visibility: hidden;
+  z-index: 2;
 }
 
 /********** SKILLS **********/
@@ -744,7 +874,7 @@ footer {
     gap: calc(1rem + 10vw);
   }
   .nav-container {
-    height: 320%;
+    height: 360%;
     position: absolute;
     top: 150vh;
     right: 5px;
@@ -776,24 +906,33 @@ footer {
   .about-section__about-text {
     width: 100%;
   }
-  .projects-section__project1-modal {
+  .projects-section__display-control {
+    gap: min(3rem + 1vw);
+  }
+  .projects-section__project1-modal,
+  .projects-section__project2-modal {
     padding-block: 6rem;
   }
-  .projects-section__project1-modal-display-control {
+  .projects-section__project1-modal-display-control,
+  .projects-section__project2-modal-display-control {
     display: flex;
     justify-content: center;
   }
-  .carousel-desktop-control-container {
+  .carousel-desktop-control-container,
+  .projects-section__project2-carousel-desktop-control-container {
     width: 50%;
   }
-  .projects-section__carousel-btns-container {
+  .projects-section__carousel-btns-container,
+  .projects-section__project2-carousel-btns-container {
     margin-bottom: 0;
   }
-  .projects-section__project1-modal-info {
+  .projects-section__project1-modal-info,
+  .projects-section__project2-modal-info {
     width: 50%;
     margin-top: 0;
   }
-  .projects-section__project1-modal-icons-container {
+  .projects-section__project1-modal-icons-container,
+  .projects-section__project2-modal-icons-container {
     gap: 1rem;
   }
 }
@@ -807,14 +946,19 @@ footer {
   .about-section__img-container {
     width: 86%;
   }
+  .projects-section__display-control {
+    gap: 0;
+  }
   .projects-section__project1-right-side,
   .projects-section__project2-left-side {
     display: flex;
   }
-  .projects-section__project1-modal {
+  .projects-section__project1-modal,
+  .projects-section__project2-modal {
     max-width: 1400px;
   }
-  .projects-section__project1-modal-icons-container {
+  .projects-section__project1-modal-icons-container,
+  .projects-section__project2-modal-icons-container {
     margin-right: auto;
   }
   .skills-section__ticker {
@@ -843,13 +987,56 @@ footer {
 
 /* I'm unsure about these untis: maybe limit for smaller widths/heights ? */
 /* NOT GOOD */
-@media (min-width: 540px) and (min-height: 600px) and (max-width: 1024px) and (max-height: 1366px) {
+/* WHAT ABOUT THIS OR THE NEWEST BOTTOM QUERIES...TEST/COMPARE LATER */
+@media screen and (min-width: 540px) and (min-height: 600px) and (max-width: 1080px) and (max-height: 1366px) {
   /* body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    gap: 9rem;
+  }
+  section {
+    height: 100%;
+  }
+  .hero-section__ticker {
+    bottom: 3rem;
+    font-size: 1rem;
+    padding: 0;
+  }
+  .hero-section__cta-container {
+    bottom: 2.5rem;
+  }
+  .projects-section__display-control {
     gap: 2rem;
+  }
+  .projects-section__project1,
+  .projects-section__project2 {
+    height: 100vh;
+  } */
+}
+
+/* Mobile Orientation: Landscape */
+@media screen and (orientation: landscape) and (max-width: 1080px) and (max-height: 820px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  section {
+    height: 100%;
+    margin-bottom: 9rem;
+  }
+  .hero-section__ticker {
+    bottom: 4.5rem;
+    font-size: 1rem;
+    padding: 0;
+  }
+  .hero-section__cta-container {
+    bottom: 3rem;
+  }
+  .nav-container {
+    /* height: 561%; */
+    height: 692%;
   }
   .projects-section__display-control {
     gap: 2rem;
@@ -857,12 +1044,23 @@ footer {
   .projects-section__project1,
   .projects-section__project2 {
     height: 100%;
-  } */
+  }
+  .projects-section__project1-left-side-main-content {
+    margin-bottom: 1.5rem;
+  }
+  .skills-section {
+    height: auto;
+  }
+  .contact-section {
+    /* margin-top: 5rem; */
+  }
+  footer {
+    margin-top: 0;
+  }
 }
 
-/* Mobile Orientation: Landscape */
-@media (orientation: landscape) and (max-width: 1000px) and (max-height: 520px) {
-  body {
+@media screen and (max-width: 1100px) and (max-height: 900px) {
+  /* body {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -885,5 +1083,5 @@ footer {
   .projects-section__project1,
   .projects-section__project2 {
     height: 100%;
-  }
+  } */
 }
