@@ -289,6 +289,8 @@ textarea:not([rows]) {
 }
 
 .projects-section__project1-desktop-img {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
   cursor: pointer;
 }
 
@@ -479,6 +481,8 @@ textarea:not([rows]) {
 }
 
 .projects-section__project2-desktop-img {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
   cursor: pointer;
 }
 
@@ -976,6 +980,24 @@ footer {
   }
   footer {
     margin-top: 0;
+  }
+}
+
+@media (min-width: 455px) and (max-width: 934px) and (min-height: 501px) and (max-height: 730px) {
+  .hero-section {
+    margin-bottom: 7rem;
+  }
+  .about-section {
+    margin-bottom: 14rem;
+  }
+  .projects-section {
+    margin-bottom: 12rem;
+  }
+  .projects-section__project1 {
+   margin-bottom: 15rem;
+  }
+  .skills-section {
+    margin-bottom: 7rem;
   }
 }
 
