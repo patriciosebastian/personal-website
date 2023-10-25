@@ -136,6 +136,24 @@ window.addEventListener("scroll", function() {
   }
 });
 
+// ========== DESKTOP NAV ==========
+
+// Once the min-width of the body reaches 992px, set navContainerHeight to match bodyHeight
+const setNavContainerHeight = () => {
+  const navContainer = document.querySelector(".nav-container");
+  const bodyHeight = document.body.scrollHeight;
+  const spaceFromTop = navContainer.offsetTop;
+  
+  window.innerWidth >= 992 ? navContainer.style.height = (bodyHeight - spaceFromTop) + 'px' : navContainer.style.height = "auto";
+};
+setNavContainerHeight();
+
+let resizeTimer;
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(setNavContainerHeight, 200);
+});
+
 // ========== CONTACT FORM SUBMIT ==========
 
 const form = document.querySelector(".contact-form");
