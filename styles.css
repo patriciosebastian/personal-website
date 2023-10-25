@@ -221,9 +221,6 @@ textarea:not([rows]) {
 }
 
 .about-section__img-container {
-  background-color: var(--white-color);
-  border-top-left-radius: 50%;
-  border-top-right-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: end;
@@ -232,7 +229,9 @@ textarea:not([rows]) {
 }
 
 .about-section__img {
-  height: 95%;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  height: 100%;
   margin: 0 auto;
   aspect-ratio: 1 / 1;
   object-fit: cover;
