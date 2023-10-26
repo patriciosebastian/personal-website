@@ -672,6 +672,10 @@ textarea:not([rows]) {
   margin-inline: auto;
 }
 
+.contact-section__contact-heading {
+  margin-bottom: 3rem;
+}
+
 .contact-section__email-input {
   margin-bottom: .2rem;
 }
@@ -816,8 +820,10 @@ footer {
     gap: calc(5rem + 14vw);
   }
   .about-section__main-content,
-  .about-section__main-cta {
-    font-size: calc(1rem + .5vw);
+  .about-section__main-cta,
+  .projects-section__project1-modal-info,
+  .projects-section__project2-modal-info {
+    font-size: calc(1rem + .4vw);
   }
   .about-section__img-container {
     width: 47%;
@@ -830,6 +836,9 @@ footer {
   .projects-section__project1-info-text,
   .projects-section__project2-info-text {
     width: 80%;
+  }
+  .contact-section__contact-heading {
+    font-size: 2rem;
   }
 }
 
@@ -868,7 +877,7 @@ footer {
     margin: 0;
   }
   .about-section__main-content {
-    max-width: 1127px;
+    max-width: 1135px;
   }
   .about-section__about-text {
     width: 100%;
@@ -884,6 +893,7 @@ footer {
   .projects-section__project2-modal-display-control {
     display: flex;
     justify-content: center;
+    align-items: center;
   }
   .carousel-desktop-control-container,
   .projects-section__project2-carousel-desktop-control-container {
@@ -929,7 +939,7 @@ footer {
     margin-right: auto;
   }
   .skills-section {
-    margin-bottom: 5rem;
+    margin-bottom: 7rem;
   }
   .skills-section__ticker {
     bottom: 5rem;
