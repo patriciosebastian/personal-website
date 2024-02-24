@@ -238,6 +238,10 @@ textarea:not([rows]) {
   object-position: top;
 }
 
+.about_section-work-link {
+  text-decoration: underline;
+}
+
 .about-section__contact-link {
   margin-right: 1rem;
 }
