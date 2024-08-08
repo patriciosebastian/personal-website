@@ -66,4 +66,7 @@
   body {
     @apply bg-background text-foreground;
   }
+  [role="tablist"] > [aria-selected="true"] {
+    @apply border-b-2 border-b-primary rounded-none -mb-2;
+  }
 }
