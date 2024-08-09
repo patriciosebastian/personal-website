@@ -4,6 +4,7 @@ import { buttonVariants } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import Image from 'next/image'
+import MainFooter from '@/components/main-footer'
 
 export default function Home() {
   return (
@@ -146,6 +147,9 @@ export default function Home() {
 
       {/* Spacer */}
       <div className="h-24"></div>
+
+      {/* Footer */}
+      <MainFooter />
     </main>
   );
 }
