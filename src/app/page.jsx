@@ -36,9 +36,9 @@ export default function Home() {
       <div className="container sticky top-2">
         <Menubar className="justify-center">
           <MenubarMenu>
-            <MenubarTrigger>Home</MenubarTrigger>
-            <MenubarTrigger>Freelance</MenubarTrigger>
-            <MenubarTrigger>Blog</MenubarTrigger>
+            <MenubarTrigger><Link href="/">Home</Link></MenubarTrigger>
+            <MenubarTrigger><Link href="/freelance">Freelance</Link></MenubarTrigger>
+            <MenubarTrigger><Link href="/blog">Blog</Link></MenubarTrigger>
           </MenubarMenu>
         </Menubar>
       </div>
