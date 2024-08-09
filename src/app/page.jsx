@@ -11,13 +11,11 @@ export default function Home() {
   return (
     <main>
       {/* Hero */}
-      {/* NOTE: can I make the main el a .container? */}
       <div className="container min-h-svh flex flex-col justify-center items-center text-center text-balance relative">
         <h1 className="text-8xl">Patricio Salazar</h1>
         <p>Full-stack Software Developer and stand up community member in Austin, TX.</p>
         {/* xxx Badges */}
         <div className="flex flex-wrap justify-center gap-3 h-24 pt-6">
-          {/* NOTE: pages/sections or any other text (quantitave numbers or other text) || bigger font-size || possibly add icons to all link badges */}
           <Link href="/blog" className={badgeVariants({ variant: "outline" }) + ` h-12 justify-center px-8 border-2 border-primary font-bold`}>About</Link>
           <Link href="/blog" className={badgeVariants({ variant: "outline" }) + ` h-12 justify-center px-8 border-2 border-primary font-bold`}>Projects</Link>
           <Link href="/blog" className={badgeVariants({ variant: "outline" }) + ` h-12 justify-center px-8 border-2 border-primary font-bold`}>Latest Article</Link>
@@ -32,9 +30,9 @@ export default function Home() {
       </div>
 
       {/* Spacer */}
-      <div className="h-24"></div>
+      <div className="h-12"></div>
 
-      {/* Navigation Menu */}
+      {/* Mobile Nav Menu */}
       <div className="container sticky top-2">
         <Menubar className="justify-center">
           <MenubarMenu>
@@ -44,6 +42,9 @@ export default function Home() {
           </MenubarMenu>
         </Menubar>
       </div>
+
+      {/* Spacer */}
+      <div className="h-12"></div>
 
       {/* About */}
       <div className="container">
@@ -106,7 +107,7 @@ export default function Home() {
         <Card className="mb-4">
           <CardHeader>
             <Image src="https://www.patriciosalazar.dev/img/TouchBase_Desktop.png" alt="Touch Base" width={533} height={273} />
-            {/* possibly remove this */}
+            {/* NOTE: possibly remove this */}
             <small className="text-center flex justify-center items-center !mb-4"><span className="text-green-600 text-lg leading-none">&#10687;&nbsp;</span>Live site available</small>
             <CardTitle>Touch Base</CardTitle>
             <CardDescription className="text-pretty !mb-1">Full stack React Contacts Management app</CardDescription>
@@ -135,7 +136,6 @@ export default function Home() {
         <Card>
           <CardHeader>
             <Image src="https://www.patriciosalazar.dev/img/ClearCalc_Desktop.png" alt="ClearCalc" width={533} height={273} />
-            {/* possibly remove this */}
             <small className="text-center flex justify-center items-center !mb-4"><span className="text-green-600 text-lg leading-none">&#10687;&nbsp;</span>Live site available</small>
             <CardTitle>ClearCalc</CardTitle>
             <CardDescription className="text-pretty !mb-1">ClearCalc is a JavaScrpit amortization schedule generator</CardDescription>
@@ -152,7 +152,7 @@ export default function Home() {
             </p>
           </CardContent>
           <CardFooter>
-            <a href="https://www.clearcalc.app" target='_blank' className={buttonVariants({ variant: "secondary" }) + ` h-12 justify-center`}>Visit Site</a> {/* <-- use external link icon  */}
+            <a href="https://www.clearcalc.app" target='_blank' className={buttonVariants({ variant: "secondary" }) + ` h-12 justify-center`}>Visit Site</a>
           </CardFooter>
         </Card>
       </div>
