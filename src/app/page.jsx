@@ -3,6 +3,7 @@ import { Badge, badgeVariants } from "@/components/ui/badge"
 import { buttonVariants } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Menubar, MenubarMenu, MenubarTrigger } from '@/components/ui/menubar'
 import Image from 'next/image'
 import MainFooter from '@/components/main-footer'
 
@@ -32,6 +33,17 @@ export default function Home() {
 
       {/* Spacer */}
       <div className="h-24"></div>
+
+      {/* Navigation Menu */}
+      <div className="container sticky top-2">
+        <Menubar className="justify-center">
+          <MenubarMenu>
+            <MenubarTrigger>Home</MenubarTrigger>
+            <MenubarTrigger>Freelance</MenubarTrigger>
+            <MenubarTrigger>Blog</MenubarTrigger>
+          </MenubarMenu>
+        </Menubar>
+      </div>
 
       {/* About */}
       <div className="container">
