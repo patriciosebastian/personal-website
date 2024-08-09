@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function MainFooter() {
   return (
-    <div className="container w-full">
+    <div className="w-full">
       <div className="flex justify-evenly items-center mb-12">
         <Link href="/">Home</Link>
         <Link href="/freelance">Freelance</Link>

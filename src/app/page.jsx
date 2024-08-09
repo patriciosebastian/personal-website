@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <main>
       {/* Hero */}
-      <div className="container min-h-svh flex flex-col justify-center items-center text-center text-balance relative">
+      <div className="min-h-svh flex flex-col justify-center items-center text-center text-balance relative">
         <h1 className="text-8xl">Patricio Salazar</h1>
         <p>Full-stack Software Developer and stand up community member in Austin, TX.</p>
         {/* xxx Badges */}
@@ -39,7 +39,7 @@ export default function Home() {
       <div className="h-12"></div>
 
       {/* About */}
-      <div className="container">
+      <div>
         <h2 className="text-4xl">About</h2>
         <Tabs defaultValue="career" className="border py-4">
           <TabsList className=" w-full bg-transparent border-b-2 rounded-none p-0 box-border">
@@ -93,7 +93,7 @@ export default function Home() {
       <div className="h-24"></div>
 
       {/* Projects */}
-      <div className="container">
+      <div>
         <h2 className="text-4xl">Projects</h2>
         {/* 1. */}
         <Card className="mb-4">
