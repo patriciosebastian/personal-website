@@ -3,9 +3,9 @@ import { Badge, badgeVariants } from "@/components/ui/badge"
 import { buttonVariants } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Menubar, MenubarMenu, MenubarTrigger } from '@/components/ui/menubar'
 import Image from 'next/image'
 import MainFooter from '@/components/main-footer'
+import MobileNav from '@/components/mobile-nav'
 
 export default function Home() {
   return (
@@ -33,15 +33,7 @@ export default function Home() {
       <div className="h-12"></div>
 
       {/* Mobile Nav Menu */}
-      <div className="container sticky top-2">
-        <Menubar className="justify-center">
-          <MenubarMenu>
-            <MenubarTrigger><Link href="/">Home</Link></MenubarTrigger>
-            <MenubarTrigger><Link href="/freelance">Freelance</Link></MenubarTrigger>
-            <MenubarTrigger><Link href="/blog">Blog</Link></MenubarTrigger>
-          </MenubarMenu>
-        </Menubar>
-      </div>
+      <MobileNav />
 
       {/* Spacer */}
       <div className="h-12"></div>
