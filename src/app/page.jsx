@@ -48,7 +48,7 @@ export default function Home() {
             <TabsTrigger value="Other">Other</TabsTrigger>
             <TabsTrigger value="Cool-stuff">Stuff</TabsTrigger>
           </TabsList>
-          <TabsContent value="career" className="px-4 py-2">I'm a Software Developer at <a className="underline" href="https://empire-medical.com/" target="_blank">Empire Medical</a>. In my previous work (both professional and personal) I've mainly used a pure JavaScript stack, but I use PHP & Laravel in my current position. I'm dedicated to building exceptional experiences and writing quality code that solves problems… and I like to push to production often! View my projects and skills to learn more.</TabsContent>
+          <TabsContent value="career" className="px-4 py-2">I&#39;m a Software Developer at <a className="underline" href="https://empire-medical.com/" target="_blank">Empire Medical</a>. In my previous work (both professional and personal) I&#39;ve mainly used a pure JavaScript stack, but I use PHP & Laravel in my current position. I&#39;m dedicated to building exceptional experiences and writing quality code that solves problems… and I like to push to production often! View my projects and skills to learn more.</TabsContent>
           <TabsContent value="tech-stack" className="px-4 py-2">
             <div className="bg-secondary w-fit p-1 rounded-sm mb-2">Frontend</div>
             <ol className="grid grid-cols-2 mb-4">
@@ -140,7 +140,7 @@ export default function Home() {
           </CardHeader>
           <CardContent>
             <p>
-              ClearCalc is a JavaScript amortization schedule generator. Based on user inputs, it calculates loan details and generates a complete amortization schedule with all the data you would expect to see. Built with JavaScript and Bootstrap, it's designed to be straightforward and easy to use. It's fully responsive with side scrolling tables on smaller sized viewports. Try it out now!
+              ClearCalc is a JavaScript amortization schedule generator. Based on user inputs, it calculates loan details and generates a complete amortization schedule with all the data you would expect to see. Built with JavaScript and Bootstrap, it&#39;s designed to be straightforward and easy to use. It&#39;s fully responsive with side scrolling tables on smaller sized viewports. Try it out now!
             </p>
           </CardContent>
           <CardFooter>
