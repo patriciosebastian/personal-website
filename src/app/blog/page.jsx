@@ -1,5 +1,7 @@
 import { supabase } from "@/lib/supabaseClient";
 import MobileNav from "@/components/mobile-nav";
+import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 export default async function BlogPage() {
   const { data: blogs, error } = await supabase
@@ -15,13 +17,23 @@ export default async function BlogPage() {
   return (
     <main>
       <MobileNav />
-      <h1>Blog Page</h1>
+      <div className="h-48 flex justify-start items-center border-b-[1px] mb-8">
+        <h1 className="text-4xl">Blog</h1>
+      </div>
       <ul>
         {blogs.map((blog) => (
           <li key={blog.id}>
-            <h2>{blog.title}</h2>
-            <p>{blog.sub_title}</p>
-            <small>{new Date(blog.created_at).toLocaleDateString()}</small>
+            <Card>
+              <CardHeader>
+                <CardTitle>{blog.title}</CardTitle>
+                <CardDescription className="text-primary">
+                  {blog.sub_title}
+                </CardDescription>
+              </CardHeader>
+              <CardFooter className="text-gray-500">
+                {(blog.tag) ? <Badge>{blog.tag}</Badge> : null} <small>{new Date(blog.created_at).toLocaleDateString()}</small>
+              </CardFooter>
+            </Card>
           </li>
         ))}
       </ul>
