@@ -11,7 +11,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className + ` container min-h-full mx-2`}>{children}</body>
+      <body className={inter.className + ` container min-h-full mx-auto`}>{children}</body>
     </html>
   );
 }
