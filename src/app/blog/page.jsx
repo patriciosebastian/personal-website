@@ -23,7 +23,7 @@ export default async function BlogPage() {
       <ul>
         {blogs.map((blog) => (
           <li key={blog.id}>
-            <Card>
+            <Card className="mb-4">
               <CardHeader>
                 <CardTitle>{blog.title}</CardTitle>
                 <CardDescription className="text-primary">
@@ -31,7 +31,7 @@ export default async function BlogPage() {
                 </CardDescription>
               </CardHeader>
               <CardFooter className="text-gray-500">
-                {(blog.tag) ? <Badge>{blog.tag}</Badge> : null} <small>{new Date(blog.created_at).toLocaleDateString()}</small>
+                {(blog.tag) ? <Badge variant="outline" className="mr-4">{blog.tag}</Badge> : null} <small>{new Date(blog.created_at).toLocaleDateString()}</small>
               </CardFooter>
             </Card>
           </li>
