@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import MobileNav from "@/components/mobile-nav";
 import MainFooter from "@/components/main-footer";
 import Spacer from "@/components/ui/spacer";
+import Link from "next/link";
 
 export default async function BlogPage() {
   const { data: blogs, error } = await supabase
@@ -19,15 +20,16 @@ export default async function BlogPage() {
   return (
     <main>
       <MobileNav />
-      <div className="h-48 flex justify-start items-center border-b-[1px] mb-8">
-        <h1 className="text-4xl">Blog</h1>
+      <div className="h-48 flex flex-col justify-center items-start gap-4 border-b-[1px] mb-8">
+        <h1 className="text-4xl mt-12">Blog</h1>
+        <p className="text-muted-foreground">Bienvenido! I write about software development, entrepreneurialism, and things in life I care about.</p>
       </div>
       <ul>
         {blogs.map((blog) => (
           <li key={blog.id}>
             <Card className="mb-4">
               <CardHeader>
-                <CardTitle>{blog.title}</CardTitle>
+                <CardTitle><Link href={`/blog/${blog.slug}`}>{blog.title}</Link></CardTitle>
                 <CardDescription className="text-primary">
                   {blog.sub_title}
                 </CardDescription>
