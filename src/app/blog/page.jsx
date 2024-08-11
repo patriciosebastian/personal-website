@@ -1,7 +1,9 @@
 import { supabase } from "@/lib/supabaseClient";
-import MobileNav from "@/components/mobile-nav";
 import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import MobileNav from "@/components/mobile-nav";
+import MainFooter from "@/components/main-footer";
+import Spacer from "@/components/ui/spacer";
 
 export default async function BlogPage() {
   const { data: blogs, error } = await supabase
@@ -37,6 +39,10 @@ export default async function BlogPage() {
           </li>
         ))}
       </ul>
+
+      <Spacer />
+
+      <MainFooter />
     </main>
   );
 }

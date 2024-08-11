@@ -6,6 +6,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import Image from 'next/image'
 import MainFooter from '@/components/main-footer'
 import MobileNav from '@/components/mobile-nav'
+import Spacer from '@/components/ui/spacer'
 
 export default function Home() {
   return (
@@ -29,14 +30,12 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Spacer */}
-      <div className="h-12"></div>
+      <Spacer className="h-12" />
 
       {/* Mobile Nav Menu */}
       <MobileNav />
 
-      {/* Spacer */}
-      <div className="h-12"></div>
+      <Spacer className="h-12" />
 
       {/* About */}
       <div>
@@ -89,8 +88,7 @@ export default function Home() {
         </Tabs>
       </div>
 
-      {/* Spacer */}
-      <div className="h-24"></div>
+      <Spacer />
 
       {/* Projects */}
       <div>
@@ -149,8 +147,7 @@ export default function Home() {
         </Card>
       </div>
 
-      {/* Spacer */}
-      <div className="h-24"></div>
+      <Spacer />
 
       {/* Footer */}
       <MainFooter />
