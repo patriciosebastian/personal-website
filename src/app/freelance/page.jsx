@@ -109,6 +109,25 @@ export default function FreelancePage() {
 
       <Spacer />
 
+      <section className="text-center">
+        {/* "Project Flow & Onboarding Process" */}
+        <h2 className="text-3xl mb-16">Process Overview</h2>
+        <div className="text-balance">
+          {/* add svg's to each item */}
+          <div className="mb-4">
+            After you hire me, we work together on what you need to create the best website for your business.
+          </div>
+          <div className="mb-4">
+            Receive a mock-up of your new or updated website based on our conversations.
+          </div>
+          <div>
+            I&apos;ll revise the project up to 3 times to ensure your satisfaction.
+          </div>
+        </div>
+      </section>
+
+      <Spacer />
+
       <MainFooter />
     </main>
   );
