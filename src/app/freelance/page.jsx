@@ -14,7 +14,7 @@ export default function FreelancePage() {
           <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-4">
             {/* Does Your Businees Have Web Development Needs?<br /> */}
             Do you need a website for your business?<br />
-            Need to update your existing one?<br />
+            Updating your existing one?<br />
             {/* <span className="text-yellow-300">I&apos;m Your Guy!</span> */}
             <span className="text-yellow-300">I do exactly that.</span>
           </h1>
