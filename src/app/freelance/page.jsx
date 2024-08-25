@@ -2,6 +2,7 @@ import MainFooter from "@/components/main-footer";
 import MobileNav from "@/components/mobile-nav";
 import { badgeVariants } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import Spacer from "@/components/ui/spacer";
 import Link from "next/link";
 
@@ -38,6 +39,73 @@ export default function FreelancePage() {
       </section>
 
       {/* pricing(350. 700, 1250), learn more, free conversation, faq? */}
+
+      <Spacer />
+
+      <section>
+        {/* Pricing Card 1 */}
+        <Card className="mb-4">
+          <CardHeader>
+            <CardTitle>Tier 1</CardTitle>
+            <CardDescription>Fixed rate</CardDescription>
+            <p className="font-bold">$350</p>
+            <hr />
+          </CardHeader>
+          <CardContent>
+            <p className="mb-4">What you get</p>
+            <ul>
+              <li className="list-disc">Myself as your personal developer</li>
+              <li className="list-disc">Custom development or platform development</li>
+              <li className="list-disc">3 revisions</li>
+            </ul>
+          </CardContent>
+          <CardFooter>
+            <Button>Book A Conversation</Button>
+          </CardFooter>
+        </Card>
+
+        {/* Pricing Card 2 */}
+        <Card className="mb-4">
+          <CardHeader>
+            <CardTitle>Tier 2</CardTitle>
+            <CardDescription>Fixed rate</CardDescription>
+            <p className="font-bold">$700</p>
+            <hr />
+          </CardHeader>
+          <CardContent>
+            <p className="mb-4">What you get</p>
+            <ul>
+              <li className="list-disc">Myself as your personal developer</li>
+              <li className="list-disc">Custom development or platform development</li>
+              <li className="list-disc">3 revisions</li>
+            </ul>
+          </CardContent>
+          <CardFooter>
+            <Button>Book A Conversation</Button>
+          </CardFooter>
+        </Card>
+
+        {/* Pricing Card 3 */}
+        <Card className="mb-4">
+          <CardHeader>
+            <CardTitle>Tier 3</CardTitle>
+            <CardDescription>Fixed rate</CardDescription>
+            <p className="font-bold">$1,250</p>
+            <hr />
+          </CardHeader>
+          <CardContent>
+            <p className="mb-4">What you get</p>
+            <ul>
+              <li className="list-disc">Myself as your personal developer</li>
+              <li className="list-disc">Custom development or platform development</li>
+              <li className="list-disc">3 revisions</li>
+            </ul>
+          </CardContent>
+          <CardFooter>
+            <Button>Book A Conversation</Button>
+          </CardFooter>
+        </Card>
+      </section>
 
       <Spacer />
 
