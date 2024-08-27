@@ -38,10 +38,38 @@ export default function FreelancePage() {
         </div>
       </section>
 
-      {/* pricing(350. 700, 1250), learn more, free conversation, faq? */}
-
       <Spacer />
 
+      {/* "Project Flow & Onboarding Process" */}
+      <section className="text-center">
+        <h2 className="text-3xl mb-16">Process Overview</h2>
+        <div className="text-balance">
+          {/* add svg's to each item */}
+          <div className="mb-4">
+            After you hire me, we work together on what you need to create the best website for your business.
+          </div>
+          <div className="mb-4">
+            Receive a mock-up of your new or updated website based on our conversations.
+          </div>
+          <div>
+            I&apos;ll revise the project up to 3 times to ensure your satisfaction.
+          </div>
+        </div>
+      </section>
+                
+      <Spacer />
+
+      {/* Service Offerings */}
+      <section className="text-center">
+        <h2 className="text-3xl mb-16">Services</h2>
+        <div className="mb-4">Front-end/Design</div>
+        <div className="mb-4">Backend</div>
+        <div>Ecommerce (Shopify)</div>
+      </section>
+                
+      <Spacer />
+
+      {/* Pricing Cards */}
       <section>
         {/* Pricing Card 1 */}
         <Card className="mb-4">
@@ -105,35 +133,6 @@ export default function FreelancePage() {
             <Button>Book A Conversation</Button>
           </CardFooter>
         </Card>
-      </section>
-
-      <Spacer />
-
-      {/* "Project Flow & Onboarding Process" */}
-      <section className="text-center">
-        <h2 className="text-3xl mb-16">Process Overview</h2>
-        <div className="text-balance">
-          {/* add svg's to each item */}
-          <div className="mb-4">
-            After you hire me, we work together on what you need to create the best website for your business.
-          </div>
-          <div className="mb-4">
-            Receive a mock-up of your new or updated website based on our conversations.
-          </div>
-          <div>
-            I&apos;ll revise the project up to 3 times to ensure your satisfaction.
-          </div>
-        </div>
-      </section>
-
-      <Spacer />
-
-      {/* Service Offerings */}
-      <section className="text-center">
-        <h2 className="text-3xl mb-16">Services</h2>
-        <div className="mb-4">Front-end/Design</div>
-        <div className="mb-4">Backend</div>
-        <div>Ecommerce (Shopify)</div>
       </section>
 
       <Spacer />
