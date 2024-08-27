@@ -147,7 +147,7 @@ export default function FreelancePage() {
             <CardDescription></CardDescription>
           </CardHeader>
           <CardContent className="flex justify-center">
-            <Link href="https://calendly.com/psalazardev/introduction" className={badgeVariants({ variant: "default" }) + ` rounded px-8 py-4 text-base`}>Schedule Now</Link>
+            <Link href="https://calendly.com/psalazardev/introduction" target="_blank" className={badgeVariants({ variant: "default" }) + ` rounded px-8 py-4 text-base`}>Schedule Now</Link>
           </CardContent>
           <CardFooter>
             <p>Or email me at <a href="mailto:psalazardev@gmail.com" className="text-blue-500">psalazardev@gmail.com</a></p>
