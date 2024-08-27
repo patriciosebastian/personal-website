@@ -1,10 +1,14 @@
-import MainFooter from "@/components/main-footer";
-import MobileNav from "@/components/mobile-nav";
-import { badgeVariants } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import Spacer from "@/components/ui/spacer";
-import Link from "next/link";
+import MainFooter from "@/components/main-footer"
+import MobileNav from "@/components/mobile-nav"
+import { badgeVariants } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import Spacer from "@/components/ui/spacer"
+import Image from "next/image"
+import Link from "next/link"
+import Handshake from "../../../public/handshake_optimized.svg"
+import Responsive from "../../../public/responsive_optimized.svg"
+import Success from "../../../public/success_optimized.svg"
 
 export default function FreelancePage() {
   return (
@@ -44,14 +48,16 @@ export default function FreelancePage() {
       <section className="text-center">
         <h2 className="text-3xl mb-16">Process Overview</h2>
         <div className="text-balance">
-          {/* add svg's to each item */}
           <div className="mb-4">
+            <Image src={Handshake} className="mx-auto" alt="hand-shake" width={100} height={100} />
             After you hire me, we work together on what you need to create the best website for your business.
           </div>
           <div className="mb-4">
+            <Image src={Responsive} className="mx-auto" alt="hand-shake" width={100} height={100} />
             Receive a mock-up of your new or updated website based on our conversations.
           </div>
           <div>
+            <Image src={Success} className="mx-auto" alt="hand-shake" width={100} height={100} />
             I&apos;ll revise the project up to 3 times to ensure your satisfaction.
           </div>
         </div>

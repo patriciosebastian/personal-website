@@ -1,10 +1,10 @@
-import { supabase } from "@/lib/supabaseClient";
-import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import MobileNav from "@/components/mobile-nav";
-import MainFooter from "@/components/main-footer";
-import Spacer from "@/components/ui/spacer";
-import Link from "next/link";
+import { supabase } from "@/lib/supabaseClient"
+import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import MobileNav from "@/components/mobile-nav"
+import MainFooter from "@/components/main-footer"
+import Spacer from "@/components/ui/spacer"
+import Link from "next/link"
 
 export default async function BlogPage() {
   const { data: blogs, error } = await supabase
