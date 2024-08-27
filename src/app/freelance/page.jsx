@@ -109,8 +109,8 @@ export default function FreelancePage() {
 
       <Spacer />
 
+      {/* "Project Flow & Onboarding Process" */}
       <section className="text-center">
-        {/* "Project Flow & Onboarding Process" */}
         <h2 className="text-3xl mb-16">Process Overview</h2>
         <div className="text-balance">
           {/* add svg's to each item */}
@@ -124,6 +124,35 @@ export default function FreelancePage() {
             I&apos;ll revise the project up to 3 times to ensure your satisfaction.
           </div>
         </div>
+      </section>
+
+      <Spacer />
+
+      {/* Service Offerings */}
+      <section className="text-center">
+        <h2 className="text-3xl mb-16">Services</h2>
+        <div className="mb-4">Front-end/Design</div>
+        <div className="mb-4">Backend</div>
+        <div>Ecommerce (Shopify)</div>
+      </section>
+
+      <Spacer />
+
+      {/* Book A Call */}
+      <section>
+        <Card>
+          <CardHeader>
+            {/* use an img here */}
+            <CardTitle>Book a 15 Minute Intro Call</CardTitle>
+            <CardDescription></CardDescription>
+          </CardHeader>
+          <CardContent className="flex justify-center">
+            <Link href="https://calendly.com/psalazardev/introduction" className={badgeVariants({ variant: "default" }) + ` rounded px-8 py-4 text-base`}>Schedule Now</Link>
+          </CardContent>
+          <CardFooter>
+            <p>Or email me at <a href="mailto:psalazardev@gmail.com" className="text-blue-500">psalazardev@gmail.com</a></p>
+          </CardFooter>
+        </Card>
       </section>
 
       <Spacer />
