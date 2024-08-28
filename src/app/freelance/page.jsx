@@ -9,6 +9,9 @@ import Link from "next/link"
 import Handshake from "../../../public/handshake_optimized.svg"
 import Responsive from "../../../public/responsive_optimized.svg"
 import Success from "../../../public/success_optimized.svg"
+import Frontend from "../../../public/frontend_optimized.svg"
+import Backend from "../../../public/backend_optimized.svg"
+import Shopify from "../../../public/shopify_optimized.svg"
 
 export default function FreelancePage() {
   return (
@@ -68,9 +71,18 @@ export default function FreelancePage() {
       {/* Service Offerings */}
       <section className="text-center">
         <h2 className="text-3xl mb-16">Services</h2>
-        <div className="mb-4">Front-end/Design</div>
-        <div className="mb-4">Backend</div>
-        <div>Ecommerce (Shopify)</div>
+        <div className="mb-8">
+          <Image src={Frontend} className="mx-auto mb-4" alt="The elements of a web page - Front end" width={75} height={75} />
+          Front-end/Design
+        </div>
+        <div className="mb-8">
+          <Image src={Backend} className="mx-auto mb-4" alt="Backend database" width={75} height={75} />
+          Backend
+        </div>
+        <div>
+          <Image src={Shopify} className="mx-auto mb-4" alt="Shopify logo" width={75} height={75} />
+          Ecommerce (Shopify)
+        </div>
       </section>
                 
       <Spacer />
@@ -78,6 +90,7 @@ export default function FreelancePage() {
       {/* Pricing Cards */}
       <section>
         {/* Pricing Card 1 */}
+        <h2 className="text-3xl mb-16 text-center">Pricing</h2>
         <Card className="mb-4">
           <CardHeader>
             <CardTitle>Tier 1</CardTitle>
