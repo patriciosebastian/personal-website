@@ -12,6 +12,7 @@ import Success from "../../../public/success_optimized.svg"
 import Frontend from "../../../public/frontend_optimized.svg"
 import Backend from "../../../public/backend_optimized.svg"
 import Shopify from "../../../public/shopify_optimized.svg"
+import ThumbsUp from "../../../public/Memoji_thumbsUp_optimized.png"
 
 export default function FreelancePage() {
   return (
@@ -160,7 +161,7 @@ export default function FreelancePage() {
       <section>
         <Card>
           <CardHeader>
-            {/* use an img here */}
+            <Image src={ThumbsUp} className="mx-auto mb-4" alt="Thumbs Up Memoji" width={115} height={115} />
             <CardTitle>Book a 15 Minute Intro Call</CardTitle>
             <CardDescription></CardDescription>
           </CardHeader>
