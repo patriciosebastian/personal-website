@@ -39,7 +39,7 @@ export default function Home() {
 
       {/* About */}
       <div>
-        <h2 className="text-4xl">About</h2>
+        <h2 className="text-4xl text-center">About</h2>
         <Tabs defaultValue="career" className="border py-4">
           <TabsList className=" w-full bg-transparent border-b-2 rounded-none p-0 box-border">
             <TabsTrigger value="career">Career</TabsTrigger>
@@ -92,7 +92,7 @@ export default function Home() {
 
       {/* Projects */}
       <div>
-        <h2 className="text-4xl">Projects</h2>
+        <h2 className="text-4xl text-center">Projects</h2>
         {/* 1. */}
         <Card className="mb-4">
           <CardHeader>
