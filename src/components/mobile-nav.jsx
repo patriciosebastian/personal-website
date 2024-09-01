@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Menubar, MenubarMenu, MenubarTrigger } from '@/components/ui/menubar'
+import { ThemeToggle } from './theme-toggle';
 
 export default function MobileNav() {
   return (
@@ -9,6 +10,7 @@ export default function MobileNav() {
           <MenubarTrigger><Link href="/">Home</Link></MenubarTrigger>
           <MenubarTrigger><Link href="/freelance">Freelance</Link></MenubarTrigger>
           <MenubarTrigger><Link href="/blog">Blog</Link></MenubarTrigger>
+          <ThemeToggle />
         </MenubarMenu>
       </Menubar>
     </div>
