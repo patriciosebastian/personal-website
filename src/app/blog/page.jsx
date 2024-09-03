@@ -20,9 +20,9 @@ export default async function BlogPage() {
   return (
     <main>
       <MobileNav />
-      <div className="h-48 flex flex-col justify-center items-start gap-4 border-b-[1px] mb-8">
-        <h1 className="text-4xl mt-12">Blog</h1>
-        <p className="text-muted-foreground">Bienvenido! I write about software development, entrepreneurialism, and things in life I care about.</p>
+      <div className="h-56 flex flex-col justify-center items-start gap-4 border-b-[1px] mb-8">
+        <h1 className="text-4xl mt-14">Blog</h1>
+        <p className="text-muted-foreground text-pretty">Look at you! Reading my blog &#129395;<br /> I write about software development, entrepreneurialism, and things in life I care about.</p>
       </div>
       <ul>
         {blogs.map((blog) => (
