@@ -50,7 +50,7 @@ export default function FreelancePage() {
 
       {/* "Project Flow & Onboarding Process" */}
       <section className="text-center">
-        <h2 className="text-3xl mb-16">Process Overview</h2>
+        <h2 className="section-heading text-3xl mb-16">Process Overview</h2>
         <div className="text-balance">
           <div className="mb-8">
             <Image src={Handshake} className="mx-auto mb-4" alt="hand-shake" width={75} height={75} />
@@ -71,7 +71,7 @@ export default function FreelancePage() {
 
       {/* Service Offerings */}
       <section className="text-center">
-        <h2 className="text-3xl mb-16">Services</h2>
+        <h2 className="section-heading text-3xl mb-16">Services</h2>
         <div className="mb-8">
           <Image src={Frontend} className="mx-auto mb-4" alt="The elements of a web page - Front end" width={75} height={75} />
           Front-end/Design
@@ -91,7 +91,7 @@ export default function FreelancePage() {
       {/* Pricing Cards */}
       <section>
         {/* Pricing Card 1 */}
-        <h2 className="text-3xl mb-16 text-center">Pricing</h2>
+        <h2 className="section-heading text-3xl mb-16 text-center">Pricing</h2>
         <Card className="mb-4">
           <CardHeader>
             <CardTitle>Tier 1</CardTitle>

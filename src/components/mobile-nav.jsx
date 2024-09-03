@@ -10,7 +10,7 @@ export default function MobileNav() {
           <MenubarTrigger><Link href="/">Home</Link></MenubarTrigger>
           <MenubarTrigger><Link href="/freelance">Freelance</Link></MenubarTrigger>
           <MenubarTrigger><Link href="/blog">Blog</Link></MenubarTrigger>
-          <ThemeToggle />
+          <ThemeToggle className="right-[0] mr-4" />
         </MenubarMenu>
       </Menubar>
     </div>
