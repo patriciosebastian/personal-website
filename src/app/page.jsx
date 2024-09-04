@@ -40,7 +40,7 @@ export default function Home() {
       {/* About */}
       <div>
         <h2 className="section-heading text-4xl text-center">About</h2>
-        <Tabs defaultValue="career" className="border rounded-md py-4 bg-background">
+        <Tabs defaultValue="career" className="rounded-md py-4">
           <TabsList className=" w-full bg-transparent border-b-2 rounded-none p-0 box-border">
             <TabsTrigger value="career">Career</TabsTrigger>
             <TabsTrigger value="tech-stack">Tech Stack</TabsTrigger>
@@ -118,7 +118,7 @@ export default function Home() {
             </p>
           </CardContent>
           <CardFooter>
-            <a href="https://www.touchbaseapp.co" target='_blank' className={buttonVariants({ variant: "secondary" }) + ` h-12 justify-center`}>Visit Site</a> {/* <-- use external link icon  */}
+            <a href="https://www.touchbaseapp.co" target='_blank' className={buttonVariants({ variant: "default" }) + ` h-12 justify-center`}>Visit Site</a> {/* <-- use external link icon  */}
           </CardFooter>
         </Card>
 
@@ -142,7 +142,7 @@ export default function Home() {
             </p>
           </CardContent>
           <CardFooter>
-            <a href="https://www.clearcalc.app" target='_blank' className={buttonVariants({ variant: "secondary" }) + ` h-12 justify-center`}>Visit Site</a>
+            <a href="https://www.clearcalc.app" target='_blank' className={buttonVariants({ variant: "default" }) + ` h-12 justify-center`}>Visit Site</a>
           </CardFooter>
         </Card>
       </div>

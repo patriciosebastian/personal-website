@@ -3,17 +3,28 @@
 @tailwind utilities;
 
 @layer base {
+  /* 
+  ** gray 50: #f9fafb / hsl(210, 20%, 98%)
+  ** gray 100: #f3f4f6 / hsl(220, 14%, 96%)
+  ** gray 200: #e5e7eb / hsl(220, 13%, 91%)
+  ** gray 300: #d1d5db / hsl(216, 12%, 84%)
+  ** gray 400: #9ca3af / hsl(218, 11%, 65%)
+  ** gray 500: #6b7280 / hsl(220, 9%, 46%)
+  ** gray 600: #4b5563 / hsl(215, 14%, 34%)
+  ** gray 700: #374151 / hsl(217, 19%, 27%)
+  ** gray 800: #1f2937 / hsl(215, 28%, 17%)
+  ** gray 900: #111827 / hsl(221, 39%, 11%)
+  ** gray 950: #030712 / hsl(224, 71%, 4%)
+  */
   :root {
-    /* --background: 0 0% 100%; */
-    --background: 0 0% 98%;
-    /* --foreground: 224 71.4% 4.1%; */
-    --foreground: 0 0% 9%;
-    --card: 0 0% 100%;
-    --card-foreground: 224 71.4% 4.1%;
+    --background: 210 20% 98%; /* gray 50 */
+    --foreground: 224 71% 4%; /* gray 950 */
+    --card: 220 13% 91%; /* gray 200 */
+    --card-foreground: 224 71% 4%; /* gray 950 */
     --popover: 0 0% 100%;
     --popover-foreground: 224 71.4% 4.1%;
-    --primary: 0 0% 45%;
-    --primary-foreground: 0 0% 98%;
+    --primary: 215 28% 17%; /* gray 800 */
+    --primary-foreground: 210 20% 98%; /* gray 50 */
     --secondary: 220 14.3% 95.9%;
     --secondary-foreground: 220.9 39.3% 11%;
     --muted: 220 14.3% 95.9%;
@@ -22,7 +33,7 @@
     --accent-foreground: 220.9 39.3% 11%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 20% 98%;
-    --border: 0 0% 45%;
+    --border: 218 11% 65%; /* gray 300 */
     --input: 220 13% 91%;
     --ring: 224 71.4% 4.1%;
     --radius: 0.5rem;
@@ -34,14 +45,14 @@
   }
 
   .dark {
-    --background: 0 0% 9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 9%;
-    --card-foreground: 0 0% 98%;
+    --background: 221 39% 11%;
+    --foreground: 210 20% 98%;
+    --card: 215 28% 17%;
+    --card-foreground: 220 13% 91%;
     --popover: 224 71.4% 4.1%;
     --popover-foreground: 210 20% 98%;
-    --primary: 0 0% 45%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 216 12% 84%;
+    --primary-foreground: 224 71% 4%;
     --secondary: 0 0% 45%;
     --secondary-foreground: 0 0% 100%;
     --muted: 215 27.9% 16.9%;
