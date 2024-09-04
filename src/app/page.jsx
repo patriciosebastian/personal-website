@@ -40,7 +40,7 @@ export default function Home() {
       {/* About */}
       <div>
         <h2 className="section-heading text-4xl text-center">About</h2>
-        <Tabs defaultValue="career" className="border py-4">
+        <Tabs defaultValue="career" className="border rounded-md py-4 bg-background">
           <TabsList className=" w-full bg-transparent border-b-2 rounded-none p-0 box-border">
             <TabsTrigger value="career">Career</TabsTrigger>
             <TabsTrigger value="tech-stack">Tech Stack</TabsTrigger>
