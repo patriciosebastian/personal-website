@@ -35,7 +35,7 @@ export default function Home() {
       {/* Mobile Nav Menu */}
       <MobileNav />
 
-      <Spacer className="h-12" />
+      <Spacer />
 
       {/* About */}
       <div>
