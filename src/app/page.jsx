@@ -3,12 +3,28 @@ import { Badge, badgeVariants } from "@/components/ui/badge"
 import { buttonVariants } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { supabase } from '@/lib/supabaseClient'
 import Image from 'next/image'
 import MainFooter from '@/components/main-footer'
 import MobileNav from '@/components/mobile-nav'
 import Spacer from '@/components/ui/spacer'
+import HelloWorld1 from '../../public/Hello_World_Desk_Setup_optimized.webp'
+import HelloWorld2 from '../../public/Hello_World_Desk_Setup_2_optimized.webp'
 
-export default function Home() {
+export default async function Home() {
+  const { data: blogs, error } = await supabase
+    .from("blogs")
+    .select("*")
+    .order("created_at", { ascending: false })
+    .limit(1);
+
+  if (error) {
+    console.error("Error fetching blogs:", error);
+    return <p>Error loading blogs.</p>;
+  }
+
+  const latestBlog = blogs && blogs[0];
+
   return (
     <main>
       {/* Hero */}
@@ -146,6 +162,64 @@ export default function Home() {
           </CardFooter>
         </Card>
       </div>
+
+      <Spacer />
+
+      {/* Latest Blog */}
+      {latestBlog ? (
+        <>
+          <h2 className="section-heading text-4xl text-center">Latest Blog</h2>
+          <Card>
+            <CardHeader>
+              <CardTitle><Link href={`/blog/${latestBlog.slug}`}>{latestBlog.title}</Link></CardTitle>
+              <CardDescription className="text-primary">
+                {latestBlog.sub_title}
+              </CardDescription>
+            </CardHeader>
+            <CardFooter className="text-gray-500">
+              {(latestBlog.tag) ? <Badge variant="outline" className="mr-4">{latestBlog.tag}</Badge> : null} <small>{new Date(latestBlog.created_at).toLocaleDateString()}</small>
+            </CardFooter>
+          </Card>
+
+          <Spacer />
+        </>
+      ) : (
+        null
+      )}
+
+      {/* Spotify Playlists */}
+      <h2 className="text-4xl text-center text-balance">For You</h2>
+      <small className="block text-center mb-4 text-balance text-muted-foreground">
+        Hey! I made these playlists for you, enjoy.<br />
+        &#40;Don&apos;t worry, they don&apos;t have lyrics&#41;
+      </small>
+      {/* 1. */}
+      <Card className="border bg-background mb-4 flex items-center">
+        <CardHeader className="w-1/2 p-4 relative">
+          <Image src={HelloWorld1} className="rounded mb-2" alt="Computer/Desk Set-up" />
+          <div className="absolute !m-1">
+            <svg width="24px" height="24px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" className="stroke-background dark:stroke-foreground"><path d="M7 15C7 15 11.5 14 16 16" stroke-linecap="round" stroke-linejoin="round"></path><path d="M6.5 12C6.5 12 12.5 10.5 17.5 13.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M6 9.00003C9 8.50005 14 8.00006 19 11" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22Z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </div>
+        </CardHeader>
+        <CardContent className="w-1/2 p-4">
+          <p className="font-bold text-balance mb-2 leading-tight">Hello World - beats to code to</p>
+          <a href="https://open.spotify.com/playlist/77hkmQ7eTgfvpjPXDPjSRT?si=1f36b33a95fc4621" className={buttonVariants({ variant: "default", size: "sm" }) + ` justify-center`} target='_blank'>Play on Spotify</a>
+        </CardContent>
+      </Card>
+
+      {/* 2. */}
+      <Card className="border bg-background mb-4 flex items-center">
+        <CardHeader className="w-1/2 p-4 relative">
+          <Image src={HelloWorld2} className="rounded mb-2" alt="Computer/Desk Set-up with the universe in the background" />
+          <div className="absolute !m-1">
+            <svg width="24px" height="24px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" className="stroke-background dark:stroke-foreground"><path d="M7 15C7 15 11.5 14 16 16" stroke-linecap="round" stroke-linejoin="round"></path><path d="M6.5 12C6.5 12 12.5 10.5 17.5 13.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M6 9.00003C9 8.50005 14 8.00006 19 11" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22Z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </div>
+        </CardHeader>
+        <CardContent className="w-1/2 p-4">
+          <p className="font-bold text-balance mb-2 leading-tight">Hello World 2 - beats to code to</p>
+          <a href="https://open.spotify.com/playlist/3TWuzDL7v8DKhcFatC1g8D?si=3279f73b5ba242a3" className={buttonVariants({ variant: "default", size: "sm" }) + ` justify-center`} target='_blank'>Play on Spotify</a>
+        </CardContent>
+      </Card>
 
       <Spacer />
 

@@ -84,5 +84,6 @@
   }
   .section-heading {
     margin-bottom: 1rem;
+    text-wrap: balance;
   }
 }
