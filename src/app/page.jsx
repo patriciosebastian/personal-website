@@ -32,13 +32,13 @@ export default async function Home() {
         <h1 className="text-8xl">Patricio Salazar</h1>
         <p>Full-stack Software Developer and stand up community member in Austin, TX.</p>
         {/* xxx Badges */}
-        <div className="flex flex-wrap justify-center gap-3 h-24 pt-6">
-          <Link href="/blog" className={badgeVariants({ variant: "outline" }) + ` h-12 justify-center px-8 border-2 border-primary font-bold`}>About</Link>
-          <Link href="/blog" className={badgeVariants({ variant: "outline" }) + ` h-12 justify-center px-8 border-2 border-primary font-bold`}>Projects</Link>
-          <Link href="/blog" className={badgeVariants({ variant: "outline" }) + ` h-12 justify-center px-8 border-2 border-primary font-bold`}>Latest Article</Link>
+        <div className="flex justify-center items-center gap-4 mt-6">
+          <Link href="#Projects" className={buttonVariants({ variant: "outline" }) + ` h-12 justify-center !border-foreground font-bold`}>Projects</Link>
+          <Link href={`/blog/${latestBlog.slug}`} className={buttonVariants({ variant: "outline" }) + ` h-12 justify-center !border-foreground font-bold`}>Latest Article</Link>
         </div>
         {/* Social Badges */}
         <div className="flex gap-4 absolute bottom-16">
+          {/* NOTE: should badges become icons? */}
           <Link href="https://github.com/patriciosebastian" className={badgeVariants({ variant: "default" }) + ` w-16 h-8 justify-center px-8 font-bold`}>GitHub</Link>
           <Link href="https://www.linkedin.com/in/patriciosalazardev" className={badgeVariants({ variant: "default" }) + ` w-16 h-8 justify-center px-8 font-bold`}>Linkedin</Link>
           <Link href="mailto:psebastiansalazar@gmail.com" className={badgeVariants({ variant: "default" }) + ` w-16 h-8 justify-center px-8 font-bold`}>Email</Link>
@@ -92,11 +92,11 @@ export default async function Home() {
             <div className="bg-secondary w-fit p-1 rounded-sm mb-2">Tooling</div>
             <ol className="grid grid-cols-2 mb-4">
               <li>Git/GitHub</li>
-              <li>Notion</li>
+              <li>Atlassian</li>
               <li>Postman</li>
               <li>Slack</li>
               <li>VSCode</li>
-              <li>Communication</li>
+              <li>Notion</li>
             </ol>
           </TabsContent>
           <TabsContent value="Other" className="px-4 py-2">Other.</TabsContent>
@@ -108,13 +108,11 @@ export default async function Home() {
 
       {/* Projects */}
       <div>
-        <h2 className="section-heading text-4xl text-center">Projects</h2>
+        <h2 className="section-heading text-4xl text-center" id="Projects">Projects</h2>
         {/* 1. */}
         <Card className="mb-4">
           <CardHeader>
-            <Image src="https://www.patriciosalazar.dev/img/TouchBase_Desktop.png" alt="Touch Base" width={533} height={273} />
-            {/* NOTE: possibly remove this */}
-            <small className="text-center flex justify-center items-center !mb-4"><span className="text-green-600 text-lg leading-none">&#10687;&nbsp;</span>Live site available</small>
+            <Image src="https://www.patriciosalazar.dev/img/TouchBase_Desktop.png" alt="Touch Base" width={533} height={273} className="mb-4" />
             <CardTitle>Touch Base</CardTitle>
             <CardDescription className="text-pretty !mb-1">Full stack React Contacts Management app</CardDescription>
             <div className="flex flex-wrap items-center gap-1">
@@ -129,7 +127,7 @@ export default async function Home() {
             </div>
           </CardHeader>
           <CardContent>
-            <p>
+            <p className="text-balance">
               Touch Base uses React-Router for frontend navigation and Node.js & Express for its backend API, connected to a PSQL database. It features a fully responsive design, full CRUD capabilities for contacts and groups, Firebase Auth, and SendGrid for email functionality. AWS S3 is used for image hosting, and a demo login lets you easily tour the app and safely perform all actions.
             </p>
           </CardContent>
@@ -141,8 +139,7 @@ export default async function Home() {
         {/* 2. */}
         <Card>
           <CardHeader>
-            <Image src="https://www.patriciosalazar.dev/img/ClearCalc_Desktop.png" alt="ClearCalc" width={533} height={273} />
-            <small className="text-center flex justify-center items-center !mb-4"><span className="text-green-600 text-lg leading-none">&#10687;&nbsp;</span>Live site available</small>
+            <Image src="https://www.patriciosalazar.dev/img/ClearCalc_Desktop.png" alt="ClearCalc" width={533} height={273} className="mb-4" />
             <CardTitle>ClearCalc</CardTitle>
             <CardDescription className="text-pretty !mb-1">ClearCalc is a JavaScrpit amortization schedule generator</CardDescription>
             <div className="flex flex-wrap items-center gap-1">
@@ -153,7 +150,7 @@ export default async function Home() {
             </div>
           </CardHeader>
           <CardContent>
-            <p>
+            <p className="text-balance">
               ClearCalc is a JavaScript amortization schedule generator. Based on user inputs, it calculates loan details and generates a complete amortization schedule with all the data you would expect to see. Built with JavaScript and Bootstrap, it&#39;s designed to be straightforward and easy to use. It&#39;s fully responsive with side scrolling tables on smaller sized viewports. Try it out now!
             </p>
           </CardContent>
@@ -171,7 +168,7 @@ export default async function Home() {
           <h2 className="section-heading text-4xl text-center">Latest Blog</h2>
           <Card>
             <CardHeader>
-              <CardTitle><Link href={`/blog/${latestBlog.slug}`}>{latestBlog.title}</Link></CardTitle>
+              <CardTitle className="text-balance"><Link href={`/blog/${latestBlog.slug}`}>{latestBlog.title}</Link></CardTitle>
               <CardDescription className="text-primary">
                 {latestBlog.sub_title}
               </CardDescription>
