@@ -1,6 +1,5 @@
 import MainFooter from "@/components/main-footer"
 import MobileNav from "@/components/mobile-nav"
-import { badgeVariants } from "@/components/ui/badge"
 import { Button, buttonVariants } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import Spacer from "@/components/ui/spacer"
