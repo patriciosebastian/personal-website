@@ -29,7 +29,7 @@ export default async function BlogPage() {
           <li key={blog.id}>
             <Card className="mb-4">
               <CardHeader>
-                <CardTitle><Link href={`/blog/${blog.slug}`}>{blog.title}</Link></CardTitle>
+                <CardTitle className="text-balance"><Link href={`/blog/${blog.slug}`}>{blog.title}</Link></CardTitle>
                 <CardDescription className="text-primary">
                   {blog.sub_title}
                 </CardDescription>

@@ -1,7 +1,7 @@
 import MainFooter from "@/components/main-footer"
 import MobileNav from "@/components/mobile-nav"
 import { badgeVariants } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
+import { Button, buttonVariants } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import Spacer from "@/components/ui/spacer"
 import Image from "next/image"
@@ -18,29 +18,23 @@ export default function FreelancePage() {
   return (
     <main>
       <MobileNav />
-      <section className="flex justify-center items-center bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-24">
+      <section className="flex justify-center items-center bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-16">
         <div className="px-4 text-center lg:text-left text-balance">
           <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-4">
-            {/* Does Your Businees Have Web Development Needs?<br /> */}
             Do you need a website for your business?<br />
             Updating your existing one?<br />
-            {/* <span className="text-yellow-300">I&apos;m Your Guy!</span> */}
             <span className="text-yellow-300">I do exactly that.</span>
           </h1>
-          {/* <p className="text-lg lg:text-xl mb-8">
-            I build responsive, fast, and SEO-optimized websites that convert
-            visitors into customers. Let&apos;s create something amazing together!
-          </p> */}
           <p className="text-lg lg:text-xl mb-8">
-            I specialize in responsive, fast websites that look great and
-            give your business that online presence your customers are looking for.
+            I specialize in building fast, mobile-friendly websites for small and medium businesses.
+            Elevate your brand&apos;s online presence and connect your offerings to your customers.
           </p>
           <div className="flex justify-center items-center gap-2">
-            <Link href="#pricing" className={badgeVariants({ variant: "outline" }) + ` px-8 py-3 text-lg bg-transparent border border-white text-white hover:bg-white hover:text-black`}>
+            <Link href="#Pricing" className={buttonVariants({ variant: "outline" }) + ` px-8 py-3 text-lg bg-transparent border border-white text-white hover:bg-white hover:text-black`}>
               View Pricing
             </Link>
-            <Link href="#more" className={badgeVariants({ variant: "outline" }) + ` px-8 py-3 text-lg bg-yellow-300 text-black hover:bg-yellow-400`}>
-              Learn More
+            <Link href="https://calendly.com/psalazardev/introduction" className={buttonVariants({ variant: "outline" }) + ` px-8 py-3 text-lg bg-yellow-300 text-black hover:bg-yellow-400`} target="_blank">
+              Book a Call
             </Link>
           </div>
         </div>
@@ -91,7 +85,7 @@ export default function FreelancePage() {
       {/* Pricing Cards */}
       <section>
         {/* Pricing Card 1 */}
-        <h2 className="section-heading text-3xl mb-16 text-center">Pricing</h2>
+        <h2 className="section-heading text-3xl mb-16 text-center" id="Pricing">Pricing</h2>
         <Card className="mb-4">
           <CardHeader>
             <CardTitle>Tier 1</CardTitle>
@@ -108,7 +102,7 @@ export default function FreelancePage() {
             </ul>
           </CardContent>
           <CardFooter>
-            <Button>Book A Conversation</Button>
+            <Button>Book A Call</Button>
           </CardFooter>
         </Card>
 
@@ -129,7 +123,7 @@ export default function FreelancePage() {
             </ul>
           </CardContent>
           <CardFooter>
-            <Button>Book A Conversation</Button>
+            <Button>Book A Call</Button>
           </CardFooter>
         </Card>
 
@@ -150,7 +144,7 @@ export default function FreelancePage() {
             </ul>
           </CardContent>
           <CardFooter>
-            <Button>Book A Conversation</Button>
+            <Button>Book A Call</Button>
           </CardFooter>
         </Card>
       </section>
@@ -160,16 +154,15 @@ export default function FreelancePage() {
       {/* Book A Call */}
       <section>
         <Card>
-          <CardHeader>
-            <Image src={ThumbsUp} className="mx-auto mb-4" alt="Thumbs Up Memoji" width={115} height={115} />
-            <CardTitle>Book a 15 Minute Intro Call</CardTitle>
-            <CardDescription></CardDescription>
+          <CardHeader className="mb-4 bg-[#d1d5db] rounded-t-md">
+            <Image src={ThumbsUp} className="mx-auto" alt="Thumbs Up Memoji" width={115} height={115} />
           </CardHeader>
-          <CardContent className="flex justify-center">
-            <Link href="https://calendly.com/psalazardev/introduction" target="_blank" className={badgeVariants({ variant: "default" }) + ` rounded px-8 py-4 text-base`}>Schedule Now</Link>
+          <CardContent className="text-center">
+            <p className="text-2xl mb-4">Book a 15-Minute<br /> Intro Call</p>
+            <Link href="https://calendly.com/psalazardev/introduction" target="_blank" className={buttonVariants({ variant: "default" }) + ` px-8 py-4`}>Schedule Now</Link>
           </CardContent>
           <CardFooter>
-            <p>Or email me at <a href="mailto:psalazardev@gmail.com" className="text-blue-500">psalazardev@gmail.com</a></p>
+            <p className="text-center">Or email me at <a href="mailto:psalazardev@gmail.com" className="text-blue-500">psalazardev@gmail.com</a></p>
           </CardFooter>
         </Card>
       </section>

@@ -82,6 +82,9 @@
   [role="tablist"] > [aria-selected="true"] {
     @apply border-b-2 border-b-primary rounded-none -mb-2;
   }
+  .bg-card li {
+    list-style-position: inside;
+  }
   .section-heading {
     margin-bottom: 1rem;
     text-wrap: balance;
