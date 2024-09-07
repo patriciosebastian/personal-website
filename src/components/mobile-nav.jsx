@@ -4,7 +4,7 @@ import { ThemeToggle } from './theme-toggle'
 
 export default function MobileNav() {
   return (
-    <div className="sticky top-2">
+    <div className="sticky top-2 z-20">
       <Menubar className="justify-center">
         <MenubarMenu>
           <MenubarTrigger><Link href="/">Home</Link></MenubarTrigger>
