@@ -12,7 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className + ` container h-full mx-auto`}>
+      <body className={inter.className + ` container h-full mx-auto lg:text-lg`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
