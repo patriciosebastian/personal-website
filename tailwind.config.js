@@ -7,6 +7,18 @@ module.exports = {
     './app/**/*.{js,jsx}',
     './src/**/*.{js,jsx}',
   ],
+  safelist: [
+    'text-xs',
+    'text-sm',
+    'text-base',
+    'text-xl',
+    'text-4xl',
+    'text-5xl',
+    'text-6xl',
+    'text-7xl',
+    'text-8xl',
+    'text-9xl',
+  ],
   prefix: "",
   theme: {
     container: {
