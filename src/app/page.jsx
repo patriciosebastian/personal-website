@@ -174,7 +174,12 @@ export default async function Home() {
               </CardDescription>
             </CardHeader>
             <CardFooter className="text-gray-500">
-              {(latestBlog.tag) ? <Badge variant="outline" className="mr-4">{latestBlog.tag}</Badge> : null} <small>{new Date(latestBlog.created_at).toLocaleDateString()}</small>
+                {(latestBlog.is_freelance) ? <Badge variant="outline" className="mr-2">freelance</Badge> : null}
+                {(latestBlog.is_web_development) ? <Badge variant="outline" className="mr-2">web development</Badge> : null}
+                {(latestBlog.is_tech) ? <Badge variant="outline" className="mr-2">tech</Badge> : null}
+                {(latestBlog.is_entrepreneurialism) ? <Badge variant="outline" className="mr-2">entrepreneurialism</Badge> : null}
+                {(latestBlog.is_life) ? <Badge variant="outline" className="mr-2">life</Badge> : null}
+                <small>{new Date(latestBlog.created_at).toLocaleDateString()}</small>
             </CardFooter>
           </Card>
 
