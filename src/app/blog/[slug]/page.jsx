@@ -24,11 +24,11 @@ export default async function BlogPostPage({ params }) {
 
       <Spacer />
 
-      <h1 className="text-3xl font-bold">{blog.title}</h1>
+      <h1 className="text-3xl font-bold text-balance">{blog.title}</h1>
       <p>{blog.sub_title}</p>
       <small className="text-muted-foreground">{new Date(blog.created_at).toLocaleDateString()}</small>
       <Spacer className="h-12" />
-      <p>{blog.body}</p>
+      <div dangerouslySetInnerHTML={{__html: blog.body}} className="text-balance"></div>
 
       <Spacer />
 
