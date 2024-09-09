@@ -18,7 +18,7 @@ export default async function BlogPostPage({ params }) {
   }
 
   return (
-    <main>
+    <main className="blog-post">
       {/* NOTE: update layout */}
       <MobileNav />
 

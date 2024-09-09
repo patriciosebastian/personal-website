@@ -85,6 +85,10 @@
   .bg-card li {
     list-style-position: inside;
   }
+  .blog-post h1, .blog-post h2, .blog-post h3, .blog-post h4, .blog-post h5, .blog-post h6{
+    font-weight: bold;
+    line-height: 1.25;
+  }
   .section-heading {
     margin-bottom: 1rem;
     text-wrap: balance;
