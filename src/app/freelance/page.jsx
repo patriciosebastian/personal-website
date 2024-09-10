@@ -70,7 +70,7 @@ export default function FreelancePage() {
         </div>
         <div>
           <svg width="75" height="75" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" className="stroke-foreground dark:fill-background mx-auto mb-4 stroke-0 dark:stroke-1"><path d="M21 4.5h-.2l-.9.3c-.5-1.5-1.4-3-3.1-3h-.1A2 2 0 0 0 15 1c-3.9 0-5.8 4.8-6.3 7.3L6 9.2c-.9.2-.9.2-1 1L2.8 27.8l17 3.2zM17.1 3C18 3 18.6 4 19 5.1l-1.5.5V5c0-.8-.1-1.5-.3-2.2zm-.7 2.8V6l-3 1c.3-1.7 1.3-3 2.6-3.8a7.2 7.2 0 0 1 .4 2.6zM15 2l.5.2c-1.8 1-3 2.9-3.2 5l-2.3.7c.6-2.2 2.2-5.8 5-5.8zm.6 13.1c-.6-.3-1.4-.5-2.2-.5-1.8 0-1.9 1.1-1.9 1.4 0 1.6 4 2.2 4 5.8l.1.4c0 2.4-1.9 4.3-4.3 4.3h-.1c-1.7 0-3.2-.7-4.3-1.8l.8-2.6c.8.7 1.8 1.1 2.8 1.3h.1c.7 0 1.2-.5 1.2-1.2 0-2-3.3-2-3.3-5.4a5.5 5.5 0 0 1 6-5.5 5 5 0 0 1 2.4.4l-1.2 3.4zM20.2 31l9-2L25.9 7c0-.2-.1-.3-.3-.3l-2.4-.1-1.8-1.8-.1-.1L20 31z"/></svg>
-          Ecommerce (Shopify)
+          Shopify Websites
         </div>
       </section>
 
