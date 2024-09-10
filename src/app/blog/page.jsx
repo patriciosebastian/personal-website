@@ -22,7 +22,8 @@ export default async function BlogPage() {
       <MobileNav />
       <div className="h-56 flex flex-col justify-center items-start gap-4 border-b-[1px] mb-8">
         <h1 className="text-4xl mt-14">Blog</h1>
-        <p className="text-muted-foreground text-pretty">Look at you! Reading my blog &#129395;<br /> I write about web development, entrepreneurialism, and things in life I care about.</p>
+        <p className="text-muted-foreground text-pretty">Look at you! Reading my blog &#129395;<br />
+        I write about web development, entrepreneurialism, and things in life I care about.</p>
       </div>
       <ul>
         {blogs.map((blog) => (
@@ -40,7 +41,7 @@ export default async function BlogPage() {
                 {(blog.is_tech) ? <Badge variant="outline" className="mr-2">tech</Badge> : null}
                 {(blog.is_entrepreneurialism) ? <Badge variant="outline" className="mr-2">entrepreneurialism</Badge> : null}
                 {(blog.is_life) ? <Badge variant="outline" className="mr-2">life</Badge> : null}
-                <small>{new Date(blog.created_at).toLocaleDateString()}</small>
+                <small className="ml-auto">{new Date(blog.created_at).toLocaleDateString()}</small>
               </CardFooter>
             </Card>
           </li>
