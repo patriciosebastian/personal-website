@@ -40,19 +40,37 @@ export default async function Home() {
         <div className="flex justify-center items-center gap-4 absolute bottom-16">
           {/* github */}
           <Link href="https://github.com/patriciosebastian" className="justify-center px-4 font-bold" target="_blank">
-            <svg width="30px" height="30px" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" color="#000000" className="stroke-foreground fill-background"><path d="M16 22.0268V19.1568C16.0375 18.68 15.9731 18.2006 15.811 17.7506C15.6489 17.3006 15.3929 16.8902 15.06 16.5468C18.2 16.1968 21.5 15.0068 21.5 9.54679C21.4997 8.15062 20.9627 6.80799 20 5.79679C20.4558 4.5753 20.4236 3.22514 19.91 2.02679C19.91 2.02679 18.73 1.67679 16 3.50679C13.708 2.88561 11.292 2.88561 8.99999 3.50679C6.26999 1.67679 5.08999 2.02679 5.08999 2.02679C4.57636 3.22514 4.54413 4.5753 4.99999 5.79679C4.03011 6.81549 3.49251 8.17026 3.49999 9.57679C3.49999 14.9968 6.79998 16.1868 9.93998 16.5768C9.61098 16.9168 9.35725 17.3222 9.19529 17.7667C9.03334 18.2112 8.96679 18.6849 8.99999 19.1568V22.0268" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M9 20.0267C6 20.9999 3.5 20.0267 2 17.0267" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            <svg width="34px" height="34px" viewBox="-2.5 0 19 19" xmlns="http://www.w3.org/2000/svg" className="stroke-background fill-foreground">
+              <path d="M9.464 17.178a4.506 4.506 0 0 1-2.013.317 4.29 4.29 0 0 1-2.007-.317.746.746 0 0 1-.277-.587c0-.22-.008-.798-.012-1.567-2.564.557-3.105-1.236-3.105-1.236a2.44 2.44 0 0 0-1.024-1.348c-.836-.572.063-.56.063-.56a1.937 1.937 0 0 1 1.412.95 1.962 1.962 0 0 0 2.682.765 1.971 1.971 0 0 1 .586-1.233c-2.046-.232-4.198-1.023-4.198-4.554a3.566 3.566 0 0 1 .948-2.474 3.313 3.313 0 0 1 .091-2.438s.773-.248 2.534.945a8.727 8.727 0 0 1 4.615 0c1.76-1.193 2.532-.945 2.532-.945a3.31 3.31 0 0 1 .092 2.438 3.562 3.562 0 0 1 .947 2.474c0 3.54-2.155 4.32-4.208 4.548a2.195 2.195 0 0 1 .625 1.706c0 1.232-.011 2.227-.011 2.529a.694.694 0 0 1-.272.587z"/>
+            </svg>
           </Link>
           {/* linkedin */}
           <Link href="https://www.linkedin.com/in/patriciosalazardev" className="justify-center px-4 font-bold" target="_blank">
-            <svg width="30px" height="30px" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" color="#000000" className="stroke-foreground fill-background"><path d="M21 8V16C21 18.7614 18.7614 21 16 21H8C5.23858 21 3 18.7614 3 16V8C3 5.23858 5.23858 3 8 3H16C18.7614 3 21 5.23858 21 8Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M7 17V13.5V10" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M11 17V13.75M11 10V13.75M11 13.75C11 10 17 10 17 13.75V17" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M7 7.01L7.01 6.99889" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" width="34px" height="34px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" className="stroke-background fill-foreground">
+              <g>
+              	<path d="M80.667,14H19.315C16.381,14,14,16.325,14,19.188v61.617C14,83.672,16.381,86,19.315,86h61.352
+              		C83.603,86,86,83.672,86,80.805V19.188C86,16.325,83.603,14,80.667,14z M35.354,75.354H24.67V40.995h10.684V75.354z M30.012,36.297
+              		c-3.423,0-6.19-2.774-6.19-6.194c0-3.415,2.767-6.189,6.19-6.189c3.415,0,6.189,2.774,6.189,6.189
+              		C36.201,33.523,33.427,36.297,30.012,36.297z M75.35,75.354H64.683V58.646c0-3.986-0.078-9.111-5.551-9.111
+              		c-5.558,0-6.405,4.341-6.405,8.822v16.998H42.052V40.995h10.245v4.692h0.146c1.426-2.7,4.91-5.549,10.106-5.549
+              		c10.806,0,12.802,7.114,12.802,16.369V75.354z"/>
+              </g>
+            </svg>
           </Link>
           {/* email */}
           <Link href="mailto:psebastiansalazar@gmail.com" className="justify-center px-4 font-bold" target="_blank">
-            <svg width="30px" height="30px" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" color="#000000" className="stroke-foreground fill-none"><path d="M7 9L12 12.5L17 9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M2 17V7C2 5.89543 2.89543 5 4 5H20C21.1046 5 22 5.89543 22 7V17C22 18.1046 21.1046 19 20 19H4C2.89543 19 2 18.1046 2 17Z" stroke-width="1.5"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="34px" height="34px" viewBox="0 0 24 24" className="stroke-background fill-foreground">
+              <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
           </Link>
           {/* blog */}
           <Link href="/blog" className="justify-center px-4 font-bold">
-            <svg width="30px" height="30px" viewBox="0 0 24 24" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg" color="#000000" className="-rotate-[10deg] stroke-foreground fill-background"><path d="M2.90602 17.505L5.33709 3.71766C5.5289 2.62987 6.56621 1.90354 7.654 2.09534L19.4717 4.17912C20.5595 4.37093 21.2858 5.40824 21.094 6.49603L18.6629 20.2833C18.4711 21.3711 17.4338 22.0975 16.346 21.9057L4.52834 19.8219C3.44055 19.6301 2.71421 18.5928 2.90602 17.505Z" stroke-width="1.5"></path><path d="M8.92902 6.38184L16.8075 7.77102" stroke-width="1.5" stroke-linecap="round"></path><path d="M8.23444 10.3213L16.1129 11.7105" stroke-width="1.5" stroke-linecap="round"></path><path d="M7.53986 14.2607L12.4639 15.129" stroke-width="1.5" stroke-linecap="round"></path></svg>
+            <svg width="34px" height="34px" viewBox="0 0 24 24" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg" color="#000000" className="-rotate-[10deg] stroke-background fill-foreground">
+              <path d="M2.90602 17.505L5.33709 3.71766C5.5289 2.62987 6.56621 1.90354 7.654 2.09534L19.4717 4.17912C20.5595 4.37093 21.2858 5.40824 21.094 6.49603L18.6629 20.2833C18.4711 21.3711 17.4338 22.0975 16.346 21.9057L4.52834 19.8219C3.44055 19.6301 2.71421 18.5928 2.90602 17.505Z" stroke-width="1.5"></path>
+              <path d="M8.92902 6.38184L16.8075 7.77102" stroke-width="1.5" stroke-linecap="round"></path>
+              <path d="M8.23444 10.3213L16.1129 11.7105" stroke-width="1.5" stroke-linecap="round"></path>
+              <path d="M7.53986 14.2607L12.4639 15.129" stroke-width="1.5" stroke-linecap="round"></path>
+            </svg>
           </Link>
         </div>
       </div>
