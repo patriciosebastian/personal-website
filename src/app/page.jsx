@@ -191,10 +191,10 @@ export default async function Home() {
 
       <Spacer />
 
-      {/* Latest Blog */}
+      {/* Latest Post */}
       {latestBlog ? (
         <>
-          <h2 className="section-heading text-4xl text-center">Latest Blog</h2>
+          <h2 className="section-heading text-4xl text-center">Latest Post</h2>
           <Card>
             <CardHeader>
               <CardTitle className="text-balance"><Link href={`/blog/${latestBlog.slug}`}>{latestBlog.title}</Link></CardTitle>
