@@ -10,6 +10,8 @@ import MobileNav from '@/components/mobile-nav'
 import Spacer from '@/components/ui/spacer'
 import HelloWorld1 from '../../public/Hello_World_Desk_Setup_optimized.webp'
 import HelloWorld2 from '../../public/Hello_World_Desk_Setup_2_optimized.webp'
+import TouchBase from '../../public/TouchBaseApp_Optimized.webp'
+import ClearCalc from '../../public/ClearCalc_Optimized.webp'
 
 export default async function Home() {
   const { data: blogs, error } = await supabase
@@ -141,7 +143,7 @@ export default async function Home() {
         {/* 1. */}
         <Card className="mb-4">
           <CardHeader>
-            <Image src="https://www.patriciosalazar.dev/img/TouchBase_Desktop.png" alt="Touch Base" width={533} height={273} className="mb-4" />
+            <Image src={TouchBase} className="mb-4" />
             <CardTitle>Touch Base</CardTitle>
             <CardDescription className="text-pretty !mb-1">Full stack React Contacts Management app</CardDescription>
             <div className="flex flex-wrap items-center gap-1">
@@ -168,7 +170,7 @@ export default async function Home() {
         {/* 2. */}
         <Card>
           <CardHeader>
-            <Image src="https://www.patriciosalazar.dev/img/ClearCalc_Desktop.png" alt="ClearCalc" width={533} height={273} className="mb-4" />
+            <Image src={ClearCalc} className="mb-4" />
             <CardTitle>ClearCalc</CardTitle>
             <CardDescription className="text-pretty !mb-1">ClearCalc is a JavaScrpit amortization schedule generator</CardDescription>
             <div className="flex flex-wrap items-center gap-1">
