@@ -212,7 +212,7 @@ export default async function Home() {
                 {(latestBlog.is_tech) ? <Badge variant="outline" className="mr-2">tech</Badge> : null}
                 {(latestBlog.is_entrepreneurialism) ? <Badge variant="outline" className="mr-2">entrepreneurialism</Badge> : null}
                 {(latestBlog.is_life) ? <Badge variant="outline" className="mr-2">life</Badge> : null}
-                <small>{new Date(latestBlog.created_at).toLocaleDateString()}</small>
+                <small className="ml-auto">{new Date(latestBlog.created_at).toLocaleDateString()}</small>
             </CardFooter>
           </Card>
 
