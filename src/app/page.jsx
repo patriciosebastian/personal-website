@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Badge, badgeVariants } from "@/components/ui/badge"
+import { Badge } from "@/components/ui/badge"
 import { buttonVariants } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
@@ -26,7 +26,7 @@ export default async function Home() {
   const latestBlog = blogs && blogs[0];
 
   return (
-    <main>
+    <>
       {/* Hero */}
       <div className="min-h-svh flex flex-col justify-center items-center text-center text-balance relative">
         <h1 className="text-8xl">Patricio Salazar</h1>
@@ -256,6 +256,6 @@ export default async function Home() {
 
       {/* Footer */}
       <MainFooter />
-    </main>
+    </>
   );
 }

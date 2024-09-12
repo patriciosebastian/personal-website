@@ -36,7 +36,7 @@ export default async function BlogPostPage({ params }) {
   };
 
   return (
-    <main className="blog-post">
+    <div className="blog-post">
       {/* NOTE: update post layout */}
       <MobileNav />
 
@@ -51,6 +51,6 @@ export default async function BlogPostPage({ params }) {
       <Spacer />
 
       <MainFooter />
-    </main>
+    </div>
   );
 }

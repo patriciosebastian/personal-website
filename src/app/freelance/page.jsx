@@ -9,7 +9,7 @@ import ThumbsUp from "../../../public/Memoji_thumbsUp_optimized.png"
 
 export default function FreelancePage() {
   return (
-    <main>
+    <>
       <MobileNav />
       <section className="flex justify-center items-center bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-12 mt-2 rounded-md">
         <div className="px-4 text-center lg:text-left text-balance">
@@ -164,6 +164,6 @@ export default function FreelancePage() {
       <Spacer />
 
       <MainFooter />
-    </main>
+    </>
   );
 }

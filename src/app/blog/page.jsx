@@ -18,7 +18,7 @@ export default async function BlogPage() {
   }
 
   return (
-    <main>
+    <>
       <MobileNav />
       <div className="h-56 flex flex-col justify-center items-start gap-4 border-b-[1px] mb-8">
         <h1 className="text-4xl mt-14">Blog</h1>
@@ -51,6 +51,6 @@ export default async function BlogPage() {
       <Spacer />
 
       <MainFooter />
-    </main>
+    </>
   );
 }
