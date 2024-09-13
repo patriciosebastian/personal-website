@@ -140,57 +140,51 @@ export default async function Home() {
       {/* Projects */}
       <div>
         <h2 className="section-heading text-4xl text-center" id="Projects">Projects</h2>
-        <div className="md:flex justify-evenly items-start gap-4">
-          {/* 1. */}
-          <Card className="mb-4 max-w-md lg:max-w-lg mx-auto">
-            <CardHeader>
-              <Image src={TouchBase} className="mb-4" />
-              <CardTitle>Touch Base</CardTitle>
-              <CardDescription className="text-pretty !mb-1">Full stack React Contacts Management app</CardDescription>
-              <div className="flex flex-wrap items-center gap-1">
-                <Badge variant="outline">CSS</Badge>
-                <Badge variant="outline">React</Badge>
-                <Badge variant="outline">Node.js</Badge>
-                <Badge variant="outline">Express.js</Badge>
-                <Badge variant="outline">PostgreSQL</Badge>
-                <Badge variant="outline">Firebase</Badge>
-                <Badge variant="outline">SendGrid</Badge>
-                <Badge variant="outline">AWS S3</Badge>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <p className="text-balance">
-                Touch Base uses React-Router for frontend navigation and Node.js & Express for its backend API, connected to a PSQL database. It features a fully responsive design, full CRUD capabilities for contacts and groups, Firebase Auth, and SendGrid for email functionality. AWS S3 is used for image hosting, and a demo login lets you easily tour the app and safely perform all actions.
-              </p>
-            </CardContent>
-            <CardFooter>
-              <a href="https://www.touchbaseapp.co" target='_blank' className={buttonVariants({ variant: "default" }) + ` h-12 justify-center`}>Visit Site</a> {/* <-- use external link icon  */}
-            </CardFooter>
-          </Card>
-    
-          {/* 2. */}
-          <Card className="max-w-md lg:max-w-lg mx-auto">
-            <CardHeader>
-              <Image src={ClearCalc} className="mb-4" />
-              <CardTitle>ClearCalc</CardTitle>
-              <CardDescription className="text-pretty !mb-1">ClearCalc is a JavaScrpit amortization schedule generator</CardDescription>
-              <div className="flex flex-wrap items-center gap-1">
-                <Badge variant="outline">HTML</Badge>
-                <Badge variant="outline">CSS</Badge>
-                <Badge variant="outline">Bootstrap 5</Badge>
-                <Badge variant="outline">JavaScript</Badge>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <p className="text-balance">
-                ClearCalc is a JavaScript amortization schedule generator. Based on user inputs, it calculates loan details and generates a complete amortization schedule with all the data you would expect to see. Built with JavaScript and Bootstrap, it&#39;s designed to be straightforward and easy to use. It&#39;s fully responsive with side scrolling tables on smaller sized viewports. Try it out now!
-              </p>
-            </CardContent>
-            <CardFooter>
-              <a href="https://www.clearcalc.app" target='_blank' className={buttonVariants({ variant: "default" }) + ` h-12 justify-center`}>Visit Site</a>
-            </CardFooter>
-          </Card>
-        </div>
+        {/* 1. */}
+        <Card className="mb-4 max-w-md lg:flex lg:max-w-3xl xl:max-w-6xl mx-auto">
+          <CardHeader className="lg:w-1/2">
+            <Image src={TouchBase} className="mb-4" />
+            <CardTitle>Touch Base</CardTitle>
+            <CardDescription className="text-pretty !mb-1">Full stack React Contacts Management app</CardDescription>
+            <div className="flex flex-wrap items-center gap-1">
+              <Badge variant="outline">CSS</Badge>
+              <Badge variant="outline">React</Badge>
+              <Badge variant="outline">Node.js</Badge>
+              <Badge variant="outline">Express.js</Badge>
+              <Badge variant="outline">PostgreSQL</Badge>
+              <Badge variant="outline">Firebase</Badge>
+              <Badge variant="outline">SendGrid</Badge>
+              <Badge variant="outline">AWS S3</Badge>
+            </div>
+          </CardHeader>
+          <CardContent className="lg:w-1/2">
+            <p className="text-balance mb-6 lg:mt-6 lg:mb-8 xl:mb-20">
+              Touch Base uses React-Router for frontend navigation and Node.js & Express for its backend API, connected to a PSQL database. It features a fully responsive design, full CRUD capabilities for contacts and groups, Firebase Auth, and SendGrid for email functionality. AWS S3 is used for image hosting, and a demo login lets you easily tour the app and safely perform all actions.
+            </p>
+            <a href="https://www.touchbaseapp.co" target='_blank' className={buttonVariants({ variant: "default" }) + ` h-12 justify-center lg:flex lg:mx-auto`}>Visit Site</a>
+          </CardContent>
+        </Card>
+
+        {/* 2. */}
+        <Card className="max-w-md lg:flex lg:max-w-3xl xl:max-w-6xl mx-auto">
+          <CardHeader className="lg:w-1/2">
+            <Image src={ClearCalc} className="mb-4" />
+            <CardTitle>ClearCalc</CardTitle>
+            <CardDescription className="text-pretty !mb-1">ClearCalc is a JavaScrpit amortization schedule generator</CardDescription>
+            <div className="flex flex-wrap items-center gap-1">
+              <Badge variant="outline">HTML</Badge>
+              <Badge variant="outline">CSS</Badge>
+              <Badge variant="outline">Bootstrap 5</Badge>
+              <Badge variant="outline">JavaScript</Badge>
+            </div>
+          </CardHeader>
+          <CardContent className="lg:w-1/2">
+            <p className="text-balance mb-6 lg:mt-6 lg:mb-8 xl:mb-20">
+              ClearCalc is a JavaScript amortization schedule generator. Based on user inputs, it calculates loan details and generates a complete amortization schedule with all the data you would expect to see. Built with JavaScript and Bootstrap, it&#39;s designed to be straightforward and easy to use. It&#39;s fully responsive with side scrolling tables on smaller sized viewports. Try it out now!
+            </p>
+            <a href="https://www.clearcalc.app" target='_blank' className={buttonVariants({ variant: "default" }) + ` h-12 justify-center lg:flex lg:mx-auto`}>Visit Site</a>
+          </CardContent>
+        </Card>
       </div>
 
       <Spacer />
