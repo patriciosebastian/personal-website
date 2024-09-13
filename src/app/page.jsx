@@ -87,7 +87,7 @@ export default async function Home() {
       {/* About */}
       <div>
         <h2 className="section-heading text-4xl text-center">About</h2>
-        <Tabs defaultValue="career" className="rounded-md py-4">
+        <Tabs defaultValue="career" className="rounded-md py-4 max-w-lg lg:max-w-3xl mx-auto">
           <TabsList className=" w-full bg-transparent border-b-2 rounded-none p-0 box-border">
             <TabsTrigger value="career">Career</TabsTrigger>
             <TabsTrigger value="tech-stack">Tech Stack</TabsTrigger>
@@ -141,7 +141,7 @@ export default async function Home() {
       <div>
         <h2 className="section-heading text-4xl text-center" id="Projects">Projects</h2>
         {/* 1. */}
-        <Card className="mb-4 max-w-md lg:flex lg:max-w-3xl xl:max-w-6xl mx-auto">
+        <Card className="mb-4 max-w-md lg:flex lg:max-w-3xl xl:max-w-6xl mx-auto lg:mb-6">
           <CardHeader className="lg:w-1/2">
             <Image src={TouchBase} className="mb-4" />
             <CardTitle>Touch Base</CardTitle>
@@ -223,7 +223,7 @@ export default async function Home() {
         &#40;Don&apos;t worry, they don&apos;t have lyrics&#41;
       </small>
       {/* 1. */}
-      <Card className="border bg-background mb-4 flex items-center max-w-md lg:max-w-3xl mx-auto">
+      <Card className="border bg-background mb-4 flex items-center max-w-md lg:max-w-3xl mx-auto lg:mb-6">
         <CardHeader className="w-1/2 p-4 relative">
           <Image src={HelloWorld1} className="rounded mb-2" alt="Computer/Desk Set-up" />
           <div className="absolute !m-1">
