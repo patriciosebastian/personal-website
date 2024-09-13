@@ -199,7 +199,7 @@ export default async function Home() {
       {latestBlog ? (
         <>
           <h2 className="section-heading text-4xl text-center">Latest Post</h2>
-          <Card className="max-w-md lg:max-w-xl mx-auto">
+          <Card className="max-w-md lg:max-w-3xl mx-auto">
             <CardHeader>
               <CardTitle className="text-balance"><Link href={`/blog/${latestBlog.slug}`}>{latestBlog.title}</Link></CardTitle>
               <CardDescription className="text-primary">
@@ -229,28 +229,28 @@ export default async function Home() {
         &#40;Don&apos;t worry, they don&apos;t have lyrics&#41;
       </small>
       {/* 1. */}
-      <Card className="border bg-background mb-4 flex items-center">
+      <Card className="border bg-background mb-4 flex items-center max-w-md lg:max-w-3xl mx-auto">
         <CardHeader className="w-1/2 p-4 relative">
           <Image src={HelloWorld1} className="rounded mb-2" alt="Computer/Desk Set-up" />
           <div className="absolute !m-1">
             <svg width="24px" height="24px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" className="stroke-background dark:stroke-foreground"><path d="M7 15C7 15 11.5 14 16 16" stroke-linecap="round" stroke-linejoin="round"></path><path d="M6.5 12C6.5 12 12.5 10.5 17.5 13.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M6 9.00003C9 8.50005 14 8.00006 19 11" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22Z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
           </div>
         </CardHeader>
-        <CardContent className="w-1/2 p-4">
+        <CardContent className="w-1/2 p-4 sm:text-center">
           <p className="font-bold text-balance mb-2 leading-tight">Hello World - beats to code to</p>
           <a href="https://open.spotify.com/playlist/77hkmQ7eTgfvpjPXDPjSRT?si=1f36b33a95fc4621" className={buttonVariants({ variant: "default", size: "sm" }) + ` justify-center`} target='_blank'>Play on Spotify</a>
         </CardContent>
       </Card>
-
+      
       {/* 2. */}
-      <Card className="border bg-background mb-4 flex items-center">
+      <Card className="border bg-background mb-4 flex items-center max-w-md lg:max-w-3xl mx-auto">
         <CardHeader className="w-1/2 p-4 relative">
           <Image src={HelloWorld2} className="rounded mb-2" alt="Computer/Desk Set-up with the universe in the background" />
           <div className="absolute !m-1">
             <svg width="24px" height="24px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" className="stroke-background dark:stroke-foreground"><path d="M7 15C7 15 11.5 14 16 16" stroke-linecap="round" stroke-linejoin="round"></path><path d="M6.5 12C6.5 12 12.5 10.5 17.5 13.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M6 9.00003C9 8.50005 14 8.00006 19 11" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22Z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
           </div>
         </CardHeader>
-        <CardContent className="w-1/2 p-4">
+        <CardContent className="w-1/2 p-4 sm:text-center">
           <p className="font-bold text-balance mb-2 leading-tight">Hello World 2 - beats to code to</p>
           <a href="https://open.spotify.com/playlist/3TWuzDL7v8DKhcFatC1g8D?si=3279f73b5ba242a3" className={buttonVariants({ variant: "default", size: "sm" }) + ` justify-center`} target='_blank'>Play on Spotify</a>
         </CardContent>
