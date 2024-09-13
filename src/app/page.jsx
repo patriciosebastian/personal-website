@@ -95,40 +95,45 @@ export default async function Home() {
             <TabsTrigger value="Cool-stuff">Stuff</TabsTrigger>
           </TabsList>
           <TabsContent value="career" className="px-4 py-2">I&#39;m a Software Developer at <a className="underline" href="https://empire-medical.com/" target="_blank">Empire Medical</a>. In my previous work (both professional and personal) I&#39;ve mainly used a pure JavaScript stack, but I use PHP & Laravel in my current position. I&#39;m dedicated to building exceptional experiences and writing quality code that solves problems… and I like to push to production often! View my projects and skills to learn more.</TabsContent>
-          <TabsContent value="tech-stack" className="px-4 py-2">
+          <TabsContent value="tech-stack" className="px-4 py-2 w-fit mx-auto">
+            {/* Frontend */}
             <div className="bg-secondary w-fit p-1 rounded-sm mb-2">Frontend</div>
-            <ol className="grid grid-cols-2 mb-4">
-              <li>HTML</li>
-              <li>JavaScript</li>
-              <li>CSS</li>
-              <li>React</li>
-              <li>Tailwind CSS</li>
-            </ol>
+            <div className="flex flex-wrap gap-4 mb-4">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>Tailwind CSS</span>
+              <span>JavaScript</span>
+              <span>React</span>
+            </div>
+            {/* Full-stack */}
             <div className="bg-secondary w-fit p-1 rounded-sm mb-2">Full-stack</div>
-            <ol className="grid grid-cols-2 mb-4">
-              <li>Livewire</li>
-              <li>Next.js</li>
-            </ol>
+            <div className="flex flex-wrap gap-4 mb-4">
+              <span>Livewire</span>
+              <span>Next.js</span>
+            </div>
+            {/* Backend */}
             <div className="bg-secondary w-fit p-1 rounded-sm mb-2">Backend</div>
-            <ol className="grid grid-cols-2 mb-4">
-              <li>Node.js</li>
-              <li>PHP</li>
-              <li>Express.js</li>
-              <li>Laravel</li>
-            </ol>
+            <div className="flex flex-wrap gap-4 mb-4">
+              <span>Node.js</span>
+              <span>Express.js</span>
+              <span>PHP</span>
+              <span>Laravel</span>
+            </div>
+            {/* Database */}
             <div className="bg-secondary w-fit p-1 rounded-sm mb-2">Database</div>
-            <ol className="grid grid-cols-2 mb-4">
-              <li>PostgreSQL</li>
-            </ol>
+            <div className="flex flex-wrap gap-4 mb-4">
+              <span>PostgreSQL</span>
+            </div>
+            {/* Tooling */}
             <div className="bg-secondary w-fit p-1 rounded-sm mb-2">Tooling</div>
-            <ol className="grid grid-cols-2 mb-4">
-              <li>Git/GitHub</li>
-              <li>Atlassian</li>
-              <li>Postman</li>
-              <li>Slack</li>
-              <li>VSCode</li>
-              <li>Notion</li>
-            </ol>
+            <div className="flex flex-wrap gap-4 mb-4">
+              <span>Git/GitHub</span>
+              <span>Postman</span>
+              <span>VSCode</span>
+              <span>Atlassian</span>
+              <span>Slack</span>
+              <span>Notion</span>
+            </div>
           </TabsContent>
           <TabsContent value="Other" className="px-4 py-2">Other.</TabsContent>
           <TabsContent value="Cool-stuff" className="px-4 py-2">Cool stuff.</TabsContent>
