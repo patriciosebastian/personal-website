@@ -148,7 +148,7 @@ export default async function Home() {
         {/* 1. */}
         <Card className="mb-4 max-w-md lg:flex lg:max-w-3xl mx-auto lg:mb-6">
           <CardHeader className="lg:w-1/2">
-            <Image src={TouchBase} className="mb-4" />
+            <Image src={TouchBase} className="mb-4" alt="The home page of Touch Base" />
             <CardTitle>Touch Base</CardTitle>
             <CardDescription className="text-pretty !mb-1">Full stack React Contacts Management app</CardDescription>
             <div className="flex flex-wrap items-center gap-1">
@@ -173,7 +173,7 @@ export default async function Home() {
         {/* 2. */}
         <Card className="max-w-md lg:flex lg:max-w-3xl mx-auto">
           <CardHeader className="lg:w-1/2">
-            <Image src={ClearCalc} className="mb-4" />
+            <Image src={ClearCalc} className="mb-4" alt="The home page of ClearCalc" />
             <CardTitle>ClearCalc</CardTitle>
             <CardDescription className="text-pretty !mb-1">ClearCalc is a JavaScrpit amortization schedule generator</CardDescription>
             <div className="flex flex-wrap items-center gap-1">
