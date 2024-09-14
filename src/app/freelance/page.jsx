@@ -11,7 +11,7 @@ export default function FreelancePage() {
   return (
     <>
       <MobileNav />
-      <section className="flex justify-center items-center bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-12 mt-2 rounded-md max-w-lg lg:max-w-3xl mx-auto">
+      <section className="flex justify-center items-center bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-12 mt-2 rounded-md max-w-lg lg:max-w-3xl mx-auto lg:mt-20">
         <div className="px-4 text-center lg:text-left text-balance">
           <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-4">
             Do you need a website for your business?<br />
