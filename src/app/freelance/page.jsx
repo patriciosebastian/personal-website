@@ -13,12 +13,12 @@ export default function FreelancePage() {
       <MobileNav />
       <section className="flex justify-center items-center bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-12 mt-2 rounded-md max-w-lg lg:max-w-3xl mx-auto lg:mt-20">
         <div className="px-4 text-center lg:text-left text-balance">
-          <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-4">
+          <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-4 text-center">
             Do you need a website for your business?<br />
-            Updating your existing one?<br />
+            <span className="sm:whitespace-break-spaces sm:block sm:mt-4 sm:mb-4">Updating your existing one?</span><br className="sm:hidden" />
             <span className="text-yellow-300">I do exactly that.</span>
           </h1>
-          <p className="text-lg lg:text-xl mb-8">
+          <p className="text-lg lg:text-xl mb-8 text-center">
             I specialize in building fast, mobile-friendly websites for small and medium businesses.
             Elevate your brand&apos;s online presence and connect your offerings to your customers.
           </p>
