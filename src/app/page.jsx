@@ -200,7 +200,7 @@ export default async function Home() {
           <h2 className="section-heading text-4xl text-center">Latest Post</h2>
           <Card className="max-w-md lg:max-w-3xl mx-auto">
             <CardHeader>
-              <CardTitle className="text-balance"><Link href={`/blog/${latestBlog.slug}`}>{latestBlog.title}</Link></CardTitle>
+              <CardTitle className="text-balance hover:text-muted-foreground"><Link href={`/blog/${latestBlog.slug}`}>{latestBlog.title}</Link></CardTitle>
               <CardDescription className="text-primary">
                 {latestBlog.sub_title}
               </CardDescription>
