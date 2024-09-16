@@ -237,7 +237,7 @@ export default async function Home() {
         </CardHeader>
         <CardContent className="w-1/2 p-4 sm:text-center">
           <p className="font-bold text-balance mb-2 leading-tight">Hello World - beats to code to</p>
-          <a href="https://open.spotify.com/playlist/77hkmQ7eTgfvpjPXDPjSRT?si=1f36b33a95fc4621" className={buttonVariants({ variant: "default", size: "sm" }) + ` justify-center`} target='_blank'>Play on Spotify</a>
+          <a href="https://open.spotify.com/playlist/77hkmQ7eTgfvpjPXDPjSRT?si=1f36b33a95fc4621" className={buttonVariants({ variant: "default", size: "sm" }) + ` justify-center lg:h-11 lg:px-8`} target='_blank'>Play on Spotify</a>
         </CardContent>
       </Card>
       
@@ -251,7 +251,7 @@ export default async function Home() {
         </CardHeader>
         <CardContent className="w-1/2 p-4 sm:text-center">
           <p className="font-bold text-balance mb-2 leading-tight">Hello World 2 - beats to code to</p>
-          <a href="https://open.spotify.com/playlist/3TWuzDL7v8DKhcFatC1g8D?si=3279f73b5ba242a3" className={buttonVariants({ variant: "default", size: "sm" }) + ` justify-center`} target='_blank'>Play on Spotify</a>
+          <a href="https://open.spotify.com/playlist/3TWuzDL7v8DKhcFatC1g8D?si=3279f73b5ba242a3" className={buttonVariants({ variant: "default", size: "sm" }) + ` justify-center lg:h-11 lg:px-8`} target='_blank'>Play on Spotify</a>
         </CardContent>
       </Card>
 
