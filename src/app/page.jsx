@@ -94,7 +94,21 @@ export default async function Home() {
             <TabsTrigger value="Other">Other</TabsTrigger>
             <TabsTrigger value="Cool-stuff">Stuff</TabsTrigger>
           </TabsList>
-          <TabsContent value="career" className="px-4 py-2">I&#39;m a Software Developer at <a className="underline" href="https://empire-medical.com/" target="_blank">Empire Medical</a>. In my previous work (both professional and personal) I&#39;ve mainly used a pure JavaScript stack, but I use PHP & Laravel in my current position. I&#39;m dedicated to building exceptional experiences and writing quality code that solves problems… and I like to push to production often! View my projects and skills to learn more.</TabsContent>
+          <TabsContent value="career" className="px-4 py-2">
+            <p>
+              Currently, I&#39;m a Software Developer at <a className="underline" href="https://empire-medical.com/" target="_blank">Empire Medical</a>, where we use PHP & Laravel to build and maintain a custom business application. We&apos;re a smaller team, but super effective--I get to make meaningful contributions on a consistent basis. Before my current position, I mainly worked in the JavaScript ecosystem, so I'm proficient there as well... I also offer web development services as a freelancer. In all the work that I do, I strive to deliver exceptional user experiences.
+            </p>
+            {/* How do I format this better visually? An expandable type element or just styling? */}
+            <div>Here are some lessons I&apos;ve learned recently:</div>
+            <p>Not participating in or actively shaping company culture results in the death of company culture.</p>
+            <p>On the flip side,</p>
+            <p>Caring about the people you work with while constantly and actively shaping culture, especially as a leader, results in 'buy-in' and people wanting to get their hands dirty for the mission.</p>
+            <p>This one&apos;s like walking a fine line... You can get more things dones when you have the right people making decisions. It&apos;s dreadful when policy clogs up the ability of getting a task done. But, you always win when you trust the process.</p>
+            <p>When working on a new codebase, get comfortable navigating around all of it as quickly as possible.</p>
+            <p>Read the docs!</p>
+            <p>An appropriately designated amount of research time before a project or task can save you a lot of time.</p>
+            <p>Don&apos;t just bring up problems, offer solutions.</p>
+          </TabsContent>
           <TabsContent value="tech-stack" className="px-4 py-2 w-fit mx-auto">
             {/* Frontend */}
             <div className="bg-secondary w-fit p-1 rounded-sm mb-2">Frontend</div>
