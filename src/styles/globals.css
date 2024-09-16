@@ -82,8 +82,12 @@
   [role="tablist"] > [aria-selected="true"] {
     @apply border-b-2 border-b-primary rounded-none -mb-2;
   }
-  .bg-card li {
+  .bg-card li, .expandable li {
     list-style-position: inside;
+  }
+  .expandable li {
+    list-style-type: disc;
+    margin-bottom: 1rem;
   }
   .blog-post h1, .blog-post h2, .blog-post h3, .blog-post h4, .blog-post h5, .blog-post h6{
     font-weight: bold;

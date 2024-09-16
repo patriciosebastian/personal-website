@@ -12,6 +12,7 @@ import HelloWorld1 from '../../public/Hello_World_Desk_Setup_optimized.webp'
 import HelloWorld2 from '../../public/Hello_World_Desk_Setup_2_optimized.webp'
 import TouchBase from '../../public/TouchBaseApp_Optimized.webp'
 import ClearCalc from '../../public/ClearCalc_Optimized.webp'
+import Expandable from '@/components/ui/expandable'
 
 export default async function Home() {
   const { data: blogs, error } = await supabase
@@ -96,18 +97,19 @@ export default async function Home() {
           </TabsList>
           <TabsContent value="career" className="px-4 py-2">
             <p>
-              Currently, I&#39;m a Software Developer at <a className="underline" href="https://empire-medical.com/" target="_blank">Empire Medical</a>, where we use PHP & Laravel to build and maintain a custom business application. We&apos;re a smaller team, but super effective--I get to make meaningful contributions on a consistent basis. Before my current position, I mainly worked in the JavaScript ecosystem, so I'm proficient there as well... I also offer web development services as a freelancer. In all the work that I do, I strive to deliver exceptional user experiences.
+              Currently, I&#39;m a Software Developer at <a className="underline" href="https://empire-medical.com/" target="_blank">Empire Medical</a>, where we use PHP & Laravel to build and maintain a custom business application. We&apos;re a smaller team, but super effective—I get to make meaningful contributions on a consistent basis. Before my current position, I mainly worked in the JavaScript ecosystem, so I'm proficient there as well... I also offer web development services as a freelancer. In all the work that I do, I strive to deliver exceptional user experiences.
             </p>
-            {/* How do I format this better visually? An expandable type element or just styling? */}
-            <div>Here are some lessons I&apos;ve learned recently:</div>
-            <p>Not participating in or actively shaping company culture results in the death of company culture.</p>
-            <p>On the flip side,</p>
-            <p>Caring about the people you work with while constantly and actively shaping culture, especially as a leader, results in 'buy-in' and people wanting to get their hands dirty for the mission.</p>
-            <p>This one&apos;s like walking a fine line... You can get more things dones when you have the right people making decisions. It&apos;s dreadful when policy clogs up the ability of getting a task done. But, you always win when you trust the process.</p>
-            <p>When working on a new codebase, get comfortable navigating around all of it as quickly as possible.</p>
-            <p>Read the docs!</p>
-            <p>An appropriately designated amount of research time before a project or task can save you a lot of time.</p>
-            <p>Don&apos;t just bring up problems, offer solutions.</p>
+            <Expandable trigger="Here are seven lessons I've learned" className="mt-4">
+              <ul className="leading-snug bg-secondary rounded-md p-4">
+                <li>Not participating in or actively shaping company culture results in the death of company culture. On the flip side,</li>
+                <li>Actively shaping culture, and caring about the people you work with, especially as a leader, results in 'buy-in' and people wanting to get their hands dirty for the mission.</li>
+                <li>You can get more things done when you have the right people making decisions, while policy clogs up the ability of getting a task done. But, you always win when you <em>trust the process</em>. A fine line.</li>
+                <li>When working on a new codebase, get comfortable navigating around all of it as quickly as possible.</li>
+                <li>Read the docs... again!</li>
+                <li>Taking the time to research before starting a project or task can save you a lot of time.</li>
+                <li>Don&apos;t just bring up problems; offer solutions.</li>
+              </ul>
+            </Expandable>
           </TabsContent>
           <TabsContent value="tech-stack" className="px-4 py-2 w-fit mx-auto">
             {/* Frontend */}
