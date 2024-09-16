@@ -8,7 +8,7 @@ export default function MainFooter() {
         <Link href="/freelance">Freelance</Link>
         <Link href="/blog">Blog</Link>
       </div>
-      <small className="block text-center mb-2 text-muted-foreground">Your Web Dev &amp; Internet Neighbor</small>
+      <small className="block text-center mb-2 text-muted-foreground">Your Web Dev Internet Neighbor</small>
       <div className="flex justify-center items-center bg-muted-foreground h-[1px] content-none lg:mb-4 text-muted-foreground">
         <small className="block text-center bg-background px-1">&copy; 2024</small>
       </div>
