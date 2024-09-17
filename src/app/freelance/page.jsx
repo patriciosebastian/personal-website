@@ -61,16 +61,16 @@ export default function FreelancePage() {
         <h2 className="section-heading text-3xl mb-16">Services</h2>
         <div className="text-balance lg:flex justify-center items-center gap-4 lg:mx-auto">
           <div className="mb-8 lg:mb-0 lg:w-1/3">
-          <svg width="75" height="75" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" className="stroke-foreground fill-background mx-auto mb-4"><path d="M29 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM26.5 2a.5.5 0 1 0 0 1 .5.5 0 0 0 0-1zm-2 0a.5.5 0 1 0 0 1 .5.5 0 0 0 0-1zM10 14.4H4v-.8h6v.8zm4-3H4v-.8h10v.8zm0-3H4v-.8h10v.8zm17 23H1v-.8h30v.8zm0-3H1v-.8h30v.8zm0-3H1v-.8h30v.8zm0-3H1a.4.4 0 0 1-.4-.4V1C.6.8.8.6 1 .6h30c.2 0 .4.2.4.4v21c0 .2-.2.4-.4.4zm-29.6-.8h29.2V4.4H1.4v17.2zm0-18h29.2V1.4H1.4v2.2zM24 15.4a4.4 4.4 0 1 1 0-8.8 4.4 4.4 0 0 1 0 8.8zm-1.5-1a3.6 3.6 0 0 0 4.8-5l-3 1.9-1.8 3zm-1.8-5a3.6 3.6 0 0 0 1.2 4.6l1.6-2.9-2.8-1.6zM21 9l2.9 1.7 3-1.7a3.6 3.6 0 0 0-6 0z"/></svg>
-          Front-end/Design
-          </div>
-          <div className="mb-8 lg:mb-0 lg:w-1/3">
-          <svg width="75" height="75" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" className="stroke-foreground fill-foreground mx-auto mb-4" stroke-width=".1"><circle cx="23" cy="23" r="1"/><path d="M8 22h12v2H8z" className="dark:stroke-background dark:fill-foreground"/><circle cx="23" cy="9" r="1"/><path d="M8 8h12v2H8z" className="dark:stroke-background dark:fill-foreground"/><path d="M26 14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2v4H6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2h-2v-4ZM6 6h20v6H6Zm20 20H6v-6h20Zm-4-8H10v-4h12Z"/></svg>
-          Backend
+            <svg width="75" height="75" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" className="stroke-foreground fill-background mx-auto mb-4"><path d="M29 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM26.5 2a.5.5 0 1 0 0 1 .5.5 0 0 0 0-1zm-2 0a.5.5 0 1 0 0 1 .5.5 0 0 0 0-1zM10 14.4H4v-.8h6v.8zm4-3H4v-.8h10v.8zm0-3H4v-.8h10v.8zm17 23H1v-.8h30v.8zm0-3H1v-.8h30v.8zm0-3H1v-.8h30v.8zm0-3H1a.4.4 0 0 1-.4-.4V1C.6.8.8.6 1 .6h30c.2 0 .4.2.4.4v21c0 .2-.2.4-.4.4zm-29.6-.8h29.2V4.4H1.4v17.2zm0-18h29.2V1.4H1.4v2.2zM24 15.4a4.4 4.4 0 1 1 0-8.8 4.4 4.4 0 0 1 0 8.8zm-1.5-1a3.6 3.6 0 0 0 4.8-5l-3 1.9-1.8 3zm-1.8-5a3.6 3.6 0 0 0 1.2 4.6l1.6-2.9-2.8-1.6zM21 9l2.9 1.7 3-1.7a3.6 3.6 0 0 0-6 0z"/></svg>
+            Squarespace Websites
           </div>
           <div className="lg:w-1/3">
-          <svg width="75" height="75" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" className="stroke-foreground dark:fill-background mx-auto mb-4 stroke-0 dark:stroke-1"><path d="M21 4.5h-.2l-.9.3c-.5-1.5-1.4-3-3.1-3h-.1A2 2 0 0 0 15 1c-3.9 0-5.8 4.8-6.3 7.3L6 9.2c-.9.2-.9.2-1 1L2.8 27.8l17 3.2zM17.1 3C18 3 18.6 4 19 5.1l-1.5.5V5c0-.8-.1-1.5-.3-2.2zm-.7 2.8V6l-3 1c.3-1.7 1.3-3 2.6-3.8a7.2 7.2 0 0 1 .4 2.6zM15 2l.5.2c-1.8 1-3 2.9-3.2 5l-2.3.7c.6-2.2 2.2-5.8 5-5.8zm.6 13.1c-.6-.3-1.4-.5-2.2-.5-1.8 0-1.9 1.1-1.9 1.4 0 1.6 4 2.2 4 5.8l.1.4c0 2.4-1.9 4.3-4.3 4.3h-.1c-1.7 0-3.2-.7-4.3-1.8l.8-2.6c.8.7 1.8 1.1 2.8 1.3h.1c.7 0 1.2-.5 1.2-1.2 0-2-3.3-2-3.3-5.4a5.5 5.5 0 0 1 6-5.5 5 5 0 0 1 2.4.4l-1.2 3.4zM20.2 31l9-2L25.9 7c0-.2-.1-.3-.3-.3l-2.4-.1-1.8-1.8-.1-.1L20 31z"/></svg>
-          Shopify Websites
+            <svg width="75" height="75" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" className="stroke-foreground dark:fill-background mx-auto mb-4 stroke-0 dark:stroke-1"><path d="M21 4.5h-.2l-.9.3c-.5-1.5-1.4-3-3.1-3h-.1A2 2 0 0 0 15 1c-3.9 0-5.8 4.8-6.3 7.3L6 9.2c-.9.2-.9.2-1 1L2.8 27.8l17 3.2zM17.1 3C18 3 18.6 4 19 5.1l-1.5.5V5c0-.8-.1-1.5-.3-2.2zm-.7 2.8V6l-3 1c.3-1.7 1.3-3 2.6-3.8a7.2 7.2 0 0 1 .4 2.6zM15 2l.5.2c-1.8 1-3 2.9-3.2 5l-2.3.7c.6-2.2 2.2-5.8 5-5.8zm.6 13.1c-.6-.3-1.4-.5-2.2-.5-1.8 0-1.9 1.1-1.9 1.4 0 1.6 4 2.2 4 5.8l.1.4c0 2.4-1.9 4.3-4.3 4.3h-.1c-1.7 0-3.2-.7-4.3-1.8l.8-2.6c.8.7 1.8 1.1 2.8 1.3h.1c.7 0 1.2-.5 1.2-1.2 0-2-3.3-2-3.3-5.4a5.5 5.5 0 0 1 6-5.5 5 5 0 0 1 2.4.4l-1.2 3.4zM20.2 31l9-2L25.9 7c0-.2-.1-.3-.3-.3l-2.4-.1-1.8-1.8-.1-.1L20 31z"/></svg>
+            Shopify Websites
+          </div>
+          <div className="mb-8 lg:mb-0 lg:w-1/3">
+            <svg width="75" height="75" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" className="stroke-foreground fill-foreground mx-auto mb-4" stroke-width=".1"><circle cx="23" cy="23" r="1"/><path d="M8 22h12v2H8z" className="dark:stroke-background dark:fill-foreground"/><circle cx="23" cy="9" r="1"/><path d="M8 8h12v2H8z" className="dark:stroke-background dark:fill-foreground"/><path d="M26 14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2v4H6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2h-2v-4ZM6 6h20v6H6Zm20 20H6v-6h20Zm-4-8H10v-4h12Z"/></svg>
+            Custom Code
           </div>
         </div>
       </section>
@@ -84,7 +84,7 @@ export default function FreelancePage() {
         <div className="lg:flex flex-wrap justify-center items-center gap-4">
           <Card className="mb-4 lg:w-[48%]">
             <CardHeader>
-              <CardTitle>SquareSpace</CardTitle>
+              <CardTitle>Squarespace</CardTitle>
               <CardDescription>Fixed rate</CardDescription>
               <p className="font-bold">$350</p>
               <hr />
