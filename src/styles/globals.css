@@ -101,7 +101,7 @@
 
 body.__className_36bd41[data-scroll-locked="1"] {
   overflow: auto !important;
-  overscroll-behavior: auto !important; /*scroll?*/
+  overscroll-behavior: auto !important;
   position: relative !important;
   padding-left: 2rem !important;
   padding-top: 0px !important;
