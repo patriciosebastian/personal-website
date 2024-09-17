@@ -183,7 +183,7 @@ export default async function Home() {
           <CardHeader className="lg:w-1/2">
             <Image src={TouchBase} className="mb-4" alt="The home page of Touch Base" />
             <CardTitle>Touch Base</CardTitle>
-            <CardDescription className="text-pretty !mb-1">Full stack React Contacts Management app</CardDescription>
+            <CardDescription className="text-pretty text-foreground !mb-1">Full stack React Contacts Management app</CardDescription>
             <div className="flex flex-wrap items-center gap-1">
               <Badge variant="outline">CSS</Badge>
               <Badge variant="outline">React</Badge>
@@ -197,7 +197,7 @@ export default async function Home() {
           </CardHeader>
           <CardContent className="lg:w-1/2">
             <p className="text-balance mb-6 lg:mt-6 lg:mb-8">
-              Touch Base uses React-Router for frontend navigation and Node.js & Express for its backend API, connected to a PSQL database. It features a fully responsive design, full CRUD capabilities for contacts and groups, Firebase Auth, and SendGrid for email functionality. AWS S3 is used for image hosting, and a demo login lets you easily tour the app and safely perform all actions.
+              Touch Base uses React-Router for frontend navigation and Node.js & Express for its backend API, connected to a PSQL database. It features a fully responsive design, full CRUD capabilities for contacts and groups, Firebase Auth, and SendGrid for email functionality. AWS S3 is used for image hosting and a demo login lets you easily tour the app and safely perform all actions.
             </p>
             <a href="https://www.touchbaseapp.co" target='_blank' className={buttonVariants({ variant: "default" }) + ` h-12 justify-center lg:flex lg:mx-auto`}>Visit Site</a>
           </CardContent>
@@ -208,7 +208,7 @@ export default async function Home() {
           <CardHeader className="lg:w-1/2">
             <Image src={ClearCalc} className="mb-4" alt="The home page of ClearCalc" />
             <CardTitle>ClearCalc</CardTitle>
-            <CardDescription className="text-pretty !mb-1">ClearCalc is a JavaScrpit amortization schedule generator</CardDescription>
+            <CardDescription className="text-pretty text-foreground !mb-1">ClearCalc is a collection of Personal Finance tools written in JavaScript</CardDescription>
             <div className="flex flex-wrap items-center gap-1">
               <Badge variant="outline">HTML</Badge>
               <Badge variant="outline">CSS</Badge>
@@ -218,7 +218,7 @@ export default async function Home() {
           </CardHeader>
           <CardContent className="lg:w-1/2">
             <p className="text-balance mb-6 lg:mt-6 lg:mb-8">
-              ClearCalc is a JavaScript amortization schedule generator. Based on user inputs, it calculates loan details and generates a complete amortization schedule with all the data you would expect to see. Built with JavaScript and Bootstrap, it&#39;s designed to be straightforward and easy to use. It&#39;s fully responsive with side scrolling tables on smaller sized viewports. Try it out now!
+              ClearCalc tools include the Amortization Schedule Generator, Home Buying Power Calculator, and more, as well as a blog. It relies heavily on user inputs to calculate details and generate results with all the data you would expect to see. Built with JavaScript and Bootstrap, it&#39;s designed to be straightforward and easy to use. Of course, it&#39;s fully responsive. Try it out now!
             </p>
             <a href="https://www.clearcalc.app" target='_blank' className={buttonVariants({ variant: "default" }) + ` h-12 justify-center lg:flex lg:mx-auto`}>Visit Site</a>
           </CardContent>
