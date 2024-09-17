@@ -34,12 +34,12 @@ export default async function Home() {
       <div className="min-h-svh flex flex-col justify-center items-center text-center text-balance relative">
         <h1 className="text-8xl">Patricio Salazar</h1>
         <p>Software Developer and stand up community member in Austin, TX.</p>
-        {/* xxx Badges */}
+        {/* CTA's */}
         <div className="flex justify-center items-center gap-4 mt-6">
           <Link href="#Projects" className={buttonVariants({ variant: "outline" }) + ` h-12 justify-center !border-foreground font-bold`}>Projects</Link>
           <Link href={`/blog/${latestBlog.slug}`} className={buttonVariants({ variant: "outline" }) + ` h-12 justify-center !border-foreground font-bold`}>Latest Post</Link>
         </div>
-        {/* Social Badges */}
+        {/* Social Icons */}
         <div className="flex justify-center items-center gap-4 absolute bottom-16">
           {/* github */}
           <Link href="https://github.com/patriciosebastian" className="justify-center px-4 font-bold" target="_blank">
@@ -92,8 +92,8 @@ export default async function Home() {
           <TabsList className=" w-full bg-transparent border-b-2 rounded-none p-0 box-border">
             <TabsTrigger value="career">Career</TabsTrigger>
             <TabsTrigger value="tech-stack">Tech Stack</TabsTrigger>
-            <TabsTrigger value="Other">Other</TabsTrigger>
-            <TabsTrigger value="Cool-stuff">Stuff</TabsTrigger>
+            <TabsTrigger value="personal">Personal</TabsTrigger>
+            {/* <TabsTrigger value="cool-stuff">Stuff</TabsTrigger> */}
           </TabsList>
           <TabsContent value="career" className="px-4 py-2">
             <p>
@@ -103,10 +103,10 @@ export default async function Home() {
               <ul className="leading-snug bg-secondary rounded-md p-4">
                 <li>Not participating in or actively shaping company culture results in the death of company culture. On the flip side,</li>
                 <li>Actively shaping culture, and caring about the people you work with, especially as a leader, results in 'buy-in' and people wanting to get their hands dirty for the mission.</li>
-                <li>You can get more things done when you have the right people making decisions, while policy clogs up the ability of getting a task done. But, you always win when you <em>trust the process</em>. A fine line.</li>
+                <li>You can get more things done when you have the right people making decisions. Policy can hinder progress, but you always win when you <em>trust the process</em>. It&apos;s a fine line.</li>
                 <li>When working on a new codebase, get comfortable navigating around all of it as quickly as possible.</li>
                 <li>Read the docs... again!</li>
-                <li>Taking the time to research before starting a project or task can save you a lot of time.</li>
+                <li>Taking the time to research before starting a project or task can save you a lot of headache.</li>
                 <li>Don&apos;t just bring up problems; offer solutions.</li>
               </ul>
             </Expandable>
@@ -151,8 +151,25 @@ export default async function Home() {
               <span>Notion</span>
             </div>
           </TabsContent>
-          <TabsContent value="Other" className="px-4 py-2">Other.</TabsContent>
-          <TabsContent value="Cool-stuff" className="px-4 py-2">Cool stuff.</TabsContent>
+          <TabsContent value="personal" className="px-4 py-2">
+            <p>
+              I've done and seen many things in life, but hands down the greatest experience has been to be a husband to my wife and the father of our two children.
+            </p>
+            <p>Here are some quick things:</p>
+            <ul className="px-1">
+              <li>✅ Peruvian. Spanish is my first language.</li>
+              <li>✅ Born and raised in LA.</li>
+              <li>✅ Lived in Mexico City for a year.</li>
+              <li>✅ Lived in Oregon for 5.</li>
+              <li>✅ Now, ATX is home.</li>
+              <li>✅ I love spicy food. You can&apos;t take more heat than me. Yes, that&apos;s a challenge.</li>
+              <li>✅ Audio Engineering degree.</li>
+              <li>✅ When I&apos;m lifting weights at 10:30pm I&apos;m the most dangerous man alive (in my head).</li>
+              <li>✅ I&apos;m getting nerdier the older I get. Is that a thing?</li>
+              <li>✅ Let's be real, I haven&apos;t read a full book in years.</li>
+            </ul>
+          </TabsContent>
+          {/* <TabsContent value="cool-stuff" className="px-4 py-2">Cool stuff.</TabsContent> */}
         </Tabs>
       </div>
 
