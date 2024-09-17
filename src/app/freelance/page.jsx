@@ -84,7 +84,7 @@ export default function FreelancePage() {
         <div className="lg:flex flex-wrap justify-center items-center gap-4">
           <Card className="mb-4 lg:w-[48%]">
             <CardHeader>
-              <CardTitle>Tier 1</CardTitle>
+              <CardTitle>SquareSpace</CardTitle>
               <CardDescription>Fixed rate</CardDescription>
               <p className="font-bold">$350</p>
               <hr />
@@ -93,8 +93,8 @@ export default function FreelancePage() {
               <p className="mb-4">What you get</p>
               <ul>
                 <li className="list-disc">Myself as your personal developer</li>
-                <li className="list-disc">Custom development or platform development</li>
-                <li className="list-disc">3 revisions</li>
+                <li className="list-disc">Custom Squarespace website</li>
+                <li className="list-disc">Unlimited revisions</li>
               </ul>
             </CardContent>
             <CardFooter>
@@ -105,7 +105,7 @@ export default function FreelancePage() {
           {/* Pricing Card 2 */}
           <Card className="mb-4 lg:w-[48%]">
             <CardHeader>
-              <CardTitle>Tier 2</CardTitle>
+              <CardTitle>Shopify</CardTitle>
               <CardDescription>Fixed rate</CardDescription>
               <p className="font-bold">$700</p>
               <hr />
@@ -114,8 +114,8 @@ export default function FreelancePage() {
               <p className="mb-4">What you get</p>
               <ul>
                 <li className="list-disc">Myself as your personal developer</li>
-                <li className="list-disc">Custom development or platform development</li>
-                <li className="list-disc">3 revisions</li>
+                <li className="list-disc">Custom Shopify website</li>
+                <li className="list-disc">Unlimited revisions</li>
               </ul>
             </CardContent>
             <CardFooter>
@@ -126,7 +126,7 @@ export default function FreelancePage() {
           {/* Pricing Card 3 */}
           <Card className="mb-4 lg:w-[48%]">
             <CardHeader>
-              <CardTitle>Tier 3</CardTitle>
+              <CardTitle>Custom Code</CardTitle>
               <CardDescription>Fixed rate</CardDescription>
               <p className="font-bold">$1,250</p>
               <hr />
@@ -135,8 +135,8 @@ export default function FreelancePage() {
               <p className="mb-4">What you get</p>
               <ul>
                 <li className="list-disc">Myself as your personal developer</li>
-                <li className="list-disc">Custom development or platform development</li>
-                <li className="list-disc">3 revisions</li>
+                <li className="list-disc">Custom development from scratch</li>
+                <li className="list-disc">Unlimited revisions</li>
               </ul>
             </CardContent>
             <CardFooter>
