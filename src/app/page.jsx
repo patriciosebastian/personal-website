@@ -100,7 +100,7 @@ export default async function Home() {
               Currently, I&#39;m a Software Developer at <a className="underline" href="https://empire-medical.com/" target="_blank">Empire Medical</a>, where we use PHP & Laravel to build and maintain a custom business application. We&apos;re a smaller team, but super effective—I get to make meaningful contributions on a consistent basis. Before my current position, I mainly worked in the JavaScript ecosystem, so I'm proficient there as well... I also offer web development services as a freelancer. In all the work that I do, I strive to deliver exceptional user experiences.
             </p>
             <Expandable trigger="Here are seven lessons I've learned" className="mt-4">
-              <ul className="leading-snug bg-secondary rounded-md p-4">
+              <ul className="leading-snug border rounded-md p-4">
                 <li>Not participating in or actively shaping company culture results in the death of company culture. On the flip side,</li>
                 <li>Actively shaping culture, and caring about the people you work with, especially as a leader, results in 'buy-in' and people wanting to get their hands dirty for the mission.</li>
                 <li>You can get more things done when you have the right people making decisions. Policy can hinder progress, but you always win when you <em>trust the process</em>. It&apos;s a fine line.</li>
