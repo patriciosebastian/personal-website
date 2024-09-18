@@ -97,12 +97,12 @@ export default async function Home() {
           </TabsList>
           <TabsContent value="career" className="px-4 py-2">
             <p>
-              Currently, I&#39;m a Software Developer at <a className="underline" href="https://empire-medical.com/" target="_blank">Empire Medical</a>, where we use PHP & Laravel to build and maintain a custom business application. We&apos;re a smaller team, but super effective—I get to make meaningful contributions on a consistent basis. Before my current position, I mainly worked in the JavaScript ecosystem, so I'm proficient there as well... I also offer web development services as a freelancer. In all the work that I do, I strive to deliver exceptional user experiences.
+              Currently, I&#39;m a Software Developer at <a className="underline" href="https://empire-medical.com/" target="_blank">Empire Medical</a>, where we use PHP and Laravel to build and maintain a custom business application. We&apos;re a smaller team but super effective—I get to make meaningful contributions on a consistent basis. Before my current position, I mainly worked in the JavaScript ecosystem, so I&apos;m proficient there as well. I also offer web development services as a freelancer. In all the work I do, I strive to deliver exceptional user experiences.
             </p>
             <Expandable trigger="Here are seven lessons I've learned" className="mt-4">
               <ul className="leading-snug border rounded-md p-4">
                 <li>Not participating in or actively shaping company culture results in the death of company culture. On the flip side,</li>
-                <li>Actively shaping culture, and caring about the people you work with, especially as a leader, results in 'buy-in' and people wanting to get their hands dirty for the mission.</li>
+                <li>Actively shaping culture, and caring about the people you work with, especially as a leader, results in &apos;buy-in&apos; and people wanting to get their hands dirty for the mission.</li>
                 <li>You can get more things done when you have the right people making decisions. Policy can hinder progress, but you always win when you <em>trust the process</em>. It&apos;s a fine line.</li>
                 <li>When working on a new codebase, get comfortable navigating around all of it as quickly as possible.</li>
                 <li>Read the docs... again!</li>
@@ -153,7 +153,7 @@ export default async function Home() {
           </TabsContent>
           <TabsContent value="personal" className="px-4 py-2">
             <p>
-              I've done and seen many things in life, but hands down the greatest experience has been to be a husband to my wife and the father of our two children.
+              I&apos;ve done and seen many things in life, but hands down the greatest experience has been to be a husband to my wife and the father of our two children.
             </p>
             <p>Here are some quick things:</p>
             <ul className="px-1">
@@ -166,7 +166,7 @@ export default async function Home() {
               <li>✅ Audio Engineering degree.</li>
               <li>✅ When I&apos;m lifting weights at 10:30pm I&apos;m the most dangerous man alive (in my head).</li>
               <li>✅ I&apos;m getting nerdier the older I get. Is that a thing?</li>
-              <li>✅ Let's be real, I haven&apos;t read a full book in years.</li>
+              <li>✅ Let&apos;s be real, I haven&apos;t read a full book in years.</li>
             </ul>
           </TabsContent>
           {/* <TabsContent value="cool-stuff" className="px-4 py-2">Cool stuff.</TabsContent> */}
