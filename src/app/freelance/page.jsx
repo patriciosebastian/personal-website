@@ -98,7 +98,7 @@ export default function FreelancePage() {
               </ul>
             </CardContent>
             <CardFooter>
-              <Button>Book A Call</Button>
+              <Link href="https://calendly.com/psalazardev/introduction" target="_blank" className={buttonVariants({ variant: "default" })}>Book A Call</Link>
             </CardFooter>
           </Card>
 
@@ -119,7 +119,7 @@ export default function FreelancePage() {
               </ul>
             </CardContent>
             <CardFooter>
-              <Button>Book A Call</Button>
+              <Link href="https://calendly.com/psalazardev/introduction" target="_blank" className={buttonVariants({ variant: "default" })}>Book A Call</Link>
             </CardFooter>
           </Card>
 
@@ -140,7 +140,7 @@ export default function FreelancePage() {
               </ul>
             </CardContent>
             <CardFooter>
-              <Button>Book A Call</Button>
+              <Link href="https://calendly.com/psalazardev/introduction" target="_blank" className={buttonVariants({ variant: "default" })}>Book A Call</Link>
             </CardFooter>
           </Card>
         </div>
