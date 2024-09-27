@@ -182,7 +182,7 @@ export default async function Home() {
         <Card className="mb-4 max-w-md lg:flex lg:max-w-3xl mx-auto lg:mb-6">
           <CardHeader className="lg:w-1/2">
             <Image src={TouchBase} className="mb-4" alt="The home page of Touch Base" />
-            <CardTitle>Touch Base</CardTitle>
+            <CardTitle>Touch Base <Badge className="w-fit border-green-600 text-green-600 align-middle shadow" variant="outline">New Feature Added</Badge></CardTitle>
             <CardDescription className="text-pretty text-foreground !mb-1">Full stack React Contacts Management app</CardDescription>
             <div className="flex flex-wrap items-center gap-1">
               <Badge variant="outline">CSS</Badge>
@@ -197,7 +197,7 @@ export default async function Home() {
           </CardHeader>
           <CardContent className="lg:w-1/2">
             <p className="text-balance mb-6 lg:mt-6 lg:mb-8">
-              Touch Base uses React-Router for frontend navigation and Node.js & Express for its backend API, connected to a PSQL database. It features a fully responsive design, full CRUD capabilities for contacts and groups, Firebase Auth, and SendGrid for email functionality. AWS S3 is used for image hosting and a demo login lets you easily tour the app and safely perform all actions.
+              Touch Base uses React-Router for frontend navigation and Node.js & Express for its backend API, connected to a PSQL database. It features a fully responsive design, full CRUD capabilities for contacts and groups, Firebase Auth, and SendGrid for email functionality. AWS S3 is used for image hosting and a demo login lets you easily tour the app and safely perform all actions. <span className="font-bold">New feature</span>: you can now import contacts from a CSV file. Go try it out or <Link href="/blog/how-i-added-csv-importing-in-my-react-project" className="underline">read my post about it</Link>!
             </p>
             <a href="https://www.touchbaseapp.co" target='_blank' className={buttonVariants({ variant: "default" }) + ` h-12 justify-center lg:flex lg:mx-auto`}>Visit Site</a>
           </CardContent>
