@@ -58,11 +58,11 @@ export default async function BlogPostPage({ params }) {
       <Spacer />
 
       <div className="blog-post max-w-lg lg:max-w-3xl mx-auto">
-        <h1 className="text-3xl font-bold text-balance">{blog.title}</h1>
+        <h1 className="text-3xl font-bold text-pretty">{blog.title}</h1>
         <p>{blog.sub_title}</p>
-        <small className="text-muted-foreground">{new Date(blog.created_at).toLocaleDateString()}</small>
+        <small>{new Date(blog.created_at).toLocaleDateString()}</small>
         <Spacer className="h-6" />
-        <div className="text-balance">{parse(blog.body, { replace: transform })}</div>
+        <div>{parse(blog.body, { replace: transform })}</div>
       </div>
 
       <Spacer />

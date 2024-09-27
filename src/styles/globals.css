@@ -97,6 +97,9 @@
     margin-bottom: 1rem;
     text-wrap: balance;
   }
+  code {
+    @apply bg-secondary rounded text-destructive text-base p-1;
+  }
 }
 
 body.__className_36bd41[data-scroll-locked="1"] {
