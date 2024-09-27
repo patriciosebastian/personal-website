@@ -4,6 +4,7 @@ import Spacer from '@/components/ui/spacer'
 import { supabase } from '@/lib/supabaseClient'
 import parse from 'html-react-parser'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default async function BlogPostPage({ params }) {
   const { slug } = params;
@@ -31,6 +32,21 @@ export default async function BlogPostPage({ params }) {
           height={height ? parseInt(height, 10) : 500}
           className={className ? className : ''}
         />
+      );
+    }
+
+    // Replace anchor tags with Next.js Link component
+    if (node.type === 'tag' && node.name === 'a') {
+      const { href, class: className } = node.attribs;
+      return (
+        <Link
+          href={href}
+          className={className ? className : ''}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {node.children[0].data}
+        </Link>
       );
     }
   };
