@@ -40,7 +40,7 @@ export default async function Home() {
           <Link href={`/blog/${latestBlog ? latestBlog.slug : ''}`} className={buttonVariants({ variant: "outline" }) + ` h-12 justify-center !border-foreground font-bold`}>Latest Post</Link>
         </div>
         {/* Social Icons */}
-        <div className="flex justify-center items-center gap-4 absolute bottom-16">
+        <div className="flex justify-center items-center gap-4 landscape:static landscape:mt-8 landscape:md:absolute landscape:md:mt-0 absolute bottom-16">
           {/* github */}
           <Link href="https://github.com/patriciosebastian" className="justify-center px-4 font-bold" target="_blank">
             <svg width="34px" height="34px" viewBox="-2.5 0 19 19" xmlns="http://www.w3.org/2000/svg" className="stroke-background fill-foreground">
