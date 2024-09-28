@@ -199,7 +199,7 @@ export default async function Home() {
             <p className="text-balance mb-6 lg:mt-6 lg:mb-8">
               Touch Base uses React-Router for frontend navigation and Node.js & Express for its backend API, connected to a PSQL database. It features a fully responsive design, full CRUD capabilities for contacts and groups, Firebase Auth, and SendGrid for email functionality. AWS S3 is used for image hosting and a demo login lets you easily tour the app and safely perform all actions. <span className="font-bold">New feature</span>: you can now import contacts from a CSV file. Go try it out or <Link href="/blog/how-i-added-csv-importing-in-my-react-project" className="underline">read my post about it</Link>!
             </p>
-            <a href="https://www.touchbaseapp.co" target='_blank' className={buttonVariants({ variant: "default" }) + ` h-12 justify-center lg:flex lg:mx-auto`}>Visit Site</a>
+            <a href="https://touchbaseapp.co" target='_blank' className={buttonVariants({ variant: "default" }) + ` h-12 justify-center lg:flex lg:mx-auto`}>Visit Site</a>
           </CardContent>
         </Card>
 
@@ -220,7 +220,7 @@ export default async function Home() {
             <p className="text-balance mb-6 lg:mt-6 lg:mb-8">
               ClearCalc tools include the Amortization Schedule Generator, Home Buying Power Calculator, and more, as well as a blog. It relies heavily on user inputs to calculate details and generate results with all the data you would expect to see. Built with JavaScript and Bootstrap, it&#39;s designed to be straightforward and easy to use. Of course, it&#39;s fully responsive. Try it out now!
             </p>
-            <a href="https://www.clearcalc.app" target='_blank' className={buttonVariants({ variant: "default" }) + ` h-12 justify-center lg:flex lg:mx-auto`}>Visit Site</a>
+            <a href="https://clearcalc.app" target='_blank' className={buttonVariants({ variant: "default" }) + ` h-12 justify-center lg:flex lg:mx-auto`}>Visit Site</a>
           </CardContent>
         </Card>
       </div>
