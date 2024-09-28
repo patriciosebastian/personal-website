@@ -102,6 +102,10 @@
     padding: 0.1rem;
     vertical-align: middle;
   }
+  .blog-post ul li {
+    list-style-type: disc;
+    list-style-position: inside;
+  }
 }
 
 body.__className_36bd41[data-scroll-locked="1"] {
