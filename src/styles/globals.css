@@ -98,7 +98,9 @@
     text-wrap: balance;
   }
   code {
-    @apply bg-secondary rounded text-destructive text-base p-1;
+    @apply bg-secondary rounded text-destructive text-base;
+    padding: 0.1rem;
+    vertical-align: middle;
   }
 }
 
