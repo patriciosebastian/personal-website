@@ -1,5 +1,6 @@
 import MainFooter from '@/components/main-footer'
 import MobileNav from '@/components/mobile-nav'
+import Reactions from '@/components/reactions'
 import Spacer from '@/components/ui/spacer'
 import { supabase } from '@/lib/supabaseClient'
 import parse from 'html-react-parser'
@@ -61,6 +62,8 @@ export default async function BlogPostPage({ params }) {
         <h1 className="text-3xl font-bold text-pretty">{blog.title}</h1>
         <p>{blog.sub_title}</p>
         <small>{new Date(blog.created_at).toLocaleDateString()}</small>
+        <Spacer className="h-2 lg:hidden" />
+        <Reactions postId={blog.id} />
         <Spacer className="h-6" />
         <div>{parse(blog.body, { replace: transform })}</div>
       </div>
