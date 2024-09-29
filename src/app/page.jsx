@@ -12,6 +12,7 @@ import HelloWorld1 from '../../public/Hello_World_Desk_Setup_optimized.webp'
 import HelloWorld2 from '../../public/Hello_World_Desk_Setup_2_optimized.webp'
 import TouchBase from '../../public/TouchBaseApp_Optimized.webp'
 import ClearCalc from '../../public/ClearCalc_Optimized.webp'
+import Doubles from '../../public/Doubles_opt.webp'
 import Expandable from '@/components/ui/expandable'
 
 export default async function Home() {
@@ -204,7 +205,7 @@ export default async function Home() {
         </Card>
 
         {/* 2. */}
-        <Card className="max-w-md lg:flex lg:max-w-3xl mx-auto">
+        <Card className="mb-4 max-w-md lg:flex lg:max-w-3xl mx-auto lg:mb-6">
           <CardHeader className="lg:w-1/2">
             <Image src={ClearCalc} className="mb-4" alt="The home page of ClearCalc" />
             <CardTitle>ClearCalc</CardTitle>
@@ -221,6 +222,26 @@ export default async function Home() {
               ClearCalc tools include the Amortization Schedule Generator, Home Buying Power Calculator, and more, as well as a blog. It relies heavily on user inputs to calculate details and generate results with all the data you would expect to see. Built with JavaScript and Bootstrap, it&#39;s designed to be straightforward and easy to use. Of course, it&#39;s fully responsive. Try it out now!
             </p>
             <a href="https://clearcalc.app" target='_blank' className={buttonVariants({ variant: "default" }) + ` h-12 justify-center lg:flex lg:mx-auto`}>Visit Site</a>
+          </CardContent>
+        </Card>
+
+        {/* 3. */}
+        <Card className="max-w-md lg:flex lg:max-w-3xl mx-auto">
+          <CardHeader className="lg:w-1/2">
+            <Image src={Doubles} className="mb-4" alt="Doubles game home page" />
+            <CardTitle>Doubles</CardTitle>
+            <CardDescription className="text-pretty text-foreground !mb-1">Doubles is your new addictive numbers doubling game</CardDescription>
+            <div className="flex flex-wrap items-center gap-1">
+              <Badge variant="outline">React.js</Badge>
+              <Badge variant="outline">Tailwind CSS</Badge>
+              <Badge variant="outline">Vite</Badge>
+            </div>
+          </CardHeader>
+          <CardContent className="lg:w-1/2">
+            <p className="text-balance mb-6 lg:mt-6 lg:mb-8">
+              Doubles challenges your mental math skills by having you double numbers as far as you can, starting from any number of your choice. Built with React and Vite, the game features easy, medium, hard, and extra hard modes, each with varying timer speeds, and it saves your high score using localStorage. The game is fully mobile-friendly and responsive, with an intuitive UI designed for seamless gameplay. You can replay your answers and review your final incorrect answer in real-time, and share your results with a simple click. Try it out and push your limits.
+            </p>
+            <a href="https://playdoubles.org" target='_blank' className={buttonVariants({ variant: "default" }) + ` h-12 justify-center lg:flex lg:mx-auto`}>Visit Site</a>
           </CardContent>
         </Card>
       </div>
