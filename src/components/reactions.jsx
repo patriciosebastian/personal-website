@@ -37,6 +37,7 @@ export default function Reactions({ postId }) {
   
   useEffect(() => {
     fetchReactionCounts();
+    // eslint-disable-next-line
   }, [postId]);
   
   const handleClick = throttle(async (emojiLabel) => {
