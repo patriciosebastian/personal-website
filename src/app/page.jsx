@@ -230,16 +230,17 @@ export default async function Home() {
           <CardHeader className="lg:w-1/2">
             <Image src={Doubles} className="mb-4" alt="Doubles game home page" />
             <CardTitle>Doubles</CardTitle>
-            <CardDescription className="text-pretty text-foreground !mb-1">Doubles is your new addictive numbers doubling game</CardDescription>
+            <CardDescription className="text-pretty text-foreground !mb-1">Doubles is a React based number doubling game</CardDescription>
             <div className="flex flex-wrap items-center gap-1">
-              <Badge variant="outline">React.js</Badge>
+              <Badge variant="outline">React</Badge>
               <Badge variant="outline">Tailwind CSS</Badge>
               <Badge variant="outline">Vite</Badge>
+              <Badge variant="outline">localStorage</Badge>
             </div>
           </CardHeader>
           <CardContent className="lg:w-1/2">
             <p className="text-balance mb-6 lg:mt-6 lg:mb-8">
-              Doubles challenges your mental math skills by having you double numbers as far as you can, starting from any number of your choice. Built with React and Vite, the game features easy, medium, hard, and extra hard modes, each with varying timer speeds, and it saves your high score using localStorage. The game is fully mobile-friendly and responsive, with an intuitive UI designed for seamless gameplay. You can replay your answers and review your final incorrect answer in real-time, and share your results with a simple click. Try it out and push your limits.
+              Built with React and Vite, Doubles offers a true SPA experience. It features an intuitive UI designed for focused, exciting gameplay. Race against the timer to double numbers as far as you can, starting from a fixed or random number. The game saves your high score using localStorage and features easy, medium, hard, and extra hard modes. When the game is over you can review all of your answers or simply click to share your results in a fun way. Keyboard shortcuts are available for quick and easy gameplay. Can you beat my high score of 13 doubles on hard mode? I dare you to try and let me know!
             </p>
             <a href="https://playdoubles.org" target='_blank' className={buttonVariants({ variant: "default" }) + ` h-12 justify-center lg:flex lg:mx-auto`}>Visit Site</a>
           </CardContent>
