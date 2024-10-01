@@ -1,3 +1,4 @@
+import ConvertKitForm from '@/components/convertKit-form'
 import MainFooter from '@/components/main-footer'
 import MobileNav from '@/components/mobile-nav'
 import Reactions from '@/components/reactions'
@@ -67,6 +68,10 @@ export default async function BlogPostPage({ params }) {
         <Spacer className="h-6" />
         <div>{parse(blog.body, { replace: transform })}</div>
       </div>
+
+      <Spacer />
+
+      <ConvertKitForm />
 
       <Spacer />
 
