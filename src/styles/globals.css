@@ -160,3 +160,7 @@ body.__className_36bd41[data-scroll-locked="1"] {
   margin-top: 0 !important;
   margin-right: auto !important;
 }
+
+.formkit-background {
+  z-index: -1;
+}
