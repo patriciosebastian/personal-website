@@ -6,6 +6,9 @@ import MainFooter from "@/components/main-footer"
 import Spacer from "@/components/ui/spacer"
 import Link from "next/link"
 
+// Revalidate cache every hour
+export const revalidate = 3600;
+
 export default async function BlogPage() {
   const { data: blogs, error } = await supabase
     .from("blogs")
@@ -24,7 +27,7 @@ export default async function BlogPage() {
         <div className="h-56 flex flex-col justify-center items-start gap-4 border-b-[1px] mb-8">
           <h1 className="text-4xl mt-14">Blog</h1>
           <p className="text-pretty">Look at you! Reading my blog &#129395;<br />
-          I write about web development, entrepreneurialism, and things in life I care about.</p>
+          I write about web development, entrepreneurship, and things in life I care about.</p>
         </div>
         <ul>
           {blogs.map((blog) => (
@@ -42,8 +45,9 @@ export default async function BlogPage() {
                   {(blog.is_freelance) ? <Badge variant="outline" className="mr-2">freelance</Badge> : null}
                   {(blog.is_web_development) ? <Badge variant="outline" className="mr-2">web development</Badge> : null}
                   {(blog.is_tech) ? <Badge variant="outline" className="mr-2">tech</Badge> : null}
-                  {(blog.is_entrepreneurialism) ? <Badge variant="outline" className="mr-2">entrepreneurialism</Badge> : null}
+                  {(blog.is_entrepreneurship) ? <Badge variant="outline" className="mr-2">entrepreneurship</Badge> : null}
                   {(blog.is_life) ? <Badge variant="outline" className="mr-2">life</Badge> : null}
+                  {(blog.is_side_project) ? <Badge variant="outline" className="mr-2">side project</Badge> : null}
                   <small className="ml-auto">{new Date(blog.created_at).toLocaleDateString()}</small>
                 </CardFooter>
               </Card>

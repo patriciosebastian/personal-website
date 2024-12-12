@@ -15,6 +15,9 @@ import ClearCalc from '../../public/ClearCalc_Optimized.webp'
 import Doubles from '../../public/Doubles_opt.webp'
 import Expandable from '@/components/ui/expandable'
 
+// Revalidate cache every hour
+export const revalidate = 3600;
+
 export default async function Home() {
   const { data: blogs, error } = await supabase
     .from("blogs")

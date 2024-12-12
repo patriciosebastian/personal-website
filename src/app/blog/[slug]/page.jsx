@@ -8,7 +8,26 @@ import parse from 'html-react-parser'
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default async function BlogPostPage({ params }) {
+// Revalidate cache every hour
+export const revalidate = 3600;
+export const dynamicParams = true;
+
+export async function generateStaticParams() {
+  const { data: posts, error } = await supabase
+    .from('blogs')
+    .select('slug');
+
+  if (error) {
+    console.error("Error fetching blog slugs:", error);
+    return [];
+  }
+
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
+}
+
+export default async function Page({ params }) {
   const { slug } = params;
   
   const { data: blog, error } = await supabase
