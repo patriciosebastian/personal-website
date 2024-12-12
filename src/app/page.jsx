@@ -263,7 +263,7 @@ export default async function Home() {
                 {latestBlog.sub_title}
               </CardDescription>
             </CardHeader>
-            <CardFooter>
+            <CardFooter className="flex flex-wrap gap-2 md:gap-0">
                 {(latestBlog.is_freelance) ? <Badge variant="outline" className="mr-2">freelance</Badge> : null}
                 {(latestBlog.is_web_development) ? <Badge variant="outline" className="mr-2">web development</Badge> : null}
                 {(latestBlog.is_tech) ? <Badge variant="outline" className="mr-2">tech</Badge> : null}
