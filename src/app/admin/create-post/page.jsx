@@ -5,32 +5,48 @@ import { useEffect, useState } from "react"
 
 export default function CreatePostPage() {
   const supabase = createClient();
-  const [session, setSession] = useState(null);
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
-    const getSession = async () => {
-      const { data: { session }, error } = await supabase.auth.getUser();
+    const verifyUser = async () => {
+      const { data, error } = await supabase.auth.getUser();
 
       if (error) {
         console.error('Error getting session:', error.message);
+        redirectToLogin();
       }
 
-      if (session === null) {
-        // window.location.href = '/secret-login';
-        console.log('No session:', session);
+      if (!data.user) {
+        redirectToLogin();
+        window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
       } else {
-        setSession(session);
+        setUser(data.user);
       }
     };
-    getSession();
-  }, []);
 
-  if (session === null) return <p>Nice try! :D</p>;
+    verifyUser();
+  }, [supabase.auth]);
+
+  const redirectToLogin = () => {
+    window.location.href = '/secret-login';
+  };
+
+  if (!user) return <p>Loading...</p>;
+
+  const handleLogout = async () => {
+    const { error } = await supabase.auth.signOut();
+
+    if (error) {
+      console.error('Error logging out:', error);
+    } else {
+      redirectToLogin();
+    }
+  };
 
   return (
     <>
       <h1>Create New Post</h1>
-      <button>Logout</button>
+      <button onClick={handleLogout}>Logout</button>
     </>
   )
 }
