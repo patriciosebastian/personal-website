@@ -32,7 +32,7 @@ export default function SecretLoginPage() {
   };
 
   return (
-    <div className="h-screen place-content-center flex flex-col gap-6">
+    <div className="min-h-screen place-content-center flex flex-col gap-6">
       <Card className='h-1/2 overflow-hidden'>
         <CardContent className='h-full grid p-0 md:grid-cols-2'>
           <div className='relative hidden bg-muted md:block'>
