@@ -21,7 +21,34 @@ export default function TinyMCE({
   const supabase = createClient();
 
   const handlePublish = async () => {
-    // 
+    if (!editorRef.current) return;
+
+    const content = editorRef.current.getContent();
+
+    const { data, error } = await supabase
+      .from('blogs')
+      .insert([{
+        title: title,
+        body: content,
+        sub_title: subTitle,
+        preview: preview,
+        slug: slug,
+        is_freelance: isFreelance,
+        is_web_development: isWebDevelopment,
+        is_tech: isTech,
+        is_life: isLife,
+        is_entrepreneurship: isEntrepreneurship,
+        is_side_project: isSideProject,
+        is_product_review: isProductReview,
+        is_thoughts: isThoughts,
+      }]);
+
+    if (error) {
+      console.error('Error publishing post:', error.message);
+      return;
+    }
+    alert("Post published successfully! 🎉 Pubslished post 'data' has been logged in the console");
+    console.log('Published post:', data);
   };
 
   // Keep this log for personal use
@@ -56,6 +83,28 @@ export default function TinyMCE({
           menubar: true,
           plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
           toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+          images_upload_handler: async (blobInfo, success, failure) => {
+            try {
+              const file = blobInfo.blob();
+              const filePath = `${slug}/${Date.now()}-${blobInfo.filename()}`;
+              const { data: uploadData, error: uploadError } = await supabase
+                .storage
+                .from('personal-website')
+                .upload(filePath, file);
+
+              if (uploadError) {
+                console.error('Error uploading image:', uploadError.message);
+                failure('Error uploading image');
+                throw uploadError;
+              }
+
+              const { data: { publicUrl }, } = supabase.storage.from('personal-website').getPublicUrl(filePath);
+
+              success(publicUrl);
+            } catch (error) {
+              failure(error.message);
+            }
+          },
         }}
       />
       <Button
