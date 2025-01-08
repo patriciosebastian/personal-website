@@ -83,14 +83,20 @@ export default function TinyMCE({
           menubar: true,
           plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
           toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+          paste_data_images: true,
+          image_advtab: true,
           images_upload_handler: async (blobInfo, success, failure) => {
             try {
               const file = blobInfo.blob();
-              const filePath = `${slug}/${Date.now()}-${blobInfo.filename()}`;
+              const fileName = blobInfo.filename();
+              const filePath = `tinymce-images/${Date.now()}-${fileName}`;
+
               const { data: uploadData, error: uploadError } = await supabase
                 .storage
                 .from('personal-website')
-                .upload(filePath, file);
+                .upload(filePath, file, {
+                  contentType: file.type,
+                });
 
               if (uploadError) {
                 console.error('Error uploading image:', uploadError.message);
@@ -98,8 +104,13 @@ export default function TinyMCE({
                 throw uploadError;
               }
 
-              const { data: { publicUrl }, } = supabase.storage.from('personal-website').getPublicUrl(filePath);
+              const { data: { publicUrl } } = supabase.storage.from('personal-website').getPublicUrl(filePath);
 
+              if (!publicUrl) {
+                console.log('No "publicURL" found for image:', filePath);
+              }
+
+              console.log('Image uploaded successfully:', publicUrl);
               success(publicUrl);
             } catch (error) {
               failure(error.message);
