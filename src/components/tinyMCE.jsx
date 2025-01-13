@@ -7,6 +7,7 @@ import {
   h2ClassButtonAction,
   h3ClassButtonAction
 } from '@/utils/tinyMCE/customButtonActions'
+import Expandable from './ui/expandable'
 
 export default function TinyMCE({
   title,
@@ -177,6 +178,21 @@ export default function TinyMCE({
       >
         Log Content
       </Button>
+
+      <Expandable trigger="Publish Notes" className="absolute top-1/4 -left-3/4 hidden lg:block text-muted text-base leading-none">
+        <div className="text-primary rounded p-4 bg-secondary">
+          <ul>
+            <li>Add title, and slug</li>
+            <li>Select applicable tags</li>
+            <li>Add text-2xl to H2's</li>
+            <li>Add text-xl to H3's</li>
+            <li>Add .aside class where needed</li>
+            <li>Underline links</li>
+            <li>Log and inspect content before publishing</li>
+            <li>Confirm post and media uploads in supabase</li>
+          </ul>
+        </div>
+      </Expandable>
     </>
   );
 }
