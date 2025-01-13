@@ -2,12 +2,8 @@ import { useRef } from 'react'
 import { Editor } from '@tinymce/tinymce-react'
 import { createClient } from '../utils/supabase/client'
 import { Button } from './ui/button'
-import {
-  asideClassButtonAction,
-  h2ClassButtonAction,
-  h3ClassButtonAction
-} from '@/utils/tinyMCE/customButtonActions'
 import Expandable from './ui/expandable'
+import { setupOptions } from '@/utils/tinyMCE/setupOptions'
 
 export default function TinyMCE({
   title,
@@ -53,7 +49,7 @@ export default function TinyMCE({
       console.error('Error publishing post:', error.message);
       return;
     }
-    alert("Post published successfully! 🎉 Pubslished post 'data' has been logged in the console");
+    alert("Post published successfully! 🎉");
   };
 
   // Keep this log for personal use
@@ -88,46 +84,7 @@ export default function TinyMCE({
           menubar: true,
           plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
           toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat | addAsideClass | addHeading2Class | addHeading3Class',
-          setup: (editor) => {
-            editor.ui.registry.addButton('addAsideClass', {
-              text: 'Add .aside',
-              icon: 'paragraph',
-              tooltip: 'Add .aside class to paragraph',
-              onAction: () => asideClassButtonAction(editor),
-            });
-
-            editor.ui.registry.addButton('addHeading2Class', {
-              text: 'Add H2 Class',
-              icon: 'header',
-              tooltip: 'Add .text-2xl class to H2',
-              onAction: () => h2ClassButtonAction(editor),
-            });
-
-            editor.ui.registry.addButton('addHeading3Class', {
-              text: 'Add H3 Class',
-              icon: 'header',
-              tooltip: 'Add .text-xl class to H3',
-              onAction: () => h3ClassButtonAction(editor),
-            });
-
-            editor.ui.registry.addContextMenu('addAsideClassMenu', {
-              update: (element) => {
-                return element.nodeName === 'P' ? 'addAsideClassButton' : '';
-              },
-            });
-
-            editor.ui.registry.addContextMenu('addHeading2ClassMenu', {
-              update: (element) => {
-                return element.nodeName === 'H2' ? 'addHeading2Class' : '';
-              },
-            });
-
-            editor.ui.registry.addContextMenu('addHeading3ClassMenu', {
-              update: (element) => {
-                return element.nodeName === 'H3' ? 'addHeading3Class' : '';
-              },
-            });
-          },
+          setup: (editor) => setupOptions(editor),
           paste_data_images: true,
           image_advtab: true,
           selector: 'textarea',
