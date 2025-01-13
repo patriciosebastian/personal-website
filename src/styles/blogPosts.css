@@ -1,15 +1,15 @@
-#tinymce.tinymce-rte {
-
-  & p {
-    margin-bottom: 1.5rem;
-  }
+div.blog-post-body p,
+div.blog-post-body h2,
+div.blog-post-body h3,
+div.blog-post-body img {
+  margin-bottom: 1.5rem;
 }
 
 @media screen and (min-width: 1024px) {
-  #tinymce.tinymce-rte {
-
-    & p {
-      margin-bottom: 1.75rem;
-    }
+  div.blog-post-body p,
+  div.blog-post-body h2,
+  div.blog-post-body h3,
+  div.blog-post-body img {
+    margin-bottom: 1.75rem;
   }
 }
