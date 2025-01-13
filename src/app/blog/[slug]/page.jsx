@@ -85,7 +85,7 @@ export default async function Page({ params }) {
         <Spacer className="h-2 lg:hidden" />
         <Reactions postId={blog.id} />
         <Spacer className="h-6" />
-        <div className="overflow-x-hidden">
+        <div className="blog-post-body overflow-x-hidden">
           {parse(blog.body, { replace: transform })}
         </div>
       </div>
