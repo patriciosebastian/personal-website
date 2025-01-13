@@ -1,7 +1,8 @@
 div.blog-post-body p,
 div.blog-post-body h2,
 div.blog-post-body h3,
-div.blog-post-body img {
+div.blog-post-body img,
+div.blog-post-body ul {
   margin-bottom: 1.5rem;
 }
 
@@ -9,7 +10,8 @@ div.blog-post-body img {
   div.blog-post-body p,
   div.blog-post-body h2,
   div.blog-post-body h3,
-  div.blog-post-body img {
+  div.blog-post-body img,
+  div.blog-post-body ul {
     margin-bottom: 1.75rem;
   }
 }
