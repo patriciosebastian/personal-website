@@ -72,7 +72,7 @@ export default function SecretLoginPage() {
                 {loading ? <Loader2 className="animate-spin" /> : 'Log in'}
               </Button>
             </div>
-            <div className='text-center text-muted-foreground text-sm absolute bottom-0 left-0 right-0 mb-3'>
+            <div className='text-center text-muted-foreground text-sm absolute bottom-0 left-0 right-0 mb-[.325rem]'>
               Authorized personnel only.
             </div>
           </form>

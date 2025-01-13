@@ -29,7 +29,7 @@ export async function generateStaticParams() {
 
 export default async function Page({ params }) {
   const { slug } = params;
-  
+
   const { data: blog, error } = await supabase
     .from('blogs')
     .select('*')
