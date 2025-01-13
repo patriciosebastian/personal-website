@@ -136,7 +136,7 @@ export default function TinyMCE({
         Log Content
       </Button>
 
-      <Expandable trigger="Publish Notes" className="absolute top-1/4 -left-3/4 hidden lg:block text-muted text-base leading-none">
+      <Expandable trigger="Publish Notes" className="absolute top-1/4 -left-3/4 hidden lg:block text-muted text-base leading-none hover:text-black dark:hover:text-white">
         <div className="text-primary rounded p-4 bg-secondary">
           <ul>
             <li>Add title, and slug</li>
@@ -148,6 +148,13 @@ export default function TinyMCE({
             <li>Log and inspect content before publishing</li>
             <li>Confirm post and media uploads in supabase</li>
           </ul>
+          <div className="text-xs mt-6">
+            <hr />
+            <div className="mt-5">
+              <div>- p el's have 'mb' of 1.5rem (mobile) and 1.75rem (desktop)</div>
+              <div>- H2's, H3's, and img's are the same</div>
+            </div>
+          </div>
         </div>
       </Expandable>
     </>
