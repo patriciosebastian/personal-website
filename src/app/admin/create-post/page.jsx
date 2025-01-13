@@ -61,7 +61,7 @@ export default function CreatePostPage() {
   return (
     <div className="relative min-h-svh place-content-center">
       <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight text-center lg:text-5xl">Create New Post</h1>
-      <Button className="absolute top-2 right-0 flex items-center space-x-2 text-sm text-muted-foreground" onClick={handleLogout} variant="secondary">Logout</Button>
+      <Button className="absolute top-2 right-0 flex items-center space-x-2 text-sm text-secondary" onClick={handleLogout} variant="ghost">Logout</Button>
       <div className="mb-2">
         <label htmlFor="title" className="text-muted-foreground">Title:</label>
         <input
@@ -74,7 +74,7 @@ export default function CreatePostPage() {
         />
       </div>
       <Expandable trigger="Post details" className="text-base text-muted-foreground mb-2">
-        <div className="grid grid-cols-3 items-center gap-4 text-white p-4 bg-secondary rounded-sm">
+        <div className="grid grid-cols-3 items-center gap-4 text-black dark:text-white p-4 bg-secondary rounded-sm">
           <input type="text" name="subTitle" id="subTitle" placeholder="sub_title" className="p-2" onChange={(e) => setSubTitle(e.target.value)} />
           <input type="text" name="preview" id="preview" placeholder="preview" className="p-2" onChange={(e) => setPreview(e.target.value)} />
           <input type="text" name="slug" id="slug" placeholder="slug" className="p-2" onChange={(e) => setSlug(e.target.value)} />
