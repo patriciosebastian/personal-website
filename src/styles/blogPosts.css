@@ -1,0 +1,15 @@
+#tinymce.tinymce-rte {
+
+  & p {
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  #tinymce.tinymce-rte {
+
+    & p {
+      margin-bottom: 1.75rem;
+    }
+  }
+}

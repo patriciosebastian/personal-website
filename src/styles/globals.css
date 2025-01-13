@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "./blogPosts.css";
+
 @layer base {
   /* 
   ** gray 50: #f9fafb / hsl(210, 20%, 98%)
