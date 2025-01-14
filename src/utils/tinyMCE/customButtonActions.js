@@ -45,3 +45,19 @@ export const h3ClassButtonAction = (editor) => {
     });
   }
 }
+
+export const mb2ClassButtonAction = (editor) => {
+  const selectedNode = editor.selection.getNode();
+  if (selectedNode.nodeName === 'P') {
+    if (!selectedNode.classList.contains('mb-2')) {
+      selectedNode.classList.add('mb-2');
+    } else {
+      selectedNode.classList.remove('mb-2');
+    }
+  } else {
+    editor.notificationManager.open({
+      text: 'Please select a paragraph to add the .mb-2 class.',
+      type: 'warning',
+    });
+  }
+}
