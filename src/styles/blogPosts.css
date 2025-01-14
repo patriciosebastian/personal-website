@@ -19,3 +19,7 @@ div.blog-post-body ul {
 div.blog-post-body p:has(+ ul) {
   margin-bottom: .5rem;
 }
+
+div.blog-post-body p:last-child {
+  margin-bottom: 0;
+}
