@@ -83,7 +83,7 @@ export default function TinyMCE({
           height: 600,
           menubar: true,
           plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
-          toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat | addAsideClass | addHeading2Class | addHeading3Class',
+          toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat | addAsideClass | addHeading2Class | addHeading3Class | addMb2Class | add!Mb0Class',
           setup: (editor) => setupOptions(editor),
           paste_data_images: true,
           image_advtab: true,
