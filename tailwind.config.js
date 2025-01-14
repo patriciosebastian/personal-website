@@ -8,6 +8,7 @@ module.exports = {
     './src/**/*.{js,jsx}',
   ],
   safelist: [
+    '!mb-0',
     'aside',
     'text-xs',
     'text-sm',
