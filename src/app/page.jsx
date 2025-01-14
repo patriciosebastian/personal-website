@@ -37,7 +37,7 @@ export default async function Home() {
       {/* Hero */}
       <div className="min-h-svh flex flex-col justify-center items-center text-center text-balance relative">
         <h1 className="text-8xl">Patricio Salazar</h1>
-        <p>Software Developer and integrated community member in Austin, TX.</p>
+        <p className="lg:w-1/2">Software Developer and integrated community member in Austin, TX.</p>
         {/* CTA's */}
         <div className="flex justify-center items-center gap-4 mt-6">
           <Link href="#Projects" className={buttonVariants({ variant: "outline" }) + ` h-12 justify-center !border-foreground font-bold`}>Projects</Link>
