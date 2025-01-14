@@ -1,4 +1,10 @@
-import { asideClassButtonAction, h2ClassButtonAction, h3ClassButtonAction, mb2ClassButtonAction } from "./customButtonActions"
+import {
+  asideClassButtonAction,
+  h2ClassButtonAction,
+  h3ClassButtonAction,
+  mb0ClassButtonAction,
+  mb2ClassButtonAction
+} from "./customButtonActions"
 
 export const setupOptions = (editor) => {
   editor.ui.registry.addButton('addAsideClass', {
@@ -29,6 +35,13 @@ export const setupOptions = (editor) => {
     onAction: () => mb2ClassButtonAction(editor),
   });
 
+  editor.ui.registry.addButton('add!Mb0Class', {
+    text: 'Add !mb-0 Class',
+    icon: 'paragraph',
+    tooltip: 'Add .!mb-0 class to paragraph',
+    onAction: () => mb0ClassButtonAction(editor),
+  });
+
   editor.ui.registry.addContextMenu('addAsideClassMenu', {
     update: (element) => {
       return element.nodeName === 'P' ? 'addAsideClassButton' : '';
@@ -50,6 +63,12 @@ export const setupOptions = (editor) => {
   editor.ui.registry.addContextMenu('addMb2ClassMenu', {
     update: (element) => {
       return element.nodeName === 'P' ? 'addMb2Class' : '';
+    },
+  });
+
+  editor.ui.registry.addContextMenu('add!Mb0ClassMenu', {
+    update: (element) => {
+      return element.nodeName === 'P' ? 'add!Mb0Class' : '';
     },
   });
 }

@@ -61,3 +61,19 @@ export const mb2ClassButtonAction = (editor) => {
     });
   }
 }
+
+export const mb0ClassButtonAction = (editor) => {
+  const selectedNode = editor.selection.getNode();
+  if (selectedNode.nodeName === 'P') {
+    if (!selectedNode.classList.contains('!mb-0')) {
+      selectedNode.classList.add('!mb-0');
+    } else {
+      selectedNode.classList.remove('!mb-0');
+    }
+  } else {
+    editor.notificationManager.open({
+      text: 'Please select a paragraph to add the .!mb-0 class.',
+      type: 'warning',
+    });
+  }
+}
