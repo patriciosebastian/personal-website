@@ -141,8 +141,8 @@ export default function TinyMCE({
           <ul>
             <li>Add title, and slug</li>
             <li>Select applicable tags</li>
-            <li>Add text-2xl to H2's</li>
-            <li>Add text-xl to H3's</li>
+            <li>Add text-2xl to H2&apos;s</li>
+            <li>Add text-xl to H3&apos;s</li>
             <li>Add .aside class where needed</li>
             <li>Underline links</li>
             <li>Log and inspect content before publishing</li>
@@ -151,8 +151,8 @@ export default function TinyMCE({
           <div className="text-xs mt-6">
             <hr />
             <div className="mt-5">
-              <div>- p el's have 'mb' of 1.5rem (mobile) and 1.75rem (desktop)</div>
-              <div>- H2's, H3's, and img's are the same</div>
+              <div>- p el&apos;s have &apos;mb&apos; of 1.5rem (mobile) and 1.75rem (desktop)</div>
+              <div>- H2&apos;s, H3&apos;s, and img&apos;s are the same</div>
             </div>
           </div>
         </div>
