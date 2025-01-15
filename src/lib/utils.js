@@ -26,17 +26,26 @@ export function throttle(func, limit) {
 }
 
 export async function trackPageView(slug) {
-  const response = await fetch('/analytics', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ slug }),
-  });
+  if (process.env.NODE_ENV === 'production') {
 
-  if (response.ok) {
-    console.log('Page view tracked successfully:');
+    try {
+      const response = await fetch('/analytics', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ slug }),
+      });
+
+      response.ok ?
+        console.log('Page view tracked successfully:') :
+        console.error('Failed to track page view:', response.statusText);
+
+    } catch (error) {
+      console.error('Failed to track page view:', error);
+    }
+
   } else {
-    console.error('Failed to track page view:', response.statusText);
+    console.log('Skipping page view tracking in development mode.');
   }
 }
