@@ -2,19 +2,40 @@ import { supabase } from "@/lib/supabaseClient"
 import { NextResponse } from "next/server"
 
 export async function POST(req) {
-  const { slug } = req.json();
+  const { slug } = await req.json();
 
   try {
-    const { data, error } = await supabase
+    const { data, error: fetchError } = await supabase
       .from('page_views')
-      .upsert(
-        { slug, total_visits: 1 },
-        { onConflict: ['slug'], count: true }
-      )
+      .select('*')
       .eq('slug', slug)
-      .increment('total_visits', 1);
+      .single();
 
-    if (error) throw error;
+    if (fetchError && fetchError.code !== 'PGRST116') {
+      throw fetchError;
+    }
+
+    if (data) {
+      const { error: updateError } = await supabase
+        .from('page_views')
+        .update({ total_visits: data.total_visits + 1 })
+        .eq('slug', slug);
+
+      if (updateError) {
+        console.log('Error updating page views:', updateError);
+      }
+    } else {
+      const { error: insertError } = await supabase
+        .from('page_views')
+        .insert([{
+          slug: slug,
+          total_visits: 1,
+        }]);
+
+      if (insertError) {
+        console.log('Error inserting page views:', insertError);
+      }
+    }
 
     return NextResponse.json({ success: true, data }, { status: 200 });
   } catch (error) {
