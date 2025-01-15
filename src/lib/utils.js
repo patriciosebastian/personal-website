@@ -24,3 +24,19 @@ export function throttle(func, limit) {
     }
   };
 }
+
+export async function trackPageView(slug) {
+  const response = await fetch('/analytics', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ slug }),
+  });
+
+  if (response.ok) {
+    console.log('Page view tracked successfully:');
+  } else {
+    console.error('Failed to track page view:', response.statusText);
+  }
+}

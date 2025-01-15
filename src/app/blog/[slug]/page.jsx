@@ -4,6 +4,7 @@ import MobileNav from '@/components/mobile-nav'
 import Reactions from '@/components/reactions'
 import Spacer from '@/components/ui/spacer'
 import { supabase } from '@/lib/supabaseClient'
+import { trackPageView } from '@/lib/utils'
 import parse from 'html-react-parser'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -40,6 +41,8 @@ export default async function Page({ params }) {
     console.error("Error fetching blog post:", error);
     return <p>Error loading the blog post.</p>;
   }
+
+  await trackPageView(slug);
 
   // Replace img tags with Next.js Image component
   const transform = (node) => {
