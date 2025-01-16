@@ -27,9 +27,10 @@ export function throttle(func, limit) {
 
 export async function trackPageView(slug) {
   if (process.env.NODE_ENV === 'production') {
+    const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
 
     try {
-      const response = await fetch('/analytics', {
+      const response = await fetch(`${baseUrl}/analytics`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
