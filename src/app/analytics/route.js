@@ -6,7 +6,7 @@ export async function POST(req) {
 
   try {
     const { data, error: fetchError } = await supabase
-      .from('page_views')
+      .from('blog_page_views')
       .select('*')
       .eq('slug', slug)
       .single();
@@ -17,7 +17,7 @@ export async function POST(req) {
 
     if (data) {
       const { error: updateError } = await supabase
-        .from('page_views')
+        .from('blog_page_views')
         .update({ total_visits: data.total_visits + 1 })
         .eq('slug', slug);
 
@@ -26,7 +26,7 @@ export async function POST(req) {
       }
     } else {
       const { error: insertError } = await supabase
-        .from('page_views')
+        .from('blog_page_views')
         .insert([{
           slug: slug,
           total_visits: 1,
