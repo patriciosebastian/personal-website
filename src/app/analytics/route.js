@@ -1,8 +1,18 @@
+import { cookies } from "next/headers"
 import { supabase } from "@/lib/supabaseClient"
 import { NextResponse } from "next/server"
 
 export async function POST(req) {
   const { slug } = await req.json();
+  const cookieStore = cookies();
+  const ownerCookie = cookieStore.get('owner');
+
+  if (ownerCookie?.value === 'true') {
+    return NextResponse.json(
+      { message: "Page view tracking skipped for owner" },
+      { status: 200 }
+    );
+  }
 
   try {
     const { data, error: fetchError } = await supabase
