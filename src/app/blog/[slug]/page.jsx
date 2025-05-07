@@ -95,6 +95,12 @@ export default async function Page({ params }) {
 
       <Spacer />
 
+      <p className="border p-4 rounded">
+        Got thoughts on this article or anything else? I&apos;d love to connect and hear from you. <a href="mailto:psebastiansalazar@gmail.com" className="underline font-bold">Hit me up!</a>
+      </p>
+
+      <Spacer />
+
       <ConvertKitForm />
 
       <Spacer />
