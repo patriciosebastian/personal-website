@@ -58,7 +58,7 @@ export default function Reactions({ postId }) {
         <button
           key={label}
           onClick={() => handleClick(emoji)}
-          className="p-1 rounded-full transition-all duration-200 2xl:!ml-0 flex justify-center items-center"
+          className="p-1 rounded-full transition-all duration-200 2xl:ml-0! flex justify-center items-center"
         >
           <span className="2xl:text-2xl transition-transform duration-200 transform hover:scale-125 inline-block">{emoji}</span>
           <span className="ml-1 2xl:text-xl inline-block">{counts[label]}</span>

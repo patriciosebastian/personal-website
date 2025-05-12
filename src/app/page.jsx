@@ -40,8 +40,8 @@ export default async function Home() {
         <p className="lg:w-1/2">Software Developer and integrated community member in Austin, TX.</p>
         {/* CTA's */}
         <div className="flex justify-center items-center gap-4 mt-6">
-          <Link href="#Projects" className={buttonVariants({ variant: "outline" }) + ` h-12 justify-center !border-foreground font-bold`}>Projects</Link>
-          <Link href={`/blog/${latestBlog ? latestBlog.slug : ''}`} className={buttonVariants({ variant: "outline" }) + ` h-12 justify-center !border-foreground font-bold`}>Latest Post</Link>
+          <Link href="#Projects" className={buttonVariants({ variant: "outline" }) + ` h-12 justify-center border-foreground! font-bold`}>Projects</Link>
+          <Link href={`/blog/${latestBlog ? latestBlog.slug : ''}`} className={buttonVariants({ variant: "outline" }) + ` h-12 justify-center border-foreground! font-bold`}>Latest Post</Link>
         </div>
         {/* Social Icons */}
         <div className="flex justify-center items-center gap-4 landscape:static landscape:mt-8 landscape:md:absolute landscape:md:mt-0 absolute bottom-16">
@@ -72,7 +72,7 @@ export default async function Home() {
           </Link>
           {/* blog */}
           <Link href="/blog" className="justify-center px-4 font-bold">
-            <svg width="34px" height="34px" viewBox="0 0 24 24" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg" color="#000000" className="-rotate-[10deg] stroke-background fill-foreground">
+            <svg width="34px" height="34px" viewBox="0 0 24 24" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg" color="#000000" className="-rotate-10 stroke-background fill-foreground">
               <path d="M2.90602 17.505L5.33709 3.71766C5.5289 2.62987 6.56621 1.90354 7.654 2.09534L19.4717 4.17912C20.5595 4.37093 21.2858 5.40824 21.094 6.49603L18.6629 20.2833C18.4711 21.3711 17.4338 22.0975 16.346 21.9057L4.52834 19.8219C3.44055 19.6301 2.71421 18.5928 2.90602 17.505Z" stroke-width="1.5"></path>
               <path d="M8.92902 6.38184L16.8075 7.77102" stroke-width="1.5" stroke-linecap="round"></path>
               <path d="M8.23444 10.3213L16.1129 11.7105" stroke-width="1.5" stroke-linecap="round"></path>
@@ -186,8 +186,8 @@ export default async function Home() {
         <Card className="mb-4 max-w-md lg:flex lg:max-w-3xl mx-auto lg:mb-6">
           <CardHeader className="lg:w-1/2">
             <Image src={TouchBase} className="mb-4" alt="The home page of Touch Base" />
-            <CardTitle>Touch Base <Badge className="w-fit border-green-600 text-green-600 align-middle shadow" variant="outline">New Feature Added</Badge></CardTitle>
-            <CardDescription className="text-pretty text-foreground !mb-1">Full stack React Contacts Management app</CardDescription>
+            <CardTitle>Touch Base <Badge className="w-fit border-green-600 text-green-600 align-middle shadow-sm" variant="outline">New Feature Added</Badge></CardTitle>
+            <CardDescription className="text-pretty text-foreground mb-1!">Full stack React Contacts Management app</CardDescription>
             <div className="flex flex-wrap items-center gap-1">
               <Badge variant="outline">CSS</Badge>
               <Badge variant="outline">React</Badge>
@@ -212,7 +212,7 @@ export default async function Home() {
           <CardHeader className="lg:w-1/2">
             <Image src={ClearCalc} className="mb-4" alt="The home page of ClearCalc" />
             <CardTitle>ClearCalc</CardTitle>
-            <CardDescription className="text-pretty text-foreground !mb-1">ClearCalc is a collection of Personal Finance tools written in JavaScript</CardDescription>
+            <CardDescription className="text-pretty text-foreground mb-1!">ClearCalc is a collection of Personal Finance tools written in JavaScript</CardDescription>
             <div className="flex flex-wrap items-center gap-1">
               <Badge variant="outline">HTML</Badge>
               <Badge variant="outline">CSS</Badge>
@@ -233,7 +233,7 @@ export default async function Home() {
           <CardHeader className="lg:w-1/2">
             <Image src={Doubles} className="mb-4" alt="Doubles game home page" />
             <CardTitle>Doubles</CardTitle>
-            <CardDescription className="text-pretty text-foreground !mb-1">Doubles is a React based number doubling game</CardDescription>
+            <CardDescription className="text-pretty text-foreground mb-1!">Doubles is a React based number doubling game</CardDescription>
             <div className="flex flex-wrap items-center gap-1">
               <Badge variant="outline">React</Badge>
               <Badge variant="outline">Tailwind CSS</Badge>
@@ -290,7 +290,7 @@ export default async function Home() {
       <Card className="border bg-background mb-4 flex items-center max-w-md lg:max-w-3xl mx-auto lg:mb-6">
         <CardHeader className="w-1/2 p-4 relative">
           <Image src={HelloWorld1} className="rounded mb-2" alt="Computer/Desk Set-up" />
-          <div className="absolute !m-1">
+          <div className="absolute m-1!">
             <svg width="24px" height="24px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" className="stroke-background dark:stroke-foreground"><path d="M7 15C7 15 11.5 14 16 16" stroke-linecap="round" stroke-linejoin="round"></path><path d="M6.5 12C6.5 12 12.5 10.5 17.5 13.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M6 9.00003C9 8.50005 14 8.00006 19 11" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22Z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
           </div>
         </CardHeader>
@@ -304,7 +304,7 @@ export default async function Home() {
       <Card className="border bg-background mb-4 flex items-center max-w-md lg:max-w-3xl mx-auto">
         <CardHeader className="w-1/2 p-4 relative">
           <Image src={HelloWorld2} className="rounded mb-2" alt="Computer/Desk Set-up with the universe in the background" />
-          <div className="absolute !m-1">
+          <div className="absolute m-1!">
             <svg width="24px" height="24px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" className="stroke-background dark:stroke-foreground"><path d="M7 15C7 15 11.5 14 16 16" stroke-linecap="round" stroke-linejoin="round"></path><path d="M6.5 12C6.5 12 12.5 10.5 17.5 13.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M6 9.00003C9 8.50005 14 8.00006 19 11" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22Z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
           </div>
         </CardHeader>

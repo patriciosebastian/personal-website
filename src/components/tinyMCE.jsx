@@ -155,7 +155,7 @@ export default function TinyMCE({
             <div className="mt-5">
               <div>- p el&apos;s have &apos;mb&apos; of 1.5rem (mobile) and 1.75rem (desktop)</div>
               <div>- H2&apos;s, H3&apos;s, and img&apos;s are the same</div>
-              <div>- Apply !mb-0 to p tags above ul&apos;s if the margin is not desired</div>
+              <div>- Apply mb-0! to p tags above ul&apos;s if the margin is not desired</div>
             </div>
           </div>
         </div>

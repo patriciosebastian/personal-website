@@ -24,7 +24,7 @@ export default async function BlogPage() {
     <>
       <MobileNav />
       <div className="max-w-lg lg:max-w-3xl mx-auto">
-        <div className="h-56 flex flex-col justify-center items-start gap-4 border-b-[1px] mb-8">
+        <div className="h-56 flex flex-col justify-center items-start gap-4 border-b mb-8">
           <h1 className="text-4xl mt-14">Blog</h1>
           <p className="text-pretty">Look at you! Reading my blog &#129395;<br />
           I write about web development, entrepreneurship, and things in life I care about.</p>

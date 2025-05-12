@@ -36,9 +36,9 @@ export const setupOptions = (editor) => {
   });
 
   editor.ui.registry.addButton('add!Mb0Class', {
-    text: 'Add !mb-0 Class',
+    text: 'Add mb-0! Class',
     icon: 'paragraph',
-    tooltip: 'Add .!mb-0 class to paragraph',
+    tooltip: 'Add .mb-0! class to paragraph',
     onAction: () => mb0ClassButtonAction(editor),
   });
 

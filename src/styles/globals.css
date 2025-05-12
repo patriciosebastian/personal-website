@@ -1,8 +1,56 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-@import "./blogPosts.css";
+@import './blogPosts.css' layer(utilities);
+
+@config '../../tailwind.config.js';
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@utility aside {
+  @apply bg-secondary rounded p-4;
+  border-left: 3px solid;
+  border-color: var(--foreground);
+}
+
+@utility dark {
+  & form[data-uid='d4f5b1b12e'] {
+    @apply bg-background! text-foreground!;
+  }
+  & .formkit-submit {
+    @apply bg-primary! text-primary-foreground! font-semibold!;
+  }
+}
+
+@utility light {
+  & .formkit-submit {
+    @apply font-semibold!;
+  }
+}
+
+@utility formkit-submit {
+  .light & {
+    @apply font-semibold!;
+  }
+  .dark & {
+    @apply bg-primary! text-primary-foreground! font-semibold!;
+  }
+}
 
 @layer base {
   /* 
@@ -109,10 +157,10 @@
     list-style-position: inside;
   }
   .dark .formkit-header {
-    @apply !text-foreground;
+    @apply text-foreground!;
   }
   .dark .formkit-subheader, .dark .formkit-guarantee {
-    @apply !text-muted-foreground;
+    @apply text-muted-foreground!;
   }
   @media screen and (min-width: 1024px) {
     .light .formkit-form[data-uid="d4f5b1b12e"] .formkit-input,
@@ -127,27 +175,13 @@
     outline-color: #9ca3af !important;
   }
   .dark a.formkit-powered-by-convertkit {
-    @apply !text-foreground;
+    @apply text-foreground!;
   }
 }
 
 @layer components {
-  .aside {
-    @apply bg-secondary rounded p-4;
-    border-left: 3px solid;
-    border-color: var(--foreground);
-  }
   form[data-uid="d4f5b1b12e"] {
-    @apply !border-border;
-  }
-  .dark form[data-uid="d4f5b1b12e"] {
-    @apply !bg-background !text-foreground;
-  }
-  .light .formkit-submit {
-    @apply !font-semibold;
-  }
-  .dark .formkit-submit {
-    @apply !bg-primary !text-primary-foreground !font-semibold;
+    @apply border-border!;
   }
 }
 
