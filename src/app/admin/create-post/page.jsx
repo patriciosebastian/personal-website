@@ -100,8 +100,8 @@ export default function CreatePostPage() {
               <label htmlFor="isLife" className="align-middle">is_life</label>
             </div>
             <div>
-              <input type="checkbox" name="isEntrepreneurship" id="isEntrepreneurship" className="mr-2 align-middle" onChange={(e) => setIsEntrepreneurship(e.target.checked)} />
-              <label htmlFor="isEntrepreneurship" className="align-middle">is_entrepreneurship</label>
+              <input type="checkbox" name="isEntrepreneurship" id="isEntrepreneurship" className="mr-2 align-middle cursor-not-allowed" disabled onChange={(e) => setIsEntrepreneurship(e.target.checked)} />
+              <label htmlFor="isEntrepreneurship" className="align-middle opacity-50">is_entrepreneurship</label>
             </div>
             <div>
               <input type="checkbox" name="isSideProject" id="isSideProject" className="mr-2 align-middle" onChange={(e) => setIsSideProject(e.target.checked)} />
