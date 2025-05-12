@@ -130,7 +130,7 @@
     @apply bg-background text-foreground;
   }
   [role="tablist"] > [aria-selected="true"] {
-    @apply border-b-2 border-b-primary rounded-none -mb-2;
+    @apply -mb-2;
   }
   .bg-card li, .expandable li {
     list-style-position: inside;

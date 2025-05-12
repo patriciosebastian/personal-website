@@ -98,7 +98,7 @@ export default async function Home() {
       <div>
         <h2 className="section-heading text-4xl text-center">About</h2>
         <Tabs defaultValue="career" className="rounded-md py-4 max-w-lg lg:max-w-3xl mx-auto">
-          <TabsList className=" w-full bg-transparent border-b-2 rounded-none p-0 box-border">
+          <TabsList className=" w-full bg-transparent rounded-none p-0 box-border">
             <TabsTrigger value="career">Career</TabsTrigger>
             <TabsTrigger value="tech-stack">Tech Stack</TabsTrigger>
             <TabsTrigger value="personal">Personal</TabsTrigger>
@@ -109,7 +109,7 @@ export default async function Home() {
               Currently, I&#39;m a Software Developer at <a className="underline" href="https://empire-medical.com/" target="_blank">Empire Medical</a>, where we use PHP and Laravel to build and maintain a custom business application. We&apos;re a smaller team but super effective—I get to make meaningful contributions on a consistent basis. Before my current position, I mainly worked in the JavaScript ecosystem, so I&apos;m proficient there as well. I also offer web development services as a freelancer. In all the work I do, I strive to deliver exceptional user experiences.
             </p>
             <Expandable trigger="Here are seven lessons I've learned" className="mt-4">
-              <ul className="leading-snug border rounded-md p-4">
+              <ul className="leading-snug rounded-md p-4 bg-accent">
                 <li>Not participating in or actively shaping company culture results in the death of company culture. On the flip side,</li>
                 <li>Actively shaping culture, and caring about the people you work with, especially as a leader, results in &apos;buy-in&apos; and people wanting to get their hands dirty for the mission.</li>
                 <li>You can get more things done when you have the right people making decisions. Policy can hinder progress, but you always win when you <em>trust the process</em>. It&apos;s a fine line.</li>
