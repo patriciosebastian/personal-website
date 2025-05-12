@@ -39,7 +39,8 @@ export default async function Home() {
         <p className="lg:mb-2">Hello, I&apos;m <span className="font-semibold">Patricio Salazar</span>. I&apos;m a</p>
         <h1 className="mb-4 text-3xl lg:text-6xl lg:mb-8">Software Developer</h1>
         <p className="mb-4 lg:mb-8">I care about building exceptional experiences and writing clear, logical code that solves problems.</p>
-        <p>&gt; I&apos;m currently writing Laravel/Livewire code at my place of work.</p>
+        <p>&gt; I&apos;m currently writing <span className="font-semibold">Laravel/Livewire</span> code at my place of work.</p>
+        <p>&gt; Proficient in <span className="font-semibold">JavaScript/React</span>.</p>
         <p>&gt; I&apos;m also working on side projects, exploring new technologies, learning and building in public, and writing about all of this on my blog.</p>
         {/* CTA's */}
         <div className="flex items-center gap-4 mt-6 mb-16">
@@ -84,7 +85,10 @@ export default async function Home() {
           </Link>
         </div>
         {/* Gradient Blob */}
-        <div class="absolute size-1/3 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-radial from-foreground to-background blur-[8rem] lg:blur-[12rem]" />
+        <div class="
+          absolute size-1/3 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-radial -z-10
+          from-foreground to-background blur-[8rem] lg:blur-[12rem]
+        " />
       </div>
 
       <Spacer className="h-12" />
@@ -106,7 +110,7 @@ export default async function Home() {
           </TabsList>
           <TabsContent value="career" className="px-4 py-2">
             <p>
-              Currently, I&#39;m a Software Developer at <a className="underline" href="https://empire-medical.com/" target="_blank">Empire Medical</a>, where we use PHP and Laravel to build and maintain a custom business application. We&apos;re a smaller team but super effective—I get to make meaningful contributions on a consistent basis. Before my current position, I mainly worked in the JavaScript ecosystem, so I&apos;m proficient there as well. I also offer web development services as a freelancer. In all the work I do, I strive to deliver exceptional user experiences.
+              Currently, I&#39;m a Software Developer at <a className="underline" href="https://empire-medical.com/" target="_blank">Empire Medical</a>, where we use PHP and Laravel to build and maintain a custom business application. We&apos;re a smaller team but super effective—I get to make meaningful contributions on a consistent basis. Before my current position, I mainly worked in the JavaScript ecosystem, so I&apos;m proficient there as well. I also offer web development services as a freelancer. In all my work, I strive to deliver unmistakable user experiences.
             </p>
             <Expandable trigger="Here are seven lessons I've learned" className="mt-4">
               <ul className="leading-snug rounded-md p-4 bg-accent">

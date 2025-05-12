@@ -26,8 +26,8 @@ export default async function BlogPage() {
       <div className="max-w-lg lg:max-w-3xl mx-auto">
         <div className="h-56 flex flex-col justify-center items-start gap-4 border-b mb-8">
           <h1 className="text-4xl mt-14">Blog</h1>
-          <p className="text-pretty">Look at you! Reading my blog &#129395;<br />
-          I write about web development, entrepreneurship, and things in life I care about.</p>
+          <p className="text-pretty">Look at you! Thanks for stopping by &#129395;<br />
+          I write about web development, side projects, and things in life I care about.</p>
         </div>
         <ul>
           {blogs.map((blog) => (
@@ -45,7 +45,7 @@ export default async function BlogPage() {
                   {(blog.is_freelance) ? <Badge variant="outline" className="mr-2">freelance</Badge> : null}
                   {(blog.is_web_development) ? <Badge variant="outline" className="mr-2">web development</Badge> : null}
                   {(blog.is_tech) ? <Badge variant="outline" className="mr-2">tech</Badge> : null}
-                  {(blog.is_entrepreneurship) ? <Badge variant="outline" className="mr-2">entrepreneurship</Badge> : null}
+                  {/* {(blog.is_entrepreneurship) ? <Badge variant="outline" className="mr-2">side project</Badge> : null} */}
                   {(blog.is_life) ? <Badge variant="outline" className="mr-2">life</Badge> : null}
                   {(blog.is_side_project) ? <Badge variant="outline" className="mr-2">side project</Badge> : null}
                   <small className="ml-auto">{new Date(blog.created_at).toLocaleDateString()}</small>
