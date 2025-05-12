@@ -83,6 +83,8 @@ export default async function Home() {
             </svg>
           </Link>
         </div>
+        {/* Gradient Blob */}
+        <div class="absolute size-1/3 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-radial from-foreground to-background blur-[8rem] lg:blur-[12rem]" />
       </div>
 
       <Spacer className="h-12" />
