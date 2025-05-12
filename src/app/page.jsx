@@ -86,8 +86,8 @@ export default async function Home() {
         </div>
         {/* Gradient Blob */}
         <div class="
-          absolute size-1/3 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-radial -z-10
-          from-foreground to-background blur-[8rem] lg:blur-[12rem]
+          absolute size-1/3 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full dark:bg-radial -z-10
+          dark:from-foreground dark:to-background dark:blur-[8rem] dark:lg:blur-[12rem]
         " />
       </div>
 
