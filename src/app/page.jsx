@@ -35,16 +35,19 @@ export default async function Home() {
   return (
     <>
       {/* Hero */}
-      <div className="min-h-svh flex flex-col justify-center items-center text-center text-balance relative">
-        <h1 className="text-8xl">Patricio Salazar</h1>
-        <p className="lg:w-1/2">Software Developer and integrated community member in Austin, TX.</p>
+      <div className="min-h-svh flex flex-col justify-center text-start relative lg:text-balance">
+        <p className="lg:mb-2">Hello, I&apos;m <span className="font-semibold">Patricio Salazar</span>. I&apos;m a</p>
+        <h1 className="mb-4 text-3xl lg:text-6xl lg:mb-8">Software Developer</h1>
+        <p className="mb-4 lg:mb-8">I care about building exceptional experiences and writing clear, logical code that solves problems.</p>
+        <p>&gt; I&apos;m currently writing Laravel/Livewire code at my place of work.</p>
+        <p>&gt; I&apos;m also working on side projects, exploring new technologies, learning and building in public, and writing about all of this on my blog.</p>
         {/* CTA's */}
-        <div className="flex justify-center items-center gap-4 mt-6">
+        <div className="flex items-center gap-4 mt-6 mb-16">
           <Link href="#Projects" className={buttonVariants({ variant: "outline" }) + ` h-12 justify-center border-foreground! font-bold`}>Projects</Link>
           <Link href={`/blog/${latestBlog ? latestBlog.slug : ''}`} className={buttonVariants({ variant: "outline" }) + ` h-12 justify-center border-foreground! font-bold`}>Latest Post</Link>
         </div>
         {/* Social Icons */}
-        <div className="flex justify-center items-center gap-4 landscape:static landscape:mt-8 landscape:md:absolute landscape:md:mt-0 absolute bottom-16">
+        <div className="flex justify-start items-center gap-4">
           {/* github */}
           <Link href="https://github.com/patriciosebastian" className="justify-center px-4 font-bold" target="_blank">
             <svg width="34px" height="34px" viewBox="-2.5 0 19 19" xmlns="http://www.w3.org/2000/svg" className="stroke-background fill-foreground">
