@@ -36,7 +36,7 @@ export default async function Home() {
     <>
       {/* Hero */}
       <div className="min-h-svh flex flex-col justify-center text-start relative lg:text-balance">
-        <p className="lg:mb-2">Hello, I&apos;m <span className="font-semibold">Patricio Salazar</span>. I&apos;m a</p>
+        <p className="lg:mb-2">Hello, I&apos;m <strong>Patricio Salazar</strong>. I&apos;m a</p>
         <h1 className="mb-4 text-3xl lg:text-6xl lg:mb-8">Software Developer</h1>
         <p className="mb-4 lg:mb-8">I care about building exceptional experiences and writing clear, logical code that solves problems.</p>
         <p>&gt; I&apos;m currently writing <span className="font-semibold">Laravel/Livewire</span> code at my place of work.</p>
@@ -108,11 +108,17 @@ export default async function Home() {
             <TabsTrigger value="personal">Personal</TabsTrigger>
             {/* <TabsTrigger value="cool-stuff">Stuff</TabsTrigger> */}
           </TabsList>
-          <TabsContent value="career" className="px-4 py-2">
+          <TabsContent value="career" className="p-4 space-y-4">
             <p>
-              Currently, I&#39;m a Software Developer at <a className="underline" href="https://empire-medical.com/" target="_blank">Empire Medical</a>, where we use PHP and Laravel to build and maintain a custom business application. We&apos;re a smaller team but super effective—I get to make meaningful contributions on a consistent basis. Before my current position, I mainly worked in the JavaScript ecosystem, so I&apos;m proficient there as well. I also offer web development services as a freelancer. In all my work, I strive to deliver unmistakable user experiences.
+              Right now, I'm focused on growing as a developer while sharing openly about my side projects, technical learnings, and adventures in tech.
             </p>
-            <Expandable trigger="Here are seven lessons I've learned" className="mt-4">
+            <p>
+              Currently, I&#39;m a <span className="font-bold">Software Developer</span> at <a className="underline" href="https://empire-medical.com/" target="_blank">Empire Medical</a>, where I use PHP, Laravel, and Livewire to build and maintain a custom business application. The team is small but highly effective; I get to make meaningful contributions on a daily basis. Previously, I worked in the JavaScript ecosystem, so I&apos;m proficient there as well. I sometimes offer web development services as a freelancer.
+            </p>
+            <p>
+              I strive to deliver <strong>unmistakable</strong> user experiences.
+            </p>
+            {/* <Expandable trigger="Here are seven lessons I've learned" className="mt-4">
               <ul className="leading-snug rounded-md p-4 bg-accent">
                 <li>Not participating in or actively shaping company culture results in the death of company culture. On the flip side,</li>
                 <li>Actively shaping culture, and caring about the people you work with, especially as a leader, results in &apos;buy-in&apos; and people wanting to get their hands dirty for the mission.</li>
@@ -122,7 +128,7 @@ export default async function Home() {
                 <li>Taking the time to research before starting a project or task can save you a lot of headache.</li>
                 <li>Don&apos;t just bring up problems; offer solutions.</li>
               </ul>
-            </Expandable>
+            </Expandable> */}
           </TabsContent>
           <TabsContent value="tech-stack" className="px-4 py-2 w-fit mx-auto">
             {/* Frontend */}
@@ -165,21 +171,17 @@ export default async function Home() {
             </div>
           </TabsContent>
           <TabsContent value="personal" className="px-4 py-2">
-            <p>
+            <p className="mb-4">
               I&apos;ve done and seen many things in life, but hands down the greatest experience has been to be a husband to my wife and the father of our two children.
             </p>
-            <p>Here are some quick things:</p>
-            <ul className="px-1">
-              <li>✅ Peruvian. Spanish is my first language.</li>
-              <li>✅ Born and raised in LA.</li>
-              <li>✅ Lived in Mexico City for a year.</li>
-              <li>✅ Lived in Oregon for 5.</li>
-              <li>✅ Now, ATX is home.</li>
-              <li>✅ I love spicy food. You can&apos;t take more heat than me. Yes, that&apos;s a challenge.</li>
-              <li>✅ Audio Engineering degree.</li>
-              <li>✅ When I&apos;m lifting weights at 10:30pm I&apos;m the most dangerous man alive (in my head).</li>
-              <li>✅ I&apos;m getting nerdier the older I get. Is that a thing?</li>
-              <li>✅ Let&apos;s be real, I haven&apos;t read a full book in years.</li>
+            <p className="mb-2">Here are some quick things:</p>
+            <ul className="px-1 list-disc list-inside">
+              <li>Born and raised in Los Angeles, CA.</li>
+              <li>Spent an incredible year in Mexico City.</li>
+              <li>Lived in Oregon for 5 beautiful years.</li>
+              <li>Now, Austin, TX is home.</li>
+              <li>I love spicy food. I guarantee you can&apos;t handle more heat than me (challenge accepted?)</li>
+              <li>I&apos;m getting nerdier the older I get. Is that like a badge of honor?</li>
             </ul>
           </TabsContent>
           {/* <TabsContent value="cool-stuff" className="px-4 py-2">Cool stuff.</TabsContent> */}
