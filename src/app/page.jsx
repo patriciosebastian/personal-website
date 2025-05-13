@@ -251,7 +251,7 @@ export default async function Home() {
           </CardHeader>
           <CardContent className="lg:w-1/2">
             <p className="text-balance mb-6 lg:mt-6 lg:mb-8">
-              git-highlight is a lightweight, real-time Zsh plugin that instantly highlights typos or mistakes in your Git commands before you hit enter. Built with Bash scripting, it's easy to install, highly performant, and customizable. I made this tool because mixing late night coding and sensitive git commands have caused me some headaches. Hope you enjoy!
+              git-highlight is a lightweight, real-time Zsh plugin that instantly highlights typos or mistakes in your Git commands before you hit enter. Built with Bash scripting, it&apos;s easy to install, highly performant, and customizable. I made this tool because mixing late night coding and sensitive git commands have caused me some headaches. Hope you enjoy!
             </p>
             <a href="https://patriciosebastian.github.io/git-highlight-website/" target='_blank' className={buttonVariants({ variant: "default" }) + ` h-12 justify-center lg:flex lg:mx-auto`}>Visit Site</a>
           </CardContent>
