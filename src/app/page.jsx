@@ -13,6 +13,7 @@ import HelloWorld2 from '../../public/Hello_World_Desk_Setup_2_optimized.webp'
 import TouchBase from '../../public/TouchBaseApp_Optimized.webp'
 import ClearCalc from '../../public/ClearCalc_Optimized.webp'
 import Doubles from '../../public/Doubles_opt.webp'
+import GitHighlight from '../../public/git-highlight_light_opt.png'
 import Expandable from '@/components/ui/expandable'
 
 // Revalidate cache every hour
@@ -239,6 +240,24 @@ export default async function Home() {
         </Card>
 
         {/* 3. */}
+        <Card className="mb-4 max-w-md lg:flex lg:max-w-3xl mx-auto lg:mb-6">
+          <CardHeader className="lg:w-1/2">
+            <Image src={GitHighlight} className="mb-4" alt="Git Highlight website home page" />
+            <CardTitle>git-highlight</CardTitle>
+            <CardDescription className="text-pretty text-foreground mb-1!">A real-time Git command typo highlighter for Zsh</CardDescription>
+            <div className="flex flex-wrap items-center gap-1">
+              <Badge variant="outline">Bash</Badge>
+            </div>
+          </CardHeader>
+          <CardContent className="lg:w-1/2">
+            <p className="text-balance mb-6 lg:mt-6 lg:mb-8">
+              git-highlight is a lightweight, real-time Zsh plugin that instantly highlights typos or mistakes in your Git commands before you hit enter. Built with Bash scripting, it's easy to install, highly performant, and customizable. I made this tool because mixing late night coding and sensitive git commands have caused me some headaches. Hope you enjoy!
+            </p>
+            <a href="https://patriciosebastian.github.io/git-highlight-website/" target='_blank' className={buttonVariants({ variant: "default" }) + ` h-12 justify-center lg:flex lg:mx-auto`}>Visit Site</a>
+          </CardContent>
+        </Card>
+
+        {/* 4. */}
         <Card className="max-w-md lg:flex lg:max-w-3xl mx-auto">
           <CardHeader className="lg:w-1/2">
             <Image src={Doubles} className="mb-4" alt="Doubles game home page" />
