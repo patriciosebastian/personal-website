@@ -57,7 +57,7 @@ export default async function Home() {
           </Link>
           {/* linkedin */}
           <Link href="https://www.linkedin.com/in/patriciosalazardev" className="justify-center px-4 font-bold" target="_blank">
-            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" width="34px" height="34px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" className="stroke-background fill-foreground">
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" width="34px" height="34px" viewBox="0 0 100 100" enableBackground="new 0 0 100 100" className="stroke-background fill-foreground">
               <g>
               	<path d="M80.667,14H19.315C16.381,14,14,16.325,14,19.188v61.617C14,83.672,16.381,86,19.315,86h61.352
               		C83.603,86,86,83.672,86,80.805V19.188C86,16.325,83.603,14,80.667,14z M35.354,75.354H24.67V40.995h10.684V75.354z M30.012,36.297
@@ -76,16 +76,16 @@ export default async function Home() {
           </Link>
           {/* blog */}
           <Link href="/blog" className="justify-center px-4 font-bold">
-            <svg width="34px" height="34px" viewBox="0 0 24 24" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg" color="#000000" className="-rotate-10 stroke-background fill-foreground">
-              <path d="M2.90602 17.505L5.33709 3.71766C5.5289 2.62987 6.56621 1.90354 7.654 2.09534L19.4717 4.17912C20.5595 4.37093 21.2858 5.40824 21.094 6.49603L18.6629 20.2833C18.4711 21.3711 17.4338 22.0975 16.346 21.9057L4.52834 19.8219C3.44055 19.6301 2.71421 18.5928 2.90602 17.505Z" stroke-width="1.5"></path>
-              <path d="M8.92902 6.38184L16.8075 7.77102" stroke-width="1.5" stroke-linecap="round"></path>
-              <path d="M8.23444 10.3213L16.1129 11.7105" stroke-width="1.5" stroke-linecap="round"></path>
-              <path d="M7.53986 14.2607L12.4639 15.129" stroke-width="1.5" stroke-linecap="round"></path>
+            <svg width="34px" height="34px" viewBox="0 0 24 24" strokeWidth="1.5" xmlns="http://www.w3.org/2000/svg" color="#000000" className="-rotate-10 stroke-background fill-foreground">
+              <path d="M2.90602 17.505L5.33709 3.71766C5.5289 2.62987 6.56621 1.90354 7.654 2.09534L19.4717 4.17912C20.5595 4.37093 21.2858 5.40824 21.094 6.49603L18.6629 20.2833C18.4711 21.3711 17.4338 22.0975 16.346 21.9057L4.52834 19.8219C3.44055 19.6301 2.71421 18.5928 2.90602 17.505Z" strokeWidth="1.5"></path>
+              <path d="M8.92902 6.38184L16.8075 7.77102" strokeWidth="1.5" strokeLinecap="round"></path>
+              <path d="M8.23444 10.3213L16.1129 11.7105" strokeWidth="1.5" strokeLinecap="round"></path>
+              <path d="M7.53986 14.2607L12.4639 15.129" strokeWidth="1.5" strokeLinecap="round"></path>
             </svg>
           </Link>
         </div>
         {/* Gradient Blob */}
-        <div class="
+        <div className="
           absolute size-1/3 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full dark:bg-radial -z-10
           dark:from-foreground dark:to-background dark:blur-[8rem] dark:lg:blur-[12rem]
         " />
@@ -301,7 +301,7 @@ export default async function Home() {
         <CardHeader className="w-1/2 p-4 relative">
           <Image src={HelloWorld1} className="rounded mb-2" alt="Computer/Desk Set-up" />
           <div className="absolute m-1!">
-            <svg width="24px" height="24px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" className="stroke-background dark:stroke-foreground"><path d="M7 15C7 15 11.5 14 16 16" stroke-linecap="round" stroke-linejoin="round"></path><path d="M6.5 12C6.5 12 12.5 10.5 17.5 13.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M6 9.00003C9 8.50005 14 8.00006 19 11" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22Z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            <svg width="24px" height="24px" viewBox="0 0 24 24" strokeWidth="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" className="stroke-background dark:stroke-foreground"><path d="M7 15C7 15 11.5 14 16 16" strokeLinecap="round" strokeLinejoin="round"></path><path d="M6.5 12C6.5 12 12.5 10.5 17.5 13.5" strokeLinecap="round" strokeLinejoin="round"></path><path d="M6 9.00003C9 8.50005 14 8.00006 19 11" strokeLinecap="round" strokeLinejoin="round"></path><path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22Z" strokeLinecap="round" strokeLinejoin="round"></path></svg>
           </div>
         </CardHeader>
         <CardContent className="w-1/2 p-4 sm:text-center">
@@ -315,7 +315,7 @@ export default async function Home() {
         <CardHeader className="w-1/2 p-4 relative">
           <Image src={HelloWorld2} className="rounded mb-2" alt="Computer/Desk Set-up with the universe in the background" />
           <div className="absolute m-1!">
-            <svg width="24px" height="24px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" className="stroke-background dark:stroke-foreground"><path d="M7 15C7 15 11.5 14 16 16" stroke-linecap="round" stroke-linejoin="round"></path><path d="M6.5 12C6.5 12 12.5 10.5 17.5 13.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M6 9.00003C9 8.50005 14 8.00006 19 11" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22Z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            <svg width="24px" height="24px" viewBox="0 0 24 24" strokeWidth="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" className="stroke-background dark:stroke-foreground"><path d="M7 15C7 15 11.5 14 16 16" strokeLinecap="round" strokeLinejoin="round"></path><path d="M6.5 12C6.5 12 12.5 10.5 17.5 13.5" strokeLinecap="round" strokeLinejoin="round"></path><path d="M6 9.00003C9 8.50005 14 8.00006 19 11" strokeLinecap="round" strokeLinejoin="round"></path><path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22Z" strokeLinecap="round" strokeLinejoin="round"></path></svg>
           </div>
         </CardHeader>
         <CardContent className="w-1/2 p-4 sm:text-center">
