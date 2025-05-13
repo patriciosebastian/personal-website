@@ -95,7 +95,10 @@ export default async function Page({ params }) {
 
       <Spacer />
 
-      <p className="border p-4 rounded">
+      <p className="relative border p-4 rounded">
+        <div className="absolute size-8 -top-4 rounded-full flex justify-center items-center bg-accent text-primary font-bold border animate-spin duration-[2000ms]">
+          ?
+        </div>
         Got thoughts on this article or anything else? I&apos;d love to connect and hear from you. <a href="mailto:psebastiansalazar@gmail.com" className="underline font-bold">Hit me up!</a>
       </p>
 
