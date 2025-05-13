@@ -258,7 +258,7 @@ export default async function Home() {
         </Card>
 
         {/* 4. */}
-        <Card className="max-w-md lg:flex lg:max-w-3xl mx-auto">
+        {/* <Card className="max-w-md lg:flex lg:max-w-3xl mx-auto">
           <CardHeader className="lg:w-1/2">
             <Image src={Doubles} className="mb-4" alt="Doubles game home page" />
             <CardTitle>Doubles</CardTitle>
@@ -276,7 +276,7 @@ export default async function Home() {
             </p>
             <a href="https://playdoubles.org" target='_blank' className={buttonVariants({ variant: "default" }) + ` h-12 justify-center lg:flex lg:mx-auto`}>Visit Site</a>
           </CardContent>
-        </Card>
+        </Card> */}
       </div>
 
       <Spacer />
