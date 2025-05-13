@@ -152,6 +152,12 @@
     padding: 0.1rem;
     vertical-align: middle;
   }
+  .dark code {
+    @apply bg-secondary text-primary;
+  }
+  .dark .aside code {
+    @apply bg-primary text-primary-foreground;
+  }
   .blog-post ul li {
     list-style-type: disc;
     list-style-position: inside;
