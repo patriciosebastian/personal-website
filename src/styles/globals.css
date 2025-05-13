@@ -158,6 +158,9 @@
   .dark .aside code {
     @apply bg-primary text-primary-foreground;
   }
+  .blog-post ul {
+    @apply pl-3;
+  }
   .blog-post ul li {
     list-style-type: disc;
     list-style-position: inside;
