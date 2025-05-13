@@ -110,7 +110,7 @@ export default async function Home() {
           </TabsList>
           <TabsContent value="career" className="p-4 space-y-4">
             <p>
-              Right now, I'm focused on growing as a developer while sharing openly about my side projects, technical learnings, and adventures in tech.
+              Right now, I&apos;m focused on growing as a developer while sharing openly about my side projects, technical learnings, and adventures in tech.
             </p>
             <p>
               Currently, I&#39;m a <span className="font-bold">Software Developer</span> at <a className="underline" href="https://empire-medical.com/" target="_blank">Empire Medical</a>, where I use PHP, Laravel, and Livewire to build and maintain a custom business application. The team is small but highly effective; I get to make meaningful contributions on a daily basis. Previously, I worked in the JavaScript ecosystem, so I&apos;m proficient there as well. I sometimes offer web development services as a freelancer.
