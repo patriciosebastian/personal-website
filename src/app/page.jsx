@@ -174,14 +174,13 @@ export default async function Home() {
             <p className="mb-4">
               I&apos;ve done and seen many things in life, but hands down the greatest experience has been to be a husband to my wife and the father of our two children.
             </p>
-            <p className="mb-2">Here are some quick things:</p>
+            <p className="mb-2">Here are some quick basic things:</p>
             <ul className="px-1 list-disc list-inside">
               <li>Born and raised in Los Angeles, CA.</li>
               <li>Spent an incredible year in Mexico City.</li>
               <li>Lived in Oregon for 5 beautiful years.</li>
               <li>Now, Austin, TX is home.</li>
               <li>I love spicy food. I guarantee you can&apos;t handle more heat than me (challenge accepted?)</li>
-              <li>I&apos;m getting nerdier the older I get. Is that like a badge of honor?</li>
             </ul>
           </TabsContent>
           {/* <TabsContent value="cool-stuff" className="px-4 py-2">Cool stuff.</TabsContent> */}
