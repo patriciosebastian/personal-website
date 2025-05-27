@@ -19,6 +19,26 @@ import Expandable from '@/components/ui/expandable'
 // Revalidate cache every hour
 export const revalidate = 3600;
 
+export const metadata = {
+  title: "Patricio Salazar - Software Developer",
+  description: "Welcome to my website! I'm a passionate software developer growing my skills and building side projects. Explore my projects and latest blog posts.",
+  keywords: ["Portfolio", "Software Developer", "Web Development", "Laravel", "Next.js", "React", "Side Projects", "Blog"],
+  openGraph: {
+    title: "Patricio Salazar - Software Developer",
+    description: "Welcome to my website! I'm a passionate software developer growing my skills and building side projects. Explore my projects and latest blog posts.",
+    url: "https://patriciosalazar.dev",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Patricio Salazar - Software Developer",
+    description: "Welcome to my website! I'm a passionate software developer growing my skills and building side projects. Explore my projects and latest blog posts.",
+  },
+  alternates: {
+    canonical: "https://patriciosalazar.dev",
+  },
+};
+
 export default async function Home() {
   const { data: blogs, error } = await supabase
     .from("blogs")
@@ -35,6 +55,24 @@ export default async function Home() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Patricio Salazar",
+            "url": "https://yourdomain.com",
+            "description": "Software Developer website showcasing projects and blog posts",
+            "author": {
+              "@type": "Person",
+              "name": "Patricio Salazar",
+              "jobTitle": "Software Developer"
+            },
+          }),
+        }}
+      />
+
       {/* Hero */}
       <div className="min-h-svh flex flex-col justify-center text-start relative lg:text-balance">
         <p className="lg:mb-2">Hello, I&apos;m <strong>Patricio Salazar</strong>. I&apos;m a</p>
