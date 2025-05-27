@@ -7,9 +7,125 @@ import Image from "next/image"
 import Link from "next/link"
 import ThumbsUp from "../../../public/Memoji_thumbsUp_optimized.png"
 
+export const metadata = {
+  title: "Freelance Services - Patricio Salazar",
+  description: "Professional freelance web development services. I create modern, responsive websites and web applications using cutting-edge technologies. Available for hire.",
+  keywords: ["Freelance", "Web Development Services", "Next.js Developer", "React Developer", "Hire Developer", "Web Design", "Full Stack Developer", "Laravel Developer", "WIX Developer", "Shopify Developer", "Squarespace Developer", "Freelance Web Developer", "Freelance Web Design", "Austin, TX", "Remote Web Developer"],
+  openGraph: {
+    title: "Freelance Services - Patricio Salazar",
+    description: "Professional freelance web development services. I create modern, responsive websites and web applications using cutting-edge technologies.",
+    url: "https://patriciosalazar.dev/freelance",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Freelance Services - Patricio Salazar",
+    description: "Professional freelance web development services. I create modern, responsive websites and web applications using cutting-edge technologies.",
+  },
+  alternates: {
+    canonical: "https://patriciosalazar.dev/freelance",
+  },
+};
+
 export default function FreelancePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ProfessionalService",
+            "name": "Patricio Salazar Freelance Web Development",
+            "description": "Professional freelance web development services specializing in modern web applications",
+            "url": "https://patriciosalazar.dev/freelance",
+            "telephone": "+1-818-535-5976",
+            "email": "psalazardev@gmail.com",
+            "serviceType": "Web Development",
+            "provider": {
+              "@type": "Person",
+              "name": "Patricio Salazar",
+              "jobTitle": "Freelance Web Developer",
+              "url": "https://patriciosalazar.dev",
+              "sameAs": [
+                "https://github.com/patriciosebastian",
+                "https://linkedin.com/in/patriciosalazardev"
+              ]
+            },
+            "areaServed": {
+              "@type": "Place",
+              "name": "United States",
+            },
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Web Development Services",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Web Application Development",
+                    "description": "Custom web applications using Next.js and React"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Website Development",
+                    "description": "Modern, responsive websites"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Full Stack Development",
+                    "description": "Complete web solutions from frontend to backend"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Web Design",
+                    "description": "Beautiful, modern, and user-friendly web design services"
+                  }
+                }
+              ],
+            },
+          }),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What technologies do you use?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "I specialize in modern web technologies including SquareSpace, Shopify, JavaScript, React, Next.js, and Laravel. This can depend on the project, but I can also be flexible, if needed."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How long does a typical project take?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Project timelines vary based on complexity, but most websites take 2-4 weeks, while larger applications can take 1-3 months."
+                }
+              },
+            ],
+          }),
+        }}
+      />
+
       <MobileNav />
       <section className="flex justify-center items-center bg-linear-to-r from-blue-500 to-indigo-600 text-white py-12 mt-2 rounded-md max-w-lg lg:max-w-3xl mx-auto lg:mt-20">
         <div className="px-4 text-center lg:text-left text-balance">

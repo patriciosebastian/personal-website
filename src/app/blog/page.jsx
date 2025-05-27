@@ -43,38 +43,38 @@ export default async function BlogPage() {
   return (
     <>
     <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Blog",
-            "name": "Patricio Salazar Blog",
-            "description": "Full Stack Software development blog with tutorials, build-in-public insights, and side projects",
-            "url": "https://patriciosalazar.dev/blog",
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Blog",
+          "name": "Patricio Salazar Blog",
+          "description": "Full Stack Software development blog with tutorials, build-in-public insights, and side projects",
+          "url": "https://patriciosalazar.dev/blog",
+          "author": {
+            "@type": "Person",
+            "name": "Patricio Salazar",
+            "jobTitle": "Software Developer"
+          },
+          "publisher": {
+            "@type": "Person",
+            "name": "Patricio Salazar"
+          },
+          "blogPost": blogs?.map(blog => ({
+            "@type": "BlogPosting",
+            "headline": blog.title,
+            "description": blog.preview,
+            "url": `https://patriciosalazar.dev/blog/${blog.slug}`,
+            "datePublished": blog.created_at,
+            // "dateModified": blog.updated_at || blog.created_at,
             "author": {
               "@type": "Person",
-              "name": "Patricio Salazar",
-              "jobTitle": "Software Developer"
-            },
-            "publisher": {
-              "@type": "Person",
               "name": "Patricio Salazar"
-            },
-            "blogPost": blogs?.map(blog => ({
-              "@type": "BlogPosting",
-              "headline": blog.title,
-              "description": blog.preview,
-              "url": `https://patriciosalazar.dev/blog/${blog.slug}`,
-              "datePublished": blog.created_at,
-              // "dateModified": blog.updated_at || blog.created_at,
-              "author": {
-                "@type": "Person",
-                "name": "Patricio Salazar"
-              }
-            })) || []
-          }),
-        }}
-      />
+            }
+          })) || []
+        }),
+      }}
+    />
 
       <MobileNav />
       <div className="max-w-lg lg:max-w-3xl mx-auto">

@@ -143,50 +143,50 @@ export default async function Page({ params }) {
   return (
     <>
     <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BlogPosting",
-            "headline": blog.title,
-            "description": blog.preview ?
-            blog.preview :
-            blog.body ?
-            blog.body.replace(/<[^>]*>/g, '').substring(0, 160).trim() + "..."
-              : "Read this insightful blog post by Patricio Salazar",
-            "author": {
-              "@type": "Person",
-              "name": "Patricio Salazar",
-              "url": "https://patriciosalazar.dev"
-            },
-            "publisher": {
-              "@type": "Person",
-              "name": "Patricio Salazar",
-            },
-            "datePublished": blog.created_at,
-            "dateModified": blog.updated_at || blog.created_at,
-            "mainEntityOfPage": {
-              "@type": "WebPage",
-              "@id": `https://patriciosalazar.dev/blog/${slug}`
-            },
-            "url": `https://patriciosalazar.dev/blog/${slug}`,
-            "keywords": (() => {
-              const tags = [];
-              if (blog.is_freelance) tags.push("Freelance");
-              if (blog.is_web_development) tags.push("Web Development");
-              if (blog.is_tech) tags.push("Technology");
-              if (blog.is_life) tags.push("Lifestyle");
-              if (blog.is_side_project) tags.push("Side Project");
-              if (blog.is_thoughts) tags.push("Thoughts");
-              if (blog.is_product_review) tags.push("Product Review");
-              tags.push("Full Stack", "Blog Post", "Learn In Public", "Software Development");
-              return tags.length > 0 ? tags.join(", ") : "software development, programming, web development, full stack, side project, learn in public";
-            })(),
-            "articleSection": "Technology",
-            "inLanguage": "en-US"
-          }),
-        }}
-      />
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "headline": blog.title,
+          "description": blog.preview ?
+          blog.preview :
+          blog.body ?
+          blog.body.replace(/<[^>]*>/g, '').substring(0, 160).trim() + "..."
+            : "Read this insightful blog post by Patricio Salazar",
+          "author": {
+            "@type": "Person",
+            "name": "Patricio Salazar",
+            "url": "https://patriciosalazar.dev"
+          },
+          "publisher": {
+            "@type": "Person",
+            "name": "Patricio Salazar",
+          },
+          "datePublished": blog.created_at,
+          "dateModified": blog.updated_at || blog.created_at,
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": `https://patriciosalazar.dev/blog/${slug}`
+          },
+          "url": `https://patriciosalazar.dev/blog/${slug}`,
+          "keywords": (() => {
+            const tags = [];
+            if (blog.is_freelance) tags.push("Freelance");
+            if (blog.is_web_development) tags.push("Web Development");
+            if (blog.is_tech) tags.push("Technology");
+            if (blog.is_life) tags.push("Lifestyle");
+            if (blog.is_side_project) tags.push("Side Project");
+            if (blog.is_thoughts) tags.push("Thoughts");
+            if (blog.is_product_review) tags.push("Product Review");
+            tags.push("Full Stack", "Blog Post", "Learn In Public", "Software Development");
+            return tags.length > 0 ? tags.join(", ") : "software development, programming, web development, full stack, side project, learn in public";
+          })(),
+          "articleSection": "Technology",
+          "inLanguage": "en-US"
+        }),
+      }}
+    />
 
       <script
         type="application/ld+json"
