@@ -16,7 +16,7 @@ div.blog-post-body ul {
   }
 }
 
-div.blog-post-body p:has(+ ul) {
+div.blog-post-body p:has(+ ul), div.blog-post-body p:has(+ ol) {
   margin-bottom: .5rem;
 }
 
