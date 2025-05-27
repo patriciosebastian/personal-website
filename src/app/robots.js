@@ -10,8 +10,6 @@ export default function robots() {
           '/freelance',
         ],
         disallow: [
-          '/secret-login',
-          '/admin/*',
           '/api/*',
           '/_next/*',
           '/*.json$',
@@ -38,8 +36,6 @@ export default function robots() {
           '/freelance',
         ],
         disallow: [
-          '/secret-login',
-          '/admin/*',
           '/api/*',
         ],
       },
@@ -52,8 +48,6 @@ export default function robots() {
           '/freelance',
         ],
         disallow: [
-          '/secret-login',
-          '/admin/*',
           '/api/*',
         ],
       },
