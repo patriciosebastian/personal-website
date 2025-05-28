@@ -59,7 +59,7 @@ export async function generateMetadata({ params }) {
     tags.push("Full Stack", "Blog Post", "Learn In Public", "Software Development");
 
   return {
-    title: `${blog.title} - Patricio Salazar`,
+    title: blog.title,
     description: description,
     keywords: tags.join(', '),
     authors: [{ name: "Patricio Salazar" }],
