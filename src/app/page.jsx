@@ -62,7 +62,7 @@ export default async function Home() {
             "@context": "https://schema.org",
             "@type": "WebSite",
             "name": "Patricio Salazar",
-            "url": "https://yourdomain.com",
+            "url": "https://patriciosalazar.dev",
             "description": "Software Developer website showcasing projects and blog posts",
             "author": {
               "@type": "Person",

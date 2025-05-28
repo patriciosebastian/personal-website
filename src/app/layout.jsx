@@ -51,7 +51,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="canonical" href="https://patriciosalazar.dev" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f9fafb" />
         <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1f2937" />
