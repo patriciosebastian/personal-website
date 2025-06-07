@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
+import Script from "next/script"
 import "../styles/globals.css"
 
 const inter = Inter({ subsets: ["latin"] });
@@ -56,6 +57,7 @@ export default function RootLayout({ children }) {
         <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1f2937" />
 
         <script
+          id="google-seo"
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
@@ -75,7 +77,7 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      <body className={inter.className + ` container h-full mx-auto lg:text-lg lg:max-w-3xl`}>
+      <body className={`${inter.className} container h-full mx-auto lg:text-lg lg:max-w-3xl`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -88,7 +90,11 @@ export default function RootLayout({ children }) {
         </ThemeProvider>
 
         {/* Cloudflare Web Analytics */}
-        <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "b4ae2d968b044a2cbee0a95e466df1d3"}'></script>
+        <Script
+          strategy="afterInteractive"
+          src='https://static.cloudflareinsights.com/beacon.min.js'
+          data-cf-beacon='{"token": "b4ae2d968b044a2cbee0a95e466df1d3"}'
+        ></Script>
         {/* End Cloudflare Web Analytics */}
       </body>
     </html>
