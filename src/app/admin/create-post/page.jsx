@@ -90,44 +90,45 @@ export default function CreatePostPage() {
             id="title"
             className="block p-2 rounded w-full bg-background border-2 border-background hover:border-secondary"
             required
+            value={title}
             onChange={(e) => setTitle(e.target.value)}
           />
         </div>
         <Expandable trigger="Post details" className="text-base text-muted-foreground mb-2">
           <div className="grid grid-cols-3 items-center gap-4 text-black dark:text-white p-4 bg-secondary rounded-sm">
-            <input type="text" name="subTitle" id="subTitle" placeholder="sub_title" className="p-2" onChange={(e) => setSubTitle(e.target.value)} />
-            <input type="text" name="preview" id="preview" placeholder="preview" className="p-2" onChange={(e) => setPreview(e.target.value)} />
-            <input type="text" name="slug" id="slug" placeholder="slug" className="p-2" onChange={(e) => setSlug(e.target.value)} />
+            <input type="text" name="subTitle" id="subTitle" placeholder="sub_title" className="p-2" value={subTitle} onChange={(e) => setSubTitle(e.target.value)} />
+            <input type="text" name="preview" id="preview" placeholder="preview" className="p-2" value={preview} onChange={(e) => setPreview(e.target.value)} />
+            <input type="text" name="slug" id="slug" placeholder="slug" className="p-2" value={slug} onChange={(e) => setSlug(e.target.value)} />
             <div>
-              <input type="checkbox" name="isFreelance" id="isFreelance" className="mr-2 align-middle" onChange={(e) => setIsFreelance(e.target.checked)} />
+              <input type="checkbox" name="isFreelance" id="isFreelance" className="mr-2 align-middle" checked={isFreelance} onChange={(e) => setIsFreelance(e.target.checked)} />
               <label htmlFor="isFreelance" className="align-middle">is_freelance</label>
             </div>
             <div>
-              <input type="checkbox" name="isWebDevelopment" id="isWebDevelopment" className="mr-2 align-middle" onChange={(e) => setIsWebDevelopment(e.target.checked)} />
+              <input type="checkbox" name="isWebDevelopment" id="isWebDevelopment" className="mr-2 align-middle" checked={isWebDevelopment} onChange={(e) => setIsWebDevelopment(e.target.checked)} />
               <label htmlFor="isWebDevelopment" className="align-middle">is_web_development</label>
             </div>
             <div>
-              <input type="checkbox" name="isTech" id="isTech" className="mr-2 align-middle" onChange={(e) => setIsTech(e.target.checked)} />
+              <input type="checkbox" name="isTech" id="isTech" className="mr-2 align-middle" checked={isTech} onChange={(e) => setIsTech(e.target.checked)} />
               <label htmlFor="isTech" className="align-middle">is_tech</label>
             </div>
             <div>
-              <input type="checkbox" name="isLife" id="isLife" className="mr-2 align-middle" onChange={(e) => setIsLife(e.target.checked)} />
+              <input type="checkbox" name="isLife" id="isLife" className="mr-2 align-middle" checked={isLife} onChange={(e) => setIsLife(e.target.checked)} />
               <label htmlFor="isLife" className="align-middle">is_life</label>
             </div>
             <div>
-              <input type="checkbox" name="isEntrepreneurship" id="isEntrepreneurship" className="mr-2 align-middle cursor-not-allowed" disabled onChange={(e) => setIsEntrepreneurship(e.target.checked)} />
+              <input type="checkbox" name="isEntrepreneurship" id="isEntrepreneurship" className="mr-2 align-middle cursor-not-allowed" disabled checked={isEntrepreneurship} onChange={(e) => setIsEntrepreneurship(e.target.checked)} />
               <label htmlFor="isEntrepreneurship" className="align-middle opacity-50">is_entrepreneurship</label>
             </div>
             <div>
-              <input type="checkbox" name="isSideProject" id="isSideProject" className="mr-2 align-middle" onChange={(e) => setIsSideProject(e.target.checked)} />
+              <input type="checkbox" name="isSideProject" id="isSideProject" className="mr-2 align-middle" checked={isSideProject} onChange={(e) => setIsSideProject(e.target.checked)} />
               <label htmlFor="isSideProject" className="align-middle">is_side_project</label>
             </div>
             <div>
-              <input type="checkbox" name="isProductReview" id="isProductReview" className="mr-2 align-middle" onChange={(e) => setIsProductReview(e.target.checked)} />
+              <input type="checkbox" name="isProductReview" id="isProductReview" className="mr-2 align-middle" checked={isProductReview} onChange={(e) => setIsProductReview(e.target.checked)} />
               <label htmlFor="isProductReview" className="align-middle">is_product_review</label>
             </div>
             <div>
-              <input type="checkbox" name="isThoughts" id="isThoughts" className="mr-2 align-middle" onChange={(e) => setIsThoughts(e.target.checked)} />
+              <input type="checkbox" name="isThoughts" id="isThoughts" className="mr-2 align-middle" checked={isThoughts} onChange={(e) => setIsThoughts(e.target.checked)} />
               <label htmlFor="isThoughts" className="align-middle">is_thoughts</label>
             </div>
           </div>
