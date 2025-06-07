@@ -96,9 +96,9 @@ export default function CreatePostPage() {
         </div>
         <Expandable trigger="Post details" className="text-base text-muted-foreground mb-2">
           <div className="grid grid-cols-3 items-center gap-4 text-black dark:text-white p-4 bg-secondary rounded-sm">
-            <input type="text" name="subTitle" id="subTitle" placeholder="sub_title" className="p-2" value={subTitle} onChange={(e) => setSubTitle(e.target.value)} />
-            <input type="text" name="preview" id="preview" placeholder="preview" className="p-2" value={preview} onChange={(e) => setPreview(e.target.value)} />
-            <input type="text" name="slug" id="slug" placeholder="slug" className="p-2" value={slug} onChange={(e) => setSlug(e.target.value)} />
+            <input type="text" name="subTitle" id="subTitle" placeholder="sub_title" className="p-2 border" value={subTitle} onChange={(e) => setSubTitle(e.target.value)} />
+            <input type="text" name="preview" id="preview" placeholder="preview" className="p-2 border" value={preview} onChange={(e) => setPreview(e.target.value)} />
+            <input type="text" name="slug" id="slug" placeholder="slug" className="p-2 border" value={slug} onChange={(e) => setSlug(e.target.value)} />
             <div>
               <input type="checkbox" name="isFreelance" id="isFreelance" className="mr-2 align-middle" checked={isFreelance} onChange={(e) => setIsFreelance(e.target.checked)} />
               <label htmlFor="isFreelance" className="align-middle">is_freelance</label>
