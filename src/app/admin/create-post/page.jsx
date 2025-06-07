@@ -49,6 +49,21 @@ export default function CreatePostPage() {
 
   if (!user) return <p>Loading...</p>;
 
+  const handleClearContent = () => {
+    setTitle('');
+    setSubTitle('');
+    setPreview('');
+    setIsFreelance(false);
+    setIsWebDevelopment(false);
+    setSlug('');
+    setIsTech(false);
+    setIsLife(false);
+    setIsEntrepreneurship(false);
+    setIsSideProject(false);
+    setIsProductReview(false);
+    setIsThoughts(false);
+  };
+
   const handleLogout = async () => {
     const { error } = await supabase.auth.signOut();
 
@@ -130,6 +145,7 @@ export default function CreatePostPage() {
           isSideProject={isSideProject}
           isProductReview={isProductReview}
           isThoughts={isThoughts}
+          onClearContent={handleClearContent}
         />
       </div>
     </>

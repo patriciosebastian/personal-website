@@ -1,9 +1,9 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { Editor } from '@tinymce/tinymce-react'
 import { createClient } from '../utils/supabase/client'
 import { Button } from './ui/button'
-import Expandable from './ui/expandable'
 import { setupOptions } from '@/utils/tinyMCE/setupOptions'
+import Expandable from './ui/expandable'
 
 export default function TinyMCE({
   title,
@@ -17,13 +17,35 @@ export default function TinyMCE({
   isEntrepreneurship,
   isSideProject,
   isProductReview,
-  isThoughts
+  isThoughts,
+  onClearContent
 }) {
+  const [isPublishing, setIsPublishing] = useState(false);
   const editorRef = useRef(null);
   const supabase = createClient();
 
+  const clearContent = () => {
+    if (editorRef.current) {
+      editorRef.current.setContent('');
+    }
+
+    if (onClearContent) {
+      onClearContent();
+    }
+  };
+
   const handlePublish = async () => {
-    if (!editorRef.current) return;
+    if (!window.confirm("Are you sure you want to publish this post?")) {
+      return;
+    }
+
+    setIsPublishing(true);
+
+    if (!editorRef.current) {
+      alert("Editor is not initialized. Please wait a moment and try again.");
+      setIsPublishing(false);
+      return;
+    }
 
     const content = editorRef.current.getContent();
 
@@ -47,13 +69,19 @@ export default function TinyMCE({
 
     if (error) {
       console.error('Error publishing post:', error.message);
+      alert("Failed to publish post. Please check the console for errors.");
+      setIsPublishing(false);
       return;
     }
+
+    logContent();
+    clearContent();
+
     alert("Post published successfully! 🎉");
+    setIsPublishing(false);
   };
 
-  // Keep this log for personal use
-  const logContent = async () => {
+  const logContent = () => {
     if (editorRef.current) {
       const content = editorRef.current.getContent();
       console.log('Title:', title);
@@ -125,6 +153,7 @@ export default function TinyMCE({
       <Button
         onClick={handlePublish}
         className="mt-4 mr-2"
+        disabled={isPublishing}
       >
         Publish
       </Button>
@@ -132,6 +161,7 @@ export default function TinyMCE({
         onClick={logContent}
         className="mt-4 text-secondary"
         variant="ghost"
+        disabled={isPublishing}
       >
         Log Content
       </Button>
