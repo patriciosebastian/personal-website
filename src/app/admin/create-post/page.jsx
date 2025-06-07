@@ -10,17 +10,17 @@ import Head from "next/head"
 export default function CreatePostPage() {
   const [user, setUser] = useState(null);
   const [title, setTitle] = useState('');
-  const [subTitle, setSubTitle] = useState(null);
-  const [preview, setPreview] = useState(null);
-  const [isFreelance, setIsFreelance] = useState(null);
-  const [isWebDevelopment, setIsWebDevelopment] = useState(null);
+  const [subTitle, setSubTitle] = useState('');
+  const [preview, setPreview] = useState('');
+  const [isFreelance, setIsFreelance] = useState(false);
+  const [isWebDevelopment, setIsWebDevelopment] = useState(false);
   const [slug, setSlug] = useState('');
-  const [isTech, setIsTech] = useState(null);
-  const [isLife, setIsLife] = useState(null);
-  const [isEntrepreneurship, setIsEntrepreneurship] = useState(null);
-  const [isSideProject, setIsSideProject] = useState(null);
-  const [isProductReview, setIsProductReview] = useState(null);
-  const [isThoughts, setIsThoughts] = useState(null);
+  const [isTech, setIsTech] = useState(false);
+  const [isLife, setIsLife] = useState(false);
+  const [isEntrepreneurship, setIsEntrepreneurship] = useState(false);
+  const [isSideProject, setIsSideProject] = useState(false);
+  const [isProductReview, setIsProductReview] = useState(false);
+  const [isThoughts, setIsThoughts] = useState(false);
   const supabase = createClient();
 
   useEffect(() => {
