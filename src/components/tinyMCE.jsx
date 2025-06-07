@@ -152,14 +152,14 @@ export default function TinyMCE({
       />
       <Button
         onClick={handlePublish}
-        className="mt-4 mr-2"
+        className="mt-4 mr-2 hover:cursor-pointer"
         disabled={isPublishing}
       >
         Publish
       </Button>
       <Button
         onClick={logContent}
-        className="mt-4 text-secondary"
+        className="mt-4 text-secondary hover:cursor-pointer"
         variant="ghost"
         disabled={isPublishing}
       >

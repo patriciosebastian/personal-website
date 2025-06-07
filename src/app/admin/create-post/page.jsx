@@ -81,7 +81,7 @@ export default function CreatePostPage() {
       </Head>
       <div className="relative min-h-svh place-content-center">
         <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight text-center lg:text-5xl">Create New Post</h1>
-        <Button className="absolute top-2 right-0 flex items-center space-x-2 text-sm text-secondary" onClick={handleLogout} variant="ghost">Logout</Button>
+        <Button className="absolute top-2 right-0 flex items-center space-x-2 text-sm text-secondary hover:cursor-pointer" onClick={handleLogout} variant="ghost">Logout</Button>
         <div className="mb-2">
           <label htmlFor="title" className="text-muted-foreground">Title:</label>
           <input
