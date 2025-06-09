@@ -58,7 +58,7 @@ export async function generateMetadata({ params }) {
     if (blog.is_side_project) tags.push('Side Project');
     if (blog.is_thoughts) tags.push('Thoughts');
     if (blog.is_product_review) tags.push('Product Review');
-    tags.push("Full Stack", "Blog Post", "Learn In Public", "Software Development");
+    tags.push("Full Stack", "Learn In Public", "Build in Public", "Software Development", "Blog Post");
 
   return {
     title: blog.title,
@@ -182,7 +182,7 @@ export default async function Page({ params }) {
             if (blog.is_side_project) tags.push("Side Project");
             if (blog.is_thoughts) tags.push("Thoughts");
             if (blog.is_product_review) tags.push("Product Review");
-            tags.push("Full Stack", "Blog Post", "Learn In Public", "Software Development");
+            tags.push("Full Stack", "Learn In Public", "Build in Public", "Software Development", "Blog Post");
             return tags.length > 0 ? tags.join(", ") : "software development, programming, web development, full stack, side project, learn in public";
           })(),
           "articleSection": "Technology",
