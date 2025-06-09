@@ -1,6 +1,5 @@
 @import 'tailwindcss';
-
-@import './blogPosts.css' layer(utilities);
+@plugin "@tailwindcss/typography";
 
 @config '../../tailwind.config.js';
 
