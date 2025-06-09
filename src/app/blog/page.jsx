@@ -33,6 +33,7 @@ export default async function BlogPage() {
   const { data: blogs, error } = await supabase
     .from("blogs")
     .select("*")
+    .neq("status", "draft")
     .order("created_at", { ascending: false });
 
   if (error) {

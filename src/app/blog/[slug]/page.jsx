@@ -16,7 +16,8 @@ export const dynamicParams = true;
 export async function generateStaticParams() {
   const { data: posts, error } = await supabase
     .from('blogs')
-    .select('slug');
+    .select('slug')
+    .neq("status", "draft");
 
   if (error) {
     console.error("Error fetching blog slugs:", error);
@@ -35,6 +36,7 @@ export async function generateMetadata({ params }) {
     .from('blogs')
     .select('*')
     .eq('slug', slug)
+    .neq("status", "draft")
     .single();
 
   if (error || !blog) {
@@ -100,6 +102,7 @@ export default async function Page({ params }) {
     .from('blogs')
     .select('*')
     .eq('slug', slug)
+    .neq("status", "draft")
     .single();
 
   if (error) {
