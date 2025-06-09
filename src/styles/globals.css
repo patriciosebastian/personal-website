@@ -138,35 +138,16 @@
     list-style-type: disc;
     margin-bottom: 1rem;
   }
-  .blog-post h1, .blog-post h2, .blog-post h3, .blog-post h4, .blog-post h5, .blog-post h6{
-    font-weight: bold;
-    line-height: 1.25;
-  }
-  .section-heading {
-    margin-bottom: 1rem;
-    text-wrap: balance;
-  }
-  code {
+  .custom-inline-code {
     @apply bg-secondary rounded text-destructive text-base;
     padding: 0.1rem;
     vertical-align: middle;
   }
-  .dark code {
+  .dark .custom-inline-code {
     @apply bg-secondary text-primary;
   }
-  .dark .aside code {
+  .dark .aside .custom-inline-code {
     @apply bg-primary text-primary-foreground;
-  }
-  .blog-post ul, .blog-post ol {
-    @apply pl-3;
-  }
-  .blog-post ul li {
-    list-style-type: disc;
-    list-style-position: inside;
-  }
-  .blog-post ol li {
-    list-style-type: decimal;
-    list-style-position: inside;
   }
   .dark .formkit-header {
     @apply text-foreground!;
