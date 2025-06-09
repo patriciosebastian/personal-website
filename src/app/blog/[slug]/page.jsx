@@ -225,17 +225,17 @@ export default async function Page({ params }) {
 
       <Spacer />
 
-      <div className="blog-post max-w-lg lg:max-w-3xl mx-auto">
+      <article className="mx-auto max-w-lg lg:max-w-3xl">
         <h1 className="text-3xl font-bold text-pretty">{blog.title}</h1>
         <p>{blog.sub_title}</p>
         <small>{new Date(blog.created_at).toLocaleDateString()}</small>
         <Spacer className="h-2 lg:hidden" />
         <Reactions postId={blog.id} />
         <Spacer className="h-6" />
-        <div className="blog-post-body overflow-x-hidden">
+        <div className="prose text-foreground overflow-x-hidden lg:prose-lg dark:prose-invert">
           {parse(blog.body, { replace: transform })}
         </div>
-      </div>
+      </article>
 
       <Spacer />
 
