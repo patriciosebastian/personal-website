@@ -89,6 +89,12 @@ export default function RootLayout({ children }) {
           </main>
         </ThemeProvider>
 
+        {/* Senja Widget */}
+        <Script
+          strategy="lazyOnload"
+          src="https://widget.senja.io/widget/9aeef387-4143-4b01-a516-9aaedd9adced/platform.js"
+        />
+
         {/* Cloudflare Web Analytics */}
         <Script
           strategy="afterInteractive"

@@ -140,7 +140,7 @@ export default async function Home() {
       {/* About */}
       <div>
         <h2 className="section-heading text-4xl text-center">About</h2>
-        <Tabs defaultValue="career" className="rounded-md py-4 max-w-lg lg:max-w-3xl mx-auto">
+        <Tabs defaultValue="career" className="rounded-md py-4 mb-6 max-w-lg lg:max-w-3xl mx-auto">
           <TabsList className=" w-full bg-transparent rounded-none p-0 box-border">
             <TabsTrigger value="career">Career</TabsTrigger>
             <TabsTrigger value="tech-stack">Tech Stack</TabsTrigger>
@@ -224,6 +224,15 @@ export default async function Home() {
           </TabsContent>
           {/* <TabsContent value="cool-stuff" className="px-4 py-2">Cool stuff.</TabsContent> */}
         </Tabs>
+        {/* Senja Widget */}
+        <h3 className="text-2xl text-center mb-4">What People Say About Working With Me</h3>
+        <div
+          className="senja-embed"
+          data-id="9aeef387-4143-4b01-a516-9aaedd9adced"
+          data-mode="shadow"
+          data-lazyload="true"
+          style={{ display: "block", width: "100%" }}
+        />
       </div>
 
       <Spacer />
