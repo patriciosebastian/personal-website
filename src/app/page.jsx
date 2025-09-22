@@ -14,6 +14,7 @@ import TouchBase from '../../public/TouchBaseApp_Optimized.webp'
 import ClearCalc from '../../public/ClearCalc_Optimized.webp'
 import Doubles from '../../public/Doubles_opt.webp'
 import GitHighlight from '../../public/git-highlight_light_opt.png'
+import Salos from '../../public/salos_homepage.webp'
 import Expandable from '@/components/ui/expandable'
 
 // Revalidate cache every hour
@@ -243,6 +244,32 @@ export default async function Home() {
         {/* 1. */}
         <Card className="mb-4 max-w-md lg:flex lg:max-w-3xl mx-auto lg:mb-6">
           <CardHeader className="lg:w-1/2">
+            <Image src={Salos} className="mb-4" alt="The home page of SALOS AI" />
+            <CardTitle>SALOS AI</CardTitle>
+            <CardDescription className="text-pretty text-foreground mb-1!">Faith centered, Bible Based Retrieval Augmented Generation AI Chat Experience</CardDescription>
+            <div className="flex flex-wrap items-center gap-1">
+              <Badge variant="outline">Laravel</Badge>
+              <Badge variant="outline">Inertia</Badge>
+              <Badge variant="outline">React</Badge>
+              <Badge variant="outline">PostgreSQL</Badge>
+              <Badge variant="outline">Pinecone</Badge>
+              <Badge variant="outline">GPT-5-nano</Badge>
+              <Badge variant="outline">text-embedding-3-large</Badge>
+              <Badge variant="outline">Real-Time Streaming</Badge>
+              <Badge variant="outline">RAG</Badge>
+            </div>
+          </CardHeader>
+          <CardContent className="lg:w-1/2">
+            <p className="text-balance mb-6 lg:mt-6 lg:mb-8">
+              SALOS AI is a Bible based AI chat experience that uses Retrieval Augmented Generation (RAG) to provide accurate and relevant answers to user questions. It is built with Laravel, Inertia, and React on the frontend, and uses PostgreSQL for data storage. The app leverages Pinecone for vector database capabilities and OpenAI&apos;s GPT-5-nano and text-embedding-3-large models for natural language processing. Real-time streaming is implemented to enhance user experience. The project is fully responsive and designed to be user-friendly. Check it out and ask it anything about the Bible!
+            </p>
+            <a href="https://salosai.com" target='_blank' className={buttonVariants({ variant: "default" }) + ` h-12 justify-center lg:flex lg:mx-auto`}>Visit Site</a>
+          </CardContent>
+        </Card>
+
+        {/* 2. */}
+        <Card className="mb-4 max-w-md lg:flex lg:max-w-3xl mx-auto lg:mb-6">
+          <CardHeader className="lg:w-1/2">
             <Image src={TouchBase} className="mb-4" alt="The home page of Touch Base" />
             <CardTitle>Touch Base <Badge className="w-fit border-green-600 text-green-600 align-middle shadow-sm" variant="outline">New Feature Added</Badge></CardTitle>
             <CardDescription className="text-pretty text-foreground mb-1!">Full stack React Contacts Management app</CardDescription>
@@ -265,7 +292,7 @@ export default async function Home() {
           </CardContent>
         </Card>
 
-        {/* 2. */}
+        {/* 3. */}
         <Card className="mb-4 max-w-md lg:flex lg:max-w-3xl mx-auto lg:mb-6">
           <CardHeader className="lg:w-1/2">
             <Image src={ClearCalc} className="mb-4" alt="The home page of ClearCalc" />
@@ -286,7 +313,7 @@ export default async function Home() {
           </CardContent>
         </Card>
 
-        {/* 3. */}
+        {/* 4. */}
         <Card className="mb-4 max-w-md lg:flex lg:max-w-3xl mx-auto lg:mb-6">
           <CardHeader className="lg:w-1/2">
             <Image src={GitHighlight} className="mb-4" alt="Git Highlight website home page" />
