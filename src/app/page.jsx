@@ -142,7 +142,7 @@ export default async function Home() {
       <div>
         <h2 className="section-heading text-4xl text-center">About</h2>
         <Tabs defaultValue="career" className="rounded-md py-4 mb-6 max-w-lg lg:max-w-3xl mx-auto">
-          <TabsList className=" w-full bg-transparent rounded-none p-0 box-border">
+          <TabsList className="w-full bg-transparent rounded-none p-0 box-border">
             <TabsTrigger value="career">Career</TabsTrigger>
             <TabsTrigger value="tech-stack">Tech Stack</TabsTrigger>
             <TabsTrigger value="personal">Personal</TabsTrigger>
@@ -240,30 +240,30 @@ export default async function Home() {
 
       {/* Projects */}
       <div>
-        <h2 className="section-heading text-4xl text-center" id="Projects">Projects</h2>
+        <h2 className="section-heading text-4xl text-center mb-4" id="Projects">Projects</h2>
         {/* 1. */}
         <Card className="mb-4 max-w-md lg:flex lg:max-w-3xl mx-auto lg:mb-6">
           <CardHeader className="lg:w-1/2">
             <Image src={Salos} className="mb-4" alt="The home page of SALOS AI" />
             <CardTitle>SALOS AI</CardTitle>
-            <CardDescription className="text-pretty text-foreground mb-1!">Faith centered, Bible Based Retrieval Augmented Generation AI Chat Experience</CardDescription>
+            <CardDescription className="text-pretty text-foreground mb-3!">Fully featured Bible based RAG AI Chat</CardDescription>
             <div className="flex flex-wrap items-center gap-1">
               <Badge variant="outline">Laravel</Badge>
               <Badge variant="outline">Inertia</Badge>
               <Badge variant="outline">React</Badge>
               <Badge variant="outline">PostgreSQL</Badge>
               <Badge variant="outline">Pinecone</Badge>
-              <Badge variant="outline">GPT-5-nano</Badge>
+              <Badge variant="outline">gpt-5-nano</Badge>
               <Badge variant="outline">text-embedding-3-large</Badge>
-              <Badge variant="outline">Real-Time Streaming</Badge>
+              <Badge variant="outline">Real Time Streaming</Badge>
               <Badge variant="outline">RAG</Badge>
             </div>
           </CardHeader>
           <CardContent className="lg:w-1/2">
             <p className="text-balance mb-6 lg:mt-6 lg:mb-8">
-              SALOS AI is a Bible based AI chat experience that uses Retrieval Augmented Generation (RAG) to provide accurate and relevant answers to user questions. It is built with Laravel, Inertia, and React on the frontend, and uses PostgreSQL for data storage. The app leverages Pinecone for vector database capabilities and OpenAI&apos;s GPT-5-nano and text-embedding-3-large models for natural language processing. Real-time streaming is implemented to enhance user experience. The project is fully responsive and designed to be user-friendly. Check it out and ask it anything about the Bible!
+              SALOS is a Bible powered AI chat application that uses Retrieval Augmented Generation (RAG) to provide accurate and relevant answers to user questions. Its built with Laravel on the backend, React on the frontend via Inertia, and PostgreSQL. I leverage a custom Pinecone vector store which holds the entire chunked and vectorized Bible. OpenAI&apos;s GPT-5-nano and text-embedding-3-large models are used for embedding and natural language processing. Real-time streaming gives it a seamless feel. Check it out and ask it anything regarding your faith or the Bible!
             </p>
-            <a href="https://salosai.com" target='_blank' className={buttonVariants({ variant: "default" }) + ` h-12 justify-center lg:flex lg:mx-auto`}>Visit Site</a>
+            <a href="https://salosai.com/?utm_source=patriciosalazar.dev&utm_medium=referral&utm_campaign=patricio_portfolio_project_card" target='_blank' className={buttonVariants({ variant: "default" }) + ` h-12 justify-center lg:flex lg:mx-auto`}>Visit Site</a>
           </CardContent>
         </Card>
 
@@ -272,7 +272,7 @@ export default async function Home() {
           <CardHeader className="lg:w-1/2">
             <Image src={TouchBase} className="mb-4" alt="The home page of Touch Base" />
             <CardTitle>Touch Base <Badge className="w-fit border-green-600 text-green-600 align-middle shadow-sm" variant="outline">New Feature Added</Badge></CardTitle>
-            <CardDescription className="text-pretty text-foreground mb-1!">Full stack React Contacts Management app</CardDescription>
+            <CardDescription className="text-pretty text-foreground mb-3!">Full stack React Contacts Management app</CardDescription>
             <div className="flex flex-wrap items-center gap-1">
               <Badge variant="outline">CSS</Badge>
               <Badge variant="outline">React</Badge>
@@ -286,7 +286,7 @@ export default async function Home() {
           </CardHeader>
           <CardContent className="lg:w-1/2">
             <p className="text-balance mb-6 lg:mt-6 lg:mb-8">
-              Touch Base uses React-Router for frontend navigation and Node.js & Express for its backend API, connected to a PSQL database. It features a fully responsive design, full CRUD capabilities for contacts and groups, Firebase Auth, and SendGrid for email functionality. AWS S3 is used for image hosting and a demo login lets you easily tour the app and safely perform all actions. <span className="font-bold">New feature</span>: you can now import contacts from a CSV file. Go try it out or <Link href="/blog/how-i-added-csv-importing-in-my-react-project" className="underline">read my post about it</Link>!
+              Touch Base uses React-Router for frontend navigation and Node.js & Express for its backend API, connected to a PSQL database. It features a fully responsive design, full CRUD capabilities for contacts and groups, Firebase Auth, and SendGrid for email functionality. AWS S3 is used for image hosting and you can now import contacts from a CSV file. A demo login lets you easily tour the app and safely perform all actions. Go try it out or <Link href="/blog/how-i-added-csv-importing-in-my-react-project" className="underline">read my post</Link> about how I implemented CSV importing.
             </p>
             <a href="https://touchbaseapp.co" target='_blank' className={buttonVariants({ variant: "default" }) + ` h-12 justify-center lg:flex lg:mx-auto`}>Visit Site</a>
           </CardContent>
@@ -297,7 +297,7 @@ export default async function Home() {
           <CardHeader className="lg:w-1/2">
             <Image src={ClearCalc} className="mb-4" alt="The home page of ClearCalc" />
             <CardTitle>ClearCalc</CardTitle>
-            <CardDescription className="text-pretty text-foreground mb-1!">ClearCalc is a collection of Personal Finance tools written in JavaScript</CardDescription>
+            <CardDescription className="text-pretty text-foreground mb-3!">ClearCalc is a collection of Personal Finance tools written in JavaScript</CardDescription>
             <div className="flex flex-wrap items-center gap-1">
               <Badge variant="outline">HTML</Badge>
               <Badge variant="outline">CSS</Badge>
@@ -318,7 +318,7 @@ export default async function Home() {
           <CardHeader className="lg:w-1/2">
             <Image src={GitHighlight} className="mb-4" alt="Git Highlight website home page" />
             <CardTitle>git-highlight</CardTitle>
-            <CardDescription className="text-pretty text-foreground mb-1!">A real-time Git command typo highlighter for Zsh</CardDescription>
+            <CardDescription className="text-pretty text-foreground mb-3!">A real-time Git command typo highlighter for Zsh</CardDescription>
             <div className="flex flex-wrap items-center gap-1">
               <Badge variant="outline">Bash</Badge>
             </div>
@@ -358,10 +358,10 @@ export default async function Home() {
       {/* Latest Post */}
       {latestBlog ? (
         <>
-          <h2 className="section-heading text-4xl text-center">Latest Post</h2>
+          <h2 className="section-heading text-4xl text-center mb-4">Latest Post</h2>
           <Card className="max-w-md lg:max-w-3xl mx-auto">
             <CardHeader>
-              <CardTitle className="text-balance hover:text-muted-foreground w-fit"><Link href={`/blog/${latestBlog.slug}`}>{latestBlog.title}</Link></CardTitle>
+              <CardTitle className="text-balance hover:text-muted-foreground w-fit font-medium"><Link href={`/blog/${latestBlog.slug}`}>{latestBlog.title}</Link></CardTitle>
               <CardDescription className="text-primary">
                 {latestBlog.sub_title}
               </CardDescription>
@@ -385,7 +385,7 @@ export default async function Home() {
 
       {/* Spotify Playlists */}
       <h2 className="text-4xl text-center text-balance">For You</h2>
-      <small className="block text-center mb-4 text-balance text-muted-foreground">
+      <small className="block text-center mb-4 text-balance text-muted-foreground leading-snug">
         Hey! I made these playlists for you, enjoy.<br />
         &#40;Don&apos;t worry, they don&apos;t have lyrics&#41;
       </small>
