@@ -72,6 +72,7 @@ export interface Reaction {
     emoji: ReactionEmoji;
     count: number;
     created_at: string;
+    post?: Post;
 }
 
 export interface PaginationLink {
