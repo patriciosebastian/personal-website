@@ -1,3 +1,4 @@
+import { ReactionEmoji } from '@/enums/ReactionEmoji';
 import { InertiaLinkProps } from '@inertiajs/react';
 import { LucideIcon } from 'lucide-react';
 
@@ -68,8 +69,9 @@ export interface Post {
 export interface Reaction {
     id: number;
     post_id: number;
-    emoji: string;
+    emoji: ReactionEmoji;
     count: number;
+    created_at: string;
 }
 
 export interface PaginationLink {

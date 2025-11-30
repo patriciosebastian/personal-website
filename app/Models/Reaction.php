@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\ReactionEmoji;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -31,6 +32,7 @@ class Reaction extends Model
         return [
             'id' => 'integer',
             'post_id' => 'integer',
+            'emoji' => ReactionEmoji::class,
         ];
     }
 
