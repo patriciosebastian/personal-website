@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -12,13 +13,11 @@ Route::get('/', function () {
     ]);
 })->name('home');
 
-Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('dashboard', function () {
-        return Inertia::render('dashboard');
-    })->name('dashboard');
+Route::middleware(['auth', 'verified'])->prefix('dashboard')->name('dashboard.')->group(function () {
+    Route::get('/', [DashboardController::class, 'index'])->name('index');
 });
 
-Route::get('/blog', PostController::class . '@index')->name('posts.index');
+Route::get('/blog', [PostController::class, 'index'])->name('posts.index');
 
 Route::resource('posts', App\Http\Controllers\PostController::class);
 
