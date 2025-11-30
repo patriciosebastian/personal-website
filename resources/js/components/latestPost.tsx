@@ -32,19 +32,19 @@ export default function LatestPost() {
                                         return (
                                             <Badge
                                                 key={tag}
-                                                className={badgeVariants({ variant: "secondary" }) + `mr-2 rounded-full bg-gray-200 px-2 py-1 text-xs dark:bg-gray-700`}
+                                                className={badgeVariants({ variant: "secondary" }) + `mr-2 rounded-full bg-gray-200 px-2 py-1 text-xs block dark:bg-gray-700`}
                                             >
                                                 {tag.replace('is_', '').replaceAll('_', ' ')}
                                             </Badge>
                                         );
                                     }
                                 })}
-                                <p className="ml-auto mt-2">
+                                <span className="ml-auto mt-2 block">
                                     {latestPost.published_at
                                         ? new Date(latestPost.published_at).toLocaleDateString()
                                         : new Date(latestPost.created_at).toLocaleDateString()
                                     }
-                                </p>
+                                </span>
                             </ItemDescription>
                         </ItemContent>
                         <ItemActions>
