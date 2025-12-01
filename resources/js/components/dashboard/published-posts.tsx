@@ -31,7 +31,7 @@ export default function PublishedPosts({ publishedPosts }: PublishedPostsProps) 
                             variant={"muted"}
                             className={`items-start ${selectedPost === post.slug
                                 ? 'bg-accent dark:bg-accent'
-                                : 'bg-muted/10 dark:bg-muted/20 hover:bg-muted/60 dark:hover:bg-muted/30'}`}
+                                : 'bg-muted/10 dark:bg-muted/20 hover:bg-muted/60 dark:hover:bg-muted/60'}`}
                             key={post.id}
                         >
                             <Link
