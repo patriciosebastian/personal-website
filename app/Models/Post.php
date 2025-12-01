@@ -66,4 +66,9 @@ class Post extends Model
     {
         return $this->hasMany(Reaction::class);
     }
+
+    public function getRouteKeyName(): string
+    {
+        return 'slug';
+    }
 }
