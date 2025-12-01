@@ -15,9 +15,11 @@ class DashboardController extends Controller
             ->latest()
             ->paginate(10);
 
-        $draftPosts = Post::where('status', 'draft')
+        $draftPosts = Post::query()
+            ->where('status', 'draft')
             ->latest()
-            ->paginate(10);
+            ->take(10)
+            ->get();
 
         $reactions = Reaction::query()->with('post', function ($query) {
             $query->select('id', 'title');
@@ -26,10 +28,14 @@ class DashboardController extends Controller
             ->take(10)
             ->get();
 
+        $query = $request->query('post');
+        $postToPreview = Post::where('slug', $query)->first() ?? null;
+
         return Inertia::render('dashboard/dashboard', [
             'publishedPosts' => $publishedPosts,
             'draftPosts' => $draftPosts,
             'reactions' => $reactions,
+            'postToPreview' => $postToPreview,
         ]);
     }
 }
