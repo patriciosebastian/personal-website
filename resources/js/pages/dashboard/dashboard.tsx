@@ -22,7 +22,6 @@ interface DashboardProps {
 }
 
 export default function Dashboard({ publishedPosts, draftPosts, reactions, postToPreview }: DashboardProps) {
-    console.log({ publishedPosts, draftPosts, reactions, postToPreview });
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
             <Head title="Dashboard" />
@@ -32,7 +31,7 @@ export default function Dashboard({ publishedPosts, draftPosts, reactions, postT
                         <PublishedPosts publishedPosts={publishedPosts} />
                     </div>
                     <div className="relative aspect-video overflow-hidden scrollbar-thin rounded-xl border border-sidebar-border/70 dark:border-sidebar-border">
-                        <Drafts />
+                        <Drafts draftPosts={draftPosts} />
                     </div>
                     <div className="relative aspect-video overflow-x-hidden scrollbar-thin rounded-xl border border-sidebar-border/70 dark:border-sidebar-border">
                         <Reactions reactions={reactions} />
