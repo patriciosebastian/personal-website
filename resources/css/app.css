@@ -1,5 +1,7 @@
 @import 'tailwindcss';
 
+@plugin "@tailwindcss/typography";
+
 @import "tw-animate-css";
 
 @source '../views';
@@ -145,4 +147,24 @@
         scrollbar-width: thin;
         scrollbar-color: var(--color-border) transparent;
     }
+
+    .custom-inline-code {
+        @apply bg-secondary rounded text-destructive text-base;
+        padding: 0.1rem;
+        vertical-align: middle;
+    }
+
+    .dark .custom-inline-code {
+        @apply bg-secondary text-primary;
+    }
+
+    .dark .aside .custom-inline-code {
+        @apply bg-primary text-primary-foreground;
+    }
+}
+
+@utility aside {
+  @apply bg-secondary rounded p-4;
+  border-left: 3px solid;
+  border-color: var(--foreground);
 }
