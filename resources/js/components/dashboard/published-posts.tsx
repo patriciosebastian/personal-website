@@ -36,6 +36,7 @@ export default function PublishedPosts({ publishedPosts }: PublishedPostsProps) 
                         >
                             <Link
                                 href={route('dashboard.index', { post: post.slug })}
+                                only={['postToPreview']}
                                 className="flex items-start"
                             >
                                 <ItemContent>
