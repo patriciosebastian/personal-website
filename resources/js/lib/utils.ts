@@ -1,3 +1,4 @@
+import { postTags } from '@/data/postTags';
 import { Post } from '@/types';
 import { InertiaLinkProps } from '@inertiajs/react';
 import { type ClassValue, clsx } from 'clsx';
@@ -18,7 +19,7 @@ export function resolveUrl(url: NonNullable<InertiaLinkProps['href']>): string {
     return typeof url === 'string' ? url : url.url;
 }
 
-export const getActiveTags = (post: Post, postTags: string[]): string[] => {
+export const getActiveTags = (post: Post): string[] => {
     return postTags
         .filter((tag) => post[tag as keyof Post])
         .map((tag) => tag.replace('is_', '').replaceAll('_', ' '));
