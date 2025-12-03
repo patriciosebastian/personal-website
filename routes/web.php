@@ -20,9 +20,8 @@ Route::middleware(['auth', 'verified'])->prefix('dashboard')->name('dashboard.')
 });
 
 Route::get('/blog', [PostController::class, 'index'])->name('posts.index');
+Route::get('/blog/{post}', [PostController::class, 'show'])->name('posts.show');
 
 Route::resource('posts', App\Http\Controllers\PostController::class);
-
-Route::resource('reactions', App\Http\Controllers\ReactionController::class)->only('store');
 
 require __DIR__.'/settings.php';
