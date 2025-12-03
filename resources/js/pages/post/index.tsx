@@ -4,7 +4,7 @@ import { PostIndexProps } from '@/types'
 import { Badge } from '@/components/ui/badge'
 import { Link, router } from '@inertiajs/react'
 import { Separator } from '@/components/ui/separator'
-import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Button } from '@/components/ui/button'
 import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-react'
@@ -64,28 +64,47 @@ export default function Index({ posts, filters }: PostIndexProps) {
                         </p>
                     </div>
 
-                    <div className="flex flex-col sm:flex-row gap-4 mb-12 items-start sm:items-center justify-between">
-                        <Tabs
-                            value={filters.tag || 'all'}
-                            onValueChange={handleTagChange}
-                            className="w-full sm:w-auto overflow-x-auto"
+                    <div className="flex flex-col sm:flex-row mb-12 items-start justify-between">
+                        <ToggleGroup
+                            className="flex-wrap"
+                            type="multiple"
+                            spacing={1.5}
+                            size="sm"
                         >
-                            <TabsList className="w-full sm:w-auto">
-                                {tagOptions.map((tag) => (
-                                    <TabsTrigger key={tag.value} value={tag.value} className="text-xs sm:text-sm">
-                                        {tag.label}
-                                    </TabsTrigger>
-                                ))}
-                            </TabsList>
-                        </Tabs>
+                            {tagOptions.map((tag) => (
+                                <ToggleGroupItem
+                                    value={tag.value}
+                                    variant="outline"
+                                    className="data-[state=on]:text-blue-500 data-[state=on]:bg-secondary text-xs"
+                                    onClick={() => handleTagChange(tag.value)}
+                                    key={tag.value}
+                                    aria-label={`Toggle ${tag.label}`}
+                                >
+                                    {tag.label}
+                                </ToggleGroupItem>
+                            ))}
+                        </ToggleGroup>
 
-                        <Select value={filters.sort} onValueChange={handleSortChange}>
-                            <SelectTrigger className="w-full sm:w-[180px]">
+                        <Select
+                            value={filters.sort}
+                            onValueChange={handleSortChange}
+                        >
+                            <SelectTrigger className="w-full sm:w-[180px] text-xs h-fit">
                                 <SelectValue />
                             </SelectTrigger>
                             <SelectContent>
-                                <SelectItem value="desc">Newest First</SelectItem>
-                                <SelectItem value="asc">Oldest First</SelectItem>
+                                <SelectItem
+                                    value="desc"
+                                    className="text-xs"
+                                >
+                                    Newest First
+                                </SelectItem>
+                                <SelectItem
+                                    value="asc"
+                                    className="text-xs"
+                                >
+                                    Oldest First
+                                </SelectItem>
                             </SelectContent>
                         </Select>
                     </div>
