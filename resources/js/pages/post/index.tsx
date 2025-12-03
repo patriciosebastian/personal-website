@@ -1,6 +1,6 @@
 import PageHead from '@/components/page-head'
 import MainLayout from '@/layouts/main-layout'
-import { PostIndexProps, Post } from '@/types'
+import { PostIndexProps } from '@/types'
 import { Badge } from '@/components/ui/badge'
 import { Link, router } from '@inertiajs/react'
 import { Separator } from '@/components/ui/separator'
@@ -8,38 +8,11 @@ import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Button } from '@/components/ui/button'
 import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-react'
+import { useRoute } from 'ziggy-js'
+import { formatDate, getActiveTags, getReadingTime } from '@/lib/utils'
 
 export default function Index({ posts, filters }: PostIndexProps) {
-    const postTags = [
-        'is_freelance',
-        'is_web_development',
-        'is_tech',
-        'is_life',
-        'is_entrepreneurship',
-        'is_side_project',
-        'is_product_review',
-        'is_thoughts',
-    ];
-
-    const getActiveTags = (post: Post): string[] => {
-        return postTags
-            .filter((tag) => post[tag as keyof Post])
-            .map((tag) => tag.replace('is_', '').replaceAll('_', ' '));
-    };
-
-    const formatDate = (date: string): string => {
-        return new Date(date).toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'short',
-            day: 'numeric'
-        });
-    };
-
-    const getReadingTime = (content: string): number => {
-        const wordsPerMinute = 200;
-        const wordCount = content.split(/\s+/).length;
-        return Math.ceil(wordCount / wordsPerMinute);
-    };
+    const route = useRoute();
 
     const handleTagChange = (tag: string): void => {
         router.get('/blog', { tag: tag === 'all' ? undefined : tag, sort: filters.sort }, {
@@ -74,8 +47,6 @@ export default function Index({ posts, filters }: PostIndexProps) {
         { value: 'thoughts', label: 'Thoughts' },
     ];
 
-    const [featuredPost, ...remainingPosts] = posts.data;
-
     return (
         <>
             <PageHead
@@ -84,7 +55,6 @@ export default function Index({ posts, filters }: PostIndexProps) {
             />
             <MainLayout>
                 <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 overflow-hidden">
-                    {/* Header */}
                     <div className="mb-16">
                         <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-3 break-words">
                             Blog
@@ -94,7 +64,6 @@ export default function Index({ posts, filters }: PostIndexProps) {
                         </p>
                     </div>
 
-                    {/* Filters and Sort */}
                     <div className="flex flex-col sm:flex-row gap-4 mb-12 items-start sm:items-center justify-between">
                         <Tabs
                             value={filters.tag || 'all'}
@@ -121,44 +90,42 @@ export default function Index({ posts, filters }: PostIndexProps) {
                         </Select>
                     </div>
 
-                    {posts.data.length === 0 ? (
-                        <div className="text-center py-20">
-                            <p className="text-muted-foreground text-lg">No posts published yet. Check back soon!</p>
-                        </div>
-                    ) : (
-                        <div className="space-y-16">
-                            {/* Featured Post */}
-                            {featuredPost && (
-                                <article className="group min-w-0">
-                                    <Link href={`/posts/${featuredPost.slug}`}>
-                                        <div className="space-y-4">
+                    <div className="space-y-12">
+                        {posts.data.map((post, index) => {
+                            const activeTags = getActiveTags(post);
+                            const readingTime = getReadingTime(post.content);
+                            const publishDate = post.published_at || post.created_at;
+
+                            return (
+                                <article
+                                    className="min-w-0"
+                                    key={post.id}
+                                >
+                                    <Link href={route('posts.show', { post: post.slug })} className="group block">
+                                        <div className="space-y-3">
                                             <div className="flex items-center gap-3 text-sm text-muted-foreground flex-wrap">
-                                                <time dateTime={featuredPost.published_at || featuredPost.created_at}>
-                                                    {formatDate(featuredPost.published_at || featuredPost.created_at)}
+                                                <time dateTime={publishDate}>
+                                                    {formatDate(publishDate)}
                                                 </time>
                                                 <span>•</span>
-                                                <span>{getReadingTime(featuredPost.content)} min read</span>
+                                                <span>{readingTime} min read</span>
                                             </div>
-
-                                            <h2 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight group-hover:text-muted-foreground transition-colors break-words">
-                                                {featuredPost.title}
-                                            </h2>
-
-                                            {featuredPost.subtitle && (
-                                                <p className="text-xl text-muted-foreground leading-relaxed">
-                                                    {featuredPost.subtitle}
+                                            <h3 className="text-2xl md:text-3xl font-semibold tracking-tight leading-tight group-hover:text-muted-foreground transition-colors break-words">
+                                                {post.title}
+                                            </h3>
+                                            {post.subtitle && (
+                                                <p className="text-base text-muted-foreground leading-relaxed">
+                                                    {post.subtitle}
                                                 </p>
                                             )}
-
-                                            {featuredPost.preview_text && (
-                                                <p className="text-base text-muted-foreground leading-relaxed line-clamp-3">
-                                                    {featuredPost.preview_text}
+                                            {post.preview_text && (
+                                                <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">
+                                                    {post.preview_text}
                                                 </p>
                                             )}
-
-                                            {getActiveTags(featuredPost).length > 0 && (
-                                                <div className="flex flex-wrap gap-2 pt-2">
-                                                    {getActiveTags(featuredPost).map((tag) => (
+                                            {activeTags.length > 0 && (
+                                                <div className="flex flex-wrap gap-2 pt-1">
+                                                    {activeTags.map((tag) => (
                                                         <Badge
                                                             key={tag}
                                                             variant="outline"
@@ -171,77 +138,14 @@ export default function Index({ posts, filters }: PostIndexProps) {
                                             )}
                                         </div>
                                     </Link>
+                                    {index < posts.data.length - 1 && (
+                                        <Separator className="mt-12" />
+                                    )}
                                 </article>
-                            )}
+                            );
+                        })}
+                    </div>
 
-                            {remainingPosts.length > 0 && (
-                                <>
-                                    <Separator className="my-16" />
-
-                                    {/* Remaining Posts */}
-                                    <div className="space-y-12">
-                                        {remainingPosts.map((post, index) => {
-                                            const activeTags = getActiveTags(post);
-                                            const readingTime = getReadingTime(post.content);
-                                            const publishDate = post.published_at || post.created_at;
-
-                                            return (
-                                                <article key={post.id} className="min-w-0">
-                                                    <Link href={`/posts/${post.slug}`} className="group block">
-                                                        <div className="space-y-3">
-                                                            <div className="flex items-center gap-3 text-sm text-muted-foreground flex-wrap">
-                                                                <time dateTime={publishDate}>
-                                                                    {formatDate(publishDate)}
-                                                                </time>
-                                                                <span>•</span>
-                                                                <span>{readingTime} min read</span>
-                                                            </div>
-
-                                                            <h3 className="text-2xl md:text-3xl font-semibold tracking-tight leading-tight group-hover:text-muted-foreground transition-colors break-words">
-                                                                {post.title}
-                                                            </h3>
-
-                                                            {post.subtitle && (
-                                                                <p className="text-base text-muted-foreground leading-relaxed">
-                                                                    {post.subtitle}
-                                                                </p>
-                                                            )}
-
-                                                            {post.preview_text && (
-                                                                <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">
-                                                                    {post.preview_text}
-                                                                </p>
-                                                            )}
-
-                                                            {activeTags.length > 0 && (
-                                                                <div className="flex flex-wrap gap-2 pt-1">
-                                                                    {activeTags.map((tag) => (
-                                                                        <Badge
-                                                                            key={tag}
-                                                                            variant="outline"
-                                                                            className="text-xs capitalize font-normal"
-                                                                        >
-                                                                            {tag}
-                                                                        </Badge>
-                                                                    ))}
-                                                                </div>
-                                                            )}
-                                                        </div>
-                                                    </Link>
-
-                                                    {index < remainingPosts.length - 1 && (
-                                                        <Separator className="mt-12" />
-                                                    )}
-                                                </article>
-                                            );
-                                        })}
-                                    </div>
-                                </>
-                            )}
-                        </div>
-                    )}
-
-                    {/* Pagination */}
                     {posts.last_page > 1 && (
                         <div className="mt-16 flex items-center justify-center gap-2">
                             <Button
@@ -256,7 +160,6 @@ export default function Index({ posts, filters }: PostIndexProps) {
 
                             <div className="flex items-center gap-2">
                                 {posts.links.slice(1, -1).map((link, index) => {
-                                    // Show only a few page numbers around current page
                                     const pageNum = index + 1;
                                     const currentPage = posts.current_page;
                                     const shouldShow =
