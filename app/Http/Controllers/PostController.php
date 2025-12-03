@@ -51,8 +51,6 @@ class PostController extends Controller
 
     public function show(Request $request, Post $post): Response
     {
-        $post = Post::find($post);
-
         return Inertia::render('post/show', [
             'post' => $post,
         ]);
