@@ -13,9 +13,21 @@ import { formatDate, getActiveTags, getReadingTime } from '@/lib/utils'
 
 export default function Index({ posts, filters }: PostIndexProps) {
     const route = useRoute();
+    const selectedTags = filters.tag ? filters.tag.split(',').filter(Boolean) : [];
 
     const handleTagChange = (tag: string): void => {
-        router.get('/blog', { tag: tag === 'all' ? undefined : tag, sort: filters.sort }, {
+        let updatedSelectedTags: string[];
+
+        if (tag === 'all') {
+            updatedSelectedTags = [];
+        } else if (selectedTags.includes(tag)) {
+            updatedSelectedTags = selectedTags.filter(t => t !== tag);
+        } else {
+            updatedSelectedTags = [...selectedTags, tag];
+        }
+
+        router.get('/blog', { tag: updatedSelectedTags.join(','), sort: filters.sort }, {
+            only: ['posts', 'filters'],
             preserveState: true,
             preserveScroll: true,
         });
@@ -23,6 +35,7 @@ export default function Index({ posts, filters }: PostIndexProps) {
 
     const handleSortChange = (sort: string): void => {
         router.get('/blog', { tag: filters.tag, sort }, {
+            only: ['posts', 'filters'],
             preserveState: true,
             preserveScroll: true,
         });
@@ -70,6 +83,7 @@ export default function Index({ posts, filters }: PostIndexProps) {
                             type="multiple"
                             spacing={1.5}
                             size="sm"
+                            value={selectedTags}
                         >
                             {tagOptions.map((tag) => (
                                 <ToggleGroupItem

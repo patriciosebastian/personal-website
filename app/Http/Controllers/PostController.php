@@ -29,11 +29,20 @@ class PostController extends Controller
             'thoughts' => 'is_thoughts',
         ];
 
-        if ($request->has('tag') && isset($tagFilters[$request->tag])) {
-            $query->where($tagFilters[$request->tag], true);
+        if ($request->filled('tag')) {
+            $tags = explode(',', $request->input('tag'));
+
+            $query->where(function ($q) use ($tags, $tagFilters) {
+                foreach ($tags as $tag) {
+                    if (isset($tagFilters[$tag])) {
+                        $q->orWhere($tagFilters[$tag], true);
+                    }
+                }
+            });
         }
 
         $sortOrder = $request->input('sort', 'desc');
+
         if (in_array($sortOrder, ['asc', 'desc'])) {
             $query->orderBy('created_at', $sortOrder);
         }
@@ -41,8 +50,8 @@ class PostController extends Controller
         $posts = $query->paginate(9)->withQueryString();
 
         return Inertia::render('post/index', [
-            'posts' => $posts,
-            'filters' => [
+            'posts' => fn () => $posts,
+            'filters' => fn () => [
                 'tag' => $request->input('tag'),
                 'sort' => $sortOrder,
             ],
