@@ -2,51 +2,18 @@ import PageHead from '@/components/page-head'
 import MainLayout from '@/layouts/main-layout'
 import { PostIndexProps } from '@/types'
 import { Badge } from '@/components/ui/badge'
-import { Link, router } from '@inertiajs/react'
+import { Link } from '@inertiajs/react'
 import { Separator } from '@/components/ui/separator'
 import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Button } from '@/components/ui/button'
 import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-react'
 import { useRoute } from 'ziggy-js'
-import { formatDate, getActiveTags, getReadingTime } from '@/lib/utils'
+import { formatDate, getActiveTags, getReadingTime, handlePageChange, handleSortChange, handleTagChange } from '@/lib/utils'
 
 export default function Index({ posts, filters }: PostIndexProps) {
     const route = useRoute();
     const selectedTags = filters.tag ? filters.tag.split(',').filter(Boolean) : [];
-
-    const handleTagChange = (tag: string): void => {
-        let updatedSelectedTags: string[];
-
-        if (tag === 'all') {
-            updatedSelectedTags = [];
-        } else if (selectedTags.includes(tag)) {
-            updatedSelectedTags = selectedTags.filter(t => t !== tag);
-        } else {
-            updatedSelectedTags = [...selectedTags, tag];
-        }
-
-        router.get('/blog', { tag: updatedSelectedTags.join(','), sort: filters.sort }, {
-            only: ['posts', 'filters'],
-            preserveState: true,
-            preserveScroll: true,
-        });
-    };
-
-    const handleSortChange = (sort: string): void => {
-        router.get('/blog', { tag: filters.tag, sort }, {
-            only: ['posts', 'filters'],
-            preserveState: true,
-            preserveScroll: true,
-        });
-    };
-
-    const handlePageChange = (url: string): void => {
-        router.get(url, {}, {
-            preserveState: true,
-            preserveScroll: false,
-        });
-    };
 
     const tagOptions = [
         { value: 'all', label: 'All Posts' },
@@ -90,7 +57,7 @@ export default function Index({ posts, filters }: PostIndexProps) {
                                     value={tag.value}
                                     variant="outline"
                                     className="data-[state=on]:text-blue-500 data-[state=on]:bg-secondary text-xs"
-                                    onClick={() => handleTagChange(tag.value)}
+                                    onClick={() => handleTagChange('/blog', selectedTags, tag.value, filters.sort)}
                                     key={tag.value}
                                     aria-label={`Toggle ${tag.label}`}
                                 >
@@ -101,7 +68,7 @@ export default function Index({ posts, filters }: PostIndexProps) {
 
                         <Select
                             value={filters.sort}
-                            onValueChange={handleSortChange}
+                            onValueChange={(value) => handleSortChange(selectedTags, value)}
                         >
                             <SelectTrigger className="w-full sm:w-[180px] text-xs h-fit">
                                 <SelectValue />
