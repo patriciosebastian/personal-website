@@ -129,6 +129,10 @@ export interface PostCreateProps {
     //
 }
 
+export interface PostCardProps {
+    posts: PaginatedData<Post>;
+}
+
 export interface Project {
     title: string;
     summary: string;
