@@ -6,10 +6,9 @@ import { Link } from '@inertiajs/react'
 import { Separator } from '@/components/ui/separator'
 import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
-import { Button } from '@/components/ui/button'
-import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-react'
 import { useRoute } from 'ziggy-js'
-import { formatDate, getActiveTags, getReadingTime, handlePageChange, handleSortChange, handleTagChange } from '@/lib/utils'
+import { formatDate, getActiveTags, getReadingTime, handleSortChange, handleTagChange } from '@/lib/utils'
+import InertiaPagination from '@/components/ui/inertia-pagination'
 
 export default function Index({ posts, filters }: PostIndexProps) {
     const route = useRoute();
@@ -146,64 +145,16 @@ export default function Index({ posts, filters }: PostIndexProps) {
                         })}
                     </div>
 
-                    {posts.last_page > 1 && (
-                        <div className="mt-16 flex items-center justify-center gap-2">
-                            <Button
-                                variant="outline"
-                                size="sm"
-                                onClick={() => posts.prev_page_url && handlePageChange(posts.prev_page_url)}
-                                disabled={!posts.prev_page_url}
-                            >
-                                <ChevronLeftIcon className="size-4" />
-                                Previous
-                            </Button>
-
-                            <div className="flex items-center gap-2">
-                                {posts.links.slice(1, -1).map((link, index) => {
-                                    const pageNum = index + 1;
-                                    const currentPage = posts.current_page;
-                                    const shouldShow =
-                                        pageNum === 1 ||
-                                        pageNum === posts.last_page ||
-                                        (pageNum >= currentPage - 1 && pageNum <= currentPage + 1);
-
-                                    if (!shouldShow && pageNum === currentPage - 2) {
-                                        return <span key={index} className="px-2">...</span>;
-                                    }
-
-                                    if (!shouldShow && pageNum === currentPage + 2) {
-                                        return <span key={index} className="px-2">...</span>;
-                                    }
-
-                                    if (!shouldShow) {
-                                        return null;
-                                    }
-
-                                    return (
-                                        <Button
-                                            key={index}
-                                            variant={link.active ? "default" : "outline"}
-                                            size="sm"
-                                            onClick={() => link.url && handlePageChange(link.url)}
-                                            className="min-w-[2.5rem]"
-                                        >
-                                            {pageNum}
-                                        </Button>
-                                    );
-                                })}
-                            </div>
-
-                            <Button
-                                variant="outline"
-                                size="sm"
-                                onClick={() => posts.next_page_url && handlePageChange(posts.next_page_url)}
-                                disabled={!posts.next_page_url}
-                            >
-                                Next
-                                <ChevronRightIcon className="size-4" />
-                            </Button>
-                        </div>
-                    )}
+                    <InertiaPagination
+                        current_page={posts.current_page}
+                        last_page={posts.last_page}
+                        first_page_url={posts.first_page_url!}
+                        last_page_url={posts.last_page_url!}
+                        prev_page_url={posts.prev_page_url!}
+                        next_page_url={posts.next_page_url!}
+                        links={posts.links}
+                        className="w-fit mt-12 mr-0"
+                    />
                 </div>
             </MainLayout>
         </>

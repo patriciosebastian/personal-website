@@ -97,6 +97,17 @@ export interface PaginatedData<T> {
     total: number;
 }
 
+export interface InertiaPaginatedData {
+    current_page: number;
+    last_page: number;
+    first_page_url: string;
+    last_page_url: string;
+    prev_page_url: string | null;
+    next_page_url: string | null;
+    links: PaginationLink[];
+    className?: string;
+}
+
 export interface PostIndexProps {
     posts: PaginatedData<Post>;
     filters: {
