@@ -97,6 +97,10 @@
     --sidebar-accent-foreground: oklch(0.205 0 0);
     --sidebar-border: oklch(0.922 0 0);
     --sidebar-ring: oklch(0.87 0 0);
+
+    & .formkit-submit {
+        @apply !font-semibold;
+    }
 }
 
 .dark {
@@ -132,6 +136,14 @@
     --sidebar-accent-foreground: oklch(0.985 0 0);
     --sidebar-border: oklch(0.269 0 0);
     --sidebar-ring: oklch(0.439 0 0);
+
+    & form[data-uid='d4f5b1b12e'] {
+        @apply bg-background! text-foreground!;
+    }
+
+    & .formkit-submit {
+        @apply !bg-primary !text-primary-foreground !font-semibold;
+    }
 }
 
 @layer base {
@@ -161,10 +173,59 @@
     .dark .aside .custom-inline-code {
         @apply bg-primary text-primary-foreground;
     }
+
+    .dark .formkit-header {
+        @apply text-foreground!;
+    }
+
+    .dark .formkit-subheader, .dark .formkit-guarantee {
+        @apply text-muted-foreground!;
+    }
+
+    @media screen and (min-width: 1024px) {
+        .light .formkit-form[data-uid="d4f5b1b12e"] .formkit-input,
+        .dark .formkit-form[data-uid="d4f5b1b12e"] .formkit-input {
+            font-size: 1rem !important;
+            padding: 14px !important;
+        }
+    }
+
+    .light .formkit-form[data-uid="d4f5b1b12e"] .formkit-input:focus,
+    .dark .formkit-form[data-uid="d4f5b1b12e"] .formkit-input:focus {
+        outline: solid 1px;
+        outline-color: #9ca3af !important;
+    }
+
+    .dark a.formkit-powered-by-convertkit {
+        @apply text-foreground!;
+    }
 }
 
 @utility aside {
-  @apply bg-secondary rounded p-4;
-  border-left: 3px solid;
-  border-color: var(--foreground);
+    @apply bg-secondary rounded p-4;
+    border-left: 3px solid;
+    border-color: var(--foreground);
+}
+
+@layer components {
+    form[data-uid="d4f5b1b12e"] {
+        @apply border-border!;
+    }
+}
+
+.formkit-background {
+    z-index: -1;
+}
+
+body[class^="__className_"][data-scroll-locked="1"],
+[data-scroll-locked="1"][style="pointer-events: none;"] {
+    overflow: auto !important;
+    overscroll-behavior: auto !important;
+    position: relative !important;
+    padding-left: 2rem !important;
+    padding-top: 0px !important;
+    padding-right: 2rem !important;
+    margin-left: auto !important;
+    margin-top: 0 !important;
+    margin-right: auto !important;
 }

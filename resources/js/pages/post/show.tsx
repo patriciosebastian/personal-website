@@ -6,11 +6,11 @@ import { Separator } from '@/components/ui/separator'
 import { Link } from '@inertiajs/react'
 import { CalendarIcon, ClockIcon, ArrowLeftIcon } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { postTags } from '@/data/postTags'
 import { formatDate, getActiveTags, getReadingTime } from '@/lib/utils'
+import SubscribeToBlogForm from '@/components/subscribe-to-blog-form'
 
 export default function Show({ post }: PostShowProps) {
-    const activeTags = getActiveTags(post, postTags);
+    const activeTags = getActiveTags(post);
     const publishDate = post.published_at || post.created_at;
     const readingTime = getReadingTime(post.content);
 
@@ -104,6 +104,7 @@ export default function Show({ post }: PostShowProps) {
                         </div>
                     </footer>
                 </article>
+                <SubscribeToBlogForm />
             </MainLayout>
         </>
     )
