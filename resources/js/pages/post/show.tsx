@@ -104,6 +104,14 @@ export default function Show({ post }: PostShowProps) {
                         </div>
                     </footer>
                 </article>
+
+                <p className="relative text-center border p-4 rounded mx-auto max-w-lg my-24 lg:max-w-2xl">
+                    <div className="absolute size-8 -top-4 rounded-full flex justify-center items-center bg-accent text-primary font-bold border animate-spin duration-[3000ms]">
+                        ?
+                    </div>
+                    Got thoughts on this article or anything else? <a href="mailto:psebastiansalazar@gmail.com" className="underline font-bold">Hit me up!</a>
+                </p>
+
                 <SubscribeToBlogForm />
             </MainLayout>
         </>
