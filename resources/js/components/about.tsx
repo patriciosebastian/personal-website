@@ -2,6 +2,8 @@ import { Badge, badgeVariants } from '@/components/ui/badge'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Link } from '@inertiajs/react'
 import SectionHeading from './ui/section-heading'
+import TechCard from './ui/tech-card'
+import { techStack } from '@/data/techStack'
 
 export default function About() {
     return (
@@ -18,7 +20,7 @@ export default function About() {
                     <TabsContent value="career" className="space-y-12">
                         <div className="space-y-4">
                             <Badge className={badgeVariants({ variant: 'secondary' }) + ' rounded-full px-4 py-1 font-mono'}>
-                                My Mission Right Now
+                                My Current Mission
                             </Badge>
                             <p>
                                 Right now, I&apos;m focused on growing as a developer and deepening my knowledge and skills.<br />
@@ -34,44 +36,110 @@ export default function About() {
                             </p>
                         </div>
                     </TabsContent>
-                    <TabsContent value="tech-stack">
-                        {/* Frontend */}
-                        <div className="bg-secondary w-fit p-1 rounded-sm mb-2">Frontend</div>
-                        <div className="flex flex-wrap gap-4 mb-4">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>Tailwind CSS</span>
-                            <span>JavaScript</span>
-                            <span>React</span>
+                    <TabsContent value="tech-stack" className="space-y-5">
+                        <div className="space-y-2.5">
+                            <h3 className="text-xs font-semibold tracking-wider text-muted-foreground uppercase">
+                                Languages
+                            </h3>
+                            <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 md:grid-cols-4">
+                                {techStack.languages.map((tech) => (
+                                    <TechCard
+                                        key={tech.name}
+                                        name={tech.name}
+                                        icon={tech.icon}
+                                        color={tech.color}
+                                    />
+                                ))}
+                            </div>
                         </div>
-                        {/* Full-stack */}
-                        <div className="bg-secondary w-fit p-1 rounded-sm mb-2">Full-stack</div>
-                        <div className="flex flex-wrap gap-4 mb-4">
-                            <span>Livewire</span>
-                            <span>Next.js</span>
+
+                        <div className="space-y-2.5">
+                            <h3 className="text-xs font-semibold tracking-wider text-muted-foreground uppercase">
+                                UI & Frontend
+                            </h3>
+                            <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 md:grid-cols-4">
+                                {techStack.uiFrontend.map((tech) => {
+                                    const color = typeof tech.color === 'string'
+                                        ? tech.color
+                                        : `dark:${tech.color.dark}; light:${tech.color.light}`;
+
+                                    return (
+                                        <TechCard
+                                            key={tech.name}
+                                            name={tech.name}
+                                            icon={tech.icon}
+                                            color={color}
+                                        />
+                                    );
+                                })}
+                            </div>
                         </div>
-                        {/* Backend */}
-                        <div className="bg-secondary w-fit p-1 rounded-sm mb-2">Backend</div>
-                        <div className="flex flex-wrap gap-4 mb-4">
-                            <span>Node.js</span>
-                            <span>Express.js</span>
-                            <span>PHP</span>
-                            <span>Laravel</span>
+
+                        <div className="space-y-2.5">
+                            <h3 className="text-xs font-semibold tracking-wider text-muted-foreground uppercase">
+                                Backend & Frameworks
+                            </h3>
+                            <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 md:grid-cols-4">
+                                {techStack.backendFrameworks.map((tech) => {
+                                    const color = typeof tech.color === 'string'
+                                        ? tech.color
+                                        : `dark:${tech.color.dark}; light:${tech.color.light}`;
+
+                                    return (
+                                        <TechCard
+                                            key={tech.name}
+                                            name={tech.name}
+                                            icon={tech.icon}
+                                            color={color}
+                                        />
+                                    );
+                                })}
+                            </div>
                         </div>
-                        {/* Database */}
-                        <div className="bg-secondary w-fit p-1 rounded-sm mb-2">Database</div>
-                        <div className="flex flex-wrap gap-4 mb-4">
-                            <span>PostgreSQL</span>
+
+                        <div className="space-y-2.5">
+                            <h3 className="text-xs font-semibold tracking-wider text-muted-foreground uppercase">
+                                Database & Tooling
+                            </h3>
+                            <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 md:grid-cols-4">
+                                {techStack.databaseTools.map((tech) => (
+                                    <TechCard
+                                        key={tech.name}
+                                        name={tech.name}
+                                        icon={tech.icon}
+                                        color={tech.color}
+                                    />
+                                ))}
+                            </div>
                         </div>
-                        {/* Tooling */}
-                        <div className="bg-secondary w-fit p-1 rounded-sm mb-2">Tooling</div>
-                        <div className="flex flex-wrap gap-4 mb-4">
-                            <span>Git/GitHub</span>
-                            <span>Postman</span>
-                            <span>VSCode</span>
-                            <span>Atlassian</span>
-                            <span>Slack</span>
-                            <span>Notion</span>
+                    </TabsContent>
+                    <TabsContent
+                        value="AI"
+                        className="space-y-12"
+                    >
+                        <div className="space-y-4">
+                            <Badge className={
+                                    badgeVariants({ variant: 'secondary' }) +
+                                    ' rounded-full px-4 py-1'
+                                }
+                            >
+                                How I Think Abbout AI
+                            </Badge>
+                            <p>
+                                lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </p>
+                        </div>
+                        <div className="space-y-4">
+                            <Badge className={
+                                    badgeVariants({ variant: 'secondary' }) +
+                                    ' rounded-full px-4 py-1'
+                                }
+                            >
+                                How I Use AI in Development
+                            </Badge>
+                            <p>
+                                lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </p>
                         </div>
                     </TabsContent>
                     <TabsContent value="personal">
@@ -87,7 +155,6 @@ export default function About() {
                             <li>I love spicy food. I guarantee you can&apos;t handle more heat than me (challenge accepted?)</li>
                         </ul>
                     </TabsContent>
-                    <TabsContent value="cool-stuff"></TabsContent>
                 </Tabs>
             </div>
             <div className="w-5/12 mx-auto mb-26">
@@ -102,5 +169,4 @@ export default function About() {
             </div>
         </section>
     );
-};
-
+}
