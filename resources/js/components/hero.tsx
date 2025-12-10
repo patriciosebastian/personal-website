@@ -3,7 +3,10 @@ import { Link } from '@inertiajs/react'
 
 export default function Hero() {
     return (
-        <section className="min-h-svh flex justify-center items-center relative">
+        <section
+            className="min-h-svh flex justify-center items-center relative"
+            id="hero"
+        >
             <div className="w-fit space-y-4 flex flex-col z-10">
                 <h1 className="text-6xl">PATRICIO SALAZAR</h1>
                 <p className="text-3xl">Software Developer</p>

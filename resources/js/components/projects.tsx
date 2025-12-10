@@ -11,7 +11,10 @@ export default function Projects() {
     const [expandedProject, setExpandedProject] = useState<number | null>(null);
 
     return (
-        <section className="w-2/3 mx-auto min-h-svh">
+        <section
+            className="w-2/3 mx-auto min-h-svh"
+            id="projects"
+        >
             <SectionHeading headingText="Projects" />
             <div className="w-4/5 mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
                 {projects.map((project, index) => (

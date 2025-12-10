@@ -20,17 +20,17 @@ export default function Navbar() {
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                     <NavigationMenuLink asChild className="text-xl hover:bg-transparent">
-                        <Link href="/">ABOUT</Link>
+                        <Link href={route('home') + '#about'}>ABOUT</Link>
                     </NavigationMenuLink>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                     <NavigationMenuLink asChild className="text-xl hover:bg-transparent">
-                        <Link href="/">PROJECTS</Link>
+                        <Link href={route('home') + '#projects'}>PROJECTS</Link>
                     </NavigationMenuLink>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                     <NavigationMenuLink asChild className="text-xl hover:bg-transparent">
-                        <Link href="/">BLOG</Link>
+                        <Link href={route('posts.index')}>BLOG</Link>
                     </NavigationMenuLink>
                 </NavigationMenuItem>
             </NavigationMenuList>

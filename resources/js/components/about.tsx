@@ -7,15 +7,38 @@ import { techStack } from '@/data/techStack'
 
 export default function About() {
     return (
-        <section className="min-h-svh" id='about'>
+        <section
+            className="min-h-svh"
+            id="about"
+        >
             <SectionHeading headingText="About" />
             <div className="relative flex justify-center items-center">
                 <Tabs defaultValue="career" className="w-5/12 space-y-12">
                     <TabsList className="w-full bg-transparent rounded-none p-0 box-border mb-12">
-                        <TabsTrigger value="career">Career</TabsTrigger>
-                        <TabsTrigger value="tech-stack">Tech Stack</TabsTrigger>
-                        <TabsTrigger value="AI">AI</TabsTrigger>
-                        <TabsTrigger value="personal">Personal</TabsTrigger>
+                        <TabsTrigger
+                            value="career"
+                            className="hover:bg-accent"
+                        >
+                            Career
+                        </TabsTrigger>
+                        <TabsTrigger
+                            value="tech-stack"
+                            className="hover:bg-accent"
+                        >
+                            Tech Stack
+                        </TabsTrigger>
+                        <TabsTrigger
+                            value="AI"
+                            className="hover:bg-accent"
+                        >
+                            AI
+                        </TabsTrigger>
+                        <TabsTrigger
+                            value="personal"
+                            className="hover:bg-accent"
+                        >
+                            Personal
+                        </TabsTrigger>
                     </TabsList>
                     <TabsContent value="career" className="space-y-12">
                         <div className="space-y-4">
