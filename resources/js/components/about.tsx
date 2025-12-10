@@ -14,8 +14,8 @@ export default function About() {
                     <TabsList className="w-full bg-transparent rounded-none p-0 box-border mb-12">
                         <TabsTrigger value="career">Career</TabsTrigger>
                         <TabsTrigger value="tech-stack">Tech Stack</TabsTrigger>
+                        <TabsTrigger value="AI">AI</TabsTrigger>
                         <TabsTrigger value="personal">Personal</TabsTrigger>
-                        <TabsTrigger value="cool-stuff">Stuff</TabsTrigger>
                     </TabsList>
                     <TabsContent value="career" className="space-y-12">
                         <div className="space-y-4">
@@ -119,7 +119,7 @@ export default function About() {
                     >
                         <div className="space-y-4">
                             <Badge className={badgeVariants({ variant: 'secondary' }) + ' rounded-full px-4 py-1'}>
-                                How I Think Abbout AI
+                                How I Think About AI
                             </Badge>
                             <p>
                                 lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
