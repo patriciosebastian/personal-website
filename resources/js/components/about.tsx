@@ -7,7 +7,7 @@ import { techStack } from '@/data/techStack'
 
 export default function About() {
     return (
-        <section className="min-h-svh">
+        <section className="min-h-svh" id='about'>
             <SectionHeading headingText="About" />
             <div className="relative flex justify-center items-center">
                 <Tabs defaultValue="career" className="w-5/12 space-y-12">
