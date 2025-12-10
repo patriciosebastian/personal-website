@@ -19,7 +19,7 @@ export default function About() {
                     </TabsList>
                     <TabsContent value="career" className="space-y-12">
                         <div className="space-y-4">
-                            <Badge className={badgeVariants({ variant: 'secondary' }) + ' rounded-full px-4 py-1 font-mono'}>
+                            <Badge className={badgeVariants({ variant: 'secondary' }) + ' rounded-full px-4 py-1'}>
                                 My Current Mission
                             </Badge>
                             <p>
@@ -28,7 +28,7 @@ export default function About() {
                             </p>
                         </div>
                         <div className="space-y-4">
-                            <Badge className={badgeVariants({ variant: 'secondary' }) + ' rounded-full px-4 py-1 font-mono'}>
+                            <Badge className={badgeVariants({ variant: 'secondary' }) + ' rounded-full px-4 py-1'}>
                                 My Current Role
                             </Badge>
                             <p>
