@@ -2,31 +2,27 @@ import { Post } from '@/types'
 import SectionHeading from './ui/section-heading'
 import { Item, ItemActions, ItemContent, ItemDescription, ItemTitle } from './ui/item'
 import { ChevronRightIcon } from 'lucide-react'
-import { usePage } from '@inertiajs/react'
+import { Link, usePage } from '@inertiajs/react'
 import { Badge, badgeVariants } from './ui/badge'
+import { postTags } from '@/data/postTags'
+import { useRoute } from 'ziggy-js'
 
 export default function LatestPost() {
     const { latestPost } = usePage<{ latestPost: Post }>().props
-    const postTags = [
-        'is_freelance',
-        'is_web_development',
-        'is_tech',
-        'is_life',
-        'is_entrepreneurship',
-        'is_side_project',
-        'is_product_review',
-        'is_thoughts',
-    ];
+    const route = useRoute();
 
     return (
-        <section className="w-5/12 mx-auto">
+        <section
+            className="w-5/12 mx-auto"
+            id="latestPost"
+        >
             <SectionHeading headingText="Latest Post" />
             <div className="flex w-full flex-col gap-4">
                 <Item variant={"muted"} asChild>
-                    <a href="#">
+                    <Link href={route('posts.show', { post: latestPost.slug })}>
                         <ItemContent className="space-y-4">
                             <ItemTitle className="text-2xl text-balance">{latestPost.title}</ItemTitle>
-                            <ItemDescription className="flex flex-wrap gap-y-2 md:block md:space-y-2 md:space-x-2">
+                            <ItemDescription className="flex flex-wrap items-center space-x-2 space-y-2 md:space-y-0">
                                 {postTags.map((tag) => {
                                     if (latestPost[tag as keyof Post]) {
                                         return (
@@ -39,7 +35,7 @@ export default function LatestPost() {
                                         );
                                     }
                                 })}
-                                <span className="ml-auto mt-2 block">
+                                <span className="ml-auto">
                                     {latestPost.published_at
                                         ? new Date(latestPost.published_at).toLocaleDateString()
                                         : new Date(latestPost.created_at).toLocaleDateString()
@@ -50,7 +46,7 @@ export default function LatestPost() {
                         <ItemActions>
                             <ChevronRightIcon className="size-4" />
                         </ItemActions>
-                    </a>
+                    </Link>
                 </Item>
             </div>
         </section>
