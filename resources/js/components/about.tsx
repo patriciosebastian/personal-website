@@ -118,11 +118,7 @@ export default function About() {
                         className="space-y-12"
                     >
                         <div className="space-y-4">
-                            <Badge className={
-                                    badgeVariants({ variant: 'secondary' }) +
-                                    ' rounded-full px-4 py-1'
-                                }
-                            >
+                            <Badge className={badgeVariants({ variant: 'secondary' }) + ' rounded-full px-4 py-1'}>
                                 How I Think Abbout AI
                             </Badge>
                             <p>
@@ -130,11 +126,7 @@ export default function About() {
                             </p>
                         </div>
                         <div className="space-y-4">
-                            <Badge className={
-                                    badgeVariants({ variant: 'secondary' }) +
-                                    ' rounded-full px-4 py-1'
-                                }
-                            >
+                            <Badge className={badgeVariants({ variant: 'secondary' }) + ' rounded-full px-4 py-1'}>
                                 How I Use AI in Development
                             </Badge>
                             <p>
