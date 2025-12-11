@@ -15,19 +15,33 @@ export default function Footer() {
                         HOME
                     </Link>
                     <Link
-                        href="/"
+                        href={route('home') + '#about'}
+                        onClick={(e) => {
+                            if (window.location.pathname === '/') {
+                                e.preventDefault();
+                                document.querySelector('#about')?.scrollIntoView();
+                                window.history.pushState(null, '', '#about');
+                            }
+                        }}
                         className="text-sm font-medium text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 sm:text-base"
                     >
                         ABOUT
                     </Link>
                     <Link
-                        href="/"
+                        href={route('home') + '#projects'}
+                        onClick={(e) => {
+                            if (window.location.pathname === '/') {
+                                e.preventDefault();
+                                document.querySelector('#projects')?.scrollIntoView();
+                                window.history.pushState(null, '', '#projects');
+                            }
+                        }}
                         className="text-sm font-medium text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 sm:text-base"
                     >
                         PROJECTS
                     </Link>
                     <Link
-                        href="/"
+                        href={route('posts.index')}
                         className="text-sm font-medium text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 sm:text-base"
                     >
                         BLOG

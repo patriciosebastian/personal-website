@@ -20,12 +20,34 @@ export default function Navbar() {
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                     <NavigationMenuLink asChild className="text-xl hover:bg-transparent">
-                        <Link href={route('home') + '#about'}>ABOUT</Link>
+                        <Link
+                            href={route('home') + '#about'}
+                            onClick={(e) => {
+                                if (window.location.pathname === '/') {
+                                    e.preventDefault();
+                                    document.querySelector('#about')?.scrollIntoView();
+                                    window.history.pushState(null, '', '#about');
+                                }
+                            }}
+                        >
+                            ABOUT
+                        </Link>
                     </NavigationMenuLink>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                     <NavigationMenuLink asChild className="text-xl hover:bg-transparent">
-                        <Link href={route('home') + '#projects'}>PROJECTS</Link>
+                        <Link
+                            href={route('home') + '#projects'}
+                            onClick={(e) => {
+                                if (window.location.pathname === '/') {
+                                    e.preventDefault();
+                                    document.querySelector('#projects')?.scrollIntoView();
+                                    window.history.pushState(null, '', '#projects');
+                                }
+                            }}
+                        >
+                            PROJECTS
+                        </Link>
                     </NavigationMenuLink>
                 </NavigationMenuItem>
                 <NavigationMenuItem>

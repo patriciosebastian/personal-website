@@ -24,13 +24,13 @@ export default function Hero() {
                 </div>
                 <div className="flex items-center gap-4 mt-6 mb-16">
                     <Link
-                        href="#Projects"
+                        href="/#projects"
                         className={buttonVariants({ variant: "outline", size: "lg" }) + ` h-12 justify-center font-bold rounded-xs`}
                     >
                         Projects
                     </Link>
                     <Link
-                        href="/"
+                        href="/#latestPost"
                         className={buttonVariants({ variant: "outline", size: "lg" }) + ` h-12 justify-center font-bold rounded-xs`}
                     >
                         Latest Post
