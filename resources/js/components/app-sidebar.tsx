@@ -10,7 +10,7 @@ import {
     SidebarMenuButton,
     SidebarMenuItem,
 } from '@/components/ui/sidebar';
-import { index as dashboard } from '@/actions/App/Http/Controllers/DashboardController';
+import { index as dashboard, show } from '@/actions/App/Http/Controllers/DashboardController';
 import { type NavItem } from '@/types';
 import { Link } from '@inertiajs/react';
 import { BookOpen, Folder, LayoutGrid, Plus } from 'lucide-react';
@@ -24,7 +24,7 @@ const mainNavItems: NavItem[] = [
     },
     {
         title: 'New Post',
-        href: dashboard().url + '/create-post',
+        href: show(),
         icon: Plus,
     },
 ];

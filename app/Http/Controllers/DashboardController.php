@@ -6,10 +6,11 @@ use App\Models\Post;
 use App\Models\Reaction;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use Inertia\Response;
 
 class DashboardController extends Controller
 {
-    public function index(Request $request)
+    public function index(Request $request): Response
     {
         $publishedPosts = Post::where('status', 'published')
             ->latest()
@@ -37,5 +38,10 @@ class DashboardController extends Controller
             'reactions' => $reactions,
             'postToPreview' => $postToPreview,
         ]);
+    }
+
+    public function show(Request $request): Response
+    {
+        return Inertia::render('dashboard/create-post');
     }
 }
