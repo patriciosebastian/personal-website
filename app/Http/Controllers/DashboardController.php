@@ -44,4 +44,34 @@ class DashboardController extends Controller
     {
         return Inertia::render('dashboard/create-post');
     }
+
+    public function store(Request $request): Response
+    {
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
+            'subtitle' => 'nullable|string|max:255',
+            'preview_text' => 'nullable|string|max:500',
+            'content' => 'required|string',
+            'slug' => 'required|string|max:255|unique:posts,slug',
+            'status' => 'required|in:draft,published',
+            'published_at' => 'nullable|date',
+            'is_freelance' => 'sometimes|boolean',
+            'is_web_development' => 'sometimes|boolean',
+            'is_tech' => 'sometimes|boolean',
+            'is_life' => 'sometimes|boolean',
+            'is_entrepreneurship' => 'sometimes|boolean',
+            'is_side_project' => 'sometimes|boolean',
+            'is_product_review' => 'sometimes|boolean',
+            'is_thoughts' => 'sometimes|boolean',
+        ]);
+
+        Post::create([
+            ...$validated,
+            'user_id' => $request->user()->id,
+        ]);
+
+        return Inertia::render('dashboard/create-post', [
+            'message' => 'Post created successfully!',
+        ]);
+    }
 }

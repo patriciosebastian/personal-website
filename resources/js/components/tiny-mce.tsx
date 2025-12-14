@@ -3,16 +3,17 @@ import { Editor } from '@tinymce/tinymce-react'
 import { createClient } from '@/lib/utils'
 import { Button } from './ui/button'
 import { setupOptions, type TinyMCEEditor } from '@/lib/tinyMce'
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from './ui/collapsible'
-import { ChevronsUpDown } from 'lucide-react'
+import { router } from '@inertiajs/react'
+import { useRoute } from 'ziggy-js'
 
 interface TinyMCEProps {
     title: string;
-    subTitle: string;
+    subtitle: string;
     preview: string;
     isFreelance: boolean;
     isWebDevelopment: boolean;
     slug: string;
+    status: string;
     isTech: boolean;
     isLife: boolean;
     isEntrepreneurship: boolean;
@@ -24,11 +25,12 @@ interface TinyMCEProps {
 
 export default function TinyMCE({
     title,
-    subTitle,
+    subtitle,
     preview,
     isFreelance,
     isWebDevelopment,
     slug,
+    status,
     isTech,
     isLife,
     isEntrepreneurship,
@@ -38,9 +40,10 @@ export default function TinyMCE({
     onClearContent
 }: TinyMCEProps) {
     const [isPublishing, setIsPublishing] = useState(false);
-    const [isOpen, setIsOpen] = useState(false);
     const editorRef = useRef<TinyMCEEditor | null>(null);
     const supabase = createClient();
+    const route = useRoute();
+    const titleOrSlugNotSet = title.trim() === '' || slug.trim() === '';
 
     const clearContent = () => {
         if (editorRef.current) {
@@ -57,6 +60,12 @@ export default function TinyMCE({
             return;
         }
 
+        if (titleOrSlugNotSet) {
+            alert("Please fill in all required fields.");
+            setIsPublishing(false);
+            return;
+        }
+
         setIsPublishing(true);
 
         if (!editorRef.current) {
@@ -67,14 +76,44 @@ export default function TinyMCE({
 
         const content = editorRef.current.getContent();
 
+        router.visit(route('dashboard.create.store'), {
+            method: 'post',
+            data: {
+                title: title,
+                subtitle: subtitle,
+                preview_text: preview,
+                content: content,
+                slug: slug,
+                status: status,
+                published_at: status === 'published' ? new Date() : null,
+                is_freelance: isFreelance,
+                is_web_development: isWebDevelopment,
+                is_tech: isTech,
+                is_life: isLife,
+                is_entrepreneurship: isEntrepreneurship,
+                is_side_project: isSideProject,
+                is_product_review: isProductReview,
+                is_thoughts: isThoughts,
+            },
+            preserveState: true,
+            preserveScroll: true,
+        });
+
+        logContent();
+        clearContent();
+
+        alert("Post published successfully! 🎉");
+        setIsPublishing(false);
+
         const { error } = await supabase
             .from('blogs')
             .insert([{
                 title: title,
                 body: content,
-                sub_title: subTitle,
+                sub_title: subtitle,
                 preview: preview,
                 slug: slug,
+                status: status,
                 is_freelance: isFreelance,
                 is_web_development: isWebDevelopment,
                 is_tech: isTech,
@@ -87,16 +126,12 @@ export default function TinyMCE({
 
         if (error) {
             console.error('Error publishing post:', error.message);
-            alert("Failed to publish post. Please check the console for errors.");
+            alert("Failed to publish post to Supabase. Please check the console for errors.");
             setIsPublishing(false);
             return;
         }
 
-        logContent();
-        clearContent();
-
-        alert("Post published successfully! 🎉");
-        setIsPublishing(false);
+        alert("Post published to Supabase successfully! 🎉");
     };
 
     const logContent = () => {
@@ -105,17 +140,19 @@ export default function TinyMCE({
             console.log('Title:', title);
             console.log(content);
             console.log('Other post properties:', {
-                'sub title': subTitle,
+                'subtitle': subtitle,
                 'preview': preview,
-                'is freelance': isFreelance,
-                'is web development': isWebDevelopment,
                 'slug': slug,
-                'is tech': isTech,
-                'is life': isLife,
-                'is entrepreneurship': isEntrepreneurship,
-                'is side project': isSideProject,
-                'is product review': isProductReview,
-                'is thoughts': isThoughts,
+                'status': status,
+                'published_at': status === 'published' ? new Date() : null,
+                'is_freelance': isFreelance,
+                'is_web_development': isWebDevelopment,
+                'is_tech': isTech,
+                'is_life': isLife,
+                'is_entrepreneurship': isEntrepreneurship,
+                'is_side_project': isSideProject,
+                'is_product_review': isProductReview,
+                'is_thoughts': isThoughts,
             });
         }
     };
@@ -156,7 +193,7 @@ export default function TinyMCE({
                                 throw new Error('Error uploading image');
                             }
 
-                            const publicUrl = process.env.NEXT_PUBLIC_SUPABASE_URL + '/storage/v1/object/public/personal-website/' + filePath;
+                            const publicUrl = import.meta.env.VITE_PUBLIC_SUPABASE_URL + '/storage/v1/object/public/personal-website/' + filePath;
 
                             console.log('Image uploaded successfully:', publicUrl);
                             return publicUrl;
@@ -171,7 +208,7 @@ export default function TinyMCE({
                 <Button
                     onClick={handlePublish}
                     className="hover:cursor-pointer"
-                    disabled={isPublishing}
+                    disabled={isPublishing || titleOrSlugNotSet}
                 >
                     Publish
                 </Button>
@@ -179,46 +216,11 @@ export default function TinyMCE({
                     onClick={logContent}
                     className="text-secondary hover:cursor-pointer"
                     variant="ghost"
-                    disabled={isPublishing}
+                    disabled={isPublishing || titleOrSlugNotSet}
                 >
                     Log Content
                 </Button>
             </div>
-            <Collapsible
-                open={isOpen}
-                onOpenChange={setIsOpen}
-                className="absolute top-1/4 -left-3/4 hidden lg:block text-muted text-base leading-none hover:text-black dark:hover:text-white"
-            >
-                <h4 className="text-base text-muted-foreground">Publish Notes</h4>
-                <CollapsibleTrigger>
-                    <ChevronsUpDown />
-                    <span className="sr-only">Toggle</span>
-                </CollapsibleTrigger>
-                <CollapsibleContent>
-                    <div className="text-primary rounded p-4 bg-secondary">
-                        <ul>
-                            <li>Add title, and slug</li>
-                            <li>Select applicable tags</li>
-                            <li>Add optimized images</li>
-                            <li>Add text-2xl to H2&apos;s</li>
-                            <li>Add text-xl to H3&apos;s</li>
-                            <li>Add .aside class where needed</li>
-                            <li>Underline links</li>
-                            <li>P tags above UL&apos;s will get margin</li>
-                            <li>Log and inspect content before publishing</li>
-                            <li>Confirm post and media uploads in supabase</li>
-                        </ul>
-                        <div className="text-xs mt-6">
-                            <hr />
-                            <div className="mt-5">
-                                <div>- p el&apos;s have &apos;mb&apos; of 1.5rem (mobile) and 1.75rem (desktop)</div>
-                                <div>- H2&apos;s, H3&apos;s, and img&apos;s are the same</div>
-                                <div>- Apply mb-0! to p tags above ul&apos;s if the margin is not desired</div>
-                            </div>
-                        </div>
-                    </div>
-                </CollapsibleContent>
-            </Collapsible>
         </>
     );
 }

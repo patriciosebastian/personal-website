@@ -8,6 +8,7 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/component
 import { Button } from '@/components/ui/button'
 import { ChevronsUpDown } from 'lucide-react'
 import TinyMCE from '@/components/tiny-mce'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
@@ -20,16 +21,17 @@ const breadcrumbs: BreadcrumbItem[] = [
     },
 ];
 
-export default function Create() {
+export default function CreatePost() {
     const publishedPostsRef = useRef<HTMLDivElement>(null);
     usePreserveScrollPosition({ ref: publishedPostsRef as React.RefObject<HTMLDivElement> });
     const [isOpen, setIsOpen] = useState(false);
     const [title, setTitle] = useState('');
-    const [subTitle, setSubTitle] = useState('');
+    const [subtitle, setSubtitle] = useState('');
     const [preview, setPreview] = useState('');
     const [isFreelance, setIsFreelance] = useState(false);
     const [isWebDevelopment, setIsWebDevelopment] = useState(false);
     const [slug, setSlug] = useState('');
+    const [status, setStatus] = useState('draft');
     const [isTech, setIsTech] = useState(false);
     const [isLife, setIsLife] = useState(false);
     const [isEntrepreneurship, setIsEntrepreneurship] = useState(false);
@@ -39,7 +41,7 @@ export default function Create() {
 
     const handleClearContent = () => {
         setTitle('');
-        setSubTitle('');
+        setSubtitle('');
         setPreview('');
         setIsFreelance(false);
         setIsWebDevelopment(false);
@@ -83,9 +85,9 @@ export default function Create() {
                         </CollapsibleTrigger>
                         <CollapsibleContent>
                             <div className="grid grid-cols-3 items-center gap-4 text-black dark:text-white p-4 bg-secondary rounded-sm">
-                                <input type="text" name="subTitle" id="subTitle" placeholder="sub_title" className="p-2 border border-muted-foreground" value={subTitle} onChange={(e) => setSubTitle(e.target.value)} />
+                                <input type="text" name="subtitle" id="subtitle" placeholder="sub_title" className="p-2 border border-muted-foreground" value={subtitle} onChange={(e) => setSubtitle(e.target.value)} />
                                 <input type="text" name="preview" id="preview" placeholder="preview" className="p-2 border border-muted-foreground" value={preview} onChange={(e) => setPreview(e.target.value)} />
-                                <input type="text" name="slug" id="slug" placeholder="slug" className="p-2 border border-muted-foreground" value={slug} onChange={(e) => setSlug(e.target.value)} />
+                                <input type="text" name="slug" id="slug" placeholder="slug" className="p-2 border border-muted-foreground" value={slug} onChange={(e) => setSlug(e.target.value)} required />
                                 <div>
                                     <input type="checkbox" name="isFreelance" id="isFreelance" className="mr-2 align-middle" checked={isFreelance} onChange={(e) => setIsFreelance(e.target.checked)} />
                                     <label htmlFor="isFreelance" className="align-middle">is_freelance</label>
@@ -118,15 +120,29 @@ export default function Create() {
                                     <input type="checkbox" name="isThoughts" id="isThoughts" className="mr-2 align-middle" checked={isThoughts} onChange={(e) => setIsThoughts(e.target.checked)} />
                                     <label htmlFor="isThoughts" className="align-middle">is_thoughts</label>
                                 </div>
+                                <Select onValueChange={(value) => setStatus(value)} defaultValue="draft">
+                                    <SelectTrigger className="bg-primary-foreground">
+                                        <SelectValue placeholder="Status" />
+                                    </SelectTrigger>
+                                    <SelectContent>
+                                        <SelectItem value="draft">
+                                            Draft
+                                        </SelectItem>
+                                        <SelectItem value="published">
+                                            Published
+                                        </SelectItem>
+                                    </SelectContent>
+                                </Select>
                             </div>
                         </CollapsibleContent>
                     </Collapsible>
                 </div>
                 <TinyMCE
                     title={title}
-                    subTitle={subTitle}
+                    subtitle={subtitle}
                     preview={preview}
                     slug={slug}
+                    status={status}
                     isFreelance={isFreelance}
                     isWebDevelopment={isWebDevelopment}
                     isTech={isTech}
