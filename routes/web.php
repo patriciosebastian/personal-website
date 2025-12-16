@@ -15,7 +15,7 @@ Route::get('/', function () {
 
 Route::middleware(['auth', 'verified'])->prefix('dashboard')->name('dashboard.')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('index');
-    Route::get('/create-post', [DashboardController::class, 'show'])->name('create.show');
+    Route::get('/create-post/{post?}', [DashboardController::class, 'show'])->name('create.show');
     Route::post('/create-post', [DashboardController::class, 'store'])->name('create.store');
 });
 

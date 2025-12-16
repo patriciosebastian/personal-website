@@ -20,7 +20,7 @@ interface DashboardProps {
     publishedPosts: PaginatedData<Post>;
     draftPosts: Post[];
     reactions: Reaction[];
-    postToPreview: Post[];
+    postToPreview: Post;
 }
 
 export default function Dashboard({ publishedPosts, draftPosts, reactions, postToPreview }: DashboardProps) {

@@ -29,15 +29,16 @@ export default function PublishedPosts({ publishedPosts }: PublishedPostsProps) 
                     return (
                         <Item
                             variant={"muted"}
-                            className={`items-start ${selectedPost === post.slug
-                                ? 'bg-accent dark:bg-accent'
-                                : 'bg-muted/10 dark:bg-muted/20 hover:bg-muted/60 dark:hover:bg-muted/60'}`}
+                            className={`items-start wrap-anywhere
+                                ${selectedPost === post.slug
+                                    ? 'bg-accent dark:bg-accent'
+                                    : 'bg-muted/10 dark:bg-muted/20 hover:bg-muted/60 dark:hover:bg-muted/60'}`}
                             key={post.id}
                         >
                             <Link
                                 href={route('dashboard.index', { post: post.slug })}
                                 only={['postToPreview']}
-                                className="flex items-start"
+                                className="flex items-start gap-2"
                             >
                                 <ItemContent>
                                     <ItemTitle>{post.title}</ItemTitle>

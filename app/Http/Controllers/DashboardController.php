@@ -40,9 +40,11 @@ class DashboardController extends Controller
         ]);
     }
 
-    public function show(Request $request): Response
+    public function show(Request $request, Post $post): Response
     {
-        return Inertia::render('dashboard/create-post');
+        return Inertia::render('dashboard/create-post', [
+            'post' => $post,
+        ]);
     }
 
     public function store(Request $request): Response
