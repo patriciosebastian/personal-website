@@ -1,11 +1,16 @@
 import { useFormatDateAndTime } from "@/hooks/use-format-date-time"
-import { Post } from "@/types"
+import { PaginatedData, Post } from "@/types"
 import { Item, ItemContent, ItemTitle } from "../ui/item"
 import { Link } from "@inertiajs/react"
 import { useRoute } from "ziggy-js"
-import { useEffect, useState } from "react"
+import { Activity, useEffect, useState } from "react"
+import InertiaPagination from "../ui/inertia-pagination"
 
-export default function Drafts({ draftPosts }: { draftPosts: Post[] }) {
+interface DraftPostsProps {
+    draftPosts: PaginatedData<Post>;
+}
+
+export default function Drafts({ draftPosts }: DraftPostsProps) {
     const formatDateAndTime = useFormatDateAndTime;
     const route = useRoute();
     const selectedPostSlug = route().params.post as string | undefined;
@@ -19,7 +24,7 @@ export default function Drafts({ draftPosts }: { draftPosts: Post[] }) {
         <>
             <div className="text-lg pl-6 my-4 font-semibold">Drafts</div>
             <ul className="space-y-4 px-6 mb-6">
-                {draftPosts.map(draft => {
+                {draftPosts.data.map(draft => {
                     const { date, time } = formatDateAndTime(new Date(draft.created_at).toLocaleString());
 
                     return (
@@ -34,13 +39,13 @@ export default function Drafts({ draftPosts }: { draftPosts: Post[] }) {
                             <Link
                                 href={route('dashboard.index', { post: draft.slug })}
                                 only={['postToPreview']}
-                                className="w-full flex items-start gap-2 justify-between"
+                                className="w-full flex justify-between items-start gap-2"
                             >
                                 <ItemContent>
-                                    <ItemTitle className="text-xs">{draft.title}</ItemTitle>
+                                    <ItemTitle>{draft.title}</ItemTitle>
                                 </ItemContent>
                                 <ItemContent>
-                                    <p className="text-xs">{date}</p>
+                                    <p>{date}</p>
                                     <p className="text-xs text-muted-foreground">{time}</p>
                                 </ItemContent>
                             </Link>
@@ -48,6 +53,18 @@ export default function Drafts({ draftPosts }: { draftPosts: Post[] }) {
                     );
                 })}
             </ul>
+            <Activity mode={Object.keys(draftPosts).length > 10 ? 'visible' : 'hidden'}>
+                <InertiaPagination
+                    current_page={draftPosts.current_page}
+                    last_page={draftPosts.last_page}
+                    first_page_url={draftPosts.first_page_url!}
+                    last_page_url={draftPosts.last_page_url!}
+                    prev_page_url={draftPosts.prev_page_url!}
+                    next_page_url={draftPosts.next_page_url!}
+                    links={draftPosts.links}
+                    className="w-fit my-4 mr-0"
+                />
+            </Activity>
         </>
     );
 };

@@ -3,7 +3,8 @@ import { Item, ItemContent, ItemDescription, ItemTitle } from "../ui/item"
 import { useFormatDateAndTime } from "@/hooks/use-format-date-time"
 import { Link } from "@inertiajs/react"
 import { useRoute } from "ziggy-js"
-import { useEffect, useState } from "react"
+import { Activity, useEffect, useState } from "react"
+import InertiaPagination from "../ui/inertia-pagination"
 
 interface PublishedPostsProps {
     publishedPosts: PaginatedData<Post>;
@@ -38,7 +39,7 @@ export default function PublishedPosts({ publishedPosts }: PublishedPostsProps) 
                             <Link
                                 href={route('dashboard.index', { post: post.slug })}
                                 only={['postToPreview']}
-                                className="w-full flex items-start gap-2"
+                                className="w-full flex justify-between items-start gap-2"
                             >
                                 <ItemContent>
                                     <ItemTitle>{post.title}</ItemTitle>
@@ -53,6 +54,18 @@ export default function PublishedPosts({ publishedPosts }: PublishedPostsProps) 
                     );
                 })}
             </ul>
+            <Activity mode={Object.keys(publishedPosts).length > 10 ? 'visible' : 'hidden'}>
+                <InertiaPagination
+                    current_page={publishedPosts.current_page}
+                    last_page={publishedPosts.last_page}
+                    first_page_url={publishedPosts.first_page_url!}
+                    last_page_url={publishedPosts.last_page_url!}
+                    prev_page_url={publishedPosts.prev_page_url!}
+                    next_page_url={publishedPosts.next_page_url!}
+                    links={publishedPosts.links}
+                    className="w-fit my-4 mr-0"
+                />
+            </Activity>
         </div>
     );
 };

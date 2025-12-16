@@ -96,7 +96,6 @@ class PostController extends Controller
     {
         $post = Post::find($post);
 
-
         $post->save();
 
         $request->session()->flash('post.title', $post->title);
