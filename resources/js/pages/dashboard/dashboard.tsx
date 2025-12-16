@@ -18,7 +18,7 @@ const breadcrumbs: BreadcrumbItem[] = [
 
 interface DashboardProps {
     publishedPosts: PaginatedData<Post>;
-    draftPosts: Post[];
+    draftPosts: PaginatedData<Post>;
     reactions: Reaction[];
     postToPreview: Post;
 }
