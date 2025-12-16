@@ -1,9 +1,19 @@
 import { useFormatDateAndTime } from "@/hooks/use-format-date-time"
 import { Post } from "@/types"
 import { Item, ItemContent, ItemTitle } from "../ui/item"
+import { Link } from "@inertiajs/react"
+import { useRoute } from "ziggy-js"
+import { useEffect, useState } from "react"
 
 export default function Drafts({ draftPosts }: { draftPosts: Post[] }) {
     const formatDateAndTime = useFormatDateAndTime;
+    const route = useRoute();
+    const selectedPostSlug = route().params.post as string | undefined;
+    const [selectedPost, setSelectedPost] = useState("");
+
+    useEffect(() => {
+        setSelectedPost(selectedPostSlug || "");
+    }, [selectedPostSlug]);
 
     return (
         <>
@@ -15,16 +25,25 @@ export default function Drafts({ draftPosts }: { draftPosts: Post[] }) {
                     return (
                         <Item
                             variant={"muted"}
-                            className="items-start"
+                            className={`items-start wrap-anywhere
+                                ${selectedPost === draft.slug
+                                    ? 'bg-accent dark:bg-accent'
+                                    : 'bg-muted/10 dark:bg-muted/20 hover:bg-muted/60 dark:hover:bg-muted/60'}`}
                             key={draft.id}
                         >
-                            <ItemContent>
-                                <ItemTitle className="text-xs">{draft.title}</ItemTitle>
-                            </ItemContent>
-                            <ItemContent>
-                                <p className="text-xs">{date}</p>
-                                <p className="text-xs text-muted-foreground">{time}</p>
-                            </ItemContent>
+                            <Link
+                                href={route('dashboard.index', { post: draft.slug })}
+                                only={['postToPreview']}
+                                className="w-full flex items-start gap-2 justify-between"
+                            >
+                                <ItemContent>
+                                    <ItemTitle className="text-xs">{draft.title}</ItemTitle>
+                                </ItemContent>
+                                <ItemContent>
+                                    <p className="text-xs">{date}</p>
+                                    <p className="text-xs text-muted-foreground">{time}</p>
+                                </ItemContent>
+                            </Link>
                         </Item>
                     );
                 })}
