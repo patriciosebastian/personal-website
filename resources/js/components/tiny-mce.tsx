@@ -9,6 +9,7 @@ import { useRoute } from 'ziggy-js'
 interface TinyMCEProps {
     title: string;
     subtitle: string;
+    content: string;
     preview: string;
     isFreelance: boolean;
     isWebDevelopment: boolean;
@@ -26,6 +27,7 @@ interface TinyMCEProps {
 export default function TinyMCE({
     title,
     subtitle,
+    content,
     preview,
     isFreelance,
     isWebDevelopment,
@@ -43,6 +45,7 @@ export default function TinyMCE({
     const editorRef = useRef<TinyMCEEditor | null>(null);
     const supabase = createClient();
     const route = useRoute();
+    const editingDraft = route().params.post as string | undefined;
     const titleOrSlugNotSet = title.trim() === '' || slug.trim() === '';
 
     const clearContent = () => {
@@ -56,13 +59,13 @@ export default function TinyMCE({
     };
 
     const handlePublish = async () => {
-        if (!window.confirm("Are you sure you want to publish this post?")) {
-            return;
-        }
-
         if (titleOrSlugNotSet) {
             alert("Please fill in all required fields.");
             setIsPublishing(false);
+            return;
+        }
+
+        if (!window.confirm("Are you sure you want to publish this post?")) {
             return;
         }
 
@@ -134,6 +137,86 @@ export default function TinyMCE({
         alert("Post published to Supabase successfully! 🎉");
     };
 
+    const handleUpdate = async () => {
+        if (titleOrSlugNotSet) {
+            alert("Please fill in all required fields.");
+            setIsPublishing(false);
+            return;
+        }
+
+        if (!window.confirm("Are you sure you want to update this post?")) {
+            return;
+        }
+
+        setIsPublishing(true);
+
+        if (!editorRef.current) {
+            alert("Editor is not initialized. Please wait a moment and try again.");
+            setIsPublishing(false);
+            return;
+        }
+
+        const content = editorRef.current.getContent();
+
+        router.visit(route('dashboard.create.update', { post: editingDraft }), {
+            method: 'patch',
+            data: {
+                title: title,
+                subtitle: subtitle,
+                preview_text: preview,
+                content: content,
+                slug: slug,
+                status: status,
+                published_at: status === 'published' ? new Date() : null,
+                is_freelance: isFreelance,
+                is_web_development: isWebDevelopment,
+                is_tech: isTech,
+                is_life: isLife,
+                is_entrepreneurship: isEntrepreneurship,
+                is_side_project: isSideProject,
+                is_product_review: isProductReview,
+                is_thoughts: isThoughts,
+            },
+            preserveState: true,
+            preserveScroll: true,
+        });
+
+        logContent();
+        clearContent();
+
+        alert("Post updated successfully! 🎉");
+        setIsPublishing(false);
+
+        const { error } = await supabase
+            .from('blogs')
+            .update({
+                title: title,
+                body: content,
+                sub_title: subtitle,
+                preview: preview,
+                slug: slug,
+                status: status,
+                is_freelance: isFreelance,
+                is_web_development: isWebDevelopment,
+                is_tech: isTech,
+                is_life: isLife,
+                is_entrepreneurship: isEntrepreneurship,
+                is_side_project: isSideProject,
+                is_product_review: isProductReview,
+                is_thoughts: isThoughts,
+            })
+            .eq('slug', editingDraft);
+
+        if (error) {
+            console.error('Error updating post:', error.message);
+            alert("Failed to update post in Supabase. Please check the console for errors.");
+            setIsPublishing(false);
+            return;
+        }
+
+        alert("Post updated in Supabase successfully! 🎉");
+    };
+
     const logContent = () => {
         if (editorRef.current) {
             const content = editorRef.current.getContent();
@@ -162,6 +245,7 @@ export default function TinyMCE({
             <Editor
                 apiKey={import.meta.env.VITE_PUBLIC_TINYMCE_API_KEY}
                 onInit={(_evt, editor) => editorRef.current = editor}
+                value={content}
                 init={{
                     height: 600,
                     menubar: true,
@@ -205,13 +289,23 @@ export default function TinyMCE({
                 }}
             />
             <div className="flex justify-center items-center space-x-4 mr-auto">
-                <Button
-                    onClick={handlePublish}
-                    className="hover:cursor-pointer"
-                    disabled={isPublishing || titleOrSlugNotSet}
-                >
-                    Publish
-                </Button>
+                {!editingDraft ? (
+                    <Button
+                        onClick={handlePublish}
+                        className="hover:cursor-pointer"
+                        disabled={isPublishing || titleOrSlugNotSet}
+                    >
+                        Publish
+                    </Button>
+                ) : (
+                    <Button
+                        onClick={handleUpdate}
+                        className="hover:cursor-pointer"
+                        disabled={isPublishing || titleOrSlugNotSet}
+                    >
+                        Update
+                    </Button>
+                )}
                 <Button
                     onClick={logContent}
                     className="text-secondary hover:cursor-pointer"

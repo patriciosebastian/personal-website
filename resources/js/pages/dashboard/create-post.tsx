@@ -3,7 +3,7 @@ import { index as dashboard, show } from '@/actions/App/Http/Controllers/Dashboa
 import { Head } from '@inertiajs/react'
 import { useRef, useState } from 'react'
 import { usePreserveScrollPosition } from '@/hooks/use-preserve-scroll-position'
-import { BreadcrumbItem } from '@/types'
+import { BreadcrumbItem, Post } from '@/types'
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible'
 import { Button } from '@/components/ui/button'
 import { ChevronsUpDown } from 'lucide-react'
@@ -21,23 +21,24 @@ const breadcrumbs: BreadcrumbItem[] = [
     },
 ];
 
-export default function CreatePost() {
+export default function CreatePost({ post }: { post: Post }) {
     const publishedPostsRef = useRef<HTMLDivElement>(null);
     usePreserveScrollPosition({ ref: publishedPostsRef as React.RefObject<HTMLDivElement> });
     const [isOpen, setIsOpen] = useState(false);
-    const [title, setTitle] = useState('');
-    const [subtitle, setSubtitle] = useState('');
-    const [preview, setPreview] = useState('');
-    const [isFreelance, setIsFreelance] = useState(false);
-    const [isWebDevelopment, setIsWebDevelopment] = useState(false);
-    const [slug, setSlug] = useState('');
-    const [status, setStatus] = useState('draft');
-    const [isTech, setIsTech] = useState(false);
-    const [isLife, setIsLife] = useState(false);
-    const [isEntrepreneurship, setIsEntrepreneurship] = useState(false);
-    const [isSideProject, setIsSideProject] = useState(false);
-    const [isProductReview, setIsProductReview] = useState(false);
-    const [isThoughts, setIsThoughts] = useState(false);
+    const [title, setTitle] = useState(post.title || '');
+    const [subtitle, setSubtitle] = useState(post.subtitle || '');
+    const [preview, setPreview] = useState(post.preview_text || '');
+    const [isFreelance, setIsFreelance] = useState(post.is_freelance || false);
+    const [isWebDevelopment, setIsWebDevelopment] = useState(post.is_web_development || false);
+    const [slug, setSlug] = useState(post.slug || '');
+    const [status, setStatus] = useState(post.status || 'draft');
+    const [isTech, setIsTech] = useState(post.is_tech || false);
+    const [isLife, setIsLife] = useState(post.is_life || false);
+    const [isEntrepreneurship, setIsEntrepreneurship] = useState(post.is_entrepreneurship || false);
+    const [isSideProject, setIsSideProject] = useState(post.is_side_project || false);
+    const [isProductReview, setIsProductReview] = useState(post.is_product_review || false);
+    const [isThoughts, setIsThoughts] = useState(post.is_thoughts || false);
+    const content = post.content || '';
 
     const handleClearContent = () => {
         setTitle('');
@@ -120,7 +121,7 @@ export default function CreatePost() {
                                     <input type="checkbox" name="isThoughts" id="isThoughts" className="mr-2 align-middle" checked={isThoughts} onChange={(e) => setIsThoughts(e.target.checked)} />
                                     <label htmlFor="isThoughts" className="align-middle">is_thoughts</label>
                                 </div>
-                                <Select onValueChange={(value) => setStatus(value)} defaultValue="draft">
+                                <Select onValueChange={(value) => setStatus(value as "draft" | "published" | "archived")} defaultValue="draft">
                                     <SelectTrigger className="bg-primary-foreground">
                                         <SelectValue placeholder="Status" />
                                     </SelectTrigger>
@@ -140,6 +141,7 @@ export default function CreatePost() {
                 <TinyMCE
                     title={title}
                     subtitle={subtitle}
+                    content={content}
                     preview={preview}
                     slug={slug}
                     status={status}
