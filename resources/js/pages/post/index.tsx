@@ -6,6 +6,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { handleSortChange, handleTagChange } from '@/lib/utils'
 import InertiaPagination from '@/components/ui/inertia-pagination'
 import PostCard from '@/components/ui/post-card'
+import { Activity } from 'react'
 
 export default function Index({ posts, filters }: PostIndexProps) {
     const selectedTags = filters.tag ? filters.tag.split(',').filter(Boolean) : [];
@@ -89,16 +90,18 @@ export default function Index({ posts, filters }: PostIndexProps) {
                         <PostCard posts={posts} />
                     </div>
 
-                    <InertiaPagination
-                        current_page={posts.current_page}
-                        last_page={posts.last_page}
-                        first_page_url={posts.first_page_url!}
-                        last_page_url={posts.last_page_url!}
-                        prev_page_url={posts.prev_page_url!}
-                        next_page_url={posts.next_page_url!}
-                        links={posts.links}
-                        className="w-fit mt-12 mr-0"
-                    />
+                    <Activity mode={Object.keys(posts).length > 9 ? 'visible' : 'hidden'}>
+                        <InertiaPagination
+                            current_page={posts.current_page}
+                            last_page={posts.last_page}
+                            first_page_url={posts.first_page_url!}
+                            last_page_url={posts.last_page_url!}
+                            prev_page_url={posts.prev_page_url!}
+                            next_page_url={posts.next_page_url!}
+                            links={posts.links}
+                            className="w-fit mt-12 mr-0"
+                        />
+                    </Activity>
                 </div>
             </MainLayout>
         </>
