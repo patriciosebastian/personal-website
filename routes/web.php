@@ -8,7 +8,9 @@ use Inertia\Inertia;
 Route::get('/', function () {
     return Inertia::render('welcome', [
         'latestPost' => Inertia::defer(
-            fn () => App\Models\Post::latest()->first()
+            fn () => App\Models\Post::where('status', 'published')
+            ->latest()
+            ->first()
         ),
     ]);
 })->name('home');
