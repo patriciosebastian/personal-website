@@ -45,7 +45,7 @@ class Post extends Model
         return [
             'id' => 'integer',
             'user_id' => 'integer',
-            'published_at' => 'timestamp',
+            'published_at' => 'datetime',
             'is_freelance' => 'boolean',
             'is_web_development' => 'boolean',
             'is_tech' => 'boolean',
