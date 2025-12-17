@@ -52,7 +52,7 @@ export default function Show({ post }: PostShowProps) {
                             {post.title}
                         </h1>
                         {post.subtitle && (
-                            <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed mb-8">
+                            <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed mb-8 wrap-break-word">
                                 {post.subtitle}
                             </p>
                         )}
