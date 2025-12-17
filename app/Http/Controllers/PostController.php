@@ -41,6 +41,15 @@ class PostController extends Controller
             });
         }
 
+        $availableTags = collect($tagFilters)
+            ->filter(
+                fn ($column) => Post::where('status', 'published')
+                ->where($column, true)
+                ->exists()
+            )
+            ->keys()
+            ->toArray();
+
         $sortOrder = $request->input('sort', 'desc');
 
         if (in_array($sortOrder, ['asc', 'desc'])) {
@@ -51,6 +60,7 @@ class PostController extends Controller
 
         return Inertia::render('post/index', [
             'posts' => fn () => $posts,
+            'availableTags' => fn () => $availableTags,
             'filters' => fn () => [
                 'tag' => $request->input('tag'),
                 'sort' => $sortOrder,

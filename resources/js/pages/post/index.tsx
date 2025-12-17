@@ -8,7 +8,7 @@ import InertiaPagination from '@/components/ui/inertia-pagination'
 import PostCard from '@/components/ui/post-card'
 import { Activity } from 'react'
 
-export default function Index({ posts, filters }: PostIndexProps) {
+export default function Index({ posts, availableTags, filters }: PostIndexProps) {
     const selectedTags = filters.tag ? filters.tag.split(',').filter(Boolean) : [];
 
     const tagOptions = [
@@ -22,6 +22,10 @@ export default function Index({ posts, filters }: PostIndexProps) {
         { value: 'product_review', label: 'Product Review' },
         { value: 'thoughts', label: 'Thoughts' },
     ];
+
+    const availableTagOptions = tagOptions.filter(
+        (tag) => tag.value === 'all' || availableTags.includes(tag.value)
+    );
 
     return (
         <>
@@ -48,7 +52,7 @@ export default function Index({ posts, filters }: PostIndexProps) {
                             size="sm"
                             value={selectedTags}
                         >
-                            {tagOptions.map((tag) => (
+                            {availableTagOptions.map((tag) => (
                                 <ToggleGroupItem
                                     value={tag.value}
                                     variant="outline"

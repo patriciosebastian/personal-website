@@ -110,6 +110,7 @@ export interface InertiaPaginatedData {
 
 export interface PostIndexProps {
     posts: PaginatedData<Post>;
+    availableTags: string[];
     filters: {
         tag?: string;
         sort: 'asc' | 'desc';
