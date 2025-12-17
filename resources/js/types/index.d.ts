@@ -149,3 +149,19 @@ export interface SectionHeadingProps {
     subtitle?: string;
     number?: number;
 }
+
+export interface PostStats {
+    totalPublished: number;
+    totalDrafts: number;
+    totalArchived: number;
+    categoryBreakdown: {
+        freelance: number;
+        webDevelopment: number;
+        tech: number;
+        life: number;
+        entrepreneurship: number;
+        sideProject: number;
+        productReview: number;
+        thoughts: number;
+    };
+}

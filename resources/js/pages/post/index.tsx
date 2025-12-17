@@ -40,7 +40,7 @@ export default function Index({ posts, availableTags, filters }: PostIndexProps)
                             Blog
                         </h1>
                         <p className="text-lg text-muted-foreground">
-                            Thoughts on freelancing, web development, tech, and life
+                            Web development, tech, side projects, and thoughts on other things.
                         </p>
                     </div>
 

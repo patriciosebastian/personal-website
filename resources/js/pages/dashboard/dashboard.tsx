@@ -1,10 +1,10 @@
 import AppLayout from '@/layouts/app-layout'
 import { index as dashboard } from '@/actions/App/Http/Controllers/DashboardController'
-import { PaginatedData, Post, Reaction, type BreadcrumbItem } from '@/types'
+import { PaginatedData, Post, PostStats, type BreadcrumbItem } from '@/types'
 import { Head } from '@inertiajs/react'
 import PublishedPosts from '@/components/dashboard/published-posts'
 import Drafts from '@/components/dashboard/drafts'
-import Reactions from '@/components/dashboard/reactions'
+import QuickStats from '@/components/dashboard/quick-stats'
 import ViewSelectedPost from '@/components/dashboard/view-selected-post'
 import { useRef } from 'react'
 import { usePreserveScrollPosition } from '@/hooks/use-preserve-scroll-position'
@@ -19,11 +19,11 @@ const breadcrumbs: BreadcrumbItem[] = [
 interface DashboardProps {
     publishedPosts: PaginatedData<Post>;
     draftPosts: PaginatedData<Post>;
-    reactions: Reaction[];
+    stats: PostStats;
     postToPreview: Post;
 }
 
-export default function Dashboard({ publishedPosts, draftPosts, reactions, postToPreview }: DashboardProps) {
+export default function Dashboard({ publishedPosts, draftPosts, stats, postToPreview }: DashboardProps) {
     const publishedPostsRef = useRef<HTMLDivElement>(null);
     usePreserveScrollPosition({ ref: publishedPostsRef as React.RefObject<HTMLDivElement> });
 
@@ -39,7 +39,7 @@ export default function Dashboard({ publishedPosts, draftPosts, reactions, postT
                         <Drafts draftPosts={draftPosts} />
                     </div>
                     <div className="relative aspect-video overflow-x-hidden scrollbar-thin rounded-xl border border-sidebar-border/70 dark:border-sidebar-border">
-                        <Reactions reactions={reactions} />
+                        <QuickStats stats={stats} />
                     </div>
                 </div>
                 <div className="relative flex-1 overflow-hidden scrollbar-thin rounded-xl border border-sidebar-border/70 md:min-h-min dark:border-sidebar-border">

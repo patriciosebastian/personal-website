@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
-use App\Models\Reaction;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -22,20 +21,29 @@ class DashboardController extends Controller
             ->paginate(10)
             ->withQueryString();
 
-        $reactions = Reaction::query()->with('post', function ($query) {
-            $query->select('id', 'title');
-        })
-            ->latest()
-            ->take(10)
-            ->get();
+        $stats = [
+            'totalPublished' => Post::where('status', 'published')->count(),
+            'totalDrafts' => Post::where('status', 'draft')->count(),
+            'totalArchived' => Post::where('status', 'archived')->count(),
+            'categoryBreakdown' => [
+                'freelance' => Post::where('is_freelance', true)->count(),
+                'webDevelopment' => Post::where('is_web_development', true)->count(),
+                'tech' => Post::where('is_tech', true)->count(),
+                'life' => Post::where('is_life', true)->count(),
+                'entrepreneurship' => Post::where('is_entrepreneurship', true)->count(),
+                'sideProject' => Post::where('is_side_project', true)->count(),
+                'productReview' => Post::where('is_product_review', true)->count(),
+                'thoughts' => Post::where('is_thoughts', true)->count(),
+            ],
+        ];
 
         $query = $request->query('post');
         $postToPreview = Post::where('slug', $query)->first() ?? null;
 
         return Inertia::render('dashboard/dashboard', [
-            'publishedPosts' => fn() => $publishedPosts,
-            'draftPosts' => fn() => $draftPosts,
-            'reactions' => $reactions,
+            'publishedPosts' => fn () => $publishedPosts,
+            'draftPosts' => fn () => $draftPosts,
+            'stats' => $stats,
             'postToPreview' => $postToPreview,
         ]);
     }
