@@ -40,13 +40,16 @@ export default function About() {
                             Personal
                         </TabsTrigger>
                     </TabsList>
-                    <TabsContent value="career" className="space-y-12">
+                    <TabsContent
+                        value="career"
+                        className="space-y-12"
+                    >
                         <div className="space-y-4">
                             <Badge className={badgeVariants({ variant: 'secondary' }) + ' rounded-full px-4 py-1'}>
                                 My Current Mission
                             </Badge>
                             <p>
-                                Right now, I&apos;m focused on growing as a developer and deepening my knowledge and skills.<br />
+                                I&apos;m focused on growing as a developer and deepening my knowledge and skills.<br />
                                 I may or may not be sharing more about what I'm doing. Check out my <Link href="/blog" className="underline">blog</Link> for updates.
                             </p>
                         </div>
@@ -55,11 +58,14 @@ export default function About() {
                                 My Current Role
                             </Badge>
                             <p>
-                                Currently, I&#39;m a <span className="font-bold">Software Developer</span> at <a className="underline" href="https://empire-medical.com/" target="_blank">Empire Medical</a>, where I use PHP, Laravel, and Livewire to build and maintain a custom business application. The team is small but highly effective; I get to make meaningful contributions on a daily basis. Previously, I worked in the JavaScript ecosystem, so I&apos;m proficient there as well. I sometimes offer web development services as a freelancer.
+                                Currently, I&#39;m a <span className="font-bold">Software Developer</span> at <a className="underline" href="https://empire-medical.com/" target="_blank">Empire Medical</a>, where I use PHP, Laravel, and Livewire to build and maintain a custom business application. The team is small but highly effective; I get to make meaningful contributions on a daily basis. I love working on this team. Previously, I worked in the JavaScript ecosystem, so I&apos;m proficient there as well. I sometimes offer web development services as a freelancer.
                             </p>
                         </div>
                     </TabsContent>
-                    <TabsContent value="tech-stack" className="space-y-5">
+                    <TabsContent
+                        value="tech-stack"
+                        className="space-y-5"
+                    >
                         <div className="space-y-2.5">
                             <h3 className="text-xs font-semibold tracking-wider text-muted-foreground uppercase">
                                 Languages
@@ -145,7 +151,7 @@ export default function About() {
                                 How I Think About AI
                             </Badge>
                             <p>
-                                lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                AI is powerful...but you gotta know how and when to use it. It cannot replace thinking through problems myself. Any time I delegate brainstorming to a model, even if the model's solution is good, I usually feel like I could have implemented things in a more idiomatic way. I also find that letting AI do the initial thinking makes it difficult to see other solutions or potential gaps. On the other hand, it helps me to see things that I don't see on my own. AI is great for testing ideas, refining, learning, and discovery.
                             </p>
                         </div>
                         <div className="space-y-4">
@@ -153,21 +159,32 @@ export default function About() {
                                 How I Use AI in Development
                             </Badge>
                             <p>
-                                lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                Let me be clear, I use AI a lot. And I use it skillfully. However, in certain codebases with lots of domain specific knowledge, it still gets lots of things wrong. So for me, I'll let AI drive for smaller, less critical tasks. For meaningful problems, I usually don't start with AI. I take time to think through requirements and explore a couple paths forward. By the time I feel good about an idea, I'll implement it myself (especially if I need control) or I'll finally instruct a model to do it. My favorite use case is planning projects, architecture, documentation, implementation strategies, etc.
+                            </p>
+                        </div>
+                        <div className="space-y-4">
+                            <Badge className={badgeVariants({ variant: 'secondary' }) + ' rounded-full px-4 py-1'}>
+                                AI Tools I'm Actively Using
+                            </Badge>
+                            <p>
+                                Claude Code, GitHub Copilot, MCP servers (Laravel Boost, Context7, chrome-devtools, github-mcp, railway-mcp), and custom instruction sets. These work best with rich context about my codebase and environment.
                             </p>
                         </div>
                     </TabsContent>
-                    <TabsContent value="personal">
+                    <TabsContent
+                        value="personal"
+                        className="mb-10"
+                    >
                         <p className="mb-4">
-                            I&apos;ve done and seen many things in life, but hands down the greatest experience has been to be a husband to my wife and the father of our two children.
+                            I&apos;ve done and seen many things in life, but hands down the greatest experience has been to be a husband to my wife and the father of our three children.
                         </p>
                         <p className="mb-2">Here are some quick basic things:</p>
                         <ul className="px-1 list-disc list-inside">
                             <li>Born and raised in Los Angeles, CA.</li>
                             <li>Spent an incredible year in Mexico City.</li>
                             <li>Lived in Oregon for 5 beautiful years.</li>
-                            <li>Now, Austin, TX is home.</li>
-                            <li>I love spicy food. I guarantee you can&apos;t handle more heat than me (challenge accepted?)</li>
+                            <li>Now Austin, TX is home.</li>
+                            <li>I love spicy food. Like real heat, not that weak stuff.</li>
                         </ul>
                     </TabsContent>
                 </Tabs>
