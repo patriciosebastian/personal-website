@@ -1,6 +1,7 @@
 import Salos from '../../../resources/images/Salos_Homepage_Opt.webp'
 import TouchBase from '../../../resources/images/TouchBaseApp_Optimized.webp'
 import ClearCalc from '../../../resources/images/ClearCalc_Optimized.webp'
+import { Link } from '@inertiajs/react'
 
 export const projects = [
     {
@@ -25,7 +26,11 @@ export const projects = [
     {
         title: "Touch Base",
         summary: "Full stack React Contacts Management app",
-        description: "Touch Base uses React-Router for frontend navigation and Node.js & Express for its backend API, connected to a PSQL database. It features a fully responsive design, full CRUD capabilities for contacts and groups, Firebase Auth, and Resend for email functionality. AWS S3 is used for image hosting and you can now import contacts from a CSV file. A demo login lets you easily tour the app and safely perform all actions. Go try it out or <a href='/blog/how-i-added-csv-importing-in-my-react-project/' className=/'underline/'>read my post</a> about how I implemented CSV importing.",
+        description: (
+            <>
+                Touch Base uses React-Router for frontend navigation and Node.js & Express for its backend API, connected to a PSQL database. It features a fully responsive design, full CRUD capabilities for contacts and groups, Firebase Auth, and Resend for email functionality. AWS S3 is used for image hosting and you can now import contacts from a CSV file. A demo login lets you easily tour the app and safely perform all actions. Go try it out or <Link href='/blog/how-i-added-csv-importing-in-my-react-project' className='underline' prefetch>read my post</Link> about how I implemented CSV importing.
+            </>
+        ),
         link: "https://touchbaseapp.co",
         image: TouchBase,
         imageAltText: "Touch Base App Screenshot",
