@@ -1,5 +1,6 @@
 import { buttonVariants } from '@/components/ui/button'
 import { Link } from '@inertiajs/react'
+import SocialIcons from './ui/social-icons'
 
 export default function Hero() {
     return (
@@ -36,6 +37,7 @@ export default function Hero() {
                         Latest Post
                     </Link>
                 </div>
+                <SocialIcons />
             </div>
         </section>
     );
