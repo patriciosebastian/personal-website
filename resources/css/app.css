@@ -233,3 +233,7 @@ body[class^="__className_"][data-scroll-locked="1"],
 body[data-scroll-locked="1"][style="pointer-events: none;"]:has(button[data-state="open"][role="combobox"]) {
     padding-inline: 0 !important;
 }
+
+body[data-scroll-locked="1"]:has(span[data-radix-focus-guard]) {
+    padding-inline: 0 !important;
+}
