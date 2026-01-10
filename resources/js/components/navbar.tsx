@@ -42,7 +42,7 @@ export default function Navbar() {
                         <NavigationMenuItem key={link.label}>
                             <NavigationMenuLink
                                 asChild
-                                className="text-base sm:text-lg md:text-xl hover:bg-transparent"
+                                className="text-base sm:text-lg md:text-xl hover:bg-transparent focus:bg-transparent"
                             >
                                 <Link href={link.href}>
                                     {link.label}
