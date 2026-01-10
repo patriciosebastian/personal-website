@@ -59,13 +59,4 @@ export const projects = [
             'JavaScript',
         ],
     },
-    {
-        title: "Project 4",
-        summary: "Description for project 4",
-        description: "",
-        link: "https://patriciosalazar.dev",
-        techStack: [
-            'example',
-        ],
-    }
 ];
