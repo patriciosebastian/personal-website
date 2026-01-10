@@ -5,14 +5,14 @@ import SocialIcons from './ui/social-icons'
 export default function Hero() {
     return (
         <section
-            className="min-h-svh flex justify-center items-center relative"
+            className="min-h-svh flex justify-center items-center relative px-4 sm:px-6 lg:px-0"
             id="hero"
         >
             <div className="w-fit space-y-4 flex flex-col z-10">
-                <h1 className="text-6xl">PATRICIO SALAZAR</h1>
-                <p className="text-3xl">Software Developer</p>
-                <div className="w-fit text-balance max-w-prose">
-                    <p className="mb-4 lg:mb-5 lg:mt-2">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl">PATRICIO SALAZAR</h1>
+                <p className="text-xl md:text-2xl lg:text-3xl">Software Developer</p>
+                <div className="w-fit text-balance max-w-prose max-md:space-y-2">
+                    <p className="mb-7 mt-4 lg:mb-5 lg:mt-2">
                         I strive to build <strong>unmistakable</strong> experiences by<br />
                         writing informed code that meets business needs.
                     </p>

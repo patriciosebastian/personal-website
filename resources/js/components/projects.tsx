@@ -12,7 +12,7 @@ export default function Projects() {
 
     return (
         <section
-            className="w-2/3 mx-auto min-h-svh"
+            className="w-full mx-auto min-h-svh mb-16 md:mb-0 lg:w-2/3"
             id="projects"
         >
             <SectionHeading headingText="Projects" />

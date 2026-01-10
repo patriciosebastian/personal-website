@@ -13,7 +13,7 @@ export default function LatestPost() {
 
     return (
         <section
-            className="w-5/12 mx-auto"
+            className="w-full mx-auto px-4 sm:px-6 lg:px-0 sm:w-[75%] lg:w-5/12"
             id="latestPost"
         >
             <SectionHeading headingText="Latest Post" />

@@ -8,12 +8,12 @@ import { techStack } from '@/data/techStack'
 export default function About() {
     return (
         <section
-            className="min-h-svh"
+            className="min-h-svh px-4 sm:px-6 lg:px-0"
             id="about"
         >
             <SectionHeading headingText="About" />
             <div className="relative flex justify-center items-center">
-                <Tabs defaultValue="career" className="w-5/12 space-y-12">
+                <Tabs defaultValue="career" className="w-full space-y-12 sm:w-[75%] lg:w-5/12">
                     <TabsList className="w-full bg-transparent rounded-none p-0 box-border mb-12">
                         <TabsTrigger
                             value="career"
@@ -189,7 +189,7 @@ export default function About() {
                     </TabsContent>
                 </Tabs>
             </div>
-            <div className="w-5/12 mx-auto mb-26">
+            <div className="w-full mx-auto mb-26 sm:w-[75%] lg:w-5/12">
                 <h3 className="text-2xl text-center mb-4 mt-12">What People Say About Working With Me</h3>
                 <div
                     className="senja-embed"
