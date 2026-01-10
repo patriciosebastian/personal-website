@@ -1,8 +1,12 @@
 import { buttonVariants } from '@/components/ui/button'
 import { Link } from '@inertiajs/react'
 import SocialIcons from './ui/social-icons'
+import { Post } from '@/types'
+import { useRoute } from 'ziggy-js'
 
-export default function Hero() {
+export default function Hero({ latestPost }: { latestPost: Post }) {
+    const route = useRoute();
+
     return (
         <section
             className="min-h-svh flex justify-center items-center relative px-4 sm:px-6 lg:px-0"
@@ -31,8 +35,9 @@ export default function Hero() {
                         Projects
                     </Link>
                     <Link
-                        href="/#latestPost"
+                        href={route('posts.show', { post: latestPost.slug })}
                         className={buttonVariants({ variant: "outline", size: "lg" }) + ` h-12 justify-center font-bold rounded-xs`}
+                        prefetch
                     >
                         Latest Post
                     </Link>

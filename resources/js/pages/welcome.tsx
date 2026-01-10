@@ -3,11 +3,12 @@ import Hero from '@/components/hero'
 import LatestPost from '@/components/latestPost'
 import PageHead from '@/components/page-head'
 import Projects from '@/components/projects'
-import Fallback from '@/components/ui/fallback'
 import MainLayout from '@/layouts/main-layout'
-import { Deferred } from '@inertiajs/react'
+import { usePage } from '@inertiajs/react'
+import { Post } from '@/types'
 
 export default function Welcome() {
+    const { latestPost } = usePage<{ latestPost: Post }>().props;
     return (
         <>
             <PageHead
@@ -16,15 +17,10 @@ export default function Welcome() {
             />
 
             <MainLayout>
-                <Hero />
+                <Hero latestPost={latestPost} />
                 <About />
                 <Projects />
-                <Deferred
-                    data="latestPost"
-                    fallback={<Fallback />}
-                >
-                    <LatestPost />
-                </Deferred>
+                <LatestPost />
             </MainLayout>
         </>
     );

@@ -7,11 +7,9 @@ use Inertia\Inertia;
 
 Route::get('/', function () {
     return Inertia::render('welcome', [
-        'latestPost' => Inertia::defer(
-            fn () => App\Models\Post::where('status', 'published')
+        'latestPost' => App\Models\Post::where('status', 'published')
             ->latest()
-            ->first()
-        ),
+            ->first(),
     ]);
 })->name('home');
 
