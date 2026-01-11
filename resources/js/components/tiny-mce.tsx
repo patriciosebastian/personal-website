@@ -79,7 +79,7 @@ export default function TinyMCE({
 
         const content = editorRef.current.getContent();
 
-        router.visit(route('dashboard.create.store'), {
+        router.visit(route('dashboard.posts.store'), {
             method: 'post',
             data: {
                 title: title,
@@ -158,7 +158,7 @@ export default function TinyMCE({
 
         const content = editorRef.current.getContent();
 
-        router.visit(route('dashboard.create.update', { post: editingDraft }), {
+        router.visit(route('dashboard.posts.update', { post: editingDraft }), {
             method: 'patch',
             data: {
                 title: title,

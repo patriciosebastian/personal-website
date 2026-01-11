@@ -5,7 +5,7 @@ export default function ViewSelectedPost({ postToPreview }: { postToPreview: Pos
     return (
         <article className="w-fit max-w-lg pt-16 mb-12 lg:mx-auto lg:pt-22 lg:max-w-4xl">
             <Link
-                href={route('dashboard.create.show', { post: postToPreview.slug })}
+                href={route('dashboard.posts.show', { post: postToPreview.slug })}
                 as="button"
                 className="absolute top-4 right-4 cursor-pointer px-4 py-2 rounded-md hover:bg-accent"
             >
@@ -17,7 +17,7 @@ export default function ViewSelectedPost({ postToPreview }: { postToPreview: Pos
                 className="prose lg:prose-lg dark:prose-invert"
             />
             <Link
-                href={route('dashboard.create.destroy', { post: postToPreview.slug })}
+                href={route('dashboard.posts.destroy', { post: postToPreview.slug })}
                 method="delete"
                 as="button"
                 className="absolute bottom-4 right-4 cursor-pointer px-4 py-2 rounded-md hover:bg-red-600"
