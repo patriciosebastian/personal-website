@@ -7,7 +7,7 @@ export default function ViewSelectedPost({ postToPreview }: { postToPreview: Pos
             <Link
                 href={route('dashboard.create.show', { post: postToPreview.slug })}
                 as="button"
-                className="absolute top-4 right-4 cursor-pointer"
+                className="absolute top-4 right-4 cursor-pointer px-4 py-2 rounded-md hover:bg-accent"
             >
                 Edit
             </Link>
@@ -16,6 +16,15 @@ export default function ViewSelectedPost({ postToPreview }: { postToPreview: Pos
                 dangerouslySetInnerHTML={{ __html: postToPreview.content }}
                 className="prose lg:prose-lg dark:prose-invert"
             />
+            <Link
+                href={route('dashboard.create.destroy', { post: postToPreview.slug })}
+                method="delete"
+                as="button"
+                className="absolute bottom-4 right-4 cursor-pointer px-4 py-2 rounded-md hover:bg-red-600"
+                onBefore={() => confirm('Are you sure you want to delete this post?')}
+            >
+                Delete
+            </Link>
         </article>
     );
 };
