@@ -111,4 +111,12 @@ class DashboardController extends Controller
         return redirect()->route('dashboard.index')
             ->with('message', 'Post updated successfully!');
     }
+
+    public function destroy(Request $request, Post $post): RedirectResponse
+    {
+        $post->delete();
+
+        return redirect()->route('dashboard.index')
+            ->with('message', 'Post deleted successfully!');
+    }
 }
