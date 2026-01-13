@@ -17,13 +17,22 @@ export default function Projects() {
         >
             <SectionHeading headingText="Projects" />
             <div className="w-4/5 mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-                {projects.map((project, index) => (
-                    <Collapsible
-                        key={index}
-                        open={expandedProject === index}
-                        onOpenChange={(open) => setExpandedProject(open ? index : null)}
-                    >
-                        <Card className="p-0 overflow-hidden transition-shadow hover:shadow-lg">
+                {projects.map((project, index) => {
+                    const isLastItem = index === projects.length - 1;
+                    const isOddCount = projects.length % 2 !== 0;
+                    const shouldCenter = isLastItem && isOddCount;
+
+                    return (
+                        <div
+                            key={index}
+                            className={shouldCenter ? "md:col-span-2 md:flex md:justify-center" : ""}
+                        >
+                            <Collapsible
+                                open={expandedProject === index}
+                                onOpenChange={(open) => setExpandedProject(open ? index : null)}
+                                className={shouldCenter ? "md:w-1/2" : "w-full"}
+                            >
+                                <Card className="p-0 overflow-hidden transition-shadow hover:shadow-lg">
                             <CollapsibleTrigger className="w-full text-left group">
                                 <div className="relative">
                                     <img
@@ -79,7 +88,9 @@ export default function Projects() {
                             </CollapsibleContent>
                         </Card>
                     </Collapsible>
-                ))}
+                        </div>
+                    );
+                })}
             </div>
         </section>
     );
