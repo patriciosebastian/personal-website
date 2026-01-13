@@ -3,7 +3,9 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Link } from '@inertiajs/react'
 import SectionHeading from './ui/section-heading'
 import TechCard from './ui/tech-card'
+import SpotifyPlaylistCard from './ui/spotify-playlist-card'
 import { techStack } from '@/data/techStack'
+import { spotifyPlaylists } from '@/data/spotifyPlaylists'
 
 export default function About() {
     return (
@@ -173,19 +175,40 @@ export default function About() {
                     </TabsContent>
                     <TabsContent
                         value="personal"
-                        className="mb-10"
+                        className="space-y-12 mb-10"
                     >
-                        <p className="mb-4">
-                            I&apos;ve done and seen many things in life, but hands down the greatest experience has been to be a husband to my wife and the father of our three children.
-                        </p>
-                        <p className="mb-2">Here are some quick basic things:</p>
-                        <ul className="px-1 list-disc list-inside">
-                            <li>Born and raised in Los Angeles, CA.</li>
-                            <li>Spent an incredible year in Mexico City.</li>
-                            <li>Lived in Oregon for 5 beautiful years.</li>
-                            <li>Now Austin, TX is home.</li>
-                            <li>I love spicy food. Like real heat, not that weak stuff.</li>
-                        </ul>
+                        <div>
+                            <p className="mb-4">
+                                I&apos;ve done and seen many things in life, but hands down the greatest experience has been to be a husband to my wife and the father of our three children.
+                            </p>
+                            <p className="mb-2">Here are some quick basic things:</p>
+                            <ul className="px-1 list-disc list-inside">
+                                <li>Born and raised in Los Angeles, CA.</li>
+                                <li>Spent an incredible year in Mexico City.</li>
+                                <li>Lived in Oregon for 5 beautiful years.</li>
+                                <li>Now Austin, TX is home.</li>
+                                <li>I love spicy food. Like real heat, not that weak stuff.</li>
+                            </ul>
+                        </div>
+
+                        <div className="space-y-4">
+                            <Badge className={badgeVariants({ variant: 'secondary' }) + ' rounded-full px-4 py-1'}>
+                                Music I Code To
+                            </Badge>
+                            <p className="text-sm">
+                                I made these custom playlists for you. Enjoy!
+                            </p>
+                            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                                {spotifyPlaylists.map((playlist) => (
+                                    <SpotifyPlaylistCard
+                                        key={playlist.name}
+                                        name={playlist.name}
+                                        url={playlist.url}
+                                        image={playlist.image}
+                                    />
+                                ))}
+                            </div>
+                        </div>
                     </TabsContent>
                 </Tabs>
             </div>
