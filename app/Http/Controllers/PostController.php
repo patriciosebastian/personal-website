@@ -7,6 +7,7 @@ use App\Http\Requests\PostStoreRequest;
 use App\Http\Requests\PostUpdateRequest;
 use App\Jobs\SyncMedia;
 use App\Models\Post;
+use App\Traits\HasSEO;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -14,8 +15,19 @@ use Inertia\Response;
 
 class PostController extends Controller
 {
+    use HasSEO;
+
     public function index(Request $request): Response
     {
+        $title = 'Blog Posts - Patricio Salazar';
+        $description = 'Read my latest articles on web development, side projects, learning in public, and more by Patricio Salazar.';
+
+        $this->setSEO(
+            title: $title,
+            description: $description,
+            type: 'website',
+        );
+
         $query = Post::query()->where('status', 'published');
 
         $tagFilters = [
@@ -65,13 +77,27 @@ class PostController extends Controller
                 'tag' => $request->input('tag'),
                 'sort' => $sortOrder,
             ],
+            'seo' => [
+                'title' => $title,
+                'description' => $description,
+            ],
         ]);
     }
 
     public function show(Request $request, Post $post): Response
     {
+        $this->setSEO(
+            title: $post->title,
+            description: $post->preview_text ?? $post->subtitle ?? "$post->title - by Patricio Salazar",
+            type: 'article',
+        );
+
         return Inertia::render('post/show', [
             'post' => $post,
+            'seo' => [
+                'title' => $post->title,
+                'description' => $post->preview_text ?? $post->subtitle ?? "$post->title - by Patricio Salazar",
+            ],
         ]);
     }
 
