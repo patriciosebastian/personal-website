@@ -3,7 +3,7 @@ import MainLayout from '@/layouts/main-layout'
 import { PostShowProps } from '@/types'
 import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'
-import { Link } from '@inertiajs/react'
+import { Link, usePage } from '@inertiajs/react'
 import { CalendarIcon, ClockIcon, ArrowLeftIcon } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { formatDate, getActiveTags, getReadingTime } from '@/lib/utils'
@@ -13,12 +13,13 @@ export default function Show({ post }: PostShowProps) {
     const activeTags = getActiveTags(post);
     const publishDate = post.published_at || post.created_at;
     const readingTime = getReadingTime(post.content);
+    const { seo } = usePage<{ seo: { title: string, description: string } }>().props;
 
     return (
         <>
             <PageHead
-                title={post.title}
-                font='inter'
+                title={seo.title}
+                description={seo.description}
             />
             <MainLayout>
                 <article className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">

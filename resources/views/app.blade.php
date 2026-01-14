@@ -6,7 +6,9 @@
 
         <x-theme-init />
 
-        <title inertia>{{ config('app.name', 'Laravel') }}</title>
+        <title inertia>Patricio Salazar - Software Developer</title>
+
+        {!! SEO::generate(true) !!}
 
         <link rel="icon" href="/favicon.ico" sizes="any">
 

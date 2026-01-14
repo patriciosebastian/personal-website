@@ -7,9 +7,11 @@ import { handleSortChange, handleTagChange } from '@/lib/utils'
 import InertiaPagination from '@/components/ui/inertia-pagination'
 import PostCard from '@/components/ui/post-card'
 import { Activity } from 'react'
+import { usePage } from '@inertiajs/react'
 
 export default function Index({ posts, availableTags, filters }: PostIndexProps) {
     const selectedTags = filters.tag ? filters.tag.split(',').filter(Boolean) : [];
+    const { seo } = usePage<{seo: { title: string, description: string }}>().props;
 
     const tagOptions = [
         { value: 'all', label: 'All Posts' },
@@ -30,9 +32,10 @@ export default function Index({ posts, availableTags, filters }: PostIndexProps)
     return (
         <>
             <PageHead
-                title="Patricio Salazar - Blog"
-                font="inter"
+                title={seo.title}
+                description={seo.description}
             />
+
             <MainLayout>
                 <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 overflow-hidden">
                     <div className="mb-16">

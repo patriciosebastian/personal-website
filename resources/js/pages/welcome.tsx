@@ -8,12 +8,16 @@ import { usePage } from '@inertiajs/react'
 import { Post } from '@/types'
 
 export default function Welcome() {
-    const { latestPost } = usePage<{ latestPost: Post }>().props;
+    const { latestPost, seo } = usePage<{
+        latestPost: Post,
+        seo: { title: string, description: string }
+    }>().props;
+
     return (
         <>
             <PageHead
-                title="Patricio Salazar - Home"
-                font="inter"
+                title={seo.title}
+                description={seo.description}
             />
 
             <MainLayout>
