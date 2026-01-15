@@ -48,7 +48,7 @@ export default function Footer() {
                     </Link>
                 </div>
                 <div className="pointer-events-none select-none">
-                    <div className="text-[5rem] justify-self-center font-black uppercase leading-none tracking-tighter text-zinc-100 dark:text-zinc-800 sm:text-[8rem] md:text-[10rem] lg:text-[16rem] -mb-13 sm:-mb-15 md:-mb-17 lg:-mb-19">
+                    <div className="text-[5rem] justify-self-center font-black uppercase leading-none tracking-tighter text-zinc-300 dark:text-zinc-800 sm:text-[8rem] md:text-[10rem] lg:text-[16rem] -mb-13 sm:-mb-15 md:-mb-17 lg:-mb-19">
                         Patricio
                     </div>
                 </div>
