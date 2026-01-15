@@ -86,10 +86,30 @@ class PostController extends Controller
 
     public function show(Request $request, Post $post): Response
     {
+        $keywords = [];
+
+        if ($post->is_freelance) $keywords[] = 'Freelance';
+        if ($post->is_web_development) $keywords[] = 'Web Development';
+        if ($post->is_tech) $keywords[] = 'Technology';
+        if ($post->is_life) $keywords[] = 'Life';
+        if ($post->is_side_project) $keywords[] = 'Side Project';
+        if ($post->is_thoughts) $keywords[] = 'Thoughts';
+        if ($post->is_product_review) $keywords[] = 'Product Review';
+
+        $keywords = array_merge($keywords, ['Full Stack', 'Software Development', 'Learn in Public', 'Build in Public', 'Blog Post']);
+
         $this->setSEO(
             title: $post->title,
             description: $post->preview_text ?? $post->subtitle ?? "$post->title - by Patricio Salazar",
             type: 'article',
+            keywords: $keywords,
+            articleMeta: [
+                'author' => 'Patricio Salazar',
+                'published_time' => $post->published_at?->toW3cString(),
+                'modified_time' => $post->updated_at?->toW3cString() ?? $post->published_at?->toW3cString(),
+                'tag' => $keywords,
+                'section' => 'Technology',
+            ],
         );
 
         return Inertia::render('post/show', [
