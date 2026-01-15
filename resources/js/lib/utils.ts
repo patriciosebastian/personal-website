@@ -36,8 +36,9 @@ export const formatDate = (date: string): string => {
 
 export const getReadingTime = (content: string): number => {
     const wordsPerMinute = 200;
-    const wordCount = content.split(/\s+/).length;
-    return Math.ceil(wordCount / wordsPerMinute);
+    const words = content.trim().match(/\S+/g);
+    const wordCount = words ? words.length : 0;
+    return Math.max(1, Math.ceil(wordCount / wordsPerMinute));
 };
 
 export const handleTagChange = (routePath: string, selectedTags: string[], tag: string, sort: string): void => {
