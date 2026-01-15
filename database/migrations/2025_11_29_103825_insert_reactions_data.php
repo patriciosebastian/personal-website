@@ -46,6 +46,6 @@ return new class extends Migration
             ['id' => 140, 'created_at' => '2025-08-10 10:11:58', 'updated_at' => '2025-08-10 10:11:58', 'post_id' => 14, 'emoji' => 'fire'],
         ];
 
-        DB::table('reactions')->insert($reactions);
+        // DB::table('reactions')->insert($reactions);
     }
 };
