@@ -3,6 +3,7 @@
 use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 return new class extends Migration
 {
@@ -12,10 +13,10 @@ return new class extends Migration
     public function up(): void
     {
         User::firstOrCreate(
-            ['email' => 'test@example.com'],
+            ['email' => 'psalazardev@gmail.com'],
             [
                 'name' => 'Patricio Salazar',
-                'password' => 'test',
+                'password' => Hash::make('Roseen192125$'),
                 'email_verified_at' => now(),
             ]
         );
@@ -24,7 +25,7 @@ return new class extends Migration
 
         $posts = [
             [
-                'id' => 5,
+                'id' => 1,
                 'user_id' => 1,
                 'created_at' => '2024-09-27 19:41:12',
                 'updated_at' => '2024-09-27 19:41:12',
@@ -227,7 +228,7 @@ return new class extends Migration
 HTML
             ],
             [
-                'id' => 6,
+                'id' => 2,
                 'user_id' => 1,
                 'created_at' => '2024-12-12 17:11:08',
                 'updated_at' => '2024-12-12 17:11:08',
@@ -393,7 +394,7 @@ If you enjoyed this content, stay tuned for more updates on the projects I build
 HTML
             ],
             [
-                'id' => 13,
+                'id' => 3,
                 'user_id' => 1,
                 'created_at' => '2025-05-05 19:30:46',
                 'updated_at' => '2025-05-05 19:30:46',
@@ -449,7 +450,7 @@ HTML
 HTML
             ],
             [
-                'id' => 14,
+                'id' => 4,
                 'user_id' => 1,
                 'created_at' => '2025-05-27 16:42:12',
                 'updated_at' => '2025-05-27 16:42:12',
