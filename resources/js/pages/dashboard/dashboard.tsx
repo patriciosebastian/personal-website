@@ -1,13 +1,13 @@
 import AppLayout from '@/layouts/app-layout'
 import { index as dashboard } from '@/actions/App/Http/Controllers/DashboardController'
 import { PaginatedData, Post, PostStats, type BreadcrumbItem } from '@/types'
-import { Head } from '@inertiajs/react'
 import PublishedPosts from '@/components/dashboard/published-posts'
 import Drafts from '@/components/dashboard/drafts'
 import QuickStats from '@/components/dashboard/quick-stats'
 import ViewSelectedPost from '@/components/dashboard/view-selected-post'
 import { useRef } from 'react'
 import { usePreserveScrollPosition } from '@/hooks/use-preserve-scroll-position'
+import PageHead from '@/components/page-head'
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
@@ -29,7 +29,11 @@ export default function Dashboard({ publishedPosts, draftPosts, stats, postToPre
 
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
-            <Head title="Dashboard" />
+            <PageHead
+                title='Dashboard'
+                description='Admin Dashboard'
+                noRobots={true}
+            />
             <div className="flex h-full flex-1 flex-col gap-4 overflow-x-auto rounded-xl p-4">
                 <div className="grid auto-rows-min gap-4 md:grid-cols-3">
                     <div ref={publishedPostsRef} className="relative aspect-video overflow-x-hidden scrollbar-thin rounded-xl border border-sidebar-border/70 dark:border-sidebar-border">

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,5 +18,7 @@ Route::middleware(['auth', 'verified'])->prefix('dashboard')->name('dashboard.')
 
 Route::get('/blog', [PostController::class, 'index'])->name('posts.index');
 Route::get('/blog/{post}', [PostController::class, 'show'])->name('posts.show');
+
+Route::get('/sitemap.xml', SitemapController::class)->name('sitemap');
 
 require __DIR__.'/settings.php';
