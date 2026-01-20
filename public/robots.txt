@@ -1,0 +1,11 @@
+User-agent: *
+
+Disallow: /dashboard
+Disallow: /login
+Disallow: /register
+Disallow: /forgot-password
+Disallow: /reset-password
+Disallow: /email
+Disallow: /settings
+
+Sitemap: https://patriciosalazar.dev/sitemap.xml
