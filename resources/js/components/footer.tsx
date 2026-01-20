@@ -1,28 +1,7 @@
+import navLinks from "@/data/navlinks"
 import { Link } from "@inertiajs/react"
-import { useRoute } from 'ziggy-js'
 
 export default function Footer() {
-    const route = useRoute();
-
-    const navLinks = [
-        {
-            href: route('home'),
-            label: 'HOME',
-        },
-        {
-            href: route('home') + '#about',
-            label: 'ABOUT',
-        },
-        {
-            href: route('home') + '#projects',
-            label: 'PROJECTS',
-        },
-        {
-            href: route('posts.index'),
-            label: 'BLOG',
-        },
-    ];
-
     return (
         <footer className="relative overflow-hidden bg-white py-10 dark:bg-transparent mt-32 border-t">
             <div className="relative w-full mx-auto px-4 lg:w-fit">
