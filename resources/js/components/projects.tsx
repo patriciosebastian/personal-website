@@ -32,62 +32,62 @@ export default function Projects() {
                                 onOpenChange={(open) => setExpandedProject(open ? index : null)}
                                 className={shouldCenter ? "md:w-1/2" : "w-full"}
                             >
-                                <Card className="p-0 overflow-hidden transition-shadow hover:shadow-lg">
-                            <CollapsibleTrigger className="w-full text-left group">
-                                <div className="relative">
-                                    <img
-                                        src={project.image}
-                                        alt={project.imageAltText}
-                                        className="w-full h-64 object-cover"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
-                                        <div className="p-6 w-full flex justify-between items-center">
-                                            <h3 className="text-white text-xl font-medium">
-                                                {project.title}
-                                            </h3>
-                                            <ChevronDown
-                                                className={`text-white transition-transform duration-300 ${
-                                                    expandedProject === index ? 'rotate-180' : ''
-                                                }`}
-                                                size={24}
+                                <Card className={`p-0 overflow-hidden transition-shadow hover:shadow-lg ${isLastItem ? 'mb-8' : ''}`}>
+                                    <CollapsibleTrigger className="w-full text-left group">
+                                        <div className="relative">
+                                            <img
+                                                src={project.image}
+                                                alt={project.imageAltText}
+                                                className="w-full h-64 object-cover"
                                             />
+                                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
+                                                <div className="p-6 w-full flex justify-between items-center">
+                                                    <h3 className="text-white text-xl font-medium">
+                                                        {project.title}
+                                                    </h3>
+                                                    <ChevronDown
+                                                        className={`text-white transition-transform duration-300 ${
+                                                            expandedProject === index ? 'rotate-180' : ''
+                                                        }`}
+                                                        size={24}
+                                                    />
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </CollapsibleTrigger>
-                            <CollapsibleContent>
-                                <CardContent className="p-6 space-y-4">
-                                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                                        {project.description}
-                                    </p>
-                                    <div className="flex flex-wrap gap-2">
-                                        {project.techStack.map((tech, techIndex) => (
-                                            <Badge
-                                                key={techIndex}
-                                                variant="secondary"
+                                    </CollapsibleTrigger>
+                                    <CollapsibleContent>
+                                        <CardContent className="p-6 space-y-4">
+                                            <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                                                {project.description}
+                                            </p>
+                                            <div className="flex flex-wrap gap-2">
+                                                {project.techStack.map((tech, techIndex) => (
+                                                    <Badge
+                                                        key={techIndex}
+                                                        variant="secondary"
+                                                    >
+                                                        {tech}
+                                                    </Badge>
+                                                ))}
+                                            </div>
+                                            <Button
+                                                variant="outline"
+                                                size="sm"
+                                                asChild
                                             >
-                                                {tech}
-                                            </Badge>
-                                        ))}
-                                    </div>
-                                    <Button
-                                        variant="outline"
-                                        size="sm"
-                                        asChild
-                                    >
-                                        <a
-                                            href={project.link}
-                                            target="_blank"
-                                            rel="noopener"
-                                            onClick={(e) => e.stopPropagation()}
-                                        >
-                                            Visit Site →
-                                        </a>
-                                    </Button>
-                                </CardContent>
-                            </CollapsibleContent>
-                        </Card>
-                    </Collapsible>
+                                                <a
+                                                    href={project.link}
+                                                    target="_blank"
+                                                    rel="noopener"
+                                                    onClick={(e) => e.stopPropagation()}
+                                                >
+                                                    Visit Site →
+                                                </a>
+                                            </Button>
+                                        </CardContent>
+                                    </CollapsibleContent>
+                                </Card>
+                            </Collapsible>
                         </div>
                     );
                 })}
