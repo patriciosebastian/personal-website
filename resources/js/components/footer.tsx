@@ -4,48 +4,39 @@ import { useRoute } from 'ziggy-js'
 export default function Footer() {
     const route = useRoute();
 
+    const navLinks = [
+        {
+            href: route('home'),
+            label: 'HOME',
+        },
+        {
+            href: route('home') + '#about',
+            label: 'ABOUT',
+        },
+        {
+            href: route('home') + '#projects',
+            label: 'PROJECTS',
+        },
+        {
+            href: route('posts.index'),
+            label: 'BLOG',
+        },
+    ];
+
     return (
         <footer className="relative overflow-hidden bg-white py-10 dark:bg-transparent mt-32 border-t">
             <div className="relative w-full mx-auto px-4 lg:w-fit">
                 <div className="flex justify-center items-center gap-8 mt-16 mb-24 sm:gap-12 md:gap-16">
-                    <Link
-                        href={route('home')}
-                        className="text-sm font-medium text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 sm:text-base"
-                    >
-                        HOME
-                    </Link>
-                    <Link
-                        href={route('home') + '#about'}
-                        onClick={(e) => {
-                            if (window.location.pathname === '/') {
-                                e.preventDefault();
-                                document.querySelector('#about')?.scrollIntoView();
-                                window.history.pushState(null, '', '#about');
-                            }
-                        }}
-                        className="text-sm font-medium text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 sm:text-base"
-                    >
-                        ABOUT
-                    </Link>
-                    <Link
-                        href={route('home') + '#projects'}
-                        onClick={(e) => {
-                            if (window.location.pathname === '/') {
-                                e.preventDefault();
-                                document.querySelector('#projects')?.scrollIntoView();
-                                window.history.pushState(null, '', '#projects');
-                            }
-                        }}
-                        className="text-sm font-medium text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 sm:text-base"
-                    >
-                        PROJECTS
-                    </Link>
-                    <Link
-                        href={route('posts.index')}
-                        className="text-sm font-medium text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 sm:text-base"
-                    >
-                        BLOG
-                    </Link>
+                    {navLinks.map((link) => (
+                        <Link
+                            key={link.label}
+                            href={link.href}
+                            prefetch
+                            className="text-sm font-medium text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 sm:text-base"
+                        >
+                            {link.label}
+                        </Link>
+                    ))}
                 </div>
                 <div className="pointer-events-none select-none">
                     <div className="text-[5rem] justify-self-center font-black uppercase leading-none tracking-tighter text-zinc-300 dark:text-zinc-800 sm:text-[8rem] md:text-[10rem] lg:text-[16rem] -mb-13 sm:-mb-15 md:-mb-17 lg:-mb-19">
