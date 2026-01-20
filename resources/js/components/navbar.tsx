@@ -21,7 +21,10 @@ export default function Navbar() {
     const route = useRoute();
 
     const navLinks = [
-        { href: route('home'), label: 'HOME' },
+        {
+            href: route('home'),
+            label: 'HOME',
+        },
         {
             href: route('home') + '#about',
             label: 'ABOUT',
@@ -30,7 +33,10 @@ export default function Navbar() {
             href: route('home') + '#projects',
             label: 'PROJECTS',
         },
-        { href: route('posts.index'), label: 'BLOG' },
+        {
+            href: route('posts.index'),
+            label: 'BLOG',
+        },
     ];
 
     return (
@@ -44,7 +50,10 @@ export default function Navbar() {
                                 asChild
                                 className="text-base sm:text-lg md:text-xl hover:bg-transparent focus:bg-transparent"
                             >
-                                <Link href={link.href}>
+                                <Link
+                                    href={link.href}
+                                    prefetch
+                                >
                                     {link.label}
                                 </Link>
                             </NavigationMenuLink>
@@ -58,6 +67,7 @@ export default function Navbar() {
                 <Link
                     href={route('home')}
                     className="text-lg font-semibold"
+                    prefetch
                 >
                     HOME
                 </Link>
@@ -77,6 +87,7 @@ export default function Navbar() {
                                     <Link
                                         href={link.href}
                                         className="text-lg font-semibold py-3 transition-colors hover:text-accent-foreground"
+                                        prefetch
                                     >
                                         {link.label}
                                     </Link>
