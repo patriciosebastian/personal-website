@@ -39,6 +39,7 @@ export default function Projects() {
                                                 src={project.image}
                                                 alt={project.imageAltText}
                                                 className="w-full h-64 object-cover"
+                                                loading="lazy"
                                             />
                                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
                                                 <div className="p-6 w-full flex justify-between items-center">

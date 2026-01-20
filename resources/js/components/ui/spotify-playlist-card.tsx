@@ -19,6 +19,7 @@ export default function SpotifyPlaylistCard({ name, url, image }: SpotifyPlaylis
                         src={image}
                         alt={name}
                         className="h-full w-full object-cover object-center"
+                        loading="lazy"
                     />
                 </div>
                 <div className="flex items-center gap-2">

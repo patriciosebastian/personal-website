@@ -27,6 +27,7 @@ export default function TechCard({ name, icon, color }: TechCardProps) {
                             alt={name}
                             className="h-7 w-7"
                             style={{ color }}
+                            loading="lazy"
                         />
                     ) : (
                         React.createElement(icon as IconType, {

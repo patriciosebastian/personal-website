@@ -25,7 +25,7 @@ export default function Show({ post }: PostShowProps) {
             <MainLayout>
                 <article className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
                     <div className="mb-8">
-                        <Link href={route('posts.index')}>
+                        <Link href={route('posts.index')} prefetch>
                             <Button
                                 variant="ghost"
                                 size="sm"
@@ -94,7 +94,7 @@ export default function Show({ post }: PostShowProps) {
                     <footer className="mt-16">
                         <Separator className="mb-8" />
                         <div className="text-center">
-                            <Link href={route('posts.index')}>
+                            <Link href={route('posts.index')} prefetch>
                                 <Button
                                     variant="outline"
                                     className="gap-2"

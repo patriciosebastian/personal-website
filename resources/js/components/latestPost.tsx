@@ -19,7 +19,7 @@ export default function LatestPost() {
             <SectionHeading headingText="Latest Post" />
             <div className="flex w-full flex-col gap-4">
                 <Item variant={"muted"} asChild>
-                    <Link href={route('posts.show', { post: latestPost.slug })}>
+                    <Link href={route('posts.show', { post: latestPost.slug })} prefetch>
                         <ItemContent className="space-y-4">
                             <ItemTitle className="text-2xl text-balance">{latestPost.title}</ItemTitle>
                             <ItemDescription className="flex flex-wrap items-center space-x-2 space-y-2 md:space-y-0">

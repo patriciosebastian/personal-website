@@ -52,7 +52,7 @@ export default function About() {
                             </Badge>
                             <p>
                                 I&apos;m focused on growing as a developer and deepening my knowledge and skills.<br />
-                                I may or may not be sharing more about what I'm doing. Check out my <Link href="/blog" className="underline">blog</Link> for updates.
+                                I may or may not be sharing more about what I'm doing. Check out my <Link href="/blog" className="underline" prefetch>blog</Link> for updates.
                             </p>
                         </div>
                         <div className="space-y-4">

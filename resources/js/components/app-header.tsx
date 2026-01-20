@@ -102,6 +102,7 @@ export function AppHeader({ breadcrumbs = [] }: AppHeaderProps) {
                                                     key={item.title}
                                                     href={item.href}
                                                     className="flex items-center space-x-2 font-medium"
+                                                    prefetch
                                                 >
                                                     {item.icon && (
                                                         <Icon
@@ -166,6 +167,7 @@ export function AppHeader({ breadcrumbs = [] }: AppHeaderProps) {
                                                 ) && activeItemStyles,
                                                 'h-9 cursor-pointer px-3',
                                             )}
+                                            prefetch
                                         >
                                             {item.icon && (
                                                 <Icon

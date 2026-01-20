@@ -20,7 +20,11 @@ export default function PostCard({ posts }: PostCardProps) {
                         className="min-w-0"
                         key={post.id}
                     >
-                        <Link href={route('posts.show', { post: post.slug })} className="group block">
+                        <Link
+                            href={route('posts.show', { post: post.slug })}
+                            className="group block"
+                            prefetch
+                        >
                             <div className="space-y-3">
                                 <div className="flex items-center gap-3 text-sm text-muted-foreground flex-wrap">
                                     <time dateTime={publishDate}>
