@@ -16,7 +16,7 @@ return new class extends Migration
             ['email' => 'psalazardev@gmail.com'],
             [
                 'name' => 'Patricio Salazar',
-                'password' => Hash::make('Roseen192125$'),
+                'password' => Hash::make(env('ADMIN_ACCOUNT_PASSWORD')),
                 'email_verified_at' => now(),
             ]
         );
