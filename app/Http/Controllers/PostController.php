@@ -28,54 +28,20 @@ class PostController extends Controller
             type: 'website',
         );
 
-        $query = Post::query()->where('status', 'published');
+        $posts = Post::published()
+            ->withTags($request->input('tag'))
+            ->orderBy('created_at', $request->input('sort', 'desc') === 'asc' ? 'asc' : 'desc')
+            ->paginate(9)
+            ->withQueryString();
 
-        $tagFilters = [
-            'freelance' => 'is_freelance',
-            'web_development' => 'is_web_development',
-            'tech' => 'is_tech',
-            'life' => 'is_life',
-            'entrepreneurship' => 'is_entrepreneurship',
-            'side_project' => 'is_side_project',
-            'product_review' => 'is_product_review',
-            'thoughts' => 'is_thoughts',
-        ];
-
-        if ($request->filled('tag')) {
-            $tags = explode(',', $request->input('tag'));
-
-            $query->where(function ($q) use ($tags, $tagFilters) {
-                foreach ($tags as $tag) {
-                    if (isset($tagFilters[$tag])) {
-                        $q->orWhere($tagFilters[$tag], true);
-                    }
-                }
-            });
-        }
-
-        $availableTags = collect($tagFilters)
-            ->filter(
-                fn ($column) => Post::where('status', 'published')
-                ->where($column, true)
-                ->exists()
-            )
-            ->keys()
-            ->toArray();
-
-        $sortOrder = $request->input('sort', 'desc');
-
-        if (in_array($sortOrder, ['asc', 'desc'])) {
-            $query->orderBy('created_at', $sortOrder);
-        }
-
-        $posts = $query->paginate(9)->withQueryString();
+        $availableTags = Post::getAvailableTags();
 
         return Inertia::render('post/index', [
             'posts' => fn () => $posts,
             'availableTags' => fn () => $availableTags,
             'filters' => fn () => [
                 'tag' => $request->input('tag'),
-                'sort' => $sortOrder,
+                'sort' => $request->input('sort', 'desc'),
             ],
             'seo' => [
                 'title' => $title,
