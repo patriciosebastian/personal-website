@@ -1,7 +1,8 @@
-import navLinks from "@/data/navlinks"
+import { useNavLinks } from "@/data/navlinks"
 import { Link } from "@inertiajs/react"
 
 export default function Footer() {
+    const navLinks = useNavLinks();
     return (
         <footer className="relative overflow-hidden bg-white py-10 dark:bg-transparent mt-32 border-t">
             <div className="relative w-full mx-auto px-4 lg:w-fit">

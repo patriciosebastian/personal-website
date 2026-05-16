@@ -16,10 +16,11 @@ import { Link } from '@inertiajs/react'
 import { Menu } from 'lucide-react'
 import { useRoute } from 'ziggy-js'
 import { Separator } from './ui/separator'
-import navLinks from '@/data/navlinks'
+import { useNavLinks } from '@/data/navlinks'
 
 export default function Navbar() {
     const route = useRoute();
+    const navLinks = useNavLinks();
 
     return (
         <nav className="w-full flex h-14 items-center justify-between border-b px-4 lg:px-8">
