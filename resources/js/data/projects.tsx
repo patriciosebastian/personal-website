@@ -1,23 +1,24 @@
-import Salos from '../../../resources/images/Salos_Homepage_Opt.webp'
+import Lumina from '../../../resources/images/Lumina_Homepage_Opt.webp'
 import TouchBase from '../../../resources/images/TouchBaseApp_Optimized.webp'
 import ClearCalc from '../../../resources/images/ClearCalc_Optimized.webp'
 import { Link } from '@inertiajs/react'
 
 export const projects = [
     {
-        title: "SALOS",
-        summary: "Fully featured Bible based AI Chat (RAG)",
-        description: "SALOS is a Bible powered AI chat application that uses Retrieval Augmented Generation (RAG) to provide accurate and relevant answers to user questions. Its built with Laravel on the backend, React on the frontend via Inertia, and PostgreSQL. I leverage a custom Pinecone vector store which holds the entire chunked and vectorized Bible. OpenAI's GPT-5-nano and text-embedding-3-large models are used for embedding and natural language processing. Real-time streaming gives it a seamless feel. Check it out and ask it anything regarding your faith or the Bible!",
-        link: "https://salosai.com",
-        image: Salos,
-        imageAltText: "SALOS Homepage Screenshot",
+        title: "Lumina",
+        summary: "Bible based AI Chat (RAG)",
+        description: "Lumina is a Bible powered AI chat application that uses Retrieval Augmented Generation (RAG) to provide accurate and relevant answers to user questions. Its built with Laravel on the backend, React on the frontend via Inertia, and PostgreSQL. I leverage a custom Pinecone vector store which holds the entire chunked and vectorized Bible. OpenAI's GPT-5.4 and text-embedding-3-large models are used for embeddings and responses. Real-time streaming gives it a seamless feel. Check it out and ask it anything regarding your faith or the Bible!",
+        link: "https://chatwithlumina.com",
+        image: Lumina,
+        imageAltText: "Lumina Homepage Screenshot",
         techStack: [
             'Laravel',
             'Inertia',
             'React',
+            'Tailwind CSS',
             'PostgreSQL',
             'Pinecone',
-            'gpt-5-nano',
+            'gpt-5.4',
             'text-embedding-3-large',
             'Real Time Streaming',
             'RAG',
