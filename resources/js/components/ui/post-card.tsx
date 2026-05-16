@@ -21,7 +21,7 @@ export default function PostCard({ posts }: PostCardProps) {
                         key={post.id}
                     >
                         <Link
-                            href={route('posts.show', { post: post.slug })}
+                            href={route('posts.show', { post: post.slug, ref: 'personal-website-blog-index' })}
                             className="group block"
                             prefetch
                         >

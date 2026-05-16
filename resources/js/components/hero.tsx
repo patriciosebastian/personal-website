@@ -35,7 +35,7 @@ export default function Hero({ latestPost }: { latestPost: Post }) {
                         Projects
                     </Link>
                     <Link
-                        href={route('posts.show', { post: latestPost.slug })}
+                        href={route('posts.show', { post: latestPost.slug, ref: 'personal-website-hero' })}
                         className={buttonVariants({ variant: "outline", size: "lg" }) + ` h-12 justify-center font-bold rounded-xs`}
                         prefetch
                     >

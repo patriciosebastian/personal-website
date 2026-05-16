@@ -77,7 +77,7 @@ export default function Projects() {
                                                 asChild
                                             >
                                                 <a
-                                                    href={project.link}
+                                                    href={project.link + "?ref=personal-website-projects"}
                                                     target="_blank"
                                                     rel="noopener"
                                                     onClick={(e) => e.stopPropagation()}
