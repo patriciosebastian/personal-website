@@ -13,31 +13,33 @@ export default function About() {
             className="min-h-svh px-4 sm:px-6 lg:px-0 border-t border-border pt-16"
             id="about"
         >
-            <SectionHeading headingText="About" />
-            <div className="relative flex justify-center items-center">
-                <Tabs defaultValue="career" className="w-full space-y-12 sm:w-[75%] lg:w-5/12">
-                    <TabsList className="w-full bg-transparent rounded-none p-0 box-border mb-12 border-b border-border">
+            <div className="max-w-[640px] mx-auto">
+                <SectionHeading headingText="About" />
+            </div>
+            <div className="max-w-[640px] mx-auto">
+                <Tabs defaultValue="career" className="w-full space-y-12">
+                    <TabsList className="!bg-transparent !h-auto !w-full !rounded-none !p-0 flex items-end border-b border-border gap-0 mb-0">
                         <TabsTrigger
                             value="career"
-                            className="rounded-none border-b-2 border-transparent data-[state=active]:border-brand data-[state=active]:font-medium data-[state=active]:bg-transparent data-[state=active]:shadow-none hover:bg-transparent px-4 py-[0.4375rem] text-[0.8125rem] tracking-[0.02em] transition-all duration-[220ms] -mb-px"
+                            className="flex-1 min-w-28 !rounded-none !border-0 border-b-2 border-transparent !bg-transparent !shadow-none -mb-px px-4 py-[0.4375rem] text-[0.8125rem] tracking-[0.02em] font-normal transition-all duration-[220ms] data-[state=active]:!bg-transparent data-[state=active]:!shadow-none data-[state=active]:border-brand data-[state=active]:font-medium hover:!bg-transparent"
                         >
                             Career
                         </TabsTrigger>
                         <TabsTrigger
                             value="tech-stack"
-                            className="rounded-none border-b-2 border-transparent data-[state=active]:border-brand data-[state=active]:font-medium data-[state=active]:bg-transparent data-[state=active]:shadow-none hover:bg-transparent px-4 py-[0.4375rem] text-[0.8125rem] tracking-[0.02em] transition-all duration-[220ms] -mb-px"
+                            className="flex-1 min-w-28 !rounded-none !border-0 border-b-2 border-transparent !bg-transparent !shadow-none -mb-px px-4 py-[0.4375rem] text-[0.8125rem] tracking-[0.02em] font-normal transition-all duration-[220ms] data-[state=active]:!bg-transparent data-[state=active]:!shadow-none data-[state=active]:border-brand data-[state=active]:font-medium hover:!bg-transparent"
                         >
                             Tech Stack
                         </TabsTrigger>
                         <TabsTrigger
                             value="AI"
-                            className="rounded-none border-b-2 border-transparent data-[state=active]:border-brand data-[state=active]:font-medium data-[state=active]:bg-transparent data-[state=active]:shadow-none hover:bg-transparent px-4 py-[0.4375rem] text-[0.8125rem] tracking-[0.02em] transition-all duration-[220ms] -mb-px"
+                            className="flex-1 min-w-28 !rounded-none !border-0 border-b-2 border-transparent !bg-transparent !shadow-none -mb-px px-4 py-[0.4375rem] text-[0.8125rem] tracking-[0.02em] font-normal transition-all duration-[220ms] data-[state=active]:!bg-transparent data-[state=active]:!shadow-none data-[state=active]:border-brand data-[state=active]:font-medium hover:!bg-transparent"
                         >
                             AI
                         </TabsTrigger>
                         <TabsTrigger
                             value="personal"
-                            className="rounded-none border-b-2 border-transparent data-[state=active]:border-brand data-[state=active]:font-medium data-[state=active]:bg-transparent data-[state=active]:shadow-none hover:bg-transparent px-4 py-[0.4375rem] text-[0.8125rem] tracking-[0.02em] transition-all duration-[220ms] -mb-px"
+                            className="flex-1 min-w-28 !rounded-none !border-0 border-b-2 border-transparent !bg-transparent !shadow-none -mb-px px-4 py-[0.4375rem] text-[0.8125rem] tracking-[0.02em] font-normal transition-all duration-[220ms] data-[state=active]:!bg-transparent data-[state=active]:!shadow-none data-[state=active]:border-brand data-[state=active]:font-medium hover:!bg-transparent"
                         >
                             Personal
                         </TabsTrigger>
@@ -212,7 +214,7 @@ export default function About() {
                     </TabsContent>
                 </Tabs>
             </div>
-            <div className="w-full mx-auto mb-26 sm:w-[75%] lg:w-5/12">
+            <div className="max-w-[640px] mx-auto mb-26">
                 <h3 className="font-serif text-2xl text-center mb-4 mt-12">What People Say About Working With Me</h3>
                 <div
                     className="senja-embed"

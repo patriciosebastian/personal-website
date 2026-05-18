@@ -12,14 +12,18 @@ export default function Hero({ latestPost }: { latestPost: Post }) {
             className="min-h-svh flex justify-center items-center relative px-4 sm:px-6 lg:px-0"
             id="hero"
         >
-            <div className="w-fit flex flex-col z-10 max-w-prose">
+            <div className="w-full max-w-[640px] flex flex-col z-10">
                 <h1 className="font-serif font-medium tracking-[-0.025em] leading-none text-[clamp(2.5rem,9vw,6rem)]">
                     PATRICIO SALAZAR
                 </h1>
-                <p className="text-[0.8125rem] font-medium tracking-[0.18em] uppercase text-brand mt-4.5">
+                <p className="text-[0.8125rem] font-medium tracking-[0.18em] uppercase text-brand mt-4.5 mb-10">
                     Software Developer
                 </p>
-                <ol className="divide-y divide-border mt-10 mb-11">
+                <p className="leading-[1.8] mb-10">
+                    I strive to build <strong>unmistakable</strong> experiences by<br />
+                    writing informed code that meets business needs.
+                </p>
+                <ol className="divide-y divide-border mb-11">
                     <li className="flex gap-5 py-3.5">
                         <span className="text-lg font-medium text-brand shrink-0 min-w-5">1</span>
                         <span className="text-[0.9375rem] leading-[1.65]">
