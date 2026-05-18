@@ -26,14 +26,14 @@ export default function PostCard({ posts }: PostCardProps) {
                             prefetch
                         >
                             <div className="space-y-3">
-                                <div className="flex items-center gap-3 text-sm text-muted-foreground flex-wrap">
+                                <div className="flex items-center gap-3 text-[0.6875rem] tracking-[0.1em] uppercase text-muted-foreground flex-wrap">
                                     <time dateTime={publishDate}>
                                         {formatDate(publishDate)}
                                     </time>
-                                    <span>•</span>
+                                    <span>·</span>
                                     <span>{readingTime} min read</span>
                                 </div>
-                                <h3 className="text-2xl md:text-3xl font-semibold tracking-tight leading-tight group-hover:text-muted-foreground transition-colors break-words">
+                                <h3 className="font-serif text-[clamp(1rem,3vw,1.375rem)] font-medium tracking-[-0.01em] leading-tight group-hover:opacity-40 transition-opacity duration-200 break-words">
                                     {post.title}
                                 </h3>
                                 {post.subtitle && (
@@ -52,7 +52,7 @@ export default function PostCard({ posts }: PostCardProps) {
                                             <Badge
                                                 key={tag}
                                                 variant="outline"
-                                                className="text-xs capitalize font-normal"
+                                                className="rounded text-[0.6875rem] px-2.5 py-0.5 tracking-[0.05em] capitalize font-normal"
                                             >
                                                 {tag}
                                             </Badge>

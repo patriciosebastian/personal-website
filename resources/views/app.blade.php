@@ -13,7 +13,7 @@
         <link rel="icon" href="/favicon.ico" sizes="any">
 
         <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=inter:300,400,500,600,800" rel="stylesheet" />
+        <link href="https://fonts.bunny.net/css?family=inter:300,400,500,600,800|spectral:300,400,500,600" rel="stylesheet" />
 
         {{-- Senja Widget --}}
         <script

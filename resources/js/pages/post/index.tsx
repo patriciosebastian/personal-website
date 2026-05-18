@@ -39,15 +39,18 @@ export default function Index({ posts, availableTags, filters }: PostIndexProps)
             <MainLayout>
                 <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 overflow-hidden">
                     <div className="mb-16">
-                        <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-3 break-words">
-                            Blog
+                        <p className="text-xs font-medium tracking-[0.22em] uppercase text-brand mb-6">
+                            § Field Notes
+                        </p>
+                        <h1 className="font-serif font-medium tracking-[-0.025em] leading-none text-[clamp(3rem,9vw,5.25rem)] mb-6 break-words">
+                            The Blog
                         </h1>
-                        <p className="text-lg text-muted-foreground">
+                        <p className="text-base text-muted-foreground leading-relaxed">
                             Web development, tech, side projects, and thoughts on other things.
                         </p>
                     </div>
 
-                    <div className="flex flex-col sm:flex-row mb-12 items-start justify-between">
+                    <div className="flex flex-col sm:flex-row mb-12 items-start justify-between gap-4 border-b border-border pb-6">
                         <ToggleGroup
                             className="flex-wrap"
                             type="multiple"
@@ -59,7 +62,7 @@ export default function Index({ posts, availableTags, filters }: PostIndexProps)
                                 <ToggleGroupItem
                                     value={tag.value}
                                     variant="outline"
-                                    className="data-[state=on]:text-blue-500 data-[state=on]:bg-secondary text-xs"
+                                    className="rounded data-[state=on]:text-brand data-[state=on]:border-brand data-[state=on]:bg-secondary text-xs tracking-wide"
                                     onClick={() => handleTagChange('/blog', selectedTags, tag.value, filters.sort)}
                                     key={tag.value}
                                     aria-label={`Toggle ${tag.label}`}
