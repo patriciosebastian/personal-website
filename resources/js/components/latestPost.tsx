@@ -1,7 +1,6 @@
 import { Post } from '@/types'
 import SectionHeading from './ui/section-heading'
 import { Item, ItemActions, ItemContent, ItemDescription, ItemTitle } from './ui/item'
-import { ChevronRightIcon } from 'lucide-react'
 import { Link, usePage } from '@inertiajs/react'
 import { Badge, badgeVariants } from './ui/badge'
 import { postTags } from '@/data/postTags'
@@ -13,7 +12,7 @@ export default function LatestPost() {
 
     return (
         <section
-            className="w-full mx-auto px-4 sm:px-6 lg:px-0 sm:w-[75%] lg:w-5/12"
+            className="w-full mx-auto px-4 sm:px-6 lg:px-0 sm:w-[75%] lg:w-5/12 border-t border-border pt-16"
             id="latestPost"
         >
             <SectionHeading headingText="Latest Post" />
@@ -21,21 +20,23 @@ export default function LatestPost() {
                 <Item variant={"muted"} asChild>
                     <Link href={route('posts.show', { post: latestPost.slug })} prefetch>
                         <ItemContent className="space-y-4">
-                            <ItemTitle className="text-2xl text-balance">{latestPost.title}</ItemTitle>
-                            <ItemDescription className="flex flex-wrap items-center space-x-2 space-y-2 md:space-y-0">
+                            <ItemTitle className="font-serif text-[clamp(1.625rem,4vw,2.25rem)] font-normal leading-[1.2] w-full">
+                                {latestPost.title}
+                            </ItemTitle>
+                            <ItemDescription className="flex flex-wrap items-center gap-2">
                                 {postTags.map((tag) => {
                                     if (latestPost[tag as keyof Post]) {
                                         return (
                                             <Badge
                                                 key={tag}
-                                                className={badgeVariants({ variant: "secondary" }) + `mr-2 rounded-full bg-gray-200 px-2 py-1 text-xs block dark:bg-gray-700`}
+                                                className={badgeVariants({ variant: "secondary" }) + ` rounded text-[0.6875rem] px-2 py-0.5 tracking-[0.05em]`}
                                             >
                                                 {tag.replace('is_', '').replaceAll('_', ' ')}
                                             </Badge>
                                         );
                                     }
                                 })}
-                                <span className="ml-auto">
+                                <span className="ml-auto text-[0.6875rem] tracking-[0.1em] uppercase text-muted-foreground">
                                     {latestPost.published_at
                                         ? new Date(latestPost.published_at).toLocaleDateString()
                                         : new Date(latestPost.created_at).toLocaleDateString()
@@ -44,7 +45,7 @@ export default function LatestPost() {
                             </ItemDescription>
                         </ItemContent>
                         <ItemActions>
-                            <ChevronRightIcon className="size-4" />
+                            <span className="text-sm text-muted-foreground">→</span>
                         </ItemActions>
                     </Link>
                 </Item>

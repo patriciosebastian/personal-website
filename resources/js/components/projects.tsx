@@ -12,7 +12,7 @@ export default function Projects() {
 
     return (
         <section
-            className="w-full mx-auto min-h-svh mb-16 md:mb-0 lg:w-2/3"
+            className="w-full mx-auto min-h-svh mb-16 md:mb-0 lg:w-2/3 border-t border-border pt-16"
             id="projects"
         >
             <SectionHeading headingText="Projects" />
@@ -32,7 +32,7 @@ export default function Projects() {
                                 onOpenChange={(open) => setExpandedProject(open ? index : null)}
                                 className={shouldCenter ? "md:w-1/2" : "w-full"}
                             >
-                                <Card className={`p-0 overflow-hidden transition-shadow hover:shadow-lg ${isLastItem ? 'mb-8' : ''}`}>
+                                <Card className={`p-0 overflow-hidden transition-[border-color,box-shadow,transform] duration-[220ms] hover:-translate-y-0.5 hover:shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:border-muted-foreground rounded ${isLastItem ? 'mb-8' : ''}`}>
                                     <CollapsibleTrigger className="w-full text-left group">
                                         <div className="relative">
                                             <img
@@ -41,24 +41,24 @@ export default function Projects() {
                                                 className="w-full h-64 object-cover"
                                                 loading="lazy"
                                             />
-                                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
+                                            <div className="absolute inset-0 bg-gradient-to-t from-black/65 to-transparent flex items-end">
                                                 <div className="p-6 w-full flex justify-between items-center">
-                                                    <h3 className="text-white text-xl font-medium">
+                                                    <h3 className="text-white text-base font-medium">
                                                         {project.title}
                                                     </h3>
                                                     <ChevronDown
                                                         className={`text-white transition-transform duration-300 ${
                                                             expandedProject === index ? 'rotate-180' : ''
                                                         }`}
-                                                        size={24}
+                                                        size={20}
                                                     />
                                                 </div>
                                             </div>
                                         </div>
                                     </CollapsibleTrigger>
                                     <CollapsibleContent>
-                                        <CardContent className="p-6 space-y-4">
-                                            <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                                        <CardContent className="p-5 space-y-4">
+                                            <p className="text-[0.8125rem] text-muted-foreground leading-[1.65] line-clamp-3">
                                                 {project.description}
                                             </p>
                                             <div className="flex flex-wrap gap-2">
@@ -66,6 +66,7 @@ export default function Projects() {
                                                     <Badge
                                                         key={techIndex}
                                                         variant="secondary"
+                                                        className="rounded text-[0.6875rem] px-2 py-0.5 border-0"
                                                     >
                                                         {tech}
                                                     </Badge>
@@ -74,6 +75,7 @@ export default function Projects() {
                                             <Button
                                                 variant="outline"
                                                 size="sm"
+                                                className="rounded text-xs tracking-wide"
                                                 asChild
                                             >
                                                 <a
@@ -96,4 +98,3 @@ export default function Projects() {
         </section>
     );
 };
-
