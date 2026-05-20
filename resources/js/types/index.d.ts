@@ -146,8 +146,7 @@ export interface Project {
 
 export interface SectionHeadingProps {
     headingText: string;
-    subtitle?: string;
-    number?: number;
+    chapter?: string;
 }
 
 export interface PostStats {

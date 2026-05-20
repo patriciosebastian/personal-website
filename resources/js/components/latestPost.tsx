@@ -1,53 +1,67 @@
 import { Post } from '@/types'
 import SectionHeading from './ui/section-heading'
-import { Item, ItemActions, ItemContent, ItemDescription, ItemTitle } from './ui/item'
-import { ChevronRightIcon } from 'lucide-react'
 import { Link, usePage } from '@inertiajs/react'
-import { Badge, badgeVariants } from './ui/badge'
 import { postTags } from '@/data/postTags'
 import { useRoute } from 'ziggy-js'
+import { formatDate, getReadingTime } from '@/lib/utils'
+import { useState } from 'react'
 
 export default function LatestPost() {
     const { latestPost } = usePage<{ latestPost: Post }>().props
     const route = useRoute();
+    const [hovered, setHovered] = useState(false);
+    const publishDate = latestPost.published_at || latestPost.created_at;
+    const readingTime = getReadingTime(latestPost.content);
+    const activeTags = postTags
+        .filter((tag) => latestPost[tag as keyof Post])
+        .map((tag) => tag.replace('is_', '').replaceAll('_', ' '));
 
     return (
         <section
-            className="w-full mx-auto px-4 sm:px-6 lg:px-0 sm:w-[75%] lg:w-5/12"
+            className="w-full mx-auto px-4 sm:px-6 lg:px-0 pt-24 pb-40"
             id="latestPost"
         >
-            <SectionHeading headingText="Latest Post" />
-            <div className="flex w-full flex-col gap-4">
-                <Item variant={"muted"} asChild>
-                    <Link href={route('posts.show', { post: latestPost.slug })} prefetch>
-                        <ItemContent className="space-y-4">
-                            <ItemTitle className="text-2xl text-balance">{latestPost.title}</ItemTitle>
-                            <ItemDescription className="flex flex-wrap items-center space-x-2 space-y-2 md:space-y-0">
-                                {postTags.map((tag) => {
-                                    if (latestPost[tag as keyof Post]) {
-                                        return (
-                                            <Badge
-                                                key={tag}
-                                                className={badgeVariants({ variant: "secondary" }) + `mr-2 rounded-full bg-gray-200 px-2 py-1 text-xs block dark:bg-gray-700`}
-                                            >
-                                                {tag.replace('is_', '').replaceAll('_', ' ')}
-                                            </Badge>
-                                        );
-                                    }
-                                })}
-                                <span className="ml-auto">
-                                    {latestPost.published_at
-                                        ? new Date(latestPost.published_at).toLocaleDateString()
-                                        : new Date(latestPost.created_at).toLocaleDateString()
-                                    }
-                                </span>
-                            </ItemDescription>
-                        </ItemContent>
-                        <ItemActions>
-                            <ChevronRightIcon className="size-4" />
-                        </ItemActions>
-                    </Link>
-                </Item>
+            <SectionHeading
+                headingText="Latest Post"
+                chapter="III"
+            />
+            <div className="max-w-180 mx-auto px-2">
+                <Link
+                    href={route('posts.show', { post: latestPost.slug })}
+                    prefetch
+                    className="block"
+                    onMouseEnter={() => setHovered(true)}
+                    onMouseLeave={() => setHovered(false)}
+                >
+                    <p className="text-[11px] tracking-widest uppercase text-muted-foreground mb-4.5">
+                        {formatDate(publishDate)}
+                        <span className="opacity-40 mx-1.5">·</span>
+                        {readingTime} min read
+                        {activeTags.length > 0 && (
+                            <>
+                                <span className="opacity-40 mx-1.5">·</span>
+                                {activeTags.join(', ')}
+                            </>
+                        )}
+                    </p>
+
+                    <h3
+                        className="font-display font-normal tracking-[-0.01em] leading-[1.2] text-foreground mb-5 transition-opacity duration-200"
+                        style={{
+                            fontSize: 'clamp(1.625rem, 4vw, 2.25rem)',
+                            opacity: hovered ? 0.38 : 1,
+                        }}
+                    >
+                        {latestPost.title}
+                    </h3>
+
+                    <div className="flex items-center gap-4">
+                        <div className="flex-1 h-px bg-border" />
+                        <span className={`text-xs tracking-[0.08em] uppercase transition-colors duration-180 shrink-0 ${hovered ? 'text-foreground' : 'text-muted-foreground'}`}>
+                            Read →
+                        </span>
+                    </div>
+                </Link>
             </div>
         </section>
     );

@@ -1,94 +1,135 @@
-import { projects } from '@/data/projects'
 import { useState } from 'react'
-import { Card, CardContent } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible'
-import { ChevronDown } from 'lucide-react'
+import { projects } from '@/data/projects'
 import SectionHeading from './ui/section-heading'
 
 export default function Projects() {
-    const [expandedProject, setExpandedProject] = useState<number | null>(null);
+    const [flipped, setFlipped] = useState<number | null>(null);
 
     return (
         <section
-            className="w-full mx-auto min-h-svh mb-16 md:mb-0 lg:w-2/3"
+            className="w-full mx-auto min-h-svh pt-24 pb-24"
             id="projects"
         >
-            <SectionHeading headingText="Projects" />
-            <div className="w-4/5 mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+            <SectionHeading
+                headingText="Projects"
+                chapter="II"
+            />
+            <div className="max-w-180 mx-auto px-2 grid grid-cols-1 md:grid-cols-2 gap-5">
                 {projects.map((project, index) => {
-                    const isLastItem = index === projects.length - 1;
-                    const isOddCount = projects.length % 2 !== 0;
-                    const shouldCenter = isLastItem && isOddCount;
+                    const isFlipped = flipped === index;
 
                     return (
                         <div
                             key={index}
-                            className={shouldCenter ? "md:col-span-2 md:flex md:justify-center" : ""}
+                            className="h-120 perspective-distant"
                         >
-                            <Collapsible
-                                open={expandedProject === index}
-                                onOpenChange={(open) => setExpandedProject(open ? index : null)}
-                                className={shouldCenter ? "md:w-1/2" : "w-full"}
+                            <div
+                                className={`relative w-full h-full transform-3d transition-transform duration-500 ease-in-out ${isFlipped ? 'transform-[rotateY(180deg)]' : 'transform-[rotateY(0deg)]'}`}
                             >
-                                <Card className={`p-0 overflow-hidden transition-shadow hover:shadow-lg ${isLastItem ? 'mb-8' : ''}`}>
-                                    <CollapsibleTrigger className="w-full text-left group">
-                                        <div className="relative">
-                                            <img
-                                                src={project.image}
-                                                alt={project.imageAltText}
-                                                className="w-full h-64 object-cover"
-                                                loading="lazy"
-                                            />
-                                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
-                                                <div className="p-6 w-full flex justify-between items-center">
-                                                    <h3 className="text-white text-xl font-medium">
-                                                        {project.title}
-                                                    </h3>
-                                                    <ChevronDown
-                                                        className={`text-white transition-transform duration-300 ${
-                                                            expandedProject === index ? 'rotate-180' : ''
-                                                        }`}
-                                                        size={24}
-                                                    />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </CollapsibleTrigger>
-                                    <CollapsibleContent>
-                                        <CardContent className="p-6 space-y-4">
-                                            <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                                                {project.description}
+                                {/* Front */}
+                                <div
+                                    onClick={() => setFlipped(index)}
+                                    className="absolute inset-0 backface-hidden overflow-hidden border border-border rounded-sm flex flex-col cursor-pointer hover:border-muted-foreground transition-colors duration-200"
+                                >
+                                    <img
+                                        src={project.image}
+                                        alt={project.imageAltText}
+                                        className="w-full h-65 object-cover shrink-0"
+                                        loading="lazy"
+                                    />
+                                    <div className="p-5 flex flex-col gap-3 flex-1">
+                                        <div className="space-y-1">
+                                            <h3 className="font-display font-medium text-base text-foreground leading-snug">
+                                                {project.title}
+                                            </h3>
+                                            <p className="text-[11px] font-medium tracking-[0.16em] uppercase text-press-accent">
+                                                {project.summary}
                                             </p>
-                                            <div className="flex flex-wrap gap-2">
-                                                {project.techStack.map((tech, techIndex) => (
-                                                    <Badge
-                                                        key={techIndex}
-                                                        variant="secondary"
+                                        </div>
+                                        <div className="flex flex-wrap gap-1.5">
+                                            {project.techStack.map((tech, i) => (
+                                                <span
+                                                    key={i}
+                                                    className="text-[11px] px-2 py-0.5 bg-secondary rounded text-foreground"
+                                                >
+                                                    {tech}
+                                                </span>
+                                            ))}
+                                        </div>
+                                        <div className="mt-auto pt-1 flex items-center justify-between">
+                                            <a
+                                                href={project.link + '?ref=personal-website-projects'}
+                                                target="_blank"
+                                                rel="noopener"
+                                                onClick={(e) => e.stopPropagation()}
+                                                className="text-xs text-muted-foreground hover:text-foreground underline decoration-transparent hover:decoration-muted-foreground underline-offset-2 transition-[color,text-decoration-color] duration-150"
+                                            >
+                                                Visit Site
+                                            </a>
+                                            <span className="text-xs text-foreground inline-flex items-center gap-1.5">
+                                                Details <span className="text-press-accent">→</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Back */}
+                                <div
+                                    className="absolute inset-0 backface-hidden transform-[rotateY(180deg)] overflow-y-auto border border-border rounded-sm bg-background"
+                                    style={{ scrollbarWidth: 'thin' }}
+                                >
+                                    <div className="p-6 flex flex-col gap-4 min-h-full">
+                                        <div className="flex items-start justify-between gap-3">
+                                            <div>
+                                                <p className="text-[11px] font-medium tracking-[0.18em] uppercase text-press-accent mb-1.5">
+                                                    {project.summary}
+                                                </p>
+                                                <h3 className="font-display font-medium text-xl text-foreground leading-tight">
+                                                    {project.title}
+                                                </h3>
+                                            </div>
+                                            <button
+                                                onClick={() => setFlipped(null)}
+                                                className="text-muted-foreground hover:text-foreground transition-colors duration-150 shrink-0 text-xs tracking-[0.05em] mt-0.5 cursor-pointer"
+                                                aria-label="Flip back"
+                                            >
+                                                ← Back
+                                            </button>
+                                        </div>
+
+                                        <div className="h-px bg-border" />
+
+                                        <div className="text-xs leading-[1.75] text-muted-foreground">
+                                            {project.description}
+                                        </div>
+
+                                        <div className="space-y-2">
+                                            <p className="text-[10px] tracking-[0.14em] uppercase text-muted-foreground">Stack</p>
+                                            <div className="flex flex-wrap gap-1.5">
+                                                {project.techStack.map((tech, i) => (
+                                                    <span
+                                                        key={i}
+                                                        className="text-[11px] px-2 py-0.5 bg-secondary rounded text-foreground"
                                                     >
                                                         {tech}
-                                                    </Badge>
+                                                    </span>
                                                 ))}
                                             </div>
-                                            <Button
-                                                variant="outline"
-                                                size="sm"
-                                                asChild
+                                        </div>
+
+                                        <div className="mt-auto pt-2">
+                                            <a
+                                                href={project.link + '?ref=personal-website-projects'}
+                                                target="_blank"
+                                                rel="noopener"
+                                                className="inline-flex items-center justify-center w-full h-10 border border-foreground rounded bg-transparent text-foreground text-xs tracking-[0.08em] uppercase hover:bg-foreground hover:text-background transition-colors duration-200"
                                             >
-                                                <a
-                                                    href={project.link + "?ref=personal-website-projects"}
-                                                    target="_blank"
-                                                    rel="noopener"
-                                                    onClick={(e) => e.stopPropagation()}
-                                                >
-                                                    Visit Site →
-                                                </a>
-                                            </Button>
-                                        </CardContent>
-                                    </CollapsibleContent>
-                                </Card>
-                            </Collapsible>
+                                                Visit Site →
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     );
                 })}
@@ -96,4 +137,3 @@ export default function Projects() {
         </section>
     );
 };
-

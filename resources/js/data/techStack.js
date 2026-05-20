@@ -1,11 +1,10 @@
-import { 
+import {
+    SiAmazonwebservices,
     SiAtlassian,
     SiExpress,
-    SiGit,
     SiJavascript,
     SiLaravel,
     SiLivewire,
-    SiNextdotjs,
     SiNodedotjs,
     SiPhp,
     SiPostgresql,
@@ -37,14 +36,6 @@ export const techStack = {
             name: 'React',
             icon: SiReact,
             color: '#61DAFB'
-        },
-        {
-            name: 'Next.js',
-            icon: SiNextdotjs,
-            color: {
-                light: '#000000',
-                dark: '#FFFFFF'
-            },
         },
     ],
     backendFrameworks: [
@@ -79,9 +70,9 @@ export const techStack = {
             color: '#4169E1'
         },
         {
-            name: 'Git/GitHub',
-            icon: SiGit,
-            color: '#F05032'
+            name: 'AWS',
+            icon: SiAmazonwebservices,
+            color: '#FF9900'
         },
         {
             name: 'Atlassian',

@@ -6,19 +6,19 @@ export function useNavLinks() {
     return [
         {
             href: route('home'),
-            label: 'HOME'
+            label: 'Home'
         },
         {
             href: route('home') + '#about',
-            label: 'ABOUT'
+            label: 'About'
         },
         {
             href: route('home') + '#projects',
-            label: 'PROJECTS'
+            label: 'Projects'
         },
         {
             href: route('posts.index'),
-            label: 'BLOG'
+            label: 'Blog'
         },
     ];
 }

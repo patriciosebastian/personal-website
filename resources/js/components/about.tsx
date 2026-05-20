@@ -1,75 +1,86 @@
-import { Badge, badgeVariants } from '@/components/ui/badge'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Link } from '@inertiajs/react'
 import SectionHeading from './ui/section-heading'
 import TechCard from './ui/tech-card'
 import SpotifyPlaylistCard from './ui/spotify-playlist-card'
+import AboutLabel from './ui/about-label'
 import { techStack } from '@/data/techStack'
 import { spotifyPlaylists } from '@/data/spotifyPlaylists'
+import { useState } from 'react'
+import { cn } from '@/lib/utils'
 
 export default function About() {
+    const [tabsHovered, setTabsHovered] = useState(false);
+
     return (
         <section
-            className="min-h-svh px-4 sm:px-6 lg:px-0"
+            className="min-h-svh px-4 sm:px-6 lg:px-0 pt-24 pb-24"
             id="about"
         >
-            <SectionHeading headingText="About" />
-            <div className="relative flex justify-center items-center">
-                <Tabs defaultValue="career" className="w-full space-y-12 sm:w-[75%] lg:w-5/12">
-                    <TabsList className="w-full bg-transparent rounded-none p-0 box-border mb-12">
-                        <TabsTrigger
-                            value="career"
-                            className="hover:bg-accent"
+            <SectionHeading
+                headingText="About"
+                chapter="I"
+            />
+            <div className="max-w-180 mx-auto w-full">
+                <Tabs
+                    defaultValue="career"
+                    className="w-full space-y-8"
+                >
+                    <div
+                        onMouseEnter={() => setTabsHovered(true)}
+                        onMouseLeave={() => setTabsHovered(false)}
+                    >
+                        <TabsList
+                            className={cn(
+                                'w-full p-1 gap-0.5 transition-colors duration-200',
+                                tabsHovered ? 'bg-secondary rounded-lg' : 'bg-transparent rounded-none'
+                            )}
                         >
-                            Career
-                        </TabsTrigger>
-                        <TabsTrigger
-                            value="tech-stack"
-                            className="hover:bg-accent"
-                        >
-                            Tech Stack
-                        </TabsTrigger>
-                        <TabsTrigger
-                            value="AI"
-                            className="hover:bg-accent"
-                        >
-                            AI
-                        </TabsTrigger>
-                        <TabsTrigger
-                            value="personal"
-                            className="hover:bg-accent"
-                        >
-                            Personal
-                        </TabsTrigger>
-                    </TabsList>
+                            {(['career', 'tech-stack', 'AI', 'personal'] as const).map((value, i) => {
+                                const labels = ['Career', 'Tech Stack', 'AI', 'Personal'];
+                                return (
+                                    <TabsTrigger
+                                        key={value}
+                                        value={value}
+                                        className={cn(
+                                            'flex-1 min-w-0 text-[13px] font-normal tracking-[0.02em] transition-all duration-200',
+                                            tabsHovered
+                                                ? 'rounded hover:text-foreground!'
+                                                : 'rounded-none border-0! border-b-2! border-b-transparent data-[state=active]:border-b-press-accent data-[state=active]:bg-transparent! data-[state=active]:shadow-none! data-[state=active]:text-foreground dark:data-[state=active]:border-b-press-accent! dark:data-[state=active]:bg-transparent! hover:bg-accent'
+                                        )}
+                                    >
+                                        {labels[i]}
+                                    </TabsTrigger>
+                                );
+                            })}
+                        </TabsList>
+                    </div>
+
                     <TabsContent
                         value="career"
                         className="space-y-12"
                     >
                         <div className="space-y-4">
-                            <Badge className={badgeVariants({ variant: 'secondary' }) + ' rounded-full px-4 py-1'}>
-                                My Current Mission
-                            </Badge>
+                            <AboutLabel label="My Current Mission" />
                             <p>
                                 I&apos;m focused on growing as a developer and deepening my knowledge and skills.<br />
                                 I may or may not be sharing more about what I'm doing. Check out my <Link href="/blog" className="underline" prefetch>blog</Link> for updates.
                             </p>
                         </div>
                         <div className="space-y-4">
-                            <Badge className={badgeVariants({ variant: 'secondary' }) + ' rounded-full px-4 py-1'}>
-                                My Current Role
-                            </Badge>
+                            <AboutLabel label="My Current Role" />
                             <p>
                                 Currently, I&#39;m a <span className="font-bold">Software Developer</span> at <a className="underline" href="https://empire-medical.com/" target="_blank">Empire Medical</a>, where I use PHP, Laravel, and Livewire to build and maintain a custom business application. The team is small but highly effective; I get to make meaningful contributions on a daily basis. I love working on this team. Previously, I worked in the JavaScript ecosystem, so I&apos;m proficient there as well. I sometimes offer web development services as a freelancer.
                             </p>
                         </div>
                     </TabsContent>
+
                     <TabsContent
                         value="tech-stack"
                         className="space-y-5"
                     >
                         <div className="space-y-2.5">
-                            <h3 className="text-xs font-semibold tracking-wider text-muted-foreground uppercase">
+                            <h3 className="text-[11px] font-semibold tracking-widest text-muted-foreground uppercase">
                                 Languages
                             </h3>
                             <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 md:grid-cols-4">
@@ -85,7 +96,7 @@ export default function About() {
                         </div>
 
                         <div className="space-y-2.5">
-                            <h3 className="text-xs font-semibold tracking-wider text-muted-foreground uppercase">
+                            <h3 className="text-[11px] font-semibold tracking-widest text-muted-foreground uppercase">
                                 UI & Frontend
                             </h3>
                             <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 md:grid-cols-4">
@@ -107,7 +118,7 @@ export default function About() {
                         </div>
 
                         <div className="space-y-2.5">
-                            <h3 className="text-xs font-semibold tracking-wider text-muted-foreground uppercase">
+                            <h3 className="text-[11px] font-semibold tracking-widest text-muted-foreground uppercase">
                                 Backend & Frameworks
                             </h3>
                             <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 md:grid-cols-4">
@@ -129,7 +140,7 @@ export default function About() {
                         </div>
 
                         <div className="space-y-2.5">
-                            <h3 className="text-xs font-semibold tracking-wider text-muted-foreground uppercase">
+                            <h3 className="text-[11px] font-semibold tracking-widest text-muted-foreground uppercase">
                                 Database & Tooling
                             </h3>
                             <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 md:grid-cols-4">
@@ -144,35 +155,31 @@ export default function About() {
                             </div>
                         </div>
                     </TabsContent>
+
                     <TabsContent
                         value="AI"
                         className="space-y-12"
                     >
                         <div className="space-y-4">
-                            <Badge className={badgeVariants({ variant: 'secondary' }) + ' rounded-full px-4 py-1'}>
-                                How I Think About AI
-                            </Badge>
+                            <AboutLabel label="How I Think About AI" />
                             <p>
                                 AI is powerful...but you gotta know how and when to use it. It cannot replace thinking through problems myself. Any time I delegate brainstorming to a model, even if the model's solution is good, I usually feel like I could have implemented things in a more idiomatic way. I also find that letting AI do the initial thinking makes it difficult to see other solutions or potential gaps. On the other hand, it helps me to see things that I don't see on my own. AI is great for testing ideas, refining, learning, and discovery.
                             </p>
                         </div>
                         <div className="space-y-4">
-                            <Badge className={badgeVariants({ variant: 'secondary' }) + ' rounded-full px-4 py-1'}>
-                                How I Use AI in Development
-                            </Badge>
+                            <AboutLabel label="How I Use AI in Development" />
                             <p>
                                 Let me be clear, I use AI a lot. And I use it skillfully. However, in certain codebases with lots of domain specific knowledge, it still gets lots of things wrong. So for me, I'll let AI drive for smaller, less critical tasks. For meaningful problems, I usually don't start with AI. I take time to think through requirements and explore a couple paths forward. By the time I feel good about an idea, I'll implement it myself (especially if I need control) or I'll finally instruct a model to do it. My favorite use case is planning projects, architecture, documentation, implementation strategies, etc.
                             </p>
                         </div>
                         <div className="space-y-4">
-                            <Badge className={badgeVariants({ variant: 'secondary' }) + ' rounded-full px-4 py-1'}>
-                                AI Tools I'm Actively Using
-                            </Badge>
+                            <AboutLabel label="AI Tools I'm Actively Using" />
                             <p>
                                 Claude Code, GitHub Copilot, MCP servers (Laravel Boost, Context7, chrome-devtools, github-mcp, railway-mcp), and custom instruction sets. These work best with rich context about my codebase and environment.
                             </p>
                         </div>
                     </TabsContent>
+
                     <TabsContent
                         value="personal"
                         className="space-y-12 mb-10"
@@ -187,14 +194,12 @@ export default function About() {
                                 <li>Spent an incredible year in Mexico City.</li>
                                 <li>Lived in Oregon for 5 beautiful years.</li>
                                 <li>Now Austin, TX is home.</li>
-                                <li>I love spicy food. Like real heat, not that weak stuff.</li>
+                                <li>I love spicy food. Like real heat, no weak stuff.</li>
                             </ul>
                         </div>
 
                         <div className="space-y-4">
-                            <Badge className={badgeVariants({ variant: 'secondary' }) + ' rounded-full px-4 py-1'}>
-                                Music I Code To
-                            </Badge>
+                            <AboutLabel label="Music I Code To" />
                             <p className="text-sm">
                                 I made these custom playlists for you. Enjoy!
                             </p>
@@ -212,8 +217,8 @@ export default function About() {
                     </TabsContent>
                 </Tabs>
             </div>
-            <div className="w-full mx-auto mb-26 sm:w-[75%] lg:w-5/12">
-                <h3 className="text-2xl text-center mb-4 mt-12">What People Say About Working With Me</h3>
+            <div className="max-w-180 mx-auto mb-10 w-full">
+                <h3 className="font-display text-2xl font-medium text-center mb-4 mt-12">What People Say About Working With Me</h3>
                 <div
                     className="senja-embed"
                     data-id="9aeef387-4143-4b01-a516-9aaedd9adced"

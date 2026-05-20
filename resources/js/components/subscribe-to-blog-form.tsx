@@ -62,7 +62,7 @@ export default function SubscribeToBlogForm({ className }: { className?: string 
     return (
         <div
             id="convertkit-form-container"
-            className={`max-w-lg mx-auto lg:max-w-2xl ${className}`}
+            className={`max-w-md mx-auto md:max-w-lg lg:max-w-2xl ${className}`}
         />
     );
 }

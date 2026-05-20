@@ -11,6 +11,9 @@ import {
 import { cn } from '@/lib/utils'
 import { InertiaPaginatedData } from '@/types'
 
+const activePageClass = 'bg-foreground text-background border-foreground hover:bg-foreground hover:text-background';
+const inactivePageClass = 'text-muted-foreground border-border';
+
 export default function InertiaPagination({
     current_page,
     last_page,
@@ -31,6 +34,7 @@ export default function InertiaPagination({
                                 <PaginationFirst
                                     href={first_page_url!}
                                     prefetch="hover"
+                                    className={inactivePageClass}
                                 />
                             </PaginationItem>
                         )}
@@ -39,8 +43,9 @@ export default function InertiaPagination({
                                 href={prev_page_url || '#'}
                                 prefetch="hover"
                                 className={cn(
+                                    inactivePageClass,
                                     current_page === 1
-                                        ? 'text-muted-foreground pointer-events-none'
+                                        ? 'opacity-50 pointer-events-none'
                                         : ''
                                 )}
                             />
@@ -51,6 +56,7 @@ export default function InertiaPagination({
                                     href={links[current_page - 2].url!}
                                     isActive={false}
                                     prefetch="hover"
+                                    className={inactivePageClass}
                                 >
                                     {current_page - 2}
                                 </PaginationLink>
@@ -62,6 +68,7 @@ export default function InertiaPagination({
                                     href={links[current_page - 1].url!}
                                     isActive={false}
                                     prefetch="hover"
+                                    className={inactivePageClass}
                                 >
                                     {current_page - 1}
                                 </PaginationLink>
@@ -71,6 +78,7 @@ export default function InertiaPagination({
                             <PaginationLink
                                 href={links[current_page].url!}
                                 isActive={true}
+                                className={activePageClass}
                             >
                                 {current_page}
                             </PaginationLink>
@@ -81,6 +89,7 @@ export default function InertiaPagination({
                                     href={links[current_page + 1].url!}
                                     isActive={false}
                                     prefetch="hover"
+                                    className={inactivePageClass}
                                 >
                                     {current_page + 1}
                                 </PaginationLink>
@@ -92,6 +101,7 @@ export default function InertiaPagination({
                                     href={links[current_page + 2].url!}
                                     isActive={false}
                                     prefetch="hover"
+                                    className={inactivePageClass}
                                 >
                                     {current_page + 2}
                                 </PaginationLink>
@@ -102,8 +112,9 @@ export default function InertiaPagination({
                                 href={next_page_url || '#'}
                                 prefetch="hover"
                                 className={cn(
+                                    inactivePageClass,
                                     current_page === last_page
-                                        ? 'text-muted-foreground pointer-events-none'
+                                        ? 'opacity-50 pointer-events-none'
                                         : ''
                                 )}
                             />
@@ -113,6 +124,7 @@ export default function InertiaPagination({
                                 <PaginationLast
                                     href={last_page_url!}
                                     prefetch="hover"
+                                    className={inactivePageClass}
                                 />
                             </PaginationItem>
                         )}

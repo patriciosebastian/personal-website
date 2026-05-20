@@ -6,8 +6,8 @@ import { Link } from '@inertiajs/react'
 export const projects = [
     {
         title: "Lumina",
-        summary: "Bible based AI Chat (RAG)",
-        description: "Lumina is a Bible powered AI chat application that uses Retrieval Augmented Generation (RAG) to provide accurate and relevant answers to user questions. Its built with Laravel on the backend, React on the frontend via Inertia, and PostgreSQL. I leverage a custom Pinecone vector store which holds the entire chunked and vectorized Bible. OpenAI's GPT-5.4 and text-embedding-3-large models are used for embeddings and responses. Real-time streaming gives it a seamless feel. Check it out and ask it anything regarding your faith or the Bible!",
+        summary: "RAG-powered, Bible-based AI Chat",
+        description: "Lumina is a Bible-based AI chat application that uses Retrieval Augmented Generation (RAG) to provide accurate and relevant answers to user questions. Its built with Laravel on the backend, React on the frontend via Inertia, and PostgreSQL. I leverage a custom Pinecone vector store which holds the entire chunked and vectorized Bible. OpenAI's GPT-5.4 and text-embedding-3-large models are used for embeddings and responses. Real-time streaming gives it a seamless feel. Check it out and ask it anything regarding your faith or the Bible!",
         link: "https://chatwithlumina.com",
         image: Lumina,
         imageAltText: "Lumina Homepage Screenshot",
@@ -48,7 +48,7 @@ export const projects = [
     },
     {
         title: "ClearCalc",
-        summary: "ClearCalc is a collection of Personal Finance tools written in JavaScript",
+        summary: "Personal Finance tools written in JavaScript",
         description: "ClearCalc tools include the Amortization Schedule Generator, Home Buying Power Calculator, and more, as well as a blog. It relies heavily on user inputs to calculate details and generate results with all the data you would expect to see. Built with JavaScript and Bootstrap, it's designed to be straightforward and easy to use. Of course, it's fully responsive. Try it out now!",
         link: "https://clearcalc.app",
         image: ClearCalc,
