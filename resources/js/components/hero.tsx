@@ -21,7 +21,7 @@ export default function Hero({ latestPost }: { latestPost: Post }) {
                 </h1>
 
                 <p className="text-[13px] font-medium tracking-[0.18em] uppercase text-press-accent mb-10">
-                    Software Developer
+                    Software Engineer
                 </p>
 
                 <div className="mb-11">

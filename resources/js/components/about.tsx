@@ -70,7 +70,7 @@ export default function About() {
                         <div className="space-y-4">
                             <AboutLabel label="My Current Role" />
                             <p>
-                                Currently, I&#39;m a <span className="font-bold">Software Developer</span> at <a className="underline" href="https://empire-medical.com/" target="_blank">Empire Medical</a>, where I use PHP, Laravel, and Livewire to build and maintain a custom business application. The team is small but highly effective; I get to make meaningful contributions on a daily basis. I love working on this team. Previously, I worked in the JavaScript ecosystem, so I&apos;m proficient there as well. I sometimes offer web development services as a freelancer.
+                                Currently, I&#39;m a <span className="font-bold">Software Engineer</span> at <a className="underline" href="https://empire-medical.com/" target="_blank">Empire Medical</a>, where I use PHP, Laravel, and Livewire to build and maintain a custom business application. The team is small but highly effective; I get to make meaningful contributions on a daily basis. I love working on this team. Previously, I worked in the JavaScript ecosystem, so I&apos;m proficient there as well. I sometimes offer web development services as a freelancer.
                             </p>
                         </div>
                     </TabsContent>

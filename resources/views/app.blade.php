@@ -6,7 +6,7 @@
 
         <x-theme-init />
 
-        <title inertia>Patricio Salazar - Software Developer</title>
+        <title inertia>Patricio Salazar - Software Engineer</title>
 
         {!! SEO::generate(true) !!}
 

@@ -14,7 +14,7 @@ class WelcomeController extends Controller
     public function __invoke(Request $request): Response
     {
         $title = "Software Engineer";
-        $description = "Welcome to the personal website of Patricio Salazar, a software developer specializing in web applications. Explore my projects, blog posts, and learn more about me.";
+        $description = "Welcome to the personal website of Patricio Salazar, a software engineer specializing in web applications. Explore my projects, blog posts, and learn more about me.";
 
         $this->setSEO(
             title: $title,
