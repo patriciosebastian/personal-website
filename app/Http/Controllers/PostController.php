@@ -19,7 +19,7 @@ class PostController extends Controller
 
     public function index(Request $request): Response
     {
-        $title = 'Blog Posts - Patricio Salazar';
+        $title = 'Blog Posts';
         $description = 'Read my latest articles on web development, side projects, learning in public, and more by Patricio Salazar.';
 
         $this->setSEO(
