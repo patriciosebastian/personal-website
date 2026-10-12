@@ -30,3 +30,6 @@ yarn-error.log
 draft.yaml
 notes.md
 dev_docs/
+
+# Private notes repo, linked in locally (see patriciosebastian/notes)
+.notes
